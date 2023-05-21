@@ -5,8 +5,8 @@ using namespace std;
 int num[3],gcd;
 int main(){
 	#ifndef ONLINE_JUDGE
-		freopen("tracker.in","r",stdin);
-		freopen("tracker.out","w",stdout);
+		freopen("nightingale.in","r",stdin);
+		freopen("nightingale.out","w",stdout);
 	#endif
 	for(int i=0;i<3;i++){
 		cin>>num[i];

@@ -13,8 +13,8 @@ int n,q;
 int t1,t2;
 int main(){
 	#ifndef ONLINE_JUDGE
-		freopen("tracker.in","r",stdin);
-		freopen("tracker.out","w",stdout);
+		freopen("nightingale.in","r",stdin);
+		freopen("nightingale.out","w",stdout);
 	#endif
 	scanf("%d%d",&n,&q);
 	for (int i=0;i<n;i++){

@@ -6,8 +6,8 @@ char initial,latest;
 int n,sum=1,flag[10005];
 int main(){
 	#ifndef ONLINE_JUDGE
-		freopen("tracker.in","r",stdin);
-		freopen("tracker.out","w",stdout);
+		freopen("nightingale.in","r",stdin);
+		freopen("nightingale.out","w",stdout);
 	#endif
 	cin>>initial;
 	cin>>n;

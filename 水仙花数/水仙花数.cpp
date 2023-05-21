@@ -6,8 +6,8 @@ using namespace std;
 int ans;
 signed main(){
 	#ifndef ONLINE_JUDGE
-		freopen("muelsyse.in","r",stdin);
-		freopen("muelsyse.out","w",stdout);
+		freopen("nightingale.in","r",stdin);
+		freopen("nightingale.out","w",stdout);
 	#endif
 	for (int i=100;i<=999;i++){
 		int a=i%10,b=i/10%10,c=i/100;

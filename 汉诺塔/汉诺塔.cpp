@@ -12,8 +12,8 @@ long long f(int x){
 }
 int main(){
 	#ifndef ONLINE_JUDGE
-		freopen("tracker.in","r",stdin);
-		freopen("tracker.out","w",stdout);
+		freopen("nightingale.in","r",stdin);
+		freopen("nightingale.out","w",stdout);
 	#endif
 	scanf("%d",&n);
 	while(i--) scanf("%s",a),s[(a[0]-'A')*3+a[1]-'A']=i;

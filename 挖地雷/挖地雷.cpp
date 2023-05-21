@@ -14,8 +14,8 @@ void dfs(int x){
 }
 int main(){
 	#ifndef ONLINE_JUDGE
-		freopen("tracker.in","r",stdin);
-		freopen("tracker.out","w",stdout);
+		freopen("nightingale.in","r",stdin);
+		freopen("nightingale.out","w",stdout);
 	#endif
 	int n,ans=0;
 	cin>>n;
@@ -27,9 +27,9 @@ int main(){
 			scanf("%d",&rd[i][j]);
 		}
 	}
-	dp[1]=a[1];//³õÊ¼»¯
+	dp[1]=a[1];//ï¿½ï¿½Ê¼ï¿½ï¿½
 	for (register int i=2;i<=n;++i){
-		dp[i]=a[i];//³õÊ¼»¯
+		dp[i]=a[i];//ï¿½ï¿½Ê¼ï¿½ï¿½
 		for (register int j=i-1;j>0;--j){
 			if (rd[j][i]&&dp[i]<dp[j]+a[i]){
 				dp[i]=dp[j]+a[i];

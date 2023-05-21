@@ -6,7 +6,7 @@ using namespace std;
 int set[maxN];
 int n,m;
 int t1,t2,z;
-// ²éÕÒ->ÕÒµ½xµÄ¸ù½Úµã(×æ×Ú) 
+// ï¿½ï¿½ï¿½ï¿½->ï¿½Òµï¿½xï¿½Ä¸ï¿½ï¿½Úµï¿½(ï¿½ï¿½ï¿½ï¿½) 
 int find(int x){
 	if (set[x]==x){
 		return x;
@@ -15,14 +15,14 @@ int find(int x){
 		return set[x];
 	}
 }
-// ºÏ²¢->½«iºÍjºÏ²¢¸ù½Úµã(×æ×Ú)£¬µ«ÊµÖÊÉÏsetÊý×é²¢Ã»ÓÐÍêÈ«¸üÐÂ´ð°¸£¬ÐèÒªfind·½·¨°ïÃ¦ 
+// ï¿½Ï²ï¿½->ï¿½ï¿½iï¿½ï¿½jï¿½Ï²ï¿½ï¿½ï¿½ï¿½Úµï¿½(ï¿½ï¿½ï¿½ï¿½)ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½setï¿½ï¿½ï¿½é²¢Ã»ï¿½ï¿½ï¿½ï¿½È«ï¿½ï¿½ï¿½Â´ð°¸£ï¿½ï¿½ï¿½Òªfindï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã¦ 
 void merge(int i,int j){
 	set[find(j)]=find(i);
 }
 int main(){
 	#ifndef ONLINE_JUDGE
-		freopen("tracker.in","r",stdin);
-		freopen("tracker.out","w",stdout);
+		freopen("nightingale.in","r",stdin);
+		freopen("nightingale.out","w",stdout);
 	#endif
 	scanf("%d%d",&n,&m);
 	for (int i=0;i<n;i++){

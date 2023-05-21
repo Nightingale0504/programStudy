@@ -8,8 +8,8 @@ struct Node{
 }; 
 int main(){
 	#ifndef ONLINE_JUDGE
-		freopen("tracker.in","r",stdin);
-		freopen("tracker.out","w",stdout);
+		freopen("nightingale.in","r",stdin);
+		freopen("nightingale.out","w",stdout);
 	#endif
 	float w[7]={ 35,30,60,50,40,10,25 };
 	float v[7]={ 10,40,30,50,35,40,30 };

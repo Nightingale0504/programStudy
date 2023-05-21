@@ -6,8 +6,8 @@ int m,n,dp[1005][1005],map[1005][1005];
 #define int long long
 signed main(){
 	#ifndef ONLINE_JUDGE
-		freopen("tracker.in","r",stdin);
-		freopen("tracker.out","w",stdout);
+		freopen("nightingale.in","r",stdin);
+		freopen("nightingale.out","w",stdout);
 	#endif
 	scanf("%lld%lld",&m,&n);
 	for (int i=1;i<=m;i++){

@@ -8,8 +8,8 @@ long long mentality;
 int a[maxN],b[maxN],ans;
 int main(){
 //	#ifndef ONLINE_JUDGE
-//		freopen("tracker.in","r",stdin);
-//		freopen("tracker.out","w",stdout);
+//		freopen("nightingale.in","r",stdin);
+//		freopen("nightingale.out","w",stdout);
 //	#endif
 	scanf("%d%d",&n,&mentality);
 	for (int i=1;i<=n;i++){

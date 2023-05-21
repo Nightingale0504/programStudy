@@ -7,8 +7,8 @@ using namespace std;
 int p,a,b,c,d;
 signed main(){
 	#ifndef ONLINE_JUDGE
-		freopen("tracker.in","r",stdin);
-		freopen("tracker.out","w",stdout);
+		freopen("nightingale.in","r",stdin);
+		freopen("nightingale.out","w",stdout);
 	#endif
 	scanf("%lld%lld%lld%lld%lld",&p,&a,&b,&c,&d);
 	switch (p){

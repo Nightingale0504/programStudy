@@ -4,13 +4,13 @@
 using namespace std;
 int main(){
 	#ifndef ONLINE_JUDGE
-		freopen("tracker.in","r",stdin);
-		freopen("tracker.out","w",stdout);
+		freopen("nightingale.in","r",stdin);
+		freopen("nightingale.out","w",stdout);
 	#endif
-	// Í¼ÂÛ
-	// dotA <-> dotB ----- ÎÞÏòÍ¼
-	// ×î¼òµ¥´æ´¢·½°¸ ----- ÁÚ½Ó¾ØÕó
-	// ¶¨Òå¶þÎ¬Êý×é:
+	// Í¼ï¿½ï¿½
+	// dotA <-> dotB ----- ï¿½ï¿½ï¿½ï¿½Í¼
+	// ï¿½ï¿½òµ¥´æ´¢ï¿½ï¿½ï¿½ï¿½ ----- ï¿½Ú½Ó¾ï¿½ï¿½ï¿½
+	// ï¿½ï¿½ï¿½ï¿½ï¿½Î¬ï¿½ï¿½ï¿½ï¿½:
 		// dotA <-> dotB: map[A][B]=1,map[B][A]=1
 		// dotA !(<->) dotB: map[A][B]=0,(map[B][A]=0)
 	return 0;

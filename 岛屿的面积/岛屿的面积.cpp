@@ -13,8 +13,8 @@ int m,n,x,y;
 int map[55][55],book[55][55],islandArea;
 int main(){
 	#ifndef ONLINE_JUDGE
-		freopen("tracker.in","r",stdin);
-		freopen("tracker.out","w",stdout);
+		freopen("nightingale.in","r",stdin);
+		freopen("nightingale.out","w",stdout);
 	#endif
 	scanf("%d%d%d%d",&m,&n,&x,&y);
 	for (int i=1;i<=m;i++){

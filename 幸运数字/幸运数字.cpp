@@ -19,8 +19,8 @@ bool injury(int x){
 }
 signed main(){
 	#ifndef ONLINE_JUDGE
-		freopen("muelsyse.in","r",stdin);
-		freopen("muelsyse.out","w",stdout);
+		freopen("nightingale.in","r",stdin);
+		freopen("nightingale.out","w",stdout);
 	#endif
 	scanf("%lld%lld",&year,&n);
 	if ((year%4==0 && year%100!=0) || year%400==0){

@@ -21,8 +21,8 @@ void showMatch(string s,int mp){
 }
 int main(){
 	#ifndef ONLINE_JUDGE
-		freopen("tracker.in","r",stdin);
-		freopen("tracker.out","w",stdout);
+		freopen("nightingale.in","r",stdin);
+		freopen("nightingale.out","w",stdout);
 	#endif
 	string s,a;
 	while (cin>>a){

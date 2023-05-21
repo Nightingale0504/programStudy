@@ -24,8 +24,8 @@ char shiftPlace(char &ch){
 }
 signed main(){
 	#ifndef ONLINE_JUDGE
-		freopen("tracker.in","r",stdin);
-		freopen("tracker.out","w",stdout);
+		freopen("nightingale.in","r",stdin);
+		freopen("nightingale.out","w",stdout);
 	#endif
 	cin>>s;
 	transform(s.begin(),s.end(),s.begin(),caseReversal);

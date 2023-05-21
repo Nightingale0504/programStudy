@@ -4,7 +4,7 @@
 using namespace std;
 #define int long long
 int n,m,a[1005][1005];
-int f(int x,int y){ // µÝ¹é 
+int f(int x,int y){ // ï¿½Ý¹ï¿½ 
 	if (x==1 || y==1){
 		return 1;
 	}
@@ -12,8 +12,8 @@ int f(int x,int y){ // µÝ¹é
 } 
 signed main(){
 	#ifndef ONLINE_JUDGE
-		freopen("tracker.in","r",stdin);
-		freopen("tracker.out","w",stdout);
+		freopen("nightingale.in","r",stdin);
+		freopen("nightingale.out","w",stdout);
 	#endif
 	scanf("%lld%lld",&m,&n);
 	for (int i=2;i<=n;i++){

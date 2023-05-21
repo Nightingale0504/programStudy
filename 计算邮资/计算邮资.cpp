@@ -8,8 +8,8 @@ double n,ans=8;
 char u;
 signed main(){
 	#ifndef ONLINE_JUDGE
-		freopen("muelsyse.in","r",stdin);
-		freopen("muelsyse.out","w",stdout);
+		freopen("nightingale.in","r",stdin);
+		freopen("nightingale.out","w",stdout);
 	#endif
 	scanf("%lf %c",&n,&u);
 	if (u=='y'){

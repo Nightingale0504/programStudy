@@ -21,8 +21,8 @@ int LCS(string s1,string s2){
 }
 signed main(){
 	#ifndef ONLINE_JUDGE
-		freopen("tracker.in","r",stdin);
-		freopen("tracker.out","w",stdout);
+		freopen("nightingale.in","r",stdin);
+		freopen("nightingale.out","w",stdout);
 	#endif
 	while (cin>>s1){
 		n=s1.length();

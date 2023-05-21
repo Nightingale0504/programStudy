@@ -20,8 +20,8 @@ void searchSum(int begin,int end,int data[]){
 }
 int main(){
 //	#ifndef ONLINE_JUDGE
-//		freopen("tracker.in","r",stdin);
-//		freopen("tracker.out","w",stdout);
+//		freopen("nightingale.in","r",stdin);
+//		freopen("nightingale.out","w",stdout);
 //	#endif
 	int data[10]={ 1,2,3,4,5,6,7,8,9.10 };
 	searchSum(0,3,data);

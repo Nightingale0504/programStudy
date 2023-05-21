@@ -5,8 +5,8 @@ using namespace std;
 int height[10],h,s;
 int main(){
 	#ifndef ONLINE_JUDGE
-		freopen("tracker.in","r",stdin);
-		freopen("tracker.out","w",stdout);
+		freopen("nightingale.in","r",stdin);
+		freopen("nightingale.out","w",stdout);
 	#endif
 	for (int i=0;i<10;i++){
 		scanf("%d",&height[i]);

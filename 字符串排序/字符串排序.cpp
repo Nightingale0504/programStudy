@@ -15,8 +15,8 @@ bool f(char c){
 }
 signed main(){
 	#ifndef ONLINE_JUDGE
-		freopen("muelsyse.in","r",stdin);
-		freopen("muelsyse.out","w",stdout);
+		freopen("nightingale.in","r",stdin);
+		freopen("nightingale.out","w",stdout);
 	#endif
 	getline(cin,s1);
 	for (int i=0;i<s.length();i++){

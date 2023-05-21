@@ -4,15 +4,15 @@
 using namespace std;
 #define int long long
 #define maxN 1010
-// LIS -- ×î³¤µÝÔö×ÓÐòÁÐ
-// LCS -- ×î³¤¹«¹²×ÓÐòÁÐ 
+// LIS -- ï¿½î³¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+// LCS -- ï¿½î³¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 int n,m;
 int a[maxN],b[maxN];
 int dp[maxN][maxN];
 signed main(){
 	#ifndef ONLINE_JUDGE
-		freopen("tracker.in","r",stdin);
-		freopen("tracker.out","w",stdout);
+		freopen("nightingale.in","r",stdin);
+		freopen("nightingale.out","w",stdout);
 	#endif
 	scanf("%lld%lld",&n,&m);
 	for (int i=1;i<=n;i++){

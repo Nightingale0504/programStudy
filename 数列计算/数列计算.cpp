@@ -2,21 +2,21 @@
 #include<cstdio>
 #include<algorithm>
 using namespace std;
-const int inf=2e9;
-const int maxN=55;
-int a[maxN],maxNum=-1,minNum=inf;
-int main(){
+#define int long long
+int n,ans,a[25];
+int num=3,sum=2;
+signed main(){
 	#ifndef ONLINE_JUDGE
 		freopen("nightingale.in","r",stdin);
 		freopen("nightingale.out","w",stdout);
 	#endif
-	int n,m;
-	scanf("%d%d",&n,&m);
-	for (int i=0;i<n;i++){
-		scanf("%d",&a[i]);
+	scanf("%lld",&n);
+	for (int i=0;i<n;i++,sum+=2){
+		ans+=num;
+		printf("%lld\n",num);
+		num+=sum;
 	}
-	
-	printf("%d\n%d",maxNum,minNum);
+	printf("%lld",ans);
 	return 0;
 }
 

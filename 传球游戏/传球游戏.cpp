@@ -5,8 +5,8 @@ using namespace std;
 int f[31][31],m,n;
 int main(){
 	#ifndef ONLINE_JUDGE
-		freopen("tracker.in","r",stdin);
-		freopen("tracker.out","w",stdout);
+		freopen("nightingale.in","r",stdin);
+		freopen("nightingale.out","w",stdout);
 	#endif
 	scanf("%d%d",&n,&m);
 	f[0][1]=1;

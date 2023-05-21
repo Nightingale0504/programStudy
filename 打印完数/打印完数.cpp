@@ -7,8 +7,8 @@ int n,m;
 int a[10005];
 signed main(){
 //	#ifndef ONLINE_JUDGE
-//		freopen("muelsyse.in","r",stdin);
-//		freopen("muelsyse.out","w",stdout);
+//		freopen("nightingale.in","r",stdin);
+//		freopen("nightingale.out","w",stdout);
 //	#endif
 	scanf("%lld%lld",&n,&m);
 	for (int i=n;i<=m;i++){

@@ -12,8 +12,8 @@ bool pd(int x,int y){
 }
 int main(){
 	#ifndef ONLINE_JUDGE
-		freopen("tracker.in","r",stdin);
-		freopen("tracker.out","w",stdout);
+		freopen("nightingale.in","r",stdin);
+		freopen("nightingale.out","w",stdout);
 	#endif
 	scanf("%d%d%d",&n,&m,&k);
     for (int i=1;i<=m+k;i++){

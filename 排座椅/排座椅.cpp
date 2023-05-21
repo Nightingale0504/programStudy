@@ -9,8 +9,8 @@ int x[1005],y[1005];
 int c[1005],o[1005];
 int main(){
 	#ifndef ONLINE_JUDGE
-		freopen("tracker.in","r",stdin);
-		freopen("tracker.out","w",stdout);
+		freopen("nightingale.in","r",stdin);
+		freopen("nightingale.out","w",stdout);
 	#endif
 	scanf("%d%d%d%d%d",&m,&n,&k,&l,&d); 
     for(int i=0;i<d;i++) { 

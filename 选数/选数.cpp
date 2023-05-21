@@ -33,8 +33,8 @@ void dfs(ll dp,ll num,ll sum){
 }
 int main(){
 	#ifndef ONLINE_JUDGE
-		freopen("tracker.in","r",stdin);
-		freopen("tracker.out","w",stdout);
+		freopen("nightingale.in","r",stdin);
+		freopen("nightingale.out","w",stdout);
 	#endif
 	scanf("%d%d",&n,&k);
 	for (ll i=0;i<n;i++){

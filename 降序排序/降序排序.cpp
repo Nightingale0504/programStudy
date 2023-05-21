@@ -9,8 +9,8 @@ bool cmp(int x,int y){
 }
 signed main(){
 	#ifndef ONLINE_JUDGE
-		freopen("muelsyse.in","r",stdin);
-		freopen("muelsyse.out","w",stdout);
+		freopen("nightingale.in","r",stdin);
+		freopen("nightingale.out","w",stdout);
 	#endif
 	scanf("%lld",&n);
 	for (int i=0;i<n;i++){

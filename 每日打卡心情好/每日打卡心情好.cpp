@@ -6,15 +6,15 @@ using namespace std;
 int main()
 {
 	#ifndef ONLINE_JUDGE
-		freopen("tracker.in","r",stdin);
-		freopen("tracker.out","w",stdout);
+		freopen("nightingale.in","r",stdin);
+		freopen("nightingale.out","w",stdout);
 	#endif
 	int N;cin>>N;
 	int x,sum=0,num=0,h=0;
  	while(N--)
 	{
 	 	cin>>x;
-	 	if(x==1)//´ò¿¨ 
+	 	if(x==1)//ï¿½ï¿½ 
 	 	{
 	 		if(num>0)
 	 		{

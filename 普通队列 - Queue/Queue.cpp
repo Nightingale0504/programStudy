@@ -6,16 +6,16 @@ using namespace std;
 queue<int>que;
 int main(){
 	#ifndef ONLINE_JUDGE
-		freopen("tracker.in","r",stdin);
-		freopen("tracker.out","w",stdout);
+		freopen("nightingale.in","r",stdin);
+		freopen("nightingale.out","w",stdout);
 	#endif
 	int x=10;
-	que.push(x); //²åÈëÊý¾Ý 
-	que.pop(); //É¾³ý¶ÓÊ×ÔªËØ 
-	int n=que.front(); //²éÑ¯¶ÓÊ×ÔªËØ 
-	int m=que.back(); //²éÑ¯¶ÓÎ²ÔªËØ 
-	int k=que.size(); //²éÑ¯¶ÓÁÐ³¤¶È 
-	bool l=que.empty(); //²éÑ¯¶ÓÁÐ×´Ì¬£¨Îª¿Õ/·Ç¿Õ£© 
+	que.push(x); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+	que.pop(); //É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôªï¿½ï¿½ 
+	int n=que.front(); //ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½Ôªï¿½ï¿½ 
+	int m=que.back(); //ï¿½ï¿½Ñ¯ï¿½ï¿½Î²Ôªï¿½ï¿½ 
+	int k=que.size(); //ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½Ð³ï¿½ï¿½ï¿½ 
+	bool l=que.empty(); //ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½Îªï¿½ï¿½/ï¿½Ç¿Õ£ï¿½ 
 	return 0;
 }
 

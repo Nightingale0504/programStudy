@@ -10,8 +10,8 @@ ll f[40][40];
 bool s[40][40];
 int main(){
 	#ifndef ONLINE_JUDGE
-		freopen("tracker.in","r",stdin);
-		freopen("tracker.out","w",stdout);
+		freopen("nightingale.in","r",stdin);
+		freopen("nightingale.out","w",stdout);
 	#endif
 	scanf("%d%d%d%d",&bx,&by,&mx,&my);
     bx+=2;

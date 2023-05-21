@@ -55,8 +55,8 @@ void dfs(int num){
 }
 int main(){
 	#ifndef ONLINE_JUDGE
-		freopen("tracker.in","r",stdin);
-		freopen("tracker.out","w",stdout);
+		freopen("nightingale.in","r",stdin);
+		freopen("nightingale.out","w",stdout);
 	#endif
 	scanf("%d%d%d%d",&n,&m,&r,&c);
 	for (int i=1;i<=n;i++){

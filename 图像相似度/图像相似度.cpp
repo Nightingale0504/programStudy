@@ -6,8 +6,8 @@ int n,m,a[105][105],b[105][105];
 float s=0,ans;
 int main(){
 	#ifndef ONLINE_JUDGE
-		freopen("tracker.in","r",stdin);
-		freopen("tracker.out","w",stdout);
+		freopen("nightingale.in","r",stdin);
+		freopen("nightingale.out","w",stdout);
 	#endif
 	scanf("%d%d",&m,&n);
 	for (int i=1;i<=m;i++){

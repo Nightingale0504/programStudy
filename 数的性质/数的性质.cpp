@@ -5,8 +5,8 @@ using namespace std;
 int a=0,b=0,c=0,d=0,n;
 int main(){
 	#ifndef ONLINE_JUDGE
-		freopen("tracker.in","r",stdin);
-		freopen("tracker.out","w",stdout);
+		freopen("nightingale.in","r",stdin);
+		freopen("nightingale.out","w",stdout);
 	#endif
 	scanf("%d",&n);
 	if(n%2==0 && n>4 && n<=12) a=1;

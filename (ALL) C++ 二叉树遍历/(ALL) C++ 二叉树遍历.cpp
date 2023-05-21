@@ -1,3 +1,12 @@
+/*
+ * @Author: Boxuan Zhang zhangboxuan@xtcteam.onmicrosoft.com
+ * @Date: 2023-01-14 21:24:31
+ * @LastEditors: Boxuan Zhang zhangboxuan@xtcteam.onmicrosoft.com
+ * @FilePath: \programStudy\(ALL) C++ 二叉树遍历\(ALL) C++ 二叉树遍历.cpp
+ * @Description: 
+ * 心怀不惧，方能翱翔于天际
+ * Copyright (c) 2023 by Boxuan Zhang, All Rights Reserved. 
+ */
 #include<iostream>
 #include<cstdio>
 #include<algorithm>
@@ -68,8 +77,8 @@ void postorderTraversal(binaryTreeNode *rootNode){
 } 
 int main(){
 	#ifndef ONLINE_JUDGE
-		freopen("tracker.in","r",stdin);
-		freopen("tracker.out","w",stdout);
+		freopen("nightingale.in","r",stdin);
+		freopen("nightingale.out","w",stdout);
 	#endif
 	
 	return 0;

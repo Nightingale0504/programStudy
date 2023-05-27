@@ -3,7 +3,7 @@
 #include<algorithm>
 using namespace std;
 #define int long long
-int n,ans,a[25];
+int n,ans;
 int num=3,sum=2;
 signed main(){
 	#ifndef ONLINE_JUDGE

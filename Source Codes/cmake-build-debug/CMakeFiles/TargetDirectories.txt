@@ -1,3 +1,0 @@
-D:/MyDocments/Program/C++/cmake-build-debug/CMakeFiles/C__.dir
-D:/MyDocments/Program/C++/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/MyDocments/Program/C++/cmake-build-debug/CMakeFiles/rebuild_cache.dir

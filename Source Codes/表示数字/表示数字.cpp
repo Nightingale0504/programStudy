@@ -1,6 +1,7 @@
 #include<iostream>
 #include<cstdio>
 #include<algorithm>
+#include<cctype>
 #include<cstring>
 #include<string>
 using namespace std;
@@ -12,15 +13,15 @@ int main(){
 	#endif
 	cin>>s;
 	for (int i=0;i<s.length();i++){
-		if (s[i]>='0' && s[i]<='9'){
-			if (i==0 || (s[i-1]<'0' || s[i-1]>'9')){
+		if (isdigit(s[i])){
+			if (i==0 || !isdigit(s[i-1])){
 				s.insert(i++,"*");
 			}
-		}else if (s[i-1]>='0' && s[i-1]<='9'){
+		}else if (isdigit(s[i-1])){
 			s.insert(i++,"*");
 		}
 	}
-	if (s.back()>='0' && s.back()<='9'){
+	if (isdigit(s[s.length()-1])){
 		s+='*';
 	}
 	cout<<s;

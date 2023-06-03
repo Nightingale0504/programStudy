@@ -4,7 +4,7 @@
 #include<algorithm>
 using namespace std;
 #define int long long
-int n,m,t,sum;
+int n,m;
 signed main(){
 	#ifndef ONLINE_JUDGE
 		freopen("nightingale.in","r",stdin);
@@ -12,15 +12,15 @@ signed main(){
 	#endif
 	scanf("%lld%lld",&n,&m);
 	for (int i=n;i<=m;i++){
-		t=i,sum=0;
-		while (t!=0){
-			sum+=pow(t%10,4);
-			t/=10;
-		}
-		if (sum==i){
-			printf("%lld",sum);
+		if (i>=1000 && i<=9999){
+			int a=i%10;
+			int b=i/10%10;
+			int c=i/100%10;
+			int d=i/1000;
+			if (pow(a,4)+pow(b,4)+pow(c,4)+pow(d,4)==i){
+				printf("%lld ",i);
+			}
 		}
 	}
 	return 0;
 }
-

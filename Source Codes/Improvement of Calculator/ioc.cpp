@@ -1,12 +1,3 @@
-/*
- * @Author: OperatorRosmontis capture1969@hotmail.com
- * @Date: 2023-03-05 09:45:44
- * @LastEditors: OperatorRosmontis capture1969@hotmail.com
- * @FilePath: \Program\C++\Improvement of Calculator\ioc.cpp
- * @Description: P1022 - 计算器的改良
- * 心怀不惧，方能翱翔于天际
- * Copyright (c) 2023 by Boxuan Zhang, All Rights Reserved. 
- */
 #include<iostream>
 #include<cstdio>
 #include<algorithm>

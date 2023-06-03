@@ -1,12 +1,3 @@
-/*
- * @Author: OperatorRosmontis capture1969@hotmail.com
- * @Date: 2023-03-05 13:18:09
- * @LastEditors: OperatorRosmontis capture1969@hotmail.com
- * @FilePath: \Program\C++\The escape of the watchmen\teotw.cpp
- * @Description: P1095 - 守望者的逃离
- * 心怀不惧，方能翱翔于天际
- * Copyright (c) 2023 by Boxuan Zhang, All Rights Reserved. 
- */
 #include<iostream>
 #include<cstdio>
 #include<algorithm>

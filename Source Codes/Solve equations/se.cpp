@@ -1,12 +1,3 @@
-/*
- * @Author: OperatorRosmontis capture1969@hotmail.com
- * @Date: 2023-03-05 11:56:42
- * @LastEditors: OperatorRosmontis capture1969@hotmail.com
- * @FilePath: \Program\C++\Solve equations\se.cpp
- * @Description: P1689 - 方程求解
- * 心怀不惧，方能翱翔于天际
- * Copyright (c) 2023 by Boxuan Zhang, All Rights Reserved. 
- */
 #include<iostream>
 #include<cstdio>
 #include<climits>

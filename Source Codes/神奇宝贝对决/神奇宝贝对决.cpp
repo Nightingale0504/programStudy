@@ -21,13 +21,9 @@ signed main(){
 		else if (t1==3 && t2==2) b++;
 		else if (t1==3 && t2==1) a++;
 	}
-	if (a>b){
-		printf("a win");
-	}else if (b>a){
-		printf("b win");
-	}else{
-		printf("tie");
-	}
+	if (a>b) printf("a win");
+	else if (b>a) printf("b win");
+	else printf("tie");
 	return 0;
 }
 

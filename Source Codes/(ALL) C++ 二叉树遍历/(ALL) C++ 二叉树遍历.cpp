@@ -1,12 +1,3 @@
-/*
- * @Author: Boxuan Zhang zhangboxuan@xtcteam.onmicrosoft.com
- * @Date: 2023-01-14 21:24:31
- * @LastEditors: Boxuan Zhang zhangboxuan@xtcteam.onmicrosoft.com
- * @FilePath: \programStudy\(ALL) C++ 二叉树遍历\(ALL) C++ 二叉树遍历.cpp
- * @Description: 
- * 心怀不惧，方能翱翔于天际
- * Copyright (c) 2023 by Boxuan Zhang, All Rights Reserved. 
- */
 #include<iostream>
 #include<cstdio>
 #include<algorithm>

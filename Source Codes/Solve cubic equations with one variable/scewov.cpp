@@ -1,12 +1,3 @@
-/*
- * @Author: OperatorRosmontis capture1969@hotmail.com
- * @Date: 2023-03-05 12:11:37
- * @LastEditors: OperatorRosmontis capture1969@hotmail.com
- * @FilePath: \Program\C++\Solve cubic equations with one variable\scewov.cpp
- * @Description: P1024 - 一元三次方程求解
- * 心怀不惧，方能翱翔于天际
- * Copyright (c) 2023 by Boxuan Zhang, All Rights Reserved. 
- */
 #include<iostream>
 #include<cstdio>
 #include<algorithm>
@@ -14,11 +5,6 @@ using namespace std;
 double a,b,c,d;
 double l,r,m,x1,x2;
 int s;
-/**
- * @description: 传入x求一元三次方程的右根
- * @param {double} x
- * @return {double} 方程的右根
- */
 double solveEquation(double x){
     double solution=a*x*x*x+b*x*x+c*x+d;
     return solution;

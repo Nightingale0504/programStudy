@@ -1,12 +1,3 @@
-/*
- * @Author: OperatorRosmontis capture1969@hotmail.com
- * @Date: 2023-03-05 10:45:44
- * @LastEditors: OperatorRosmontis capture1969@hotmail.com
- * @FilePath: \Program\C++\Solve quadratic equations with one variable\sqewov.cpp
- * @Description: 
- * 心怀不惧，方能翱翔于天际
- * Copyright (c) 2023 by Boxuan Zhang, All Rights Reserved. 
- */
 #include <iostream>
 #include <cstring>
 #include <cstdio>

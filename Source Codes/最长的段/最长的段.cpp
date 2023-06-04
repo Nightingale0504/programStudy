@@ -4,7 +4,7 @@
 #include<climits>
 using namespace std;
 #define int long long
-int n,a[100010],b[100010],mmax=INT_MIN,sum;
+int n,a[100010],b[100010],mmax=INT_MIN,sum,t;
 signed main(){
 	#ifndef ONLINE_JUDGE
 		freopen("nightingale.in","r",stdin);

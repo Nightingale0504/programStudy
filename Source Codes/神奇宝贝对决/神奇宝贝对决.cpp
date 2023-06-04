@@ -5,7 +5,6 @@ using namespace std;
 #define int long long
 int n,t1,t2;
 int a,b;
-char ans;
 signed main(){
 	#ifndef ONLINE_JUDGE
 		freopen("nightingale.in","r",stdin);

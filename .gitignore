@@ -29,7 +29,3 @@
 # Executables
 *.exe
 *.app
-
-# File I/O files
-*.in
-*.out

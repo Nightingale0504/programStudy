@@ -1,15 +1,25 @@
-#include<iostream>
-#include<cstdio>
-#include<algorithm>
 #include "interaction.h"
 using namespace std;
-#define int long long
-signed main(){
+int n=get_num(),l,r,m;
+vector<int>v;
+int main(){
 	#ifndef ONLINE_JUDGE
 		freopen("nightingale.in","r",stdin);
 		freopen("nightingale.out","w",stdout);
 	#endif
-
+	for (int i=0;i<n;i++){
+		l=0;
+		r=1e6;
+		while (l<=r){
+			if (m=l+r>>1,guess(i,m)>0){
+				r=m-1;
+			}else{
+				l=m+1;
+			}
+		}
+		v.push_back(l-1);
+	}
+	submit(v);
 	return 0;
 }
 

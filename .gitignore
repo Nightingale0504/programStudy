@@ -29,3 +29,8 @@
 # Executables
 *.exe
 *.app
+
+# File I/O
+*.in
+*.out
+*.ans

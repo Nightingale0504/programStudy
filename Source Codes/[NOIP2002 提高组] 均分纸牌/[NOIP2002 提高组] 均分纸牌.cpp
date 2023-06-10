@@ -1,0 +1,28 @@
+#include<iostream>
+#include<cstdio>
+#include<algorithm>
+using namespace std;
+#define int long long
+int n,a[105],k,t;
+int ans;
+signed main(){
+	#ifndef ONLINE_JUDGE
+		freopen("nightingale.in","r",stdin);
+		freopen("nightingale.out","w",stdout);
+	#endif
+	scanf("%lld",&n);
+	for (int i=0;i<n;i++){
+		scanf("%lld",&a[i]);
+		k+=a[i];
+	}
+	k/=n;
+	for (int i=0;i<n;i++){
+		if (a[i]!=k){
+			ans++;
+			a[i+1]-=k-a[i];
+		}
+	}
+	printf("%lld",ans);
+	return 0;
+}
+

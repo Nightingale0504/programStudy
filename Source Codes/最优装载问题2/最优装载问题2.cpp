@@ -6,12 +6,12 @@
 #include<string>
 using namespace std;
 #define int long long
-struct antique{
+struct node{
 	string name;
 	double w;
-}aq[10005];
-bool cmp(antique a,antique b){
-	return a.w<b.w;
+}a[10005];
+bool cmp(node x,node y){
+	return x.w<y.w;
 }
 int n;
 double c,sum;
@@ -22,13 +22,13 @@ signed main(){
 	#endif
 	scanf("%lf%lld",&c,&n);
 	for (int i=0;i<n;i++){
-		cin>>aq[i].name>>aq[i].w;
+		cin>>a[i].name>>a[i].w;
 	}
-	sort(aq,aq+n,cmp);
+	sort(a,a+n,cmp);
 	for (int i=0;i<n;i++){
-		sum+=aq[i].w;
+		sum+=a[i].w;
 		if (sum<=c){
-			cout<<aq[i].name<<" ";
+			cout<<a[i].name<<" ";
 		}else{
 			exit(0);
 		}

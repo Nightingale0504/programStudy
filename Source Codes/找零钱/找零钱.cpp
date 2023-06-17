@@ -7,10 +7,10 @@ using namespace std;
 int n,m,ans;
 int a[25],dp[105];
 signed main(){
-//	#ifndef ONLINE_JUDGE
-//		freopen("nightingale.in","r",stdin);
-//		freopen("nightingale.out","w",stdout);
-//	#endif
+	#ifndef ONLINE_JUDGE
+		freopen("nightingale.in","r",stdin);
+		freopen("nightingale.out","w",stdout);
+	#endif
 	memset(dp,0x3f,sizeof(dp));
 	dp[0]=0;
 	scanf("%lld%lld",&n,&m);

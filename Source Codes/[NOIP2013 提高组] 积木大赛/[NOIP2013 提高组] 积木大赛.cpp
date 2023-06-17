@@ -3,7 +3,7 @@
 #include<algorithm>
 using namespace std;
 #define int long long
-int n,a[100005],ans;
+int n,a[10000005],ans;
 signed main(){
 	#ifndef ONLINE_JUDGE
 		freopen("nightingale.in","r",stdin);

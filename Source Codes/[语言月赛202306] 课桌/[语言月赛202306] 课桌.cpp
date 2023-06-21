@@ -3,28 +3,18 @@
 #include<algorithm>
 using namespace std;
 #define int long long
-int n,ans,finish;
-struct node{
-	int l,r;
-}a[1000005];
-bool cmp(node x,node y){
-	return x.r<=y.r;
-}
+int n,x,t,ans;
 signed main(){
 	#ifndef ONLINE_JUDGE
 		freopen("nightingale.in","r",stdin);
 		freopen("nightingale.out","w",stdout);
 	#endif
-	scanf("%lld",&n);
+	scanf("%lld%lld",&n,&x);
 	for (int i=0;i<n;i++){
-		scanf("%lld%lld",&a[i].l,&a[i].r);
-	}
-	sort(a,a+n,cmp);
-	for (int i=0;i<n;i++){
-		if (finish<=a[i].l){
-			ans++;
-			finish=a[i].r;
-		}
+		t=0;
+		scanf("%lld",&t);
+		t+=x;
+		ans+=t;
 	}
 	printf("%lld",ans);
 	return 0;

@@ -3,27 +3,31 @@
 #include<algorithm>
 using namespace std;
 #define int long long
-int n,ans,finish;
-struct node{
-	int l,r;
-}a[1000005];
-bool cmp(node x,node y){
-	return x.r<=y.r;
+int parent[50005];
+int n,m,ans;
+int t1,t2;
+int find(int x){
+	return x==parent[x] ? x : (parent[x]=find(parent[x]));
+}
+void merge(int i,int j){
+	parent[find(j)]=find(i);
 }
 signed main(){
 	#ifndef ONLINE_JUDGE
 		freopen("nightingale.in","r",stdin);
 		freopen("nightingale.out","w",stdout);
 	#endif
-	scanf("%lld",&n);
+	scanf("%lld%lld",&n,&m);
 	for (int i=0;i<n;i++){
-		scanf("%lld%lld",&a[i].l,&a[i].r);
+		parent[i]=i;
 	}
-	sort(a,a+n,cmp);
+	while (m--){
+		scanf("%lld%lld",&t1,&t2);
+		merge(t1,t2);;
+	}
 	for (int i=0;i<n;i++){
-		if (finish<=a[i].l){
+		if (parent[i]==i){
 			ans++;
-			finish=a[i].r;
 		}
 	}
 	printf("%lld",ans);

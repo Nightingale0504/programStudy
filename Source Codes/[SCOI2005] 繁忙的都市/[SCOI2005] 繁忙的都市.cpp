@@ -1,49 +1,46 @@
 #include<iostream>
 #include<cstdio>
 #include<algorithm>
-#include<cstdlib>
 using namespace std;
 #define int long long
-int n,m,sum,num=1;
 struct node{
 	int p,q,r;
-}a[200005];
-int parent[5005];
+}edge[100005];
+int f[305];
+int n,m,num,sum;
 inline bool cmp(node x,node y){
 	return x.r<y.r;
 }
 inline int find(int x){
-	return x==parent[x] ? x : parent[x]=find(parent[x]);
+	f[x]==x ? x : f[x]=find(f[x]);
 }
-inline void merge(int i,int j){
-	parent[find(j)]=find(i);
+inline void merge(int x,int y){
+	f[find(y)]=find(x);
 }
 signed main(){
 	#ifndef ONLINE_JUDGE
 		freopen("nightingale.in","r",stdin);
 		freopen("nightingale.out","w",stdout);
 	#endif
-	// Solution: kruskal
 	scanf("%lld%lld",&n,&m);
 	for (int i=0;i<n;i++){
-		parent[i]=i;
+		f[i]=i;
 	}
 	for (int i=0;i<m;i++){
-		scanf("%lld%lld%lld",&a[i].p,&a[i].q,&a[i].r);
+		scanf("%lld%lld%lld",&edge[i].p,&edge[i].q,&edge[i].r);
 	}
-	sort(a,a+m,cmp);
+	sort(edge,edge+m,cmp);
 	for (int i=0;i<m;i++){
-		if (find(a[i].p)!=find(a[i].q)){
-			sum+=a[i].r;
-			merge(a[i].p,a[i].q);
+		if (find(edge[i].p)!=find(edge[i].q)){
+			sum=edge[i].r;
+			merge(edge[i].p,edge[i].q);
 			num++;
-			if (num==n){
-				printf("%lld",sum);
-				exit(0);
+			if (num==n-1){
+				break;
 			}
 		}
 	}
-	printf("orz");
+	printf("%lld %lld",n-1,sum);
 	return 0;
 }
 

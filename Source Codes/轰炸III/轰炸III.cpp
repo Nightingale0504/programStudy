@@ -1,38 +1,34 @@
 #include<iostream>
 #include<cstdio>
 #include<algorithm>
-#include<cstring>
 using namespace std;
 #define int long long
-#define maxN 5005
-int n,m,x,y,askX,askY;
-int ans,last;
+int n,m,x,y,final[105][105];
+int a1,a2,b1,b2;
+int checkX,checkY;
+int map[105][105];
 signed main(){
 	#ifndef ONLINE_JUDGE
 		freopen("nightingale.in","r",stdin);
 		freopen("nightingale.out","w",stdout);
 	#endif
-	int x1[maxN],x2[maxN],y1[maxN],y2[maxN];
 	scanf("%lld%lld%lld%lld",&n,&m,&x,&y);
-	for (int i=0;i<x;i++){
-		scanf("%lld%lld%lld%lld",&x1[i],&y1[i],&x2[i],&y2[i]);
-	}
-	for (int i=0;i<y;i++){
-		ans=0;
-		scanf("%lld%lld",&askX,&askY);
-		for (int j=0;j<x;j++){
-			if (askX>=x1[j] && askX<=x2[j]){
-				if (askY>=y1[j] && askY<=y2[j]){
-					ans++;
-					last=j;
-				}
+	for (int i=1;i<=x;i++){
+		scanf("%lld%lld%lld%lld",&a1,&b1,&a2,&b2);
+		for (int j=a1;j<=a2;j++){
+			for (int k=b1;k<=b2;k++){
+				map[j][k]++;
+				final[j][k]=i;
 			}
 		}
 	}
-	if (!ans){
-		puts("N");
-	}else{
-		printf("Y %lld %lld\n",ans,last);
+	for (int i=1;i<=y;i++){
+		scanf("%lld%lld",&checkX,&checkY);
+		if (map[checkX][checkY]==0){
+			printf("N\n");
+		}else{
+			printf("Y %lld %lld\n",map[checkX][checkY],final[checkX][checkY]);
+		}
 	}
 	return 0;
 }

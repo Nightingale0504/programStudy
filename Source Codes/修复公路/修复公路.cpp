@@ -4,7 +4,7 @@
 #include<cstdlib>
 using namespace std;
 #define int long long
-int n,m,sum,num=1;
+int n,m,sum;
 struct node{
 	int p,q,r;
 }a[200005];
@@ -23,7 +23,6 @@ signed main(){
 		freopen("nightingale.in","r",stdin);
 		freopen("nightingale.out","w",stdout);
 	#endif
-	// Solution: kruskal
 	scanf("%lld%lld",&n,&m);
 	for (int i=0;i<n;i++){
 		parent[i]=i;
@@ -34,16 +33,16 @@ signed main(){
 	sort(a,a+m,cmp);
 	for (int i=0;i<m;i++){
 		if (find(a[i].p)!=find(a[i].q)){
-			sum+=a[i].r;
+			sum=a[i].r;
 			merge(a[i].p,a[i].q);
-			num++;
-			if (num==n){
+			n--;
+			if (n==1){
 				printf("%lld",sum);
 				exit(0);
 			}
 		}
 	}
-	printf("orz");
+	printf("-1");
 	return 0;
 }
 

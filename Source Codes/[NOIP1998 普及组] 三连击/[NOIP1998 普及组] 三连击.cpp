@@ -25,7 +25,7 @@ signed main(){
             y+=a[i]*pow(10,6-i);
         }
         for(int i=7;i<=9;i++){
-            z +=a[i]*pow(10,9-i);
+            z+=a[i]*pow(10,9-i);
         }
         if(x*6==y*3 && y*3==z*2){
             printf("%lld %lld %lld\n",x,y,z);

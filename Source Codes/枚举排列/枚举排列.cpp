@@ -5,15 +5,15 @@ using namespace std;
 #define int long long
 int n,k;
 int a[15],book[15];
-void dfs(int x){
-	if (x==k+1){
-		for (int i=1;i<=k;i++){
+inline void dfs(int x){
+	if (x>k){
+		for (register int i=1;i<=k;i++){
 			printf("%lld ",a[i]);
 		}
 		printf("\n");
 		return;
 	}
-	for (int i=1;i<=n;i++){
+	for (register int i=1;i<=n;i++){
 		if (!book[i]){
 			book[i]=1;
 			a[x]=i;

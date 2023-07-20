@@ -4,15 +4,15 @@
 using namespace std;
 #define int long long
 int a[10],n,m;
-void dfs(int k){
+inline void dfs(int k){
     if (k>n){
-        for (int i=1;i<=n;i++){
+        for (register int i=1;i<=n;i++){
 			printf("%lld ",a[i]);
 		}
 		printf("\n");
         return;
     }
-    for (int i=1;i<=m;i++){
+    for (register int i=1;i<=m;i++){
         a[k]=i;
         dfs(k+1);
     }

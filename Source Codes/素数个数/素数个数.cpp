@@ -3,14 +3,15 @@
 #include<algorithm>
 using namespace std;
 const int maxN=1e8+5;
-int n,m,cnt,isPrime[maxN];
+int n,m,cnt;
+bool isPrime[maxN];
 int prime[maxN],tmp;
 signed main(){
 	#ifndef ONLINE_JUDGE
 		freopen("nightingale.in","r",stdin);
 		freopen("nightingale.out","w",stdout);
 	#endif
-	scanf("%d%d",&n,&m);
+	scanf("%lld%lld",&n,&m);
 	isPrime[1]=1;
 	for (int i=2;i<=n;i++){
 		if (isPrime[i]==0){
@@ -23,10 +24,7 @@ signed main(){
 			}
 		}
 	}
-	while (m--){
-		scanf("%d",&tmp);
-		printf("%d\n",prime[tmp]);
-	}
+	printf("%lld",cnt);
 	return 0;
 }
 

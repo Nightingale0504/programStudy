@@ -3,9 +3,35 @@
 #include<algorithm>
 using namespace std;
 #define int long long
-int a[8000010],s[8000010];
+const int maxN=8000010; 
+int a[maxN],s[maxN];
 int n,M,ansi,ansj,ansmax;
 int sum,l,r,mid,i,j,x;
+inline int read(){
+    int x=0,t=1;
+    char ch=getchar();
+    while (ch<'0' || ch>'9'){
+        if (ch=='-'){
+        	t=-1;
+		}
+        ch=getchar();
+    }
+    while (ch>='0' && ch<='9'){
+        x=(x<<1)+(x<<3)+(ch^48);
+        ch=getchar();
+    }
+    return x*t;
+}
+inline void write(int x)
+{
+    if (x<0){
+    	putchar('-');
+		x=-x;
+	}
+    if (x>9) 
+		write(x/10);
+    putchar(x%10+'0');
+}
 int find(int k){
 	l=1;
 	r=n+1;
@@ -26,9 +52,10 @@ int find(int k){
 void solve(int id){
 	switch (id){
 		case 1:{
-			scanf("%lld%lld",&n,&M);
+			n=read();
+			M=read();
 			for (int i=1;i<=n;i++){
-				scanf("%lld",&a[i]);
+				a[i]=read();
 			}
 			for (int i=1;i<=n;i++){
 				for (int j=i;j<=n;j++){
@@ -43,13 +70,19 @@ void solve(int id){
 					}
 				}
 			}
-			printf("%lld %lld %lld\n",ansi,ansj,ansmax);
+			write(ansi);
+			printf(" ");
+			write(ansj);
+			printf(" ");
+			write(ansmax);
+			printf(" ");
 			break;
 		}
 		case 2:{
-			scanf("%lld%lld",&n,&M);
+			n=read();
+			M=read();
 			for (int i=1;i<=n;i++){
-				scanf("%lld",&a[i]);
+				a[i]=read();
 			}
 			s[0]=0;
 			for (int i=1;i<=n;i++){
@@ -65,13 +98,19 @@ void solve(int id){
 					}
 				}
 			}
-			printf("%lld %lld %lld\n",ansi,ansj,ansmax);
+			write(ansi);
+			printf(" ");
+			write(ansj);
+			printf(" ");
+			write(ansmax);
+			printf(" ");
 			break;
 		}
 		case 3:{
-			scanf("%lld%lld",&n,&M);
+			n=read();
+			M=read();
 			for (int i=1;i<=n;i++){
-				scanf("%lld",&a[i]);
+				a[i]=read();
 			}
 			s[0]=0;
 			for (int i=1;i<=n;i++){
@@ -87,15 +126,21 @@ void solve(int id){
 					ansj=j;
 				}
 			}
-			printf("%lld %lld %lld\n",ansi,ansj,ansmax);
+			write(ansi);
+			printf(" ");
+			write(ansj);
+			printf(" ");
+			write(ansmax);
+			printf(" ");
 			break;
 		}
 		case 4:{
 			i=1;
 			j=1;
-			scanf("%lld%lld",&n,&M);
+			n=read();
+			M=read();
 			for (int i=1;i<=n;i++){
-				scanf("%lld",&a[i]);
+				a[i]=read();
 			}
 			while (i<=n){
 				while (j<=n && sum+a[j]<=M){
@@ -110,7 +155,12 @@ void solve(int id){
 				sum-=a[i];
 				i++;
 			}
-			printf("%lld %lld %lld\n",ansi,ansj,ansmax);
+			write(ansi);
+			printf(" ");
+			write(ansj);
+			printf(" ");
+			write(ansmax);
+			printf(" ");
 			break;
 		}
 	}

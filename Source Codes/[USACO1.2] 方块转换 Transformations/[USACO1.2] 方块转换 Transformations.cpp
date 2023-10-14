@@ -120,8 +120,8 @@ void work()
 }
 int main(){
 	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
+		freopen("tracker.in","r",stdin);
+		freopen("tracker.out","w",stdout);
 	#endif
 	cin>>n;
     for(int i=1;i<=n;i++)
@@ -136,4 +136,3 @@ int main(){
     work();
 	return 0;
 }
-

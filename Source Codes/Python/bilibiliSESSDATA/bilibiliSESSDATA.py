@@ -1,4 +1,3 @@
-from cgi import print_form
 from bilibili_api import login,user,Credential
 import asyncio
 import pickle
@@ -15,7 +14,7 @@ async def main() -> None:
     vaild=await ctx.check_valid()
     if vaild is not True:
         print("请登录：")
-        tmp=login.login_with_qrcode_term()
+        tmp=login.login_with_qrcode()
         ctx=Credential(sessdata=tmp.sessdata,bili_jct=tmp.bili_jct,buvid3=tmp.buvid3,dedeuserid=tmp.dedeuserid,ac_time_value=tmp.ac_time_value)
     try:
         ctx.raise_for_no_bili_jct()

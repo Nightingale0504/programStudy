@@ -34,3 +34,6 @@
 *.in
 *.out
 *.ans
+
+#Pickle files
+*.pkl

@@ -1,0 +1,21 @@
+#include<iostream>
+#include<cstdio>
+#include<algorithm>
+using namespace std;
+#define int long long
+int x,y,b,s,n=0;
+signed main(){
+	#ifndef ONLINE_JUDGE
+		freopen("nightingale.in","r",stdin);
+		freopen("nightingale.out","w",stdout);
+	#endif
+	scanf("%lld",&s);
+	for (int i=1;i<=s;i++){
+		scanf("%lld%lld",&x,&y);
+		b=b+x+y-8;
+		n+=b;
+	}
+	printf("%lld\n",n);
+	return 0;
+}
+

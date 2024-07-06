@@ -1,0 +1,24 @@
+#include<iostream>
+#include<cstdio>
+#include<algorithm>
+using namespace std;
+#define int long long
+int n,a[15];
+signed main(){
+	#ifndef ONLINE_JUDGE
+		freopen("nightingale.in","r",stdin);
+		freopen("nightingale.out","w",stdout);
+	#endif
+	scanf("%lld",&n);
+	for (int i=1;i<=n;i++){
+		a[i]=i;
+	}
+	do{
+		for (int i=1;i<=n;i++){
+			printf("%5lld",a[i]);
+		}
+		puts("");
+	}while (next_permutation(a+1,a+n+1));
+	return 0;
+}
+

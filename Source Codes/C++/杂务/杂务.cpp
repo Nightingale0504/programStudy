@@ -4,9 +4,9 @@
 #include<queue>
 using namespace std;
 #define int long long
-const int maxN=5e3+5,maxM=5e5+5,mod=80112002;
-int n,m,u,v,cnt,first[maxN],ans;
-int id[maxN],od[maxN],dp[maxN];
+const int maxN=1e4+5,maxM=1e6+5;
+int n,u,v,t,cnt,mmax;
+int len[maxN],du[maxN],dp[maxN],first[maxN];
 struct node{
 	int to,next;
 }edge[maxM];
@@ -17,18 +17,19 @@ inline void add(int u,int v){
 	first[u]=cnt;
 }
 queue<int> q;
-signed main(){
-	scanf("%lld%lld",&n,&m);
-	while (m--){
-		scanf("%lld%lld",&v,&u);
-		add(u,v);
-		id[v]++;
-		od[u]++;
+signed method1(){
+	scanf("%lld",&n);
+	for (int i=1;i<=n;i++){
+		scanf("%lld%lld",&t,&len[i]);
+		while (scanf("%lld",&t) && t!=0){
+			add(t,i);
+			du[i]++;
+		}
 	}
 	for (int i=1;i<=n;i++){
-		if (id[i]==0){
+		if (du[i]==0){
 			q.push(i);
-			dp[i]=1;
+			dp[i]=len[i];
 		}
 	}
 	while (!q.empty()){
@@ -36,19 +37,20 @@ signed main(){
 		q.pop();
 		for (int i=first[u];i!=0;i=edge[i].next){
 			v=edge[i].to;
-			dp[v]=(dp[u]+dp[v])%mod;
-			id[v]--;
-			if (id[v]==0){
+			dp[v]=max(dp[v],dp[u]+len[v]);
+			du[v]--;
+			if (du[v]==0){
 				q.push(v);
 			}
 		}
 	}
 	for (int i=1;i<=n;i++){
-		if (od[i]==0){
-			ans=(ans+dp[i])%mod;
-		}
+		mmax=max(mmax,dp[i]);
 	}
-	printf("%lld",ans);
+	printf("%lld",mmax);
+}
+signed main(){
+	
 	return 0;
 }
 

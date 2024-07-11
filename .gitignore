@@ -31,4 +31,12 @@
 *.out
 *.app
 
+# Configure files
 *.ini
+*.cfg
+*.inf
+
+# I/O files
+*.in
+*.out
+*.ans

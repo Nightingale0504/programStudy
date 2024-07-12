@@ -22,10 +22,6 @@ inline bool cmp(node a,node b){
 	return a.r<b.r;
 }
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld%lld",&n,&m);
 	for (register int i=1;i<=n;i++){
 		f[i]=i;

@@ -6,10 +6,6 @@ using namespace std;
 const int maxR=1e4+5;
 int n,m,h,q,a[maxR],book[maxR][maxR],x,y;
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld%lld%lld%lld",&n,&m,&h,&q);
 	for (int i=1;i<=n;i++){
 		a[i]=h;

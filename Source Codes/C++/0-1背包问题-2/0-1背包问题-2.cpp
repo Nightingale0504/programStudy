@@ -37,10 +37,6 @@ void findItem(int i,int j){
 	}
 }
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	memset(dp,0,sizeof(dp));
 	memset(object,0,sizeof(object));
 	dynamic();

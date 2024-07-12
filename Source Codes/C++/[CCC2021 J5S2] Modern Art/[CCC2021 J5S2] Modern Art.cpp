@@ -8,10 +8,6 @@ char opt;
 int n,m,k,a,ans;
 int r[maxN],c[maxN];
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld%lld%lld",&n,&m,&k);
 	while (k--){
 		cin>>opt>>a;

@@ -5,10 +5,6 @@ using namespace std;
 #define int long long
 int n,t,s,p=0; 
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld",&n);
 	t=n;
 	for (int i=2;i*i<=n;i++){

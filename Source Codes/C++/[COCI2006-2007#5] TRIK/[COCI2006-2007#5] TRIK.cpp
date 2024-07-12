@@ -6,10 +6,6 @@ using namespace std;
 char s[55];
 bool ans[3]={1,0,0};
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%s",&s);
 	for (int i=0;i<sizeof(s);i++){
 		switch (s[i]){

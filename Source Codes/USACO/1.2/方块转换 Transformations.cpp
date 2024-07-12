@@ -119,10 +119,6 @@ void work()
 	cout<<7;
 }
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("tracker.in","r",stdin);
-		freopen("tracker.out","w",stdout);
-	#endif
 	cin>>n;
     for(int i=1;i<=n;i++)
      for(int j=1;j<=n;j++){

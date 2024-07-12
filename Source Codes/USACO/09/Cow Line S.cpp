@@ -8,10 +8,6 @@ int s,num,m;
 deque<int> deq;
 char t,d;
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	cin>>s;
 	while (s--){
 		cin>>t;

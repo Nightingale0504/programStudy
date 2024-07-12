@@ -15,10 +15,6 @@ void F(string s1,string s2){
 	cout<<root;
 }
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	cin>>s2>>s1;
 	F(s1,s2);
 	return 0;

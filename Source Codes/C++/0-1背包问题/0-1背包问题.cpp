@@ -2,10 +2,6 @@
 #include<cstdio>
 using namespace std;
 int main(){
-//	#ifndef ONLINE_JUDGE
-//		freopen("nightingale.in","r",stdin);
-//		freopen("nightingale.out","w",stdout);
-//	#endif
 	int n,vol,maxV=-1;
 	scanf("%d%d",&n,&vol);
 	int weight[n+1],value[n+1],itemList[n+1][vol+1]={{ 0 }};

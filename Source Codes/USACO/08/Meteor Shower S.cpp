@@ -16,10 +16,6 @@ int pos[4][2]={ {0,1},{1,0},{-1,0},{0,-1} };
 int m,Ans=maxM;
 int x,y,t,ux,uy;
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	memset(ans,-1,sizeof(ans));
 	memset(death,0x7f,sizeof(death));
 	scanf("%lld",&m);

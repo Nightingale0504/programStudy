@@ -5,10 +5,6 @@ using namespace std;
 int dp[1100];
 int win[1100],lose[1100],use[1100];
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	int n,m;
     scanf("%d%d",&n,&m);
     for(int i=1;i<=n;i++){

@@ -4,10 +4,6 @@
 #include<cmath>
 using namespace std;
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	double m,h,bmi;
 	scanf("%lf",&m);
 	scanf("%lf",&h);

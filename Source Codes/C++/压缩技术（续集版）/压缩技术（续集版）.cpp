@@ -4,10 +4,6 @@
 #include<cstring>
 using namespace std;
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	int i,n,num,sum;
     char text[40000],str[200];
     scanf("%s",str);

@@ -12,10 +12,6 @@ int gcd(ll a,ll b){
 	return gcd(b,a%b);
 }
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	ll ans=0;
 	scanf("%lld%lld",&x,&y);
 	for (ll i=1;i<=sqrt(x*y);i++){

@@ -8,10 +8,6 @@ const int INF=0x3f3f3f3f;
 int n,m,ans=INF;
 int a[maxN][maxN],f[maxN][maxN];
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld%lld",&n,&m);
     for (int i=1;i<=m;i++){
         for (int j=1;j<=n;j++){

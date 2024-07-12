@@ -14,10 +14,6 @@ bool judgePrime(int x){
 	return true;
 }
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld",&n);
 	(judgePrime(n) && n%10==n/10000 && n/10%10==n/1000%10) ? printf("yes") : printf("no");
 	return 0;

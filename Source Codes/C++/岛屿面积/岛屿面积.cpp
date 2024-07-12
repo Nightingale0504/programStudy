@@ -15,10 +15,6 @@ void bfs(int i,int j){
 	
 }
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%d%d",&m,&n);
 	for (int i=1;i<=m;i++){
 		for (int j=1;j<=n;j++){

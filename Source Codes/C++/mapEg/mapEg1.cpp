@@ -9,10 +9,6 @@ using namespace std;
 map<string,int> mmap;
 string n;
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	mmap["124"]=8;
 	mmap["125"]=8;
 	mmap["126"]=8;

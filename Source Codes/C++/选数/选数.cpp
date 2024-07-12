@@ -32,10 +32,6 @@ void dfs(ll dp,ll num,ll sum){
 	dfs(dp+1,num,sum);
 }
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%d%d",&n,&k);
 	for (ll i=0;i<n;i++){
 		scanf("%d",&arr[i]);

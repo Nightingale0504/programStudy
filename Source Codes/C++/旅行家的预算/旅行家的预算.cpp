@@ -2,10 +2,6 @@
 #include<cstdio>
 using namespace std;
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	double d[2],c,p;
 	int n;
 	double distance[n+1],price[n+1];

@@ -4,10 +4,6 @@
 using namespace std;
 int a[510][510]; 
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	int n;
     scanf("%d",&n);
     for(int i=1;i<n;i++)

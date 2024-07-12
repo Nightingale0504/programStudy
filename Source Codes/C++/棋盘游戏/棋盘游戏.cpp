@@ -18,10 +18,6 @@ int answerStorage[2];
 bool flag1,flag2;
 Node a;
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%d%d%d%d",&ex1,&ey1,&ex2,&ey2);
 	a={ 1,1,0 };
 	book[1][1]=1;

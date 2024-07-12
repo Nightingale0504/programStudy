@@ -61,10 +61,6 @@ inline void update(int i,int l,int r){
 	tree[i].sum=tree[2*i].sum+tree[2*i+1].sum;
 }
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld%lld",&n,&m);
 	for (int i=1;i<=n;i++){
 		scanf("%lld",&a[i]);

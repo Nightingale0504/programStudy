@@ -18,10 +18,6 @@ inline void init(int a[],int n){
 }
 // Template - end
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld",&n);
 	init(f,n);
 	

@@ -6,10 +6,6 @@ using namespace std;
 #define maxN 10005
 int m,n,dp[maxN],t[maxN],score[maxN];
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld%lld",&m,&n);
 	for (int i=1;i<=n;i++){
 		scanf("%lld%lld",&score[i],&t[i]);

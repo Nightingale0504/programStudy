@@ -7,10 +7,6 @@ using namespace std;
 int a[10][10],h[10],l[10],maxH,minL;
 bool judge;
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	for (int i=0;i<5;i++){
 		for (int j=0;j<5;j++){
 			scanf("%lld",&a[i][j]);

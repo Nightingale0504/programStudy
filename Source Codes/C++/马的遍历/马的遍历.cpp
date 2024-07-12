@@ -13,10 +13,6 @@ struct node{
 queue<node> que;
 int f[8][2]={{1,2},{1,-2},{2,1},{2,-1},{-1,2},{-2,1},{-2,-1},{-1,-2}};
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld%lld%lld%lld",&n,&m,&x,&y);
 	for (int i=1;i<=n;i++){
 		for (int j=1;j<=m;j++){

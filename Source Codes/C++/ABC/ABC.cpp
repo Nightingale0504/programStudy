@@ -5,10 +5,6 @@ using namespace std;
 int a[3];
 char A,B,C;
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	cin>>a[0]>>a[1]>>a[2];
     cin>>A>>B>>C;
     sort(a,a+3);

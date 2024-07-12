@@ -5,10 +5,6 @@ using namespace std;
 const int maxN=1e4+5;
 int t,n,m,a[maxN][maxN],dp[105][maxN]; 
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%d",&t);
 	scanf("%d",&n);
 	scanf("%d",&m);

@@ -20,10 +20,6 @@ void showMatch(string s,int mp){
 	printf("%d:%d\n",w,l);
 }
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	string s,a;
 	while (cin>>a){
 		s+=a;

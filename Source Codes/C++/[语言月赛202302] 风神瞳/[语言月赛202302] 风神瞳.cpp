@@ -6,10 +6,6 @@ using namespace std;
 #define int long long
 int p,a,b,c,d;
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld%lld%lld%lld%lld",&p,&a,&b,&c,&d);
 	switch (p){
 		case 1:{

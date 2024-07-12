@@ -4,10 +4,6 @@
 using namespace std;
 const int maxN=1010; 
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	int dp[maxN][maxN];
 	string s,p;
 	int q;

@@ -6,10 +6,6 @@ const int maxN=3e4;
 using namespace std;
 int a[maxN]={ 0 },w,n,group=0,bag,tmp;
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%d%d",&w,&n);
 	bag=w;
 	for (int i=0;i<n;i++){

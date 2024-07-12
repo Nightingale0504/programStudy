@@ -7,10 +7,6 @@ using namespace std;
 int n,a,b,c;
 char last,s[20],ans[20];
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld\n",&n);
 	while (n--){
 		fgets(s,sizeof(s),stdin);

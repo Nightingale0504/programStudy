@@ -13,10 +13,6 @@ double dist(double x1,double y1,double x2,double y2){
 	return sqrt(t1+t2);
 }
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	double x1,x2,x3,y1,y2,y3;
 	scanf("%lf%lf%lf%lf%lf%lf",&x1,&y1,&x2,&y2,&x3,&y3);
 	ans+=dist(x1,y1,x2,y2);

@@ -30,10 +30,6 @@ char trans(char a){
 	}
 }
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld\n",&num);
 	while (num--){
 		while (!s.empty()){

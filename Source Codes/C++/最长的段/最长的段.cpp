@@ -6,10 +6,6 @@ using namespace std;
 #define int long long
 int n,a[100010],b[100010],mmax=INT_MIN,sum,t;
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	// Solution: Standard
 	scanf("%lld",&n);
 	for (int i=1;i<=n;i++){

@@ -15,10 +15,6 @@ void write(int n){
 	printf(" %d",n);
 }
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	int n;
 	scanf("%d",&n);
 	write(n);

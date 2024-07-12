@@ -11,10 +11,6 @@ bool pd(int x,int y){
     return 1;
 }
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%d%d%d",&n,&m,&k);
     for (int i=1;i<=m+k;i++){
         scanf("%d%d",&a,&b);

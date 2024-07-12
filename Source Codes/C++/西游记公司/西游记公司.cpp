@@ -8,10 +8,6 @@ using namespace std;
 #define ss 1
 int a,b,c,x,y,z,t;
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	return scanf("%lld:%lld:%lld\n%lld:%lld:%lld\n%lld",&a,&b,&c,&x,&y,&z,&t), printf("%lld",((x-a)*hs+(y-b)*ms+(z-c)*ss)*t)%1;
 	return 0;
 }

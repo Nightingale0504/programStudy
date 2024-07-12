@@ -23,10 +23,6 @@ inline bool cmp(node x,node y){
 	return x.r<y.r;
 }
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld%lld",&s,&p);
 	for (int i=0;i<p;i++){
 		f[i]=i;

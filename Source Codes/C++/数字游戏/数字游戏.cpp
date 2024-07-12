@@ -6,10 +6,6 @@ const int inf=2e9;
 const int maxN=55;
 int a[maxN],maxNum=-1,minNum=inf;
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	int n,m;
 	scanf("%d%d",&n,&m);
 	for (int i=0;i<n;i++){

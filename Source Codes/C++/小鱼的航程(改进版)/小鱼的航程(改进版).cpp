@@ -3,10 +3,6 @@
 #include<algorithm>
 using namespace std;
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	int a,b,i,sum=0;
     scanf("%d",&a);
     scanf("%d",&b);

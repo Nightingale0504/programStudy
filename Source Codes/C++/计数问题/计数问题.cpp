@@ -3,10 +3,6 @@
 #include<algorithm>
 using namespace std;
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	int n,x,ans=0;
 	scanf("%d%d",&n,&x);
 	for (int i=1;i<=n;i++){

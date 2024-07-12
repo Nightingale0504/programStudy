@@ -13,10 +13,6 @@ void dfs(int x){
 	printf("%d ",x);
 }
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	int n,ans=0;
 	cin>>n;
 	f (n){

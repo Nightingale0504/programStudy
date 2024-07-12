@@ -16,10 +16,6 @@ bool cmp(node x,node y){
 int n;
 double c,sum;
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lf%lld",&c,&n);
 	for (int i=0;i<n;i++){
 		cin>>a[i].name>>a[i].w;

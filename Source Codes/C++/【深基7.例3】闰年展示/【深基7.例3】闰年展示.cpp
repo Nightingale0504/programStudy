@@ -5,10 +5,6 @@ using namespace std;
 int cnt;
 int ans[1500],start,final;
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%d%d",&start,&final);
 	for (int i=start;i<=final;i++){
 		bool ly=(i%4==0 && i%100!=0) || i%400==0;

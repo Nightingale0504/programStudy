@@ -5,10 +5,6 @@ using namespace std;
 #define int long long
 string s,ans;
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	while (cin>>s){
 		if (s=="99999"){
 			break;

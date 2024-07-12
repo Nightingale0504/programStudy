@@ -27,10 +27,6 @@ void dfs(int x,int y){
 	return;
 }
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld%lld",&m,&n);
 	for (int i=0;i<m;i++){
 		for (int j=0;j<n;j++){

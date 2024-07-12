@@ -11,10 +11,6 @@ bool cmp(data a,data b){
 	return a.t1<b.t1;
 } 
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	int x[2],y[2],n;
 	for (int i=0;i<2;i++){
 		cin>>x[i]>>y[i];

@@ -13,10 +13,6 @@ void merge(int i,int j){
 	parent[find(j)]=find(i);
 }
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld%lld",&n,&m);
 	for (int i=0;i<n;i++){
 		parent[i]=i;

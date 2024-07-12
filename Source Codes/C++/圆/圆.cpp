@@ -12,10 +12,6 @@ double dist(int x1,int y1,int x2,int y2){
 }
 int x[60],y[60],r[60];
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	int n,x1,x2,y1,y2,ans=0;
 	scanf("%lld",&n);
 	for (int i=0;i<n;i++){

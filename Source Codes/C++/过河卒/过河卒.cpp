@@ -9,10 +9,6 @@ int bx,by,mx,my;
 ll f[40][40];
 bool s[40][40];
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%d%d%d%d",&bx,&by,&mx,&my);
     bx+=2;
 	by+=2;

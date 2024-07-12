@@ -5,10 +5,6 @@ using namespace std;
 int w,x,h,ans,q;
 int a[21][21][21];
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%d%d%d%d",&w,&x,&h,&q);
 	while (q--){
         int x1,y1,z1,x2,y2,z2;

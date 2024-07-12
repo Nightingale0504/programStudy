@@ -23,10 +23,6 @@ inline void dfs(int x){
 	}
 }
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld%lld",&n,&k);
 	dfs(1);
 	return 0;

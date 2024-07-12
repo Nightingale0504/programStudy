@@ -5,10 +5,6 @@ using namespace std;
 int n;
 int t1,t2,t3,sum,s2,s3;
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%d",&n);
 	t1=n%10;
 	n/=10;

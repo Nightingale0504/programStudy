@@ -8,10 +8,6 @@ int n;
 long long now=1;
 bool a[105];
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%d",&n);
 	if (n%2!=0)
 	{

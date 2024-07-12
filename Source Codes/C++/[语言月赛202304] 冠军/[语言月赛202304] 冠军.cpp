@@ -6,10 +6,6 @@ using namespace std;
 char n1,n2,n3,n4,n5,n6,n7,n8,n9,n10,n11,n12,n13,n14,n15;
 int p,q;
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld-%lld",&p,&q);
 	if (p>q){
 		n1='A';

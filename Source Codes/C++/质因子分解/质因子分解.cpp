@@ -6,10 +6,6 @@ using namespace std;
 const int maxN=1e4;
 int a[maxN+5],n;
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld",&n);
 	for (int i=2;i<=n;i++){
 		int k=i;

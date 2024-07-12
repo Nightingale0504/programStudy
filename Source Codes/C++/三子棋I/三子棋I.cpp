@@ -31,10 +31,6 @@ inline int check(){
 	}
 }
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 //	scanf("%s",s.c_str());
 	cin>>s;
 	for (int i=0;i<s.length();i++){

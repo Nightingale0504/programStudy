@@ -10,10 +10,6 @@ string name;
 map<string,int> m1;
 map<string,int> m2;
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld%lld",&n,&k);
 	while (n--){
 		cin>>name>>opt;

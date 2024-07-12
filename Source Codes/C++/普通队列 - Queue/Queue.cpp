@@ -5,10 +5,6 @@
 using namespace std;
 queue<int>que;
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	int x=10;
 	que.push(x); //�������� 
 	que.pop(); //ɾ������Ԫ�� 

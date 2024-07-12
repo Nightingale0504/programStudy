@@ -4,10 +4,6 @@
 using namespace std;
 int n,g[40][40],x,y;
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%d",&n);
 	g[1][n/2+1]=1;
 	x=1;

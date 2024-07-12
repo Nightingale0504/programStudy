@@ -6,10 +6,6 @@ using namespace std;
 #define int long long
 int n,a,b,c;
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld%lld%lld%lld",&n,&a,&b,&c);
 	if (n<=3){
 		if (a<b && a<c){

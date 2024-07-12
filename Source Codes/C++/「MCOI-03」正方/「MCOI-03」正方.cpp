@@ -5,10 +5,6 @@ using namespace std;
 #define int unsigned long long
 int a,b,c,d,q;
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%llu",&q);
 	while (q--){
 		scanf("%llu%llu%llu%llu",&a,&b,&c,&d);

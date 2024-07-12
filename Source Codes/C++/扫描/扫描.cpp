@@ -36,10 +36,6 @@ inline int query(int i,int l,int r){
 	return mmax;
 }
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld%lld",&n,&k);
 	for (int i=1;i<=n;i++){
 		scanf("%lld",&a[i]);

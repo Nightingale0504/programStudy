@@ -10,10 +10,6 @@ int n,m;
 int a[maxN],b[maxN];
 int dp[maxN][maxN];
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld%lld",&n,&m);
 	for (int i=1;i<=n;i++){
 		scanf("%lld",&a[i]);

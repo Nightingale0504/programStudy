@@ -3,10 +3,6 @@
 using namespace std;
 int z[1005][1005]={{0}} 
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	int m,n,a,b,sum=0;
 	scanf("%d%d%d%d",&m,&n,&a,&b);
 	int x[a+1],y[a+1];

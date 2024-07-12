@@ -4,10 +4,6 @@
 #include<cstring> 
 using namespace std;
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	string s;
     int n,i,j;
     cin>>n;

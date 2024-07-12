@@ -8,10 +8,6 @@ int a1,a2,b1,b2;
 int checkX,checkY;
 int map[105][105];
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld%lld%lld%lld",&n,&m,&x,&y);
 	for (int i=1;i<=x;i++){
 		scanf("%lld%lld%lld%lld",&a1,&b1,&a2,&b2);

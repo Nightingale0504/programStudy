@@ -11,10 +11,6 @@ int f(int k){
 	return f(k-1)*k;
 }
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld",&n);
 	ans=f(n);
 	printf("%lld",ans);

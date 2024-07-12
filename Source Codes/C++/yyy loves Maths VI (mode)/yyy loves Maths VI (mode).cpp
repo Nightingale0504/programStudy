@@ -8,10 +8,6 @@ using namespace std;
 int n,tmp,ans;
 map<int,int> mmap;
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld",&n);
 	for (int i=0;i<n;i++){
 		scanf("%lld",&tmp);

@@ -22,10 +22,6 @@ void dfs(int x){
 	}
 }
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld",&n);
 	for (int i=0;i<1<<n;i++){
 		scanf("%lld",&value[i+(1<<n)]);

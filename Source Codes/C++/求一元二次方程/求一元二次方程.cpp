@@ -7,10 +7,6 @@ using namespace std;
 double a,b,c,delta;
 double x1,x2;
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lf%lf%lf",&a,&b,&c);
 	delta=b*b-4*a*c;
 	if (delta<0){

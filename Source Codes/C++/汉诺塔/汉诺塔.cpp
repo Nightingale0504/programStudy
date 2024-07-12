@@ -11,10 +11,6 @@ long long f(int x){
 	return (long long)pow(3,n-1);
 }
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%d",&n);
 	while(i--) scanf("%s",a),s[(a[0]-'A')*3+a[1]-'A']=i;
 	if (s[1]>s[2]){

@@ -166,10 +166,6 @@ void solve(int id){
 	}
 }
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	solve(4);
 	return 0;
 }

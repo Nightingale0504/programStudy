@@ -5,10 +5,6 @@ using namespace std;
 #define int long long
 int a[5],sum;
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	for (register int i=0;i<5;i++){
 		scanf("%lld",&a[i]);
 	}

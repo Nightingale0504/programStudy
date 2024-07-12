@@ -4,10 +4,6 @@
 using namespace std;
 int money,cost,mama,flag=1,monthofdeath;
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	for(int i=1;i<=12;i++){
         money+=300;
         scanf("%d",&cost);

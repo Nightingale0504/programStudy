@@ -7,10 +7,6 @@ int n;
 int dp[5001][5001];
 char str1[5001],str2[5001];
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%s",str1+1);
     n=strlen(str1+1);
     for (int i=1;i<=n;i++){

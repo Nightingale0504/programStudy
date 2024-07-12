@@ -17,10 +17,6 @@ int find(int x)
 	else return -1; 
 }
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%d %d",&n,&m);
 	for (int i=1 ; i<=n ; i++)
 	    scanf("%d",&a[i]);

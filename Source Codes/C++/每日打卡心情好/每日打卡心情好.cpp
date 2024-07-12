@@ -5,10 +5,6 @@
 using namespace std;
 int main()
 {
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	int N;cin>>N;
 	int x,sum=0,num=0,h=0;
  	while(N--)

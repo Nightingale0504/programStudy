@@ -7,10 +7,6 @@ using namespace std;
 double n,ans=8;
 char u;
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lf %c",&n,&u);
 	if (u=='y'){
 		ans+=5;

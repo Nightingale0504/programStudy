@@ -6,10 +6,6 @@ using namespace std;
 int a;
 double w,b;
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld",&a);
 	w=a/1.2;
 	b=27.0+23.0+a/3.0;

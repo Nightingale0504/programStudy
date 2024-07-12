@@ -5,10 +5,6 @@ using namespace std;
 #define int long long
 int n,a[105],k,sum;
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld%lld%lld",&n,&a[0],&a[1]);
 	k=a[1]/a[0];
 	for (int i=2;i<=n;i++){

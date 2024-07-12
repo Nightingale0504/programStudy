@@ -3,10 +3,6 @@
 #include<algorithm>
 using namespace std;
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	int flag=0; 
 	int a[10]={99,36,82,71,60,39,10,8,76,1},low=0,mid=0,high=9,x;
 	cin>>x;

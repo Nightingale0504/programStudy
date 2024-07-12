@@ -5,10 +5,6 @@ using namespace std;
 #define int long long
 int n,finalCost,fishCost[105],oilCost[105],mmin=INT_MAX;
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld",&n);
 	for (int i=0;i<n;i++){
 		scanf("%lld%lld",&fishCost[i],&oilCost[i]);

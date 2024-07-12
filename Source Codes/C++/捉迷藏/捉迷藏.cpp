@@ -11,10 +11,6 @@ int f(int x,int y){ // �ݹ�
 	return f(x-1,y)+f(x,y-1);
 } 
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld%lld",&m,&n);
 	for (int i=2;i<=n;i++){
 		a[1][i]=1;

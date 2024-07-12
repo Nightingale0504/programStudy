@@ -5,10 +5,6 @@
 using namespace std;
 #define maxN 1024 
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	int n,a[3][maxN],ans=0;
 	scanf("%d",&n);
 	for (int i=0;i<n;i++){

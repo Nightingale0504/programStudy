@@ -5,10 +5,6 @@
 using namespace std;
 long long k,n,d,e,m,mid;
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld",&k);
 	while (k--){
 		scanf("%lld%lld%lld",&n,&d,&e);

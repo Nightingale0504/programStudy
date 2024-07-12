@@ -5,10 +5,6 @@ using namespace std;
 int n;
 bool tree[100005]; 
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%d",&n);
 	for (int i=1;i<=5;i++){
 		int t=1;

@@ -14,10 +14,6 @@ void stat(int a[],int m){
 	maxSum=max(maxSum,sum-maxScore-minScore);
 }
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld%lld",&n,&m);
 	for (int i=0;i<n;i++){
 		for (int j=0;j<m;j++){

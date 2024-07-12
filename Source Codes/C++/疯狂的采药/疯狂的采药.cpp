@@ -6,10 +6,6 @@ using namespace std;
 const ll N=1e4+5,M=1e7+5;
 ll n,m,w[N],v[N],f[M];
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld%lld",&m,&n);
 	for(int i=1;i<=n;i++){
 		scanf("%lld%lld",&w[i],&v[i]);

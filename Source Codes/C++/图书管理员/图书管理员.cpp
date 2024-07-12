@@ -13,10 +13,6 @@ int fun(int n){
 	return x;
 }
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%d%d",&n,&q);
 	for (int i=1;i<=n;i++){
 		scanf("%d",&a[i]);

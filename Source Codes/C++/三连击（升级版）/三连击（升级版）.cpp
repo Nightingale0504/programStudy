@@ -7,10 +7,6 @@ using namespace std;
 int a,b,c,cnt=0,sum;
 int p[10]={0,1,2,3,4,5,6,7,8,9};
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld%lld%lld",&a,&b,&c);
 	if (a==0 || b==0 || c==0){
 		printf("No!!!");

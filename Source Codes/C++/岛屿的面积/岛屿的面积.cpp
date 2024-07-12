@@ -12,10 +12,6 @@ int f[4][2]={ { 1,0 },{ -1,0 },{ 0,1 },{ 0,-1 } };
 int m,n,x,y;
 int map[55][55],book[55][55],islandArea;
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%d%d%d%d",&m,&n,&x,&y);
 	for (int i=1;i<=m;i++){
 		for (int j=1;j<=n;j++){

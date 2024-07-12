@@ -6,10 +6,6 @@ using namespace std;
 int n,x;
 double ans;
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld%lld",&x,&n);
 	ans=x;
 	while (n--){

@@ -8,10 +8,6 @@ struct skill{
 }s;
 int k,m,n,flag;
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld%lld%lld",&k,&m,&n);
 	for (int i=1;i<=m;i++){
 		scanf("%lld%lld",&s.sp,&s.damage);

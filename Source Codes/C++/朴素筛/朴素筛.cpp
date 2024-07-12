@@ -16,10 +16,6 @@ inline bool f(int x){
 }
 int n;
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld",&n);
 	printf(f(n) ? "isPrime" : "notPrime");
 	return 0;

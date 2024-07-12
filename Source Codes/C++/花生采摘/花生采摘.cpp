@@ -33,10 +33,6 @@ inline void write(int x){
     putchar(x%10^48);
 }
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	n=read(),m=read(),k=read();
 	for (register int i=1;i<=n;++i){
 		for (register int j=1;j<=m;++j){

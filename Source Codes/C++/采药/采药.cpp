@@ -6,10 +6,6 @@ using namespace std;
 int w[105],val[105];
 int dp[105][1005];
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	int t,m;
     scanf("%lld%lld",&t,&m);
     for (int i=1;i<=m;i++){

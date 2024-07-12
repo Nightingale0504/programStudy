@@ -5,10 +5,6 @@ using namespace std;
 int x,y,z;
 int t1,t2,t3;
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%d%d%d",&x,&y,&z);
 	t1=(x>y+z)?y+z:x;
 	t2=(y>x+z)?x+z:y;

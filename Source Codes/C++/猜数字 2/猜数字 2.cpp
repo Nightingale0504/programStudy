@@ -3,10 +3,6 @@ using namespace std;
 int n=get_num(),l,r,m;
 vector<int>v;
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	for (int i=0;i<n;i++){
 		l=0;
 		r=1e6;

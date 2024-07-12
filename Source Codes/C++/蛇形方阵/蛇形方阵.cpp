@@ -18,10 +18,6 @@ int read(){
 int a[15][15];
 int pos[4][2]={0,1,1,0,0,-1,-1,0};
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	int n=read(),x=1,y=1,d=0;
 	for(int i=1;i<=n*n;i++){
 		a[x][y]=i;

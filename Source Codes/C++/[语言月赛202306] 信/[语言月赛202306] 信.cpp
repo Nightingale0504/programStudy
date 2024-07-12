@@ -8,10 +8,6 @@ int n,x,y,a,b;
 int m,cntA,cntB;
 int maximumSV,surpriseValue;
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld%lld%lld%lld%lld",&n,&x,&y,&a,&b);
 	for (int i=0;i<n;i++){
 		scanf("%lld%lld%lld",&envelopeArea,&letterArea,&grossMass);

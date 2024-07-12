@@ -13,10 +13,6 @@ void init(){
 	}
 }
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	init();
 	scanf("%lld",&n);
 	for (int i=4;i<=n;i+=2){

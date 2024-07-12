@@ -6,10 +6,6 @@ using namespace std;
 bool f;
 int k;
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld",&k);
 	for (int i=10000;i<=30000;i++){
 		if (i/100%k==0){

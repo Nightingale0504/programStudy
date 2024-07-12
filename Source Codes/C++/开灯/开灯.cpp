@@ -5,10 +5,6 @@ using namespace std;
 int a[2000001],n;
 double x,y;
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	cin>>n;
 	for (int i=1;i<=n;i++){
 		cin>>x>>y;

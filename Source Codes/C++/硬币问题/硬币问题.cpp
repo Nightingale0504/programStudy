@@ -6,10 +6,6 @@ using namespace std;
 #define maxN 1000005
 int n,dp[maxN];
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld",&n);
 	dp[5]=dp[11]=1;
 	for (int i=1;i<=n;i++){

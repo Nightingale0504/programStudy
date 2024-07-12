@@ -21,10 +21,6 @@ bool isPrime(int x){
 	return true;
 }
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	int max=0,min=999;
 	scanf("%s",&s);
 	memset(vis,true,sizeof(vis));

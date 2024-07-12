@@ -32,10 +32,6 @@ void postorderTraversal(int x){
 	printf("%d ",a[x].root);
 }
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%d",&n);
 	for (int i=1;i<=n;i++){
 		a[i].root=i;

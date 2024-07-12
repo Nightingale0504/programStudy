@@ -45,10 +45,6 @@ void spfa(){
   }
 }
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld%lld%lld",&n,&m,&s);
 	for (int i=1;i<=m;i++){
     	int f,g,w;

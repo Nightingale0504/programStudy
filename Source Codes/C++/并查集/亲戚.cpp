@@ -18,10 +18,6 @@ void merge(int i,int j){
 	set[find(j)]=find(i);
 }
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%d%d%d",&n,&m,&p);
 	for (int i=0;i<n;i++){
 		set[i]=i;

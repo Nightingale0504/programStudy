@@ -12,10 +12,6 @@ inline int judge(int a,int b,int c){
 	return 0;
 }
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld%lld%lld",&x,&y,&z);
 	ans=judge(x,y,z);
 	printf("%lld",ans);

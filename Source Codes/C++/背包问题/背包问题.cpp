@@ -7,10 +7,6 @@ struct Node{
 	char charMark;
 }; 
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	float w[7]={ 35,30,60,50,40,10,25 };
 	float v[7]={ 10,40,30,50,35,40,30 };
 	Node nodes[7];

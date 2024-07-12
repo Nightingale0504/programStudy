@@ -7,10 +7,6 @@ int n,ans;
 char t;
 bool R=1,B=1,W=1;
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld",&n);
 	for (int i=0;i<n;i++){
 		cin>>t;

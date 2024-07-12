@@ -12,10 +12,6 @@ int calcAge(int x){
 	return calcAge(x-1)+2;
 }
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld",&n);
 	printf("%lld",calcAge(n));
 	return 0;

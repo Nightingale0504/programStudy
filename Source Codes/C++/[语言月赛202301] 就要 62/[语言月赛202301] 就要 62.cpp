@@ -5,10 +5,6 @@ using namespace std;
 long long x;
 int flag;
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld",&x);
 	if (x%62==0){
 		flag=1;

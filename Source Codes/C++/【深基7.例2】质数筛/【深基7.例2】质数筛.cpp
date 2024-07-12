@@ -7,10 +7,6 @@ const int maxI=100000;
 const int maxN=maxI+5;
 int f[maxN],n,m;
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	f[1]=1;
 	for (int i=2;i<=maxI;i++){
 		if (f[i]==0){

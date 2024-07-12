@@ -9,10 +9,6 @@ inline double f(double x,double y,double x1,double y1){
 	return sqrt((x-x1)*(x-x1)+(y-y1)*(y-y1));
 }
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	for (int i=0;i<3;i++){
 		scanf("%lf%lf",&x[i],&y[i]);
 	}

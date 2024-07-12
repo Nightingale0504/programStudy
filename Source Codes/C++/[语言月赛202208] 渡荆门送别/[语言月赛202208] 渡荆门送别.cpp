@@ -8,10 +8,6 @@ int n,tmp;
 int a[1000005];
 int mmax=LONG_LONG_MIN,mmin=LONG_LONG_MAX;
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld",&n);
 	for (int i=0;i<n;i++){
 		scanf("%lld",&a[i]);

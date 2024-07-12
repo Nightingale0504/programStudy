@@ -12,10 +12,6 @@ bool cmp(node x,node y){
 int n,t,l,c;
 double ans;
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld%lld",&n,&t);
 	for (int i=0;i<n;i++){
 		scanf("%lld%lld",&a[i].m,&a[i].v);

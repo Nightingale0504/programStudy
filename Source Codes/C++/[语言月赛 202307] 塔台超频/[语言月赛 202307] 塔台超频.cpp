@@ -9,10 +9,6 @@ struct tower{
 	int pos,cr;
 }t[maxN];
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld",&n);
 	for (int i=1;i<=n;i++){
 		scanf("%lld%lld",&t[i].pos,&t[i].cr);

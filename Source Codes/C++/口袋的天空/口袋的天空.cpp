@@ -19,10 +19,6 @@ inline void merge(int x,int y){
 	f[find(y)]=find(x);
 }
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld%lld%lld",&n,&m,&k);
 	for (int i=0;i<n;i++){
 		f[i]=i;

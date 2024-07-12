@@ -17,10 +17,6 @@ int m,n,x,y,newX,newY,newStep;
 queue<Node> que;
 Node a;
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%d%d%d%d",&m,&n,&x,&y);
 	memset(answerStorage,-1,sizeof(answerStorage));
 	a={ x,y,0 };

@@ -7,10 +7,6 @@ using namespace std;
 int n,k,m,mmax=LONG_LONG_MIN;
 int sum[1000005];
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld%lld",&n,&k);
 	for (int i=2;i<=n;i++){
 		scanf("%lld",&m);

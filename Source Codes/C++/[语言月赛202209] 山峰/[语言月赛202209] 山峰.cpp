@@ -8,10 +8,6 @@ int a[10005][10005];
 int k,x[1000005],y[1000005];
 int a1,a2,b1,b2;
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld%lld",&n,&m);
 	for (int i=1;i<=n;i++){
 		for (int j=1;j<=m;j++){

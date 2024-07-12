@@ -29,10 +29,6 @@ char num[110],out[5][500];
 int n;
 int baseX,baseY,digit,tubeNum;
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld",&n);
 	scanf("%s",num);
 	memset(out,'.',sizeof(out));

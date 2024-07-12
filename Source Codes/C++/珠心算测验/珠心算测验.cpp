@@ -6,10 +6,6 @@ const int M=20005;
 int t[M],g[M];
 int n,a[105],ans,maxn;
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%d",&n);
     for (int i=1;i<=n;i++){
         scanf("%d",&a[i]);

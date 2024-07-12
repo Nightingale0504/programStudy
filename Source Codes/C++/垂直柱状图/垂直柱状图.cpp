@@ -6,10 +6,6 @@
 using namespace std;
 int ff[26]; 
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	int n,maxn=0;
 	char a[81];
     for(int i=0;i<4;i++){

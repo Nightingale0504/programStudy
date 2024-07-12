@@ -6,10 +6,6 @@ using namespace std;
 int n;
 bool f3=false,f5=false,f7=false;
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld",&n);
 	if (n%3==0){
 		printf("3 ");

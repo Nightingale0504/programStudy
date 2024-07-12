@@ -17,10 +17,6 @@ bool F(int x){
 	return false;
 }
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld",&n);
 	for (int i=1;i<=n;i++){
 		if (F(i)){

@@ -6,10 +6,6 @@ using namespace std;
 int n,m,student,sq,desk,row;
 int a[105],b[105],c[105];
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld%lld",&n,&m);
 	for (int i=0;i<n;i++){
 		scanf("%lld%lld%lld",&a[i],&b[i],&c[i]);

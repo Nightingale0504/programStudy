@@ -5,10 +5,6 @@ using namespace std;
 #define int long long
 double m=7,s,x,l,r,now;
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lf%lf",&s,&x);
 	l=s-x;
 	r=s+x;

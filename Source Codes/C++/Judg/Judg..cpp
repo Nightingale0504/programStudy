@@ -8,10 +8,6 @@ using namespace std;
 int n;
 string tmp; 
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld",&n);
 	for (int i=1;i<=n;i++){
 		cin>>tmp;

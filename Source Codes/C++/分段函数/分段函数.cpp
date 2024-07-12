@@ -16,10 +16,6 @@ inline double f(double x){
 	return y;
 }
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lf",&n);
 	ans=f(n);
 	printf("%.3lf",ans);

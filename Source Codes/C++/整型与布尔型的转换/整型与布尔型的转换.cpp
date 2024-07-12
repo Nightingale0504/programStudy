@@ -12,10 +12,6 @@ inline int judge(int n){
 	}
 }
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld",&x);
 	ans=judge(x);
 	printf("%lld",ans);

@@ -7,26 +7,18 @@
 #include<conio.h>
 #include<string>
 #include<cstdlib>
-
 using namespace std;
-
 int where,x,y;
-
-void print(string a)
-{
-    for (int i=0;i<=a.length();++i)
-    {
+void print(string a){
+    for (int i=0;i<=a.length();++i){
         cout<<a[i];
         Sleep(20);
     }
     Sleep(500);
     return;
 }
-
 char qwe;
-
 string mapname[5]={"【中部主城】","【森林】","【森林深处】","【沙漠】","【魔王老巢】"};
-                      //01234567890123456789
 string maps[5][20]= {{{"####################"},// 0
                       {"#武#   #           #"},// 1
                       {"#器|   # *         #"},// 2
@@ -47,7 +39,6 @@ string maps[5][20]= {{{"####################"},// 0
                       {"#               |简#"},// 7
                       {"#               |困#"},// 8
                       {"####################"}},// 9
-                      //01234567890123456789
                      {{" |#######_#####|=O=|"},// 0
                       {"| ##    AAA     VUV#"},// 1
                       {" |###  |=O=|  _  U #"},// 2
@@ -68,7 +59,6 @@ string maps[5][20]= {{{"####################"},// 0
                       {" |###    VUV       #"},// 7
                       {" |##      U    U U #"},// 8
                       {"| ########U####U U##"}},// 9
-                      //01234567890123456789
                      {{"###_###########U@U##"},// 0
                       {"# AAA          U U #"},// 1
                       {"#|=O=|             #"},// 2
@@ -89,7 +79,6 @@ string maps[5][20]= {{{"####################"},// 0
                       {"#VUV   U  U    U   #"},// 7
                       {"# U       U    U   #"},// 8
                       {"##U#################"}},// 9
-                      //01234567890123456789
                      {{"##############Z#####"},// 0
                       {"# |O #       ZZ    #"},// 1
                       {"# #大#       ZZZ   #"},// 2
@@ -110,7 +99,6 @@ string maps[5][20]= {{{"####################"},// 0
                       {"# ZZZZZ         |简#"},// 7
                       {"#               |困#"},// 8
                       {"####################"}},// 9
-                      //01234567890123456789
                      {{"####################"},// 0
                       {"#      #     #     #"},// 1
                       {"# ####### #######  #"},// 2
@@ -132,8 +120,7 @@ string maps[5][20]= {{{"####################"},// 0
                       {"#                  #"},// 8
                       {"####################"}}};//9
 
-struct PlayerDec
-{
+struct PlayerDec{
     string name;
     int HP,MAXHP;
     int LV,EXP,MAXEXP;
@@ -145,8 +132,7 @@ struct PlayerDec
     int k1,k2,k3,k4,k5,k6,k7,k8,k9;
 };
 PlayerDec Player;
-void shop1()
-{
+void shop1(){
     system("cls");
     print("武器店老板：这位少侠，我看你力大如牛，来买一把好武器吧！");
     system("cls");
@@ -156,8 +142,7 @@ void shop1()
     print("4.夺魂重枪····················1000金币");printf("\n");
     print("5.石中神剑····················2000金币");printf("\n");
     qwe=_getch();
-    switch (qwe)
-    {
+    switch (qwe){
         case '1':if (Player.Money>=200)Player.s1++,Player.Money-=200;else cout<<"这位客官，您的钱不够！我脾气很好的！";break;
         case '2':if (Player.Money>=500)Player.s2++,Player.Money-=500;else cout<<"这位客官，您的钱不够！我脾气很好的！";break;
         case '3':if (Player.Money>=800)Player.s3++,Player.Money-=800;else cout<<"这位客官，您的钱不够！我脾气很好的！";break;
@@ -168,9 +153,7 @@ void shop1()
     system("cls");
     return;
 }
-
-void shop2()
-{
+void shop2(){
     system("cls");
     print("防具店老板：这位仁兄，你这么弱不禁风，小心给野兽打死了，我这的防具世界第一，看看？");
     system("cls");
@@ -180,8 +163,7 @@ void shop2()
     print("4.坦克皮····················1250金币");printf("\n");
     print("5.风王结界···················1750金币");printf("\n");
     qwe=_getch();
-    switch (qwe)
-    {
+    switch (qwe){
         case '1':if (Player.Money>=100)Player.d1++,Player.Money-=100;else cout<<"这位客官，您的钱不够！来人啊！轰出去！";break;
         case '2':if (Player.Money>=200)Player.d2++,Player.Money-=200;else cout<<"这位客官，您的钱不够！来人啊！轰出去！";break;
         case '3':if (Player.Money>=500)Player.d3++,Player.Money-=500;else cout<<"这位客官，您的钱不够！来人啊！轰出去！";break;
@@ -192,9 +174,7 @@ void shop2()
     system("cls");
     return;
 }
-
-void shop3()
-{
+void shop3(){
     system("cls");
     print("道具店老板娘：嗑药吗？少年？");
     system("cls");
@@ -204,8 +184,7 @@ void shop3()
     print("4.肥宅快乐丹（HP永久增加60点）··········100金币");printf("\n");
     print("5.鹤顶红（立即狗带，绝不忽悠！）·········500金币");printf("\n");
     qwe=_getch();
-    switch (qwe)
-    {
+    switch (qwe){
         case '1':if (Player.Money>=60)Player.q1++,Player.Money-=60;else cout<<"这位客官，您的钱不够！别来调戏老娘！！";break;
         case '2':if (Player.Money>=85)Player.q2++,Player.Money-=85;else cout<<"这位客官，您的钱不够！别来调戏老娘！！";break;
         case '3':if (Player.Money>=90)Player.q3++,Player.Money-=90;else cout<<"这位客官，您的钱不够！别来调戏老娘！！";break;
@@ -216,9 +195,7 @@ void shop3()
     system("cls");
     return;
 }
-
-void shop4()
-{
+void shop4(){
     system("cls");
     print("黑市商人：小哥，买符吗？打怪更有利！");
     system("cls");
@@ -232,8 +209,7 @@ void shop4()
     print("8.独孤九剑符（永久伤害九倍）············8000金币");printf("\n");
     print("9.钠水神功符（随机伤害）··············9000金币");printf("\n");
     qwe=_getch();
-    switch (qwe)
-    {
+    switch (qwe){
         case '1':if (Player.Money>=60)Player.k1++,Player.Money-=60;else cout<<"这位客官，您的钱不够！请走开！";break;
         case '2':if (Player.Money>=200)Player.k2++,Player.Money-=200;else cout<<"这位客官，您的钱不够！请走开！";break;
         case '3':if (Player.Money>=2000)Player.k3++,Player.Money-=2000;else cout<<"这位客官，您的钱不够！请走开！";break;
@@ -248,21 +224,16 @@ void shop4()
     system("cls");
     return;
 }
-
-void sp()
-{
+void sp(){
     system("cls");
     print("这里是祭坛，可以强化自身，武器。但是会破除你所有防御，用掉你所有金钱！。（y/n）");
     qwe=_getch();
-    if (qwe=='n')
-    {
+    if (qwe=='n'){
         system("cls");
         print("做好觉悟后再来吧！");
         system("cls");
         return;
-    }
-    else
-    {
+    }else{
         system("cls");
         print("你将所有金币洒在祭坛上！");printf("\n");
         print("你的护甲全都爆炸！");printf("\n");
@@ -275,36 +246,27 @@ void sp()
     }
     system("cls");
 }
-
-void go(int w)
-{
-    switch (w)
-    {
+void go(int w){
+    switch (w){
         case 0:x=7,y=19;break;
-        case 1:
-        {
+        case 1:{
             if (where==0)
                 x=7,y=0;
-            else
-            if (where==2)
+            else if (where==2)
                 x=19,y=16;
             break;
         }
-        case 2:
-        {
+        case 2:{
             if (where==3)
                 x=7,y=0;
-            else
-            if (where==1)
+            else if (where==1)
                 x=0,y=16;
             break;
         }
-        case 3:
-        {
+        case 3:{
             if (where==2)
                 x=7,y=19;
-            else
-            if (where==4)
+            else if (where==4)
                 x=11,y=0;
             break;
         }
@@ -312,11 +274,8 @@ void go(int w)
     }
     where=w;
 }
-
-void lvup()
-{
-    if (Player.EXP>=Player.MAXEXP)
-    {
+void lvup(){
+    if (Player.EXP>=Player.MAXEXP){
         system("cls");
         print("你升了");
         printf("%d级！",Player.EXP/Player.MAXEXP);
@@ -327,23 +286,18 @@ void lvup()
         Player.EXP%=Player.MAXEXP;
         Player.MAXEXP+=rand()%500;
         Player.MAXHP+=rand()%500;
-    }
-    else
-    {
+    }else{
         system("cls");
         print("然而你并没有升级.");
         system("cls");
         return;
     }
 }
-
-bool fight_to_jiangshi()
-{
+bool fight_to_jiangshi(){
     system("cls");
     string name="僵尸";
     int HP=1200,MAXHP=1200,ATK=70,DEF=16;
-    while (1)
-    {
+    while (1){
         printf("**************************");printf("\n");
         printf("*     >  {=}        僵尸 *");printf("\n");
         printf("*   _/_  [6]        ___  *敌方血量：%d/%d",HP,MAXHP);printf("\n");
@@ -359,16 +313,12 @@ bool fight_to_jiangshi()
         printf("**************************");printf("\n");
         printf("1.攻击   2.逃跑   3.技能  ");printf("\n");
         qwe=_getch();
-        if (qwe=='2')
-        {
+        if (qwe=='2'){
             system("cls");
             print("三十六计，走为上计！");
             system("cls");
             return false;
-        }
-        else
-        if (qwe=='1')
-        {
+        }else if (qwe=='1'){
             system("cls");
             int sd;
             sd=Player.ATK-DEF+(rand()%100);
@@ -443,9 +393,7 @@ bool fight_to_jiangshi()
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
             printf("1.攻击   2.逃跑   3.技能  ");printf("\n");Sleep(500);system("cls");
-
-            if (HP<=0)
-            {
+            if (HP<=0){
                 print("你赢了！获得100金币！300经验值！");
                 Player.EXP+=300;
                 lvup();Player.HP+=378;if (Player.HP>Player.MAXHP) Player.HP=Player.MAXHP;
@@ -525,15 +473,11 @@ bool fight_to_jiangshi()
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
             printf("1.攻击   2.逃跑   3.技能  ");printf("\n");Sleep(500);system("cls");
-            if (Player.HP<=0)
-            {
+            if (Player.HP<=0){
                 print("你被咬死了！");
                 exit(1);
             }
-        }
-        else
-        if (qwe=='3')
-        {
+        }else if (qwe=='3'){
             int sd;
             system("cls");
             printf("q.你有%d张回血符！\n",Player.k1);
@@ -546,8 +490,7 @@ bool fight_to_jiangshi()
             printf("i.你有%d张独孤九剑符！\n",Player.k8);
             printf("o.你有%d张钠水神功符！\n",Player.k9);
             qwe=_getch();
-            switch (qwe)
-            {
+            switch (qwe){
                 case 'q':if (Player.k1>=1){Player.k1--;print("感到一阵舒畅！HP+500");Player.HP+=500;}else print("你没有！");break;
                 case 'w':if (Player.k2>=1){Player.k2--;print("感觉一阵电流一般的快感流遍全身！HP+1000");Player.HP+=1000;}else print("你没有！");break;
                 case 'e':if (Player.k3>=1){Player.k3--;print("你的双手能使用不同的招式！伤害翻倍！");Player.ATK*=2;}else print("你没有！");break;
@@ -629,8 +572,7 @@ bool fight_to_jiangshi()
             printf("**************************");printf("\n");
             printf("1.攻击   2.逃跑   3.技能  ");printf("\n");Sleep(200);system("cls");
             system("cls");
-            if (HP<=0)
-            {
+            if (HP<=0){
                 print("你赢了！获得100金币！300经验值！");
                 Player.EXP+=300;
                 lvup();Player.HP+=378;if (Player.HP>Player.MAXHP) Player.HP=Player.MAXHP;
@@ -710,8 +652,7 @@ bool fight_to_jiangshi()
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
             printf("1.攻击   2.逃跑   3.技能  ");printf("\n");Sleep(500);system("cls");
-            if (Player.HP<=0)
-            {
+            if (Player.HP<=0){
                 print("你被咬死了！");
                 exit(1);
             }
@@ -719,13 +660,11 @@ bool fight_to_jiangshi()
         system("cls");
     }
 }
-bool fight_to_sheshou()
-{
+bool fight_to_sheshou(){
     system("cls");
     string name="僵尸";
     int HP=750,MAXHP=750,ATK=100,DEF=2;
-    while (1)
-    {
+    while (1){
         printf("**************************");printf("\n");
         printf("*     >  {=}     骷髅射手*");printf("\n");
         printf("*   _/_  [6]        ___  *敌方血量：%d/%d",HP,MAXHP);printf("\n");
@@ -741,16 +680,12 @@ bool fight_to_sheshou()
         printf("**************************");printf("\n");
         printf("1.攻击   2.逃跑   3.技能  ");printf("\n");
         qwe=_getch();
-        if (qwe=='2')
-        {
+        if (qwe=='2'){
             system("cls");
             print("三十六计，走为上计！");
             system("cls");
             return false;
-        }
-        else
-        if (qwe=='1')
-        {
+        }else if (qwe=='1'){
             int sd;
             system("cls");
             sd=Player.ATK-DEF+(rand()%100);
@@ -825,8 +760,7 @@ bool fight_to_sheshou()
             printf("*   D D             | |  *");printf("\n");
             printf("**************************");printf("\n");
             printf("1.攻击   2.逃跑   3.技能  ");printf("\n");Sleep(200);system("cls");
-            if (HP<=0)
-            {
+            if (HP<=0){
                 print("你赢了！获得50金币！400经验值！");
                 Player.EXP+=400;
                 lvup();Player.HP+=378;if (Player.HP>Player.MAXHP) Player.HP=Player.MAXHP;
@@ -906,16 +840,11 @@ bool fight_to_sheshou()
             printf("*   D D             | |  *");printf("\n");
             printf("**************************");printf("\n");
             printf("1.攻击   2.逃跑   3.技能  ");printf("\n");Sleep(200);system("cls");
-            if (Player.HP<=0)
-            {
+            if (Player.HP<=0){
                 print("你被射成马蜂窝了！活不过来了！");
                 exit(1);
             }
-
-        }
-        else
-        if (qwe=='3')
-        {
+        }else if (qwe=='3'){
             int sd;
             system("cls");
             printf("q.你有%d张回血符！\n",Player.k1);
@@ -928,8 +857,7 @@ bool fight_to_sheshou()
             printf("i.你有%d张独孤九剑符！\n",Player.k8);
             printf("o.你有%d张钠水神功符！\n",Player.k9);
             qwe=_getch();
-            switch (qwe)
-            {
+            switch (qwe){
                 case 'q':if (Player.k1>=1){Player.k1--;print("感到一阵舒畅！HP+500");Player.HP+=500;}else print("你没有！");break;
                 case 'w':if (Player.k2>=1){Player.k2--;print("感觉一阵电流一般的快感流遍全身！HP+1000");Player.HP+=1000;}else print("你没有！");break;
                 case 'e':if (Player.k3>=1){Player.k3--;print("你的双手能使用不同的招式！伤害翻倍！");Player.ATK*=2;};break;
@@ -1011,8 +939,7 @@ bool fight_to_sheshou()
             printf("*   D D             | |  *");printf("\n");
             printf("**************************");printf("\n");
             printf("1.攻击   2.逃跑   3.技能  ");printf("\n");Sleep(200);system("cls");
-            if (HP<=0)
-            {
+            if (HP<=0){
                 print("你赢了！获得100金币！300经验值！");
                 Player.EXP+=300;
                 lvup();Player.HP+=378;if (Player.HP>Player.MAXHP) Player.HP=Player.MAXHP;
@@ -1092,8 +1019,7 @@ bool fight_to_sheshou()
             printf("*   D D             | |  *");printf("\n");
             printf("**************************");printf("\n");
             printf("1.攻击   2.逃跑   3.技能  ");printf("\n");Sleep(200);system("cls");
-            if (Player.HP<=0)
-            {
+            if (Player.HP<=0){
                 print("你被射成马蜂窝了！活不过来了！");
                 exit(1);
             }
@@ -1101,13 +1027,11 @@ bool fight_to_sheshou()
         system("cls");
     }
 }
-bool fight_to_kulipa()
-{
+bool fight_to_kulipa(){
     system("cls");
     string name="僵尸";
     int HP=1300,MAXHP=1300,ATK=80,DEF=20;
-    while (1)
-    {
+    while (1){
         printf("**************************");printf("\n");
         printf("*     >  {=}      苦力怕 *");printf("\n");
         printf("*   _/_  [6]        ___  *敌方血量：%d/%d",HP,MAXHP);printf("\n");
@@ -1123,16 +1047,12 @@ bool fight_to_kulipa()
         printf("**************************");printf("\n");
         printf("1.攻击   2.逃跑    3.技能 ");printf("\n");
         qwe=_getch();
-        if (qwe=='2')
-        {
+        if (qwe=='2'){
             system("cls");
             print("三十六计，走为上计！");
             system("cls");
             return false;
-        }
-        else
-        if (qwe=='1')
-        {
+        }else if (qwe=='1'){
             system("cls");
             int sd;
             sd=Player.ATK-DEF+(rand()%100);
@@ -1207,8 +1127,7 @@ bool fight_to_kulipa()
             printf("*   D D           SSSASSS*");printf("\n");
             printf("**************************");printf("\n");
             printf("1.攻击   2.逃跑    3.技能 ");printf("\n");Sleep(200);system("cls");
-            if (HP<=0)
-            {
+            if (HP<=0){
                 print("你赢了！获得150金币！200经验值！");
                 Player.EXP+=200;
                 lvup();Player.HP+=378;if (Player.HP>Player.MAXHP) Player.HP=Player.MAXHP;
@@ -1288,15 +1207,11 @@ bool fight_to_kulipa()
             printf("*   D D           SSSASSS*");printf("\n");
             printf("**************************");printf("\n");
             printf("1.攻击   2.逃跑    3.技能 ");printf("\n");Sleep(200);system("cls");
-            if (Player.HP<=0)
-            {
+            if (Player.HP<=0){
                 print("你被炸死了！活不过来了！");
                 exit(1);
             }
-        }
-        else
-        if (qwe=='3')
-        {
+        }else if (qwe=='3'){
             int sd;
             system("cls");
             printf("q.你有%d张回血符！\n",Player.k1);
@@ -1309,8 +1224,7 @@ bool fight_to_kulipa()
             printf("i.你有%d张独孤九剑符！\n",Player.k8);
             printf("o.你有%d张钠水神功符！\n",Player.k9);
             qwe=_getch();
-            switch (qwe)
-            {
+            switch (qwe){
                 case 'q':if (Player.k1>=1){Player.k1--;print("感到一阵舒畅！HP+500");Player.HP+=500;}else print("你没有！");break;
                 case 'w':if (Player.k2>=1){Player.k2--;print("感觉一阵电流一般的快感流遍全身！HP+1000");Player.HP+=1000;}else print("你没有！");break;
                 case 'e':if (Player.k3>=1){Player.k3--;print("你的双手能使用不同的招式！伤害翻倍！");Player.ATK*=2;}else print("你没有！");break;
@@ -1392,8 +1306,7 @@ bool fight_to_kulipa()
             printf("*   D D           SSSASSS*");printf("\n");
             printf("**************************");printf("\n");
             printf("1.攻击   2.逃跑    3.技能 ");printf("\n");Sleep(200);system("cls");
-            if (HP<=0)
-            {
+            if (HP<=0){
                 print("你赢了！获得100金币！300经验值！");
                 Player.EXP+=300;
                 lvup();Player.HP+=378;if (Player.HP>Player.MAXHP) Player.HP=Player.MAXHP;
@@ -1473,8 +1386,7 @@ bool fight_to_kulipa()
             printf("*   D D           SSSASSS*");printf("\n");
             printf("**************************");printf("\n");
             printf("1.攻击   2.逃跑    3.技能 ");printf("\n");Sleep(200);system("cls");
-            if (Player.HP<=0)
-            {
+            if (Player.HP<=0){
                 print("你被炸死了！活不过来了！");
                 exit(1);
             }
@@ -1482,13 +1394,11 @@ bool fight_to_kulipa()
         system("cls");
     }
 }
-bool fight_to_jiangshiwang()
-{
+bool fight_to_jiangshiwang(){
     system("cls");
     string name="僵尸";
     int HP=4000,MAXHP=4000,ATK=100,DEF=30;
-    while (1)
-    {
+    while (1){
         printf("**************************");printf("\n");
         printf("*     >  {=}   6   僵尸王*");printf("\n");
         printf("*   _/_  [6]   6    ___  *敌方血量：%d/%d",HP,MAXHP);printf("\n");
@@ -1504,16 +1414,12 @@ bool fight_to_jiangshiwang()
         printf("**************************");printf("\n");
         printf("1.攻击   2.逃跑    3.技能 ");printf("\n");
         qwe=_getch();
-        if (qwe=='2')
-        {
+        if (qwe=='2'){
             system("cls");
             print("三十六计，走为上计！");
             system("cls");
             return false;
-        }
-        else
-        if (qwe=='1')
-        {
+        }else if (qwe=='1'){
             int sd;
             system("cls");
             sd=Player.ATK-DEF+(rand()%100);
@@ -1588,8 +1494,7 @@ bool fight_to_jiangshiwang()
             printf("*   D D            66 66 *");printf("\n");
             printf("**************************");printf("\n");
             printf("1.攻击   2.逃跑    3.技能 ");printf("\n");Sleep(200);system("cls");
-            if (HP<=0)
-            {
+            if (HP<=0){
                 print("你赢了！获得1000金币！1000经验值！");
                 Player.EXP+=1000;
                 lvup();Player.HP+=378;if (Player.HP>Player.MAXHP) Player.HP=Player.MAXHP;
@@ -1669,15 +1574,11 @@ bool fight_to_jiangshiwang()
             printf("*   D D            66 66 *");printf("\n");
             printf("**************************");printf("\n");
             printf("1.攻击   2.逃跑    3.技能 ");printf("\n");Sleep(200);system("cls");
-            if (Player.HP<=0)
-            {
+            if (Player.HP<=0){
                 print("你被打死了！");
                 exit(1);
             }
-        }
-        else
-        if (qwe=='3')
-        {
+        }else if (qwe=='3'){
             int sd;
             system("cls");
             printf("q.你有%d张回血符！\n",Player.k1);
@@ -1690,8 +1591,7 @@ bool fight_to_jiangshiwang()
             printf("i.你有%d张独孤九剑符！\n",Player.k8);
             printf("o.你有%d张钠水神功符！\n",Player.k9);
             qwe=_getch();
-            switch (qwe)
-            {
+            switch (qwe){
                 case 'q':if (Player.k1>=1){Player.k1--;print("感到一阵舒畅！HP+500");Player.HP+=500;}else print("你没有！");break;
                 case 'w':if (Player.k2>=1){Player.k2--;print("感觉一阵电流一般的快感流遍全身！HP+1000");Player.HP+=1000;}else print("你没有！");break;
                 case 'e':if (Player.k3>=1){Player.k3--;print("你的双手能使用不同的招式！伤害翻倍！");Player.ATK*=2;}else print("你没有！");break;
@@ -1773,8 +1673,7 @@ bool fight_to_jiangshiwang()
             printf("*   D D            66 66 *");printf("\n");
             printf("**************************");printf("\n");
             printf("1.攻击   2.逃跑    3.技能 ");printf("\n");Sleep(200);system("cls");
-            if (HP<=0)
-            {
+            if (HP<=0){
                 print("你赢了！获得100金币！300经验值！");
                 Player.EXP+=300;
                 lvup();Player.HP+=378;if (Player.HP>Player.MAXHP) Player.HP=Player.MAXHP;
@@ -1854,8 +1753,7 @@ bool fight_to_jiangshiwang()
             printf("*   D D            66 66 *");printf("\n");
             printf("**************************");printf("\n");
             printf("1.攻击   2.逃跑    3.技能 ");printf("\n");Sleep(200);system("cls");
-            if (Player.HP<=0)
-            {
+            if (Player.HP<=0){
                 print("你被打死了！");
                 exit(1);
             }
@@ -1863,14 +1761,12 @@ bool fight_to_jiangshiwang()
         system("cls");
     }
 }
-bool fight_to_kkk()
-{
+bool fight_to_kkk(){
     system("cls");
     string name="僵尸";
     long long HP=999999999,MAXHP=999999999,ATK=Player.DEF+750,DEF=0;
     print("KKK：哼，弱鸡吱吱乱叫！上次我大意了！现在去死吧！！！");
-    while (1)
-    {
+    while (1){
         printf("**************************");printf("\n");
         printf("*     >  {=}  暴走kkksc06*");printf("\n");
         printf("*   _/_  [6]    ==+ DDD  *敌方血量：%d/%d",HP,MAXHP);printf("\n");
@@ -1886,15 +1782,11 @@ bool fight_to_kkk()
         printf("**************************");printf("\n");
         printf("1.攻击   2.逃跑   3.技能  ");printf("\n");
         qwe=_getch();
-        if (qwe=='2')
-        {
+        if (qwe=='2'){
             system("cls");
             print("大战在即，你还想跑？");
             system("cls");
-        }
-        else
-        if (qwe=='1')
-        {
+        }else if (qwe=='1'){
             int sd;
             system("cls");
             sd=Player.ATK-DEF+(rand()%100);
@@ -1969,8 +1861,7 @@ bool fight_to_kkk()
             printf("*   D D            sS Ss *");printf("\n");
             printf("**************************");printf("\n");
             printf("1.攻击   2.逃跑   3.技能  ");printf("\n");Sleep(200);system("cls");
-            if (HP<=0)
-            {
+            if (HP<=0){
                 print("kkk:没想到!!呜哇~~~~（一口老血）");
                 print("游戏通关！你帮助面包姐姐逃离kkk的魔爪！");
                 Player.EXP+=999999;
@@ -2051,16 +1942,11 @@ bool fight_to_kkk()
             printf("*sssssssssssss     sS Ss *");printf("\n");
             printf("**************************");printf("\n");
             printf("1.攻击   2.逃跑   3.技能  ");printf("\n");Sleep(200);system("cls");
-
-            if (Player.HP<=0)
-            {
+            if (Player.HP<=0){
                 print("你被刺死了！活不过来了！");
                 exit(1);
             }
-        }
-        else
-        if (qwe=='3')
-        {
+        }else if (qwe=='3'){
             int sd;
             system("cls");
             printf("q.你有%d张回血符！\n",Player.k1);
@@ -2073,8 +1959,7 @@ bool fight_to_kkk()
             printf("i.你有%d张独孤九剑符！\n",Player.k8);
             printf("o.你有%d张钠水神功符！\n",Player.k9);
             qwe=_getch();
-            switch (qwe)
-            {
+            switch (qwe){
                 case 'q':if (Player.k1>=1){Player.k1--;print("感到一阵舒畅！HP+500");Player.HP+=500;}else print("你没有！");break;
                 case 'w':if (Player.k2>=1){Player.k2--;print("感觉一阵电流一般的快感流遍全身！HP+1000");Player.HP+=1000;}else print("你没有！");break;
                 case 'e':if (Player.k3>=1){Player.k3--;print("你的双手能使用不同的招式！伤害翻倍！");Player.ATK*=2;}else print("你没有！");break;
@@ -2156,8 +2041,7 @@ bool fight_to_kkk()
             printf("*   D D            sS Ss *");printf("\n");
             printf("**************************");printf("\n");
             printf("1.攻击   2.逃跑   3.技能  ");printf("\n");Sleep(200);system("cls");
-            if (HP<=0)
-            {
+            if (HP<=0){
                 print("你赢了！获得9999999金币！99999经验值！你救出了面包！");
                 Player.EXP+=99999999;
                 lvup();Player.HP+=378;if (Player.HP>Player.MAXHP) Player.HP=Player.MAXHP;
@@ -2237,8 +2121,7 @@ bool fight_to_kkk()
             printf("*sssssssssssss     sS Ss *");printf("\n");
             printf("**************************");printf("\n");
             printf("1.攻击   2.逃跑   3.技能  ");printf("\n");Sleep(200);system("cls");
-            if (Player.HP<=0)
-            {
+            if (Player.HP<=0){
                 print("你被羞辱致死了！活不过来了！");
                 exit(1);
             }
@@ -2246,13 +2129,11 @@ bool fight_to_kkk()
         system("cls");
     }
 }
-bool fight_to_kkkshiwei()
-{
+bool fight_to_kkkshiwei(){
     system("cls");
     string name="僵尸";
     int HP=100000,MAXHP=100000,ATK=260,DEF=20;
-    while (1)
-    {
+    while (1){
         printf("**************************");printf("\n");
         printf("*     >  {=}    A kkk侍卫*");printf("\n");
         printf("*   _/_  [6]    V   ___  *敌方血量：%d/%d",HP,MAXHP);printf("\n");
@@ -2268,16 +2149,12 @@ bool fight_to_kkkshiwei()
         printf("**************************");printf("\n");
         printf("1.攻击   2.逃跑   3.技能  ");printf("\n");
         qwe=_getch();
-        if (qwe=='2')
-        {
+        if (qwe=='2'){
             system("cls");
             print("三十六计，走为上计！");
             system("cls");
             return false;
-        }
-        else
-        if (qwe=='1')
-        {
+        }else if (qwe=='1'){
             system("cls");
             int sd;
             sd=Player.ATK-DEF+(rand()%100);
@@ -2352,8 +2229,7 @@ bool fight_to_kkkshiwei()
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
             printf("1.攻击   2.逃跑   3.技能  ");printf("\n");Sleep(200);system("cls");
-            if (HP<=0)
-            {
+            if (HP<=0){
                 print("你赢了！获得2000金币！1000经验值！");
                 Player.EXP+=1000;
                 lvup();Player.HP+=378;if (Player.HP>Player.MAXHP) Player.HP=Player.MAXHP;
@@ -2433,15 +2309,11 @@ bool fight_to_kkkshiwei()
             printf("*   D D           SS SS  *");printf("\n");
             printf("**************************");printf("\n");
             printf("1.攻击   2.逃跑   3.技能  ");printf("\n");Sleep(200);system("cls");
-            if (Player.HP<=0)
-            {
+            if (Player.HP<=0){
                 print("你被砍死了！");
                 exit(1);
             }
-        }
-        else
-        if (qwe=='3')
-        {
+        }else if (qwe=='3'){
             int sd;
             system("cls");
             printf("q.你有%d张回血符！\n",Player.k1);
@@ -2454,8 +2326,7 @@ bool fight_to_kkkshiwei()
             printf("i.你有%d张独孤九剑符！\n",Player.k8);
             printf("o.你有%d张钠水神功符！\n",Player.k9);
             qwe=_getch();
-            switch (qwe)
-            {
+            switch (qwe){
                 case 'q':if (Player.k1>=1){Player.k1--;print("感到一阵舒畅！HP+500");Player.HP+=500;}else print("你没有！");break;
                 case 'w':if (Player.k2>=1){Player.k2--;print("感觉一阵电流一般的快感流遍全身！HP+1000");Player.HP+=1000;}else print("你没有！");break;
                 case 'e':if (Player.k3>=1){Player.k3--;print("你的双手能使用不同的招式！伤害翻倍！");Player.ATK*=2;}else print("你没有！");break;
@@ -2537,8 +2408,7 @@ bool fight_to_kkkshiwei()
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
             printf("1.攻击   2.逃跑   3.技能  ");printf("\n");Sleep(200);system("cls");
-            if (HP<=0)
-            {
+            if (HP<=0){
                 print("你赢了！获得2000金币！1000经验值！");
                 Player.EXP+=1000;
                 lvup();Player.HP+=378;if (Player.HP>Player.MAXHP) Player.HP=Player.MAXHP;
@@ -2618,8 +2488,7 @@ bool fight_to_kkkshiwei()
             printf("*   D D           SS SS  *");printf("\n");
             printf("**************************");printf("\n");
             printf("1.攻击   2.逃跑   3.技能  ");printf("\n");Sleep(200);system("cls");
-            if (Player.HP<=0)
-            {
+            if (Player.HP<=0){
                 print("你被砍死了！");
                 exit(1);
             }
@@ -2627,13 +2496,11 @@ bool fight_to_kkkshiwei()
         system("cls");
     }
 }
-bool fight_to_kkkmofashi()
-{
+bool fight_to_kkkmofashi(){
     system("cls");
     string name="僵尸";
     int HP=120000,MAXHP=120000,ATK=400,DEF=0;
-    while (1)
-    {
+    while (1){
         printf("**************************");printf("\n");
         printf("*     >  {=}    kkk魔法师*");printf("\n");
         printf("*   _/_  [6]        _A_  *敌方血量：%d/%d",HP,MAXHP);printf("\n");
@@ -2649,16 +2516,12 @@ bool fight_to_kkkmofashi()
         printf("**************************");printf("\n");
         printf("1.攻击   2.逃跑   3.技能  ");printf("\n");
         qwe=_getch();
-        if (qwe=='2')
-        {
+        if (qwe=='2'){
             system("cls");
             print("三十六计，走为上计！");
             system("cls");
             return false;
-        }
-        else
-        if (qwe=='1')
-        {
+        }else if (qwe=='1'){
             system("cls");
             int sd;
             sd=Player.ATK-DEF+(rand()%100);
@@ -2733,8 +2596,7 @@ bool fight_to_kkkmofashi()
             printf("*                  SS SS *");printf("\n");
             printf("**************************");printf("\n");
             printf("1.攻击   2.逃跑   3.技能  ");printf("\n");Sleep(200);system("cls");
-            if (HP<=0)
-            {
+            if (HP<=0){
                 print("你赢了！获得2500金币！500经验值！");
                 Player.EXP+=500;
                 lvup();Player.HP+=378;if (Player.HP>Player.MAXHP) Player.HP=Player.MAXHP;
@@ -2814,15 +2676,11 @@ bool fight_to_kkkmofashi()
             printf("*                  SS SS *");printf("\n");
             printf("**************************");printf("\n");
             printf("1.攻击   2.逃跑   3.技能  ");printf("\n");Sleep(200);system("cls");
-            if (Player.HP<=0)
-            {
+            if (Player.HP<=0){
                 print("你被烧死了！");
                 exit(1);
             }
-        }
-        else
-        if (qwe=='3')
-        {
+        }else if (qwe=='3'){
             int sd;
             system("cls");
             printf("q.你有%d张回血符！\n",Player.k1);
@@ -2835,8 +2693,7 @@ bool fight_to_kkkmofashi()
             printf("i.你有%d张独孤九剑符！\n",Player.k8);
             printf("o.你有%d张钠水神功符！\n",Player.k9);
             qwe=_getch();
-            switch (qwe)
-            {
+            switch (qwe){
                 case 'q':if (Player.k1>=1){Player.k1--;print("感到一阵舒畅！HP+500");Player.HP+=500;}else print("你没有！");break;
                 case 'w':if (Player.k2>=1){Player.k2--;print("感觉一阵电流一般的快感流遍全身！HP+1000");Player.HP+=1000;}else print("你没有！");break;
                 case 'e':if (Player.k3>=1){Player.k3--;print("你的双手能使用不同的招式！伤害翻倍！");Player.ATK*=2;}else print("你没有！");break;
@@ -2918,8 +2775,7 @@ bool fight_to_kkkmofashi()
             printf("*                  SS SS *");printf("\n");
             printf("**************************");printf("\n");
             printf("1.攻击   2.逃跑   3.技能  ");printf("\n");Sleep(200);system("cls");
-            if (HP<=0)
-            {
+            if (HP<=0){
                 print("你赢了！获得2100金币！400经验值！");
                 Player.EXP+=400;
                 lvup();Player.HP+=378;if (Player.HP>Player.MAXHP) Player.HP=Player.MAXHP;
@@ -2999,8 +2855,7 @@ bool fight_to_kkkmofashi()
             printf("*                  SS SS *");printf("\n");
             printf("**************************");printf("\n");
             printf("1.攻击   2.逃跑   3.技能  ");printf("\n");Sleep(200);system("cls");
-            if (Player.HP<=0)
-            {
+            if (Player.HP<=0){
                 print("你被冻死了！");
                 exit(1);
             }
@@ -3008,13 +2863,11 @@ bool fight_to_kkkmofashi()
         system("cls");
     }
 }
-bool fight_to_cike()
-{
+bool fight_to_cike(){
     system("cls");
     string name="僵尸";
     int HP=60000,MAXHP=60000,ATK=800,DEF=1;
-    while (1)
-    {
+    while (1){
         printf("**************************");printf("\n");
         printf("*     >  {=}      kkk刺客*");printf("\n");
         printf("*   _/_  [6]  -+    ___  *敌方血量：%d/%d",HP,MAXHP);printf("\n");
@@ -3030,16 +2883,13 @@ bool fight_to_cike()
         printf("**************************");printf("\n");
         printf("1.攻击   2.逃跑   3.技能  ");printf("\n");
         qwe=_getch();
-        if (qwe=='2')
-        {
+        if (qwe=='2'){
             system("cls");
             print("三十六计，走为上计！");
             system("cls");
             return false;
         }
-        else
-        if (qwe=='1')
-        {
+        else if (qwe=='1'){
             system("cls");
             int sd;
             sd=Player.ATK-DEF+(rand()%100);
@@ -3114,8 +2964,7 @@ bool fight_to_cike()
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
             printf("1.攻击   2.逃跑   3.技能  ");printf("\n");printf("\n");Sleep(200);system("cls");
-            if (HP<=0)
-            {
+            if (HP<=0){
                 print("你赢了！获得1000金币！4000经验值！");
                 Player.EXP+=4000;
                 lvup();Player.HP+=378;if (Player.HP>Player.MAXHP) Player.HP=Player.MAXHP;
@@ -3195,15 +3044,11 @@ bool fight_to_cike()
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
             printf("1.攻击   2.逃跑   3.技能  ");printf("\n");printf("\n");Sleep(200);system("cls");
-            if (Player.HP<=0)
-            {
+            if (Player.HP<=0){
                 print("你被弄死了！");
                 exit(1);
             }
-        }
-        else
-        if (qwe=='3')
-        {
+        }else if (qwe=='3'){
             int sd;
             system("cls");
             printf("q.你有%d张回血符！\n",Player.k1);
@@ -3216,8 +3061,7 @@ bool fight_to_cike()
             printf("i.你有%d张独孤九剑符！\n",Player.k8);
             printf("o.你有%d张钠水神功符！\n",Player.k9);
             qwe=_getch();
-            switch (qwe)
-            {
+            switch (qwe){
                 case 'q':if (Player.k1>=1){Player.k1--;print("感到一阵舒畅！HP+500");Player.HP+=500;}else print("你没有！");break;
                 case 'w':if (Player.k2>=1){Player.k2--;print("感觉一阵电流一般的快感流遍全身！HP+1000");Player.HP+=1000;}else print("你没有！");break;
                 case 'e':if (Player.k3>=1){Player.k3--;print("你的双手能使用不同的招式！伤害翻倍！");Player.ATK*=2;}else print("你没有！");break;
@@ -3299,8 +3143,7 @@ bool fight_to_cike()
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
             printf("1.攻击   2.逃跑   3.技能  ");printf("\n");printf("\n");Sleep(200);system("cls");
-            if (HP<=0)
-            {
+            if (HP<=0){
                 print("你赢了！获得300金币！8000经验值！");
                 Player.EXP+=8000;
                 lvup();Player.HP+=378;if (Player.HP>Player.MAXHP) Player.HP=Player.MAXHP;
@@ -3380,8 +3223,7 @@ bool fight_to_cike()
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
             printf("1.攻击   2.逃跑   3.技能  ");printf("\n");printf("\n");Sleep(200);system("cls");
-            if (Player.HP<=0)
-            {
+            if (Player.HP<=0){
                 print("你被弄死了！");
                 exit(1);
             }
@@ -3389,14 +3231,12 @@ bool fight_to_cike()
         system("cls");
     }
 }
-bool fight_to_kkkk()
-{
+bool fight_to_kkkk(){
     system("cls");
     string name="僵尸";
     int HP=300000,MAXHP=300000,ATK=200,DEF=10;
     print("你看见kkksc06冲了过来，你定睛一看，是假的！");
-    while (1)
-    {
+    while (1){
         printf("**************************");printf("\n");
         printf("*     >  {=}    kkkksc06 *");printf("\n");
         printf("*   _/_  [6]        ___  *敌方血量：%d/%d",HP,MAXHP);printf("\n");
@@ -3412,16 +3252,12 @@ bool fight_to_kkkk()
         printf("**************************");printf("\n");
         printf("1.攻击   2.逃跑   3.技能  ");printf("\n");
         qwe=_getch();
-        if (qwe=='2')
-        {
+        if (qwe=='2'){
             system("cls");
             print("三十六计，走为上计！");
             system("cls");
             return false;
-        }
-        else
-        if (qwe=='1')
-        {
+        }else if (qwe=='1'){
             system("cls");
             int sd;
             sd=Player.ATK-DEF+(rand()%100);
@@ -3496,8 +3332,7 @@ bool fight_to_kkkk()
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
             printf("1.攻击   2.逃跑   3.技能  ");printf("\n");printf("\n");Sleep(200);system("cls");
-            if (HP<=0)
-            {
+            if (HP<=0){
                 print("你赢了！获得10000金币！1000经验值！");
                 Player.EXP+=1000;
                 lvup();Player.HP+=378;if (Player.HP>Player.MAXHP) Player.HP=Player.MAXHP;
@@ -3577,15 +3412,11 @@ bool fight_to_kkkk()
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
             printf("1.攻击   2.逃跑   3.技能  ");printf("\n");printf("\n");Sleep(200);system("cls");
-            if (Player.HP<=0)
-            {
+            if (Player.HP<=0){
                 print("你被假死了！");
                 exit(1);
             }
-        }
-        else
-        if (qwe=='3')
-        {
+        }else if (qwe=='3'){
             int sd;
             system("cls");
             printf("q.你有%d张回血符！\n",Player.k1);
@@ -3598,8 +3429,7 @@ bool fight_to_kkkk()
             printf("i.你有%d张独孤九剑符！\n",Player.k8);
             printf("o.你有%d张钠水神功符！\n",Player.k9);
             qwe=_getch();
-            switch (qwe)
-            {
+            switch (qwe){
                 case 'q':if (Player.k1>=1){Player.k1--;print("感到一阵舒畅！HP+500");Player.HP+=500;}else print("你没有！");break;
                 case 'w':if (Player.k2>=1){Player.k2--;print("感觉一阵电流一般的快感流遍全身！HP+1000");Player.HP+=1000;}else print("你没有！");break;
                 case 'e':if (Player.k3>=1){Player.k3--;print("你的双手能使用不同的招式！伤害翻倍！");Player.ATK*=2;}else print("你没有！");break;
@@ -3681,8 +3511,7 @@ bool fight_to_kkkk()
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
             printf("1.攻击   2.逃跑   3.技能  ");printf("\n");printf("\n");Sleep(200);system("cls");
-            if (HP<=0)
-            {
+            if (HP<=0){
                 print("你赢了！获得10000金币！1000经验值！");
                 Player.EXP+=1000;
                 lvup();Player.HP+=378;if (Player.HP>Player.MAXHP) Player.HP=Player.MAXHP;
@@ -3762,8 +3591,7 @@ bool fight_to_kkkk()
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
             printf("1.攻击   2.逃跑   3.技能  ");printf("\n");printf("\n");Sleep(200);system("cls");
-            if (Player.HP<=0)
-            {
+            if (Player.HP<=0){
                 print("你被假死了！");
                 exit(1);
             }
@@ -3771,8 +3599,7 @@ bool fight_to_kkkk()
         system("cls");
     }
 }
-bool fight_to_KKKKK()
-{
+bool fight_to_KKKKK(){
     system("cls");
     string name="僵尸";
     int HP=1000000,MAXHP=1000000,ATK=999999,DEF=100;
@@ -3781,8 +3608,7 @@ bool fight_to_KKKKK()
     print("永远膜拜我吧！！！");printf("\n");
     print("kkksc06大魔王拿出了巨强牛神电磁炮！");printf("\n");
     print(" ");
-    while (1)
-    {
+    while (1){
         printf("**************************");printf("\n");
         printf("*     >  {=}     kkksc06 *");printf("\n");
         printf("*   _/_  [6]        ___  *敌方血量：%d/%d",HP,MAXHP);printf("\n");
@@ -3798,16 +3624,12 @@ bool fight_to_KKKKK()
         printf("**************************");printf("\n");
         printf("1.攻击   2.逃跑   3.技能  ");printf("\n");
         qwe=_getch();
-        if (qwe=='2')
-        {
+        if (qwe=='2'){
             system("cls");
             print("我不救面包了，拜拜！");
             system("cls");
             return false;
-        }
-        else
-        if (qwe=='1')
-        {
+        }else if (qwe=='1'){
             system("cls");
             int sd;
             sd=Player.ATK-DEF+(rand()%100);
@@ -3882,8 +3704,7 @@ bool fight_to_KKKKK()
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
             printf("1.攻击   2.逃跑   3.技能  ");printf("\n");printf("\n");Sleep(200);system("cls");
-            if (HP<=0)
-            {
+            if (HP<=0){
                 print("你赢了！获得10000金币！1000经验值！然而面包不在这里！！");
                 Player.EXP+=1000;
                 lvup();Player.HP+=378;if (Player.HP>Player.MAXHP) Player.HP=Player.MAXHP;
@@ -3897,15 +3718,11 @@ bool fight_to_KKKKK()
             print("kkksc06：蒟蒻！！！纳命来！！造成");
             printf("%d",sd);
             print("点伤害！");
-            if (Player.HP<=0)
-            {
+            if (Player.HP<=0){
                 print("你被打死了！");
                 exit(1);
             }
-        }
-        else
-        if (qwe=='3')
-        {
+        }else if (qwe=='3'){
             int sd;
             system("cls");
             printf("q.你有%d张回血符！\n",Player.k1);
@@ -3918,8 +3735,7 @@ bool fight_to_KKKKK()
             printf("i.你有%d张独孤九剑符！\n",Player.k8);
             printf("o.你有%d张钠水神功符！\n",Player.k9);
             qwe=_getch();
-            switch (qwe)
-            {
+            switch (qwe){
                 case 'q':if (Player.k1>=1){Player.k1--;print("感到一阵舒畅！HP+500");Player.HP+=500;}else print("你没有！");break;
                 case 'w':if (Player.k2>=1){Player.k2--;print("感觉一阵电流一般的快感流遍全身！HP+1000");Player.HP+=1000;}else print("你没有！");break;
                 case 'e':if (Player.k3>=1){Player.k3--;print("你的双手能使用不同的招式！伤害翻倍！");Player.ATK*=2;}else print("你没有！");break;
@@ -4001,8 +3817,7 @@ bool fight_to_KKKKK()
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
             printf("1.攻击   2.逃跑   3.技能  ");printf("\n");printf("\n");Sleep(200);system("cls");
-            if (HP<=0)
-            {
+            if (HP<=0){
                 print("你赢了！获得10000金币！1000经验值！然而面包不在这里！！");
                 Player.EXP+=1000000;
                 lvup();Player.HP+=378;if (Player.HP>Player.MAXHP) Player.HP=Player.MAXHP;
@@ -4016,8 +3831,7 @@ bool fight_to_KKKKK()
             print("kkksc06：面包是我的!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!v!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
             printf("%d",sd);
             print("点伤害！");
-            if (Player.HP<=0)
-            {
+            if (Player.HP<=0){
                 print("你被打死了！");
                 exit(1);
             }
@@ -4025,8 +3839,7 @@ bool fight_to_KKKKK()
         system("cls");
     }
 }
-int main()
-{
+int main(){
     print("洛谷王国的超级可爱的面包姐姐被kkksc06大魔王抓走啦！勇士！为了面包夹绿鸟！请救出面包姐姐吧！！");
     system("cls");
     srand(time(NULL));
@@ -4034,8 +3847,7 @@ int main()
     Player.LV=1;Player.EXP=0;Player.MAXEXP=500;
     Player.ATK=200;Player.DEF=5;
     Player.Money=100;
-    for (int i=1;i<=4;++i)
-    {
+    for (int i=1;i<=4;++i){
         cout<<"加载中|";
         Sleep(200);
         system("cls");
@@ -4057,108 +3869,81 @@ int main()
     Sleep(4000);
     system("cls");
     go(0);
-    while (1)
-    {
+    while (1){
         cout<<mapname[where]<<endl;
         for (int i=0;i<20;++i)
             cout<<maps[where][i]<<endl;
         printf("HP:   %d  /  %d",Player.HP,Player.MAXHP);
         qwe=_getch();
         system("cls");
-        switch (qwe)
-        {
+        switch (qwe){
             case 'w':if (maps[where][x-1][y]==' '){swap(maps[where][x-1][y],maps[where][x][y]);x-=1;};break;
             case 'a':if (maps[where][x][y-1]==' '){swap(maps[where][x][y-1],maps[where][x][y]);y-=1;};break;
             case 's':if (maps[where][x+1][y]==' '){swap(maps[where][x+1][y],maps[where][x][y]);x+=1;};break;
             case 'd':if (maps[where][x][y+1]==' '){swap(maps[where][x][y+1],maps[where][x][y]);y+=1;};break;
-            case 'f':
-            {
-                switch (where)
-                {
-                    case 0:
-                    {
+            case 'f':{
+                switch (where){
+                    case 0:{
                         if (x==2&&y==4)
                             shop1();
-                        else
-                        if (x==6&&y==4)
+                        else if (x==6&&y==4)
                             shop2();
-                        else
-                        if (x==10&&y==4)
+                        else if (x==10&&y==4)
                             shop3();
-                        else
-                        if (x==7&&y==19)
+                        else if (x==7&&y==19)
                             go(1);
-                        else
-                        if (x==17&&y==15)
-                            switch (rand()%3+1)
-                            {
+                        else if (x==17&&y==15)
+                            switch (rand()%3+1){
                                 case 1:fight_to_jiangshi();break;
                                 case 2:fight_to_kulipa();break;
                                 case 3:fight_to_sheshou();break;
                             }
-                        else
-                        if (x==18&&y==15)
-                        {
+                        else if (x==18&&y==15){
                             fight_to_jiangshiwang();
                         }
                         break;
                     }
-                    case 1:
-                    {
+                    case 1:{
                         if (x==7&&y==0)
                             go(0);
-                        else
-                        if (x==19&&y==16)
+                        else if (x==19&&y==16)
                             go(2);
-                        else
-                        if (x==10&&y==9)
-                        {
+                        else if (x==10&&y==9){
                             fight_to_kkk();
                         }
                         break;
                     }
-                    case 2:
-                    {
+                    case 2:{
                         if (x==0&&y==16)
                             go(1);
-                        else
-                        if (x==9&&y==11)
+                        else if (x==9&&y==11)
                             sp();
-                        else
-                        if (x==7&&y==0)
+                        else if (x==7&&y==0)
                             go(3);
                         break;
                     }
-                    case 3:
-                    {
+                    case 3:{
                         if (x==7&&y==19)
                             go(2);
-                        else
-                        if (x==1&&y==1)
+                        else if (x==1&&y==1)
                             shop4();
-                        else
-                        if (x==11&&y==0)
+                        else if (x==11&&y==0)
                             go(4);
                         if (x==17&&y==15)
-                            switch(rand()%3+1)
-                            {
+                            switch(rand()%3+1){
                                 case 1:fight_to_kkkshiwei();break;
                                 case 2:fight_to_kkkmofashi();break;
                                 case 3:fight_to_cike();break;
                             }
-                        if (x==18&&y==15)
-                        {
+                        if (x==18&&y==15){
                             fight_to_kkkk();
                         }
                         break;
                     }
-                    case 4:
-                    {
+                    case 4:{
                         if (x==11&&y==19)
                             go(3);
-                        else
-                        if (x==10&&y==1)
-                        {
+                        else if (x==10&&y==1){
                             fight_to_KKKKK();
                         }
                         break;
@@ -4166,8 +3951,7 @@ int main()
                 }
                 break;
             }
-            case 'e':
-            {
+            case 'e':{
                 system("cls");
                 printf("你有%d枚金币！\n",Player.Money);
                 printf("你现在是%d级！\n",Player.LV);
@@ -4178,8 +3962,7 @@ int main()
                 system("cls");
                 break;
             }
-            case 'b':
-            {
+            case 'b':{
                 system("cls");
                 printf("1.大补丸  %d\n",Player.q1);
                 printf("2.剑气纵横丹  %d\n",Player.q2);
@@ -4197,46 +3980,40 @@ int main()
                 printf("e.坦克皮  %d\n",Player.d4);
                 printf("f.风王结界  %d\n",Player.d5);
                 qwe=_getch();
-                switch(qwe)
-                {
-                    case '1':
-                    {
-                        if (Player.q1>=1)
-                        {
+                switch(qwe){
+                    case '1':{
+                        if (Player.q1>=1){
                             Player.q1--;
                             Player.HP+=200;
                             print("你回了200点HP");
                             if (Player.HP>Player.MAXHP)
                                 Player.HP=Player.MAXHP;
                             system("cls");
-                        }break;
+                        }
+                        break;
                     }
-                    case '2':
-                    {
-                        if (Player.q2>=1)
-                        {
+                    case '2':{
+                        if (Player.q2>=1){
                             Player.q2--;
                             Player.HP+=200;
                             Player.ATK+=20;
                             print("你觉得自己充满力气，攻击力上升20点");
                             system("cls");
-                        }break;
+                        }
+                        break;
                     }
-                    case '3':
-                    {
-                        if (Player.q3>=1)
-                        {
+                    case '3':{
+                        if (Player.q3>=1){
                             Player.q3--;
                             Player.HP+=200;
                             Player.DEF+=5;
                             print("你觉得自己刀枪不入，防御力上升5点");
                             system("cls");
-                        }break;
+                        }
+                        break;
                     }
-                    case '4':
-                    {
-                        if (Player.q4>=1)
-                        {
+                    case '4':{
+                        if (Player.q4>=1){
                             Player.q4--;
                             Player.HP+=200;
                             Player.MAXHP+=60;
@@ -4245,10 +4022,8 @@ int main()
                         }
                         break;
                     }
-                    case '5':
-                    {
-                        if (Player.q5>=1)
-                        {
+                    case '5':{
+                        if (Player.q5>=1){
                             Player.HP+=200;
                             print("你缓缓服下鹤顶红！");printf("\n");
                             print("你觉得自己时日不多了！");printf("\n");
@@ -4263,91 +4038,71 @@ int main()
                         }
                         break;
                     }
-                    case '6':
-                    {
-                        if (Player.s1>=1)
-                        {
+                    case '6':{
+                        if (Player.s1>=1){
                             Player.ATK+=100;
                             Player.s1--;
                         }
                         break;
                     }
-                    case '7':
-                    {
-                        if (Player.s2>=1)
-                        {
+                    case '7':{
+                        if (Player.s2>=1){
                             Player.ATK+=200;
                             Player.s2--;
                         }
                         break;
                     }
-                    case '8':
-                    {
-                        if (Player.s3>=1)
-                        {
+                    case '8':{
+                        if (Player.s3>=1){
                             Player.ATK+=300;
                             Player.s3--;
                         }
                         break;
                     }
-                    case '9':
-                    {
-                        if (Player.s4>=1)
-                        {
+                    case '9':{
+                        if (Player.s4>=1){
                             Player.ATK+=500;
                             Player.s4--;
                         }
                         break;
                     }
-                    case 'a':
-                    {
-                        if (Player.s5>=1)
-                        {
+                    case 'a':{
+                        if (Player.s5>=1){
                             Player.ATK+=1000;
                             Player.s5--;
                         }
                         break;
                     }
-                    case 'b':
-                    {
-                        if (Player.d1>=1)
-                        {
+                    case 'b':{
+                        if (Player.d1>=1){
                             Player.DEF+=10;
                             Player.d1--;
                         }
                         break;
                     }
-                    case 'c':
-                    {
-                        if (Player.d2>=1)
-                        {
+                    case 'c':{
+                        if (Player.d2>=1){
                             Player.DEF+=20;
                             Player.d2--;
                         }
                         break;
                     }
-                    case 'd':
-                    {
-                        if (Player.d3>=1)
-                        {
+                    case 'd':{
+                        if (Player.d3>=1){
                             Player.DEF+=30;
                             Player.d3--;
                         }
                         break;
                     }
-                    case 'e':
-                    {
-                        if (Player.d4>=1)
-                        {
+                    case 'e':{
+                        if (Player.d4>=1){
                             Player.DEF+=40;
                             Player.d4--;
                         }
                         break;
                     }
-                    case 'f':
-                    {
-                        if (Player.d5>=1)
-                        {
+                    case 'f':{
+                        if (Player.d5>=1){
                             Player.DEF+=100;
                             Player.d5--;
                         }
@@ -4357,8 +4112,7 @@ int main()
                 system("cls");
                 break;
             }
-            case 'q':
-            {
+            case 'q':{
                 system("cls");
                 printf("你有%d张回血符！\n",Player.k1);
                 printf("你有%d张凝神归元符！\n",Player.k2);

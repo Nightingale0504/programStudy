@@ -17,10 +17,6 @@ inline bool cmp(node a,node b){
 	return a.sum>b.sum;
 }
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	cin>>n>>m;
 	for(int i=1;i<=n;i++){
 		l=0;

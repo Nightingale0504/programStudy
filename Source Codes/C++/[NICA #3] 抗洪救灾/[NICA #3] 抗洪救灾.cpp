@@ -7,10 +7,6 @@ const int maxN=5e3+5;
 int n,k,m,sum;
 int a[maxN],b[maxN],c[maxN];
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld%lld%lld",&n,&k,&m);
 	for (int i=1;i<=n;i++){
 		scanf("%lld",&a[i]);

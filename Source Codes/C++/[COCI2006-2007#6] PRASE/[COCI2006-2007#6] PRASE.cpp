@@ -10,10 +10,6 @@ int n,abandon,rest;
 string name;
 map<string,int> mmap;
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld",&n);
 	for (int i=0;i<n;i++){
 		cin>>name;

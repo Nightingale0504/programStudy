@@ -11,10 +11,6 @@ int n,y,t,a[maxN];
 int mmin=INT_MAX,ans;
 string s;
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld",&n);
 	for (int i=2;i<=n;i++){
 		cin>>s;

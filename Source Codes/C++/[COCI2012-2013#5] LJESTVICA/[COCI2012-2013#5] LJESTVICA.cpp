@@ -6,10 +6,6 @@ using namespace std;
 int x,y;
 string s;
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	cin>>s;
 	for (int i=0;i<=s.size()-1;i++){
 		if (i==0 || s[i-1]=='|'){

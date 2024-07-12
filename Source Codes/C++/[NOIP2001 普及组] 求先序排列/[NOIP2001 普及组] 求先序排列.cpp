@@ -16,10 +16,6 @@ void F(string s1,string s2){
 	F(s1.substr(l+1,s1.length()-l-1),s2.substr(l,s1.length()-l-1));
 }
 int main(){
-//	#ifndef ONLINE_JUDGE
-//		freopen("nightingale.in","r",stdin);
-//		freopen("nightingale.out","w",stdout);
-//	#endif
 	cin>>s1>>s2;
 	F(s1,s2);
 	return 0;

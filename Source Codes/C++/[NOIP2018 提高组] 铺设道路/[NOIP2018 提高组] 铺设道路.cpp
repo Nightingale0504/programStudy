@@ -5,10 +5,6 @@ using namespace std;
 #define int long long
 int n,a[100005],ans;
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld",&n);
 	for (int i=1;i<=n;i++){
 		scanf("%lld",&a[i]);

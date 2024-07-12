@@ -7,10 +7,6 @@ const int maxN=1005;
 int f[maxN],n;
 int prime[maxN],cnt,k;
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld%lld",&n,&k);
 	for (int i=2;i<=n;i++){
 		if (f[i]==0){

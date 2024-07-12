@@ -7,10 +7,6 @@ using namespace std;
 int x,y,z;
 int a[15];
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	for (int i=1;i<=9;i++){
     	a[i]=i;
     }

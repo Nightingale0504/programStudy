@@ -7,10 +7,6 @@ using namespace std;
 const int maxN=7e4+5;
 int n,k,sum[maxN],s;
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld%lld",&n,&k);
 	for (int i=1;i<=n;i++){
 		sum[i]=sum[i-1]+i;

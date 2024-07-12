@@ -6,10 +6,6 @@ using namespace std;
 int n;
 long long box[maxN],wand[maxN];
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%d",&n);
 	for (int i=0;i<n;i++){
 		scanf("%lld",&wand[i]);

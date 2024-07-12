@@ -5,10 +5,6 @@ using namespace std;
 int k,n,t,x;
 char c;
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%d%d",&k,&n);
 	for (int i=0;i<n;i++){
 		scanf("%d",&x);

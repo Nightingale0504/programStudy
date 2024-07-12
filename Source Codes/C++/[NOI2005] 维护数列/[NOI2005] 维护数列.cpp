@@ -21,10 +21,6 @@ inline void build(int i,int l,int r){
 	tree[i].mmax=max(tree[2*i].mmax,tree[2*i+1].mmax);
 }
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld%lld",&n,&k);
 	for (int i=1;i<=n;i++){
 		scanf("%lld",&a[i]);

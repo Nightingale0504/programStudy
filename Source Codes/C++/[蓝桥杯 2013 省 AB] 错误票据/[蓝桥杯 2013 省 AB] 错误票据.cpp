@@ -6,10 +6,6 @@ using namespace std;
 int n,length,ansID,ansID2,i; 
 int idList[maxN];
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%d",&n);
 	while (scanf("%d",&idList[i])!=EOF){
 		i++;

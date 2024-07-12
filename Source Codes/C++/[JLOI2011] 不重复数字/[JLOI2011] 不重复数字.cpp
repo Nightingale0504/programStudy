@@ -7,10 +7,6 @@ using namespace std;
 int T,n,tmp;
 map<int,int> mmap;
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld",&T);
 	while (T--){
 		mmap.clear();

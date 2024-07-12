@@ -8,10 +8,6 @@ const int maxN=5e3+5;
 int n,m,mmax=INT_MIN;
 int x,y,k,a[maxN][maxN],sum[maxN][maxN];
 signed main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%lld%lld",&n,&m);
 	while (n--){
 		scanf("%lld%lld%lld",&x,&y,&k);

@@ -17,10 +17,6 @@ struct score{
 }a[1005];
 int t;
 int main(){
-	#ifndef ONLINE_JUDGE
-		freopen("nightingale.in","r",stdin);
-		freopen("nightingale.out","w",stdout);
-	#endif
 	scanf("%d",&t);
 	for (int i=0;i<t;i++){
 		scanf("%d",&a[i].basic);

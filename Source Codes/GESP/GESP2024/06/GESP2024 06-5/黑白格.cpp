@@ -5,27 +5,23 @@
 using namespace std;
 #define int long long
 const int maxN=105;
-int n,m,k,ans=LLONG_MAX;
-char a[maxN][maxN];
+int n,m,k,ans=LLONG_MAX,dp[maxN][maxN];
+char t;
 signed main(){
 	scanf("%lld%lld%lld",&n,&m,&k);
-	for (register int i=0;i<n;i++){
-		scanf("%s",&a[i]);
+	for (int i=1;i<=n;i++){
+		for (int j=1;j<=m;j++){
+			scanf(" %c",&t);
+			dp[i][j]=dp[i-1][j]+dp[i][j-1]-dp[i-1][j-1]+t-'0';
+		}
 	}
-	for (register int i=0;i<n;i++){
-		for (register int j=0;j<m;j++){
-			for (register int x=i;x<n;x++){
-				for (register int y=j;y<m;y++){
-					int sum=0;
-					for (register int o=i;o<=x;o++){
-						for (register int p=j;p<=y;p++){
-							if (a[o][p]=='1'){
-								sum++;
-							}
-						}
-					}
+	for (int i=1;i<=n;i++){
+		for (int j=1;j<=m;j++){
+			for (int x=i;x<=n;x++){
+				for (int y=j;y<=m;y++){
+					int sum=dp[x][y]-dp[i-1][y]-dp[x][j-1]+dp[i-1][j-1],area=(x-i+1)*(y-j+1);
 					if (sum>=k){
-					   ans=min(ans,(x-i+1)*(y-j+1));
+						ans=min(ans,area);
 					}
 				}
 			}

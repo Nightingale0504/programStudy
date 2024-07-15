@@ -40,3 +40,9 @@
 *.in
 *.out
 *.ans
+
+#ffs
+*.ffs_db
+*.ffs_real
+*.ffs_batch
+*.ffs_lock

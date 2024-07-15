@@ -4,7 +4,7 @@
 using namespace std;
 #define int long long
 const int maxN=5e5+5;
-int n,m,t,tree[maxN][5],num[maxN]; 
+int n,m,t,cnt,tree[maxN][5],num[maxN]; 
 inline void insert(string s){
 	int p=0;
 	for (int i=0;i<s.length();i++){
@@ -30,9 +30,9 @@ inline int query(string s){
 }
 signed main(){
 	scanf("%lld%lld",&m,&n);
-	 for (int i=1;i<=m;i++){
-	 	scanf("%lld",&t);
-	 }
+	for (int i=1;i<=m;i++){
+		scanf("%lld",&t);
+	}
 	return 0;
 }
 

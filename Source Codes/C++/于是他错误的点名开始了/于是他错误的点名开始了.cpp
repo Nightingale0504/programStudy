@@ -1,11 +1,15 @@
 #include<iostream>
 #include<cstdio>
 #include<algorithm>
+#include<cstring>
+#include<string>
+#include<map>
 using namespace std;
 #define int long long
 const int maxN=5e5+5;
 int n,m,cnt,tree[maxN][26],num[maxN],sum;
 string s;
+map<string,int> mmap;
 inline void insert(string s){
 	int p=0;
 	for (int i=0;i<s.length();i++){
@@ -29,7 +33,8 @@ inline int query(string s){
 	}
 	return num[p];
 }
-signed main(){
+inline void method1(){
+	//Trie method.
 	scanf("%lld",&n);
 	while (n--){
 		cin>>s;
@@ -48,6 +53,30 @@ signed main(){
 			printf("REPEAT\n");
 		}
 	}
+} 
+inline void method2(){
+	// Map method.
+	scanf("%lld",&n);
+	while (n--){
+		cin>>s;
+		mmap[s]=1;
+	}
+	scanf("%lld",&m);
+	while (m--){
+		cin>>s;
+		sum=mmap[s];
+		if (sum==0){
+			printf("WRONG\n");
+		}else if (sum==1){
+			printf("OK\n");
+			mmap[s]=2;
+		}else if (sum==2){
+			printf("REPEAT\n");
+		}
+	}
+}
+signed main(){
+	method2();
 	return 0;
 }
 

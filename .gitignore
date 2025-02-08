@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+*.bat
+
+# Generation
+*.in
+*.out
+*.ans

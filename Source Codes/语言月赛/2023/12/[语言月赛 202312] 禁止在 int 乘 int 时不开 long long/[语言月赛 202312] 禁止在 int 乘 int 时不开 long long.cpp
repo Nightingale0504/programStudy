@@ -4,16 +4,14 @@
 #include<climits>
 using namespace std;
 #define int long long
-int minX,maxX;
-int minY,maxY;
-int tmp;
+int xl,xu,yl,yu;
 signed main(){
-	scanf("%lld%lld%lld%lld",&minX,&maxX,&minY,&maxY);
-	tmp=maxX*maxY;
-	if (tmp>=INT_MAX){
-		printf("long long int");
+	cin>>xl>>xu>>yl>>yu;
+	int ans1=xl*yl,ans2=xl*yu,ans3=xu*yl,ans4=xu*yu;
+	if(ans1>INT_MAX || ans1<INT_MIN ||ans2>INT_MAX || ans2<INT_MIN ||ans3>INT_MAX || ans3<INT_MIN || ans4>INT_MAX || ans4<INT_MIN){
+		cout<<"long long int";
 	}else{
-		printf("int");
+		cout<<"int";
 	}
 	return 0;
 }

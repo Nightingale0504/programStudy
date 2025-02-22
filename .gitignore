@@ -35,3 +35,8 @@
 *.in
 *.out
 *.ans
+
+# Zip file
+*.zip
+*.7z
+*.rar

@@ -1,6 +1,5 @@
 @echo off
-e:
-cd E:\programStudy
+cd C:\MyDocuments\programStudy
 git add .
 git commit -m "Update"
 git push

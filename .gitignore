@@ -40,3 +40,6 @@
 *.zip
 *.7z
 *.rar
+
+#FreeFileSync
+*.ffs_db

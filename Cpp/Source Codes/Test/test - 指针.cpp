@@ -1,4 +1,13 @@
-#include<bits/stdc++.h>
+#include<iostream>
+#include<cstdio>
+#include<algorithm>
+#include<cstring>
+#include<string>
+#include<map>
+#include<stack>
+#include<queue>
+#include<climits>
+#include<cmath>
 #define int long long
 using namespace std;
 struct node{
@@ -8,12 +17,12 @@ struct node{
 signed main(){
 	int a=10;
 	cout<<a<<"\n"<<&a<<"\n"<<*(&a)<<"\n";
-	// &: È¡µØÖ· *: ½âÒýÓÃ
-	// *(&a): È¡aµØÖ·¶ÔÓ¦µÄÖµ 
+	// &: È¡ï¿½ï¿½Ö· *: ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	// *(&a): È¡aï¿½ï¿½Ö·ï¿½ï¿½Ó¦ï¿½ï¿½Öµ 
 	int *p=&a;
 	cout<<p<<" "<<*p<<"\n";
-	// ½á¹¹ÌåÖ¸Õë
-	node b={114514,16,"ÕÅ²©ìÓ"};
+	// ï¿½á¹¹ï¿½ï¿½Ö¸ï¿½ï¿½
+	node b={114514,16,"ï¿½Å²ï¿½ï¿½ï¿½"};
 	node *q=&b;
 	cout<<b.age<<" "<<q->age<<" "; 
 	int c=1145141919810;

@@ -1,7 +1,6 @@
 #include<iostream>
 #include<cstdio>
 #include<algorithm>
-#include<climits>
 using namespace std;
 #define int long long
 int a[10][10],h[10],l[10],maxH,minL;

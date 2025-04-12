@@ -1,7 +1,6 @@
 #include<iostream>
 #include<cstdio>
 #include<algorithm>
-#include<climits>
 using namespace std;
 #define int long long
 int xl,xu,yl,yu;

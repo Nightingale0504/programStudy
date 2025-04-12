@@ -1,7 +1,6 @@
 #include<iostream>
 #include<cstdio>
 #include<algorithm>
-#include<climits>
 using namespace std;
 #define int long long
 double a,b,l,ans1,ans2,mmin=INT_MAX;

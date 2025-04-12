@@ -4,6 +4,11 @@
 #include<cstring>
 #include<string>
 #include<map>
+#include<stack>
+#include<queue>
+#include<climits>
+#include<cmath>
+#include<map>
 using namespace std;
 #define int long long
 int n,m,k;

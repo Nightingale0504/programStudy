@@ -1,4 +1,13 @@
-#include<bits/stdc++.h>
+#include<iostream>
+#include<cstdio>
+#include<algorithm>
+#include<cstring>
+#include<string>
+#include<map>
+#include<stack>
+#include<queue>
+#include<climits>
+#include<cmath>
 using namespace std;
 // part:define struct
 struct student{
@@ -38,19 +47,19 @@ int main(){
 	// part:calculation total awards
 	for (int i=0;i<n;i++){
 		a[i].name=stu[i].name;
-		if (stu[i].averpoint>80&&stu[i].nop>=1){ // ÔºÊ¿½±Ñ§½ð
+		if (stu[i].averpoint>80&&stu[i].nop>=1){ // ÔºÊ¿ï¿½ï¿½Ñ§ï¿½ï¿½
 			a[i].awards+=8000;
 		}
-		if (stu[i].averpoint>85&&stu[i].reviewpoint>80){ // ÎåËÄ½±Ñ§½ð
+		if (stu[i].averpoint>85&&stu[i].reviewpoint>80){ // ï¿½ï¿½ï¿½Ä½ï¿½Ñ§ï¿½ï¿½
 			a[i].awards+=4000;
 		}
-		if (stu[i].averpoint>90){ // ³É¼¨ÓÅÐã½±
+		if (stu[i].averpoint>90){ // ï¿½É¼ï¿½ï¿½ï¿½ï¿½ã½±
 			a[i].awards+=2000;
 		}
-		if (stu[i].averpoint>85&&stu[i].Isweststu=='Y'){ //Î÷²¿½±Ñ§½ð
+		if (stu[i].averpoint>85&&stu[i].Isweststu=='Y'){ //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ§ï¿½ï¿½
 			a[i].awards+=1000;
 		}
-		if (stu[i].reviewpoint>80&&stu[i].Isleader=='Y'){ // °à¼¶¹±Ï×½±
+		if (stu[i].reviewpoint>80&&stu[i].Isleader=='Y'){ // ï¿½à¼¶ï¿½ï¿½ï¿½×½ï¿½
 			a[i].awards+=850;
 		}
 	}

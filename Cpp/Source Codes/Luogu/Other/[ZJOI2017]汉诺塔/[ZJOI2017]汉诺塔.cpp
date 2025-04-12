@@ -1,4 +1,13 @@
-#include<bits/stdc++.h>
+#include<iostream>
+#include<cstdio>
+#include<algorithm>
+#include<cstring>
+#include<string>
+#include<map>
+#include<stack>
+#include<queue>
+#include<climits>
+#include<cmath>
 using namespace std;
 struct clc{
     int z,y,x;clc(int z=0,int y=0,int x=0):x(x),y(y),z(z){}

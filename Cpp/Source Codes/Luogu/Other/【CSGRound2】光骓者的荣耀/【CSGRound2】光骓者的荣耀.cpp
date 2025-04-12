@@ -1,7 +1,6 @@
 #include<iostream>
 #include<cstdio>
 #include<algorithm>
-#include<climits>
 using namespace std;
 #define int long long
 int n,k,m,mmax=LONG_LONG_MIN;

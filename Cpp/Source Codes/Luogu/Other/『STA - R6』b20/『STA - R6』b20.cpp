@@ -3,6 +3,11 @@
 #include<algorithm>
 #include<cstring>
 #include<string>
+#include<map>
+#include<stack>
+#include<queue>
+#include<climits>
+#include<cmath>
 using namespace std;
 #define int long long
 char c[25];

@@ -1,4 +1,13 @@
-#include<bits/stdc++.h>
+#include<iostream>
+#include<cstdio>
+#include<algorithm>
+#include<cstring>
+#include<string>
+#include<map>
+#include<stack>
+#include<queue>
+#include<climits>
+#include<cmath>
 using namespace std;
 int dx[4]={ -1,1,0,0 },dy[4]={ 0,0,-1,1 },book[105][105],a[105][105];
 int sx,sy,fx,fy,tx,ty,solve,n,m,t,newX,newY;

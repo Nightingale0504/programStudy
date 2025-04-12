@@ -1,9 +1,18 @@
-#include<bits/stdc++.h>
+#include<iostream>
+#include<cstdio>
+#include<algorithm>
+#include<cstring>
+#include<string>
+#include<map>
+#include<stack>
+#include<queue>
+#include<climits>
+#include<cmath>
 using namespace std;
 // part:define function
 void story(){
-	printf("从前有个庙，庙里有个老和尚。");
-	printf("老和尚给小和尚讲故事，讲的故事是：");
+	printf("锟斤拷前锟叫革拷锟斤拷锟斤拷锟斤拷锟斤拷锟叫革拷锟较猴拷锟叫★拷");
+	printf("锟较猴拷锟叫革拷小锟斤拷锟叫斤拷锟斤拷锟铰ｏ拷锟斤拷锟侥癸拷锟斤拷锟角ｏ拷");
 	story();
 }
 int main(){

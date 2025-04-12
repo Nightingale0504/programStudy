@@ -7,6 +7,12 @@
 #include<stack>
 #include<queue>
 #include<climits>
+#include<cmath>
+#include<map>
+#include<stack>
+#include<queue>
+#include<climits>
+#include<cmath>
 #define int long long
 using namespace std;
 string s,se;

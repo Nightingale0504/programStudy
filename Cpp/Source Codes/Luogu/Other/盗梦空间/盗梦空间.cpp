@@ -1,14 +1,23 @@
-#include<bits/stdc++.h>
+#include<iostream>
+#include<cstdio>
+#include<algorithm>
+#include<cstring>
+#include<string>
+#include<map>
+#include<stack>
+#include<queue>
+#include<climits>
+#include<cmath>
 using namespace std;
 // part:define function
 void createDream(int n,int m){
-	printf("ÕâÊÇµÚ%d²ãÃÎ¾³\n",n);
+	printf("ï¿½ï¿½ï¿½Çµï¿½%dï¿½ï¿½ï¿½Î¾ï¿½\n",n);
 	if (n==m){
-		printf("ÈÎÎñÍê³É\n");
+		printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n");
 		return ;
 	}
 	createDream(n+1,m);
-	printf("ÏÖÔÚÄã»Øµ½ÁËµÚ%d²ãÃÎ¾³\n",n);
+	printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Øµï¿½ï¿½Ëµï¿½%dï¿½ï¿½ï¿½Î¾ï¿½\n",n);
 } 
 int main(){
 	// part:define variable

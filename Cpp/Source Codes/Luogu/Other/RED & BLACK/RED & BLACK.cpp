@@ -1,4 +1,13 @@
-#include<bits/stdc++.h> 
+#include<iostream>
+#include<cstdio>
+#include<algorithm>
+#include<cstring>
+#include<string>
+#include<map>
+#include<stack>
+#include<queue>
+#include<climits>
+#include<cmath> 
 using namespace std;
 int w,h,x,y,sum=0;
 int dir[4][2]={ {1,0},{-1,0},{0,1},{0,-1} };

@@ -1,7 +1,4 @@
-#include<iostream>
-#include<cstdio>
-#include<cmath>
-#include<algorithm>
+#include<bits/stdc++.h> 
 using namespace std;
 long long k,n,d,e,m,mid;
 int main(){

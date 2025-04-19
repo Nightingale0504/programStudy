@@ -1,8 +1,4 @@
-#include<iostream>
-#include<cstdio>
-#include<algorithm>
-#include<stack>
-#include<climits>
+#include<bits/stdc++.h> 
 using namespace std;
 #define int long long
 const int maxN=1e6+5;

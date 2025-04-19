@@ -1,13 +1,4 @@
-#include<iostream>
-#include<cstdio>
-#include<algorithm>
-#include<cstring>
-#include<string>
-#include<map>
-#include<stack>
-#include<queue>
-#include<climits>
-#include<cmath>
+#include<bits/stdc++.h> 
 using namespace std;
 int n,m;
 int dx[4]={ -1,1,0,0 };

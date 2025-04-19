@@ -1,8 +1,4 @@
-#include<iostream>
-#include<cstdio>
-#include<algorithm>
-#include<cstring>
-#include<cmath>
+#include<bits/stdc++.h> 
 using namespace std;
 int n,m,r,c,matrix[20][20];
 int f[20][20],dis[20],delta[20][20];

@@ -1,6 +1,4 @@
-#include<iostream>
-#include<cstdio>
-#include<algorithm>
+#include<bits/stdc++.h> 
 using namespace std;
 int cnt;
 int ans[1500],start,final;

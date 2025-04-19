@@ -1,7 +1,4 @@
-#include<iostream>
-#include<cstdio>
-#include<algorithm>
-#include<cmath>
+#include<bits/stdc++.h> 
 using namespace std;
 typedef long long ll;
 ll x,y;

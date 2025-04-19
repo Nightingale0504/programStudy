@@ -1,7 +1,4 @@
-#include<iostream>
-#include<cstdio>
-#include<algorithm>
-#include<cstring>
+#include<bits/stdc++.h> 
 using namespace std;
 bool minefield[105][105];
 int main(){

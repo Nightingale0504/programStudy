@@ -1,7 +1,4 @@
-#include<iostream>
-#include<cstdio>
-#include<algorithm>
-#include<cstring>
+#include<bits/stdc++.h> 
 const int maxN=3e4;
 using namespace std;
 int a[maxN]={ 0 },w,n,group=0,bag,tmp;

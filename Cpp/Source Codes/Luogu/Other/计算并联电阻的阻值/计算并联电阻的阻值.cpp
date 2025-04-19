@@ -1,6 +1,4 @@
-#include<iostream>
-#include<cstdio>
-#include<algorithm>
+#include<bits/stdc++.h> 
 using namespace std;
 #define int long long
 double R,r1,r2;

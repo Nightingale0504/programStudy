@@ -1,6 +1,4 @@
-#include<iostream>
-#include<cstdio>
-#include<algorithm>
+#include<bits/stdc++.h> 
 #include<map>
 #include<climits>
 using namespace std;

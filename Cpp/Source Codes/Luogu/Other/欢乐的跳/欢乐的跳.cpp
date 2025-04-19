@@ -1,7 +1,4 @@
-#include<iostream>
-#include<cstdio>
-#include<algorithm>
-#include<cmath>
+#include<bits/stdc++.h> 
 using namespace std;
 #define int long long
 int a[1005],c[1005],n;

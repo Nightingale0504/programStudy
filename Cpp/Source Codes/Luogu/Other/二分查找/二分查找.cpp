@@ -1,6 +1,4 @@
-#include<iostream>
-#include<cstdio>
-#include<algorithm>
+#include<bits/stdc++.h> 
 using namespace std;
 int n,x,a[10005];
 int main(){

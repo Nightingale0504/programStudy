@@ -1,6 +1,4 @@
-#include<iostream>
-#include<cstdio>
-#include<algorithm>
+#include<bits/stdc++.h> 
 using namespace std;
 int sum=0;
 void searchSum(int begin,int end,int data[]){

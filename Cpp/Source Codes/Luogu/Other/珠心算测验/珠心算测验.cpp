@@ -1,6 +1,4 @@
-#include<iostream>
-#include<cstdio>
-#include<algorithm>
+#include<bits/stdc++.h> 
 using namespace std;
 const int M=20005;
 int t[M],g[M];

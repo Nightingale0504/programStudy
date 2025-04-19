@@ -1,6 +1,4 @@
-#include<iostream>
-#include<cstdio>
-#include<algorithm>
+#include<bits/stdc++.h> 
 using namespace std;
 int n;
 char a[15][15],b[15][15],c[15][15],d[15][15];

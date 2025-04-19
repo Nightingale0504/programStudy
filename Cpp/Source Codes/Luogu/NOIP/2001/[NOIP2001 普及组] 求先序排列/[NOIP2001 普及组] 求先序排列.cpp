@@ -1,7 +1,4 @@
-#include<iostream>
-#include<cstdio>
-#include<algorithm>
-#include<cstring>
+#include<bits/stdc++.h> 
 using namespace std;
 char root;
 string s1,s2;

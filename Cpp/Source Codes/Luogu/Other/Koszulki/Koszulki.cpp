@@ -1,6 +1,4 @@
-#include<iostream>
-#include<cstdio>
-#include<algorithm>
+#include<bits/stdc++.h> 
 using namespace std;
 const int maxN=2*1e3+10;
 int a[maxN],b[135],k,ans,n,Max=-1;

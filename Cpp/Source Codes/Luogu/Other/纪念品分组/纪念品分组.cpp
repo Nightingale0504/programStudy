@@ -1,6 +1,4 @@
-#include<iostream>
-#include<cstdio>
-#include<algorithm>
+#include<bits/stdc++.h> 
 const int maxN=3e4;
 using namespace std;
 bool cmp(int x,int y){

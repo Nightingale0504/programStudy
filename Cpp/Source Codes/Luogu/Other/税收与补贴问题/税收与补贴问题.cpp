@@ -1,6 +1,4 @@
-#include<iostream>
-#include<cstdio>
-#include<algorithm>
+#include<bits/stdc++.h> 
 using namespace std;
 int x,x1,a[10001],b[10001],change,t=1,i,j,s,flag1,flag2,n1,n2,flag;
 int mscore(int a,int b)

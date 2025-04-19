@@ -1,8 +1,4 @@
-#include<iostream>
-#include<cstdio>
-#include<algorithm>
-#include<queue>
-#include<cstring>
+#include<bits/stdc++.h> 
 using namespace std;
 #define int long long
 #define MIN(a,b,c) if (a>=0 && b>=0) death[a][b]=min(death[a][b],c)

@@ -1,8 +1,4 @@
-#include<iostream>
-#include<cstdio>
-#include<cmath>
-#include<algorithm>
-#include<cstring>
+#include<bits/stdc++.h> 
 using namespace std;
 int v[5]={ 0,3,4,5,6 };
 int w[5]={ 0,2,3,4,5 };

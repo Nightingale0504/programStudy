@@ -1,13 +1,4 @@
-#include<iostream>
-#include<cstdio>
-#include<algorithm>
-#include<cstring>
-#include<string>
-#include<map>
-#include<stack>
-#include<queue>
-#include<climits>
-#include<cmath>
+#include<bits/stdc++.h> 
 #include<cctype>
 using namespace std;
 #define int long long

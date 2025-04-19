@@ -1,7 +1,4 @@
-#include<iostream>
-#include<cstdio>
-#include<algorithm>
-#include<queue>
+#include<bits/stdc++.h> 
 using namespace std;
 #define int long long
 const int maxN=1e5+5,maxM=2e5+5;

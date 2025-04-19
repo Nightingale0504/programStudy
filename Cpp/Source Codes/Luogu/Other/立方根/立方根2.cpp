@@ -1,21 +1,18 @@
-#include<iostream>
-#include<cstdio>
-#include<algorithm>
-#include<cmath>
+#include<bits/stdc++.h> 
 using namespace std;
 #define int long long
 int n;
 signed main(){
 	scanf("%lld",&n);
 	// method 1
-	printf("Method 1:±©Á¦Ã¶¾Ù\n");
+	printf("Method 1:ï¿½ï¿½ï¿½ï¿½Ã¶ï¿½ï¿½\n");
 	for (int i=1;i<=1e5;i++){
 		if (i*i*i<=n && (i+1)*(i+1)*(i+1)>n){
 			printf("%lld\n",i);
 		}
 	}
 	// method 2
-	printf("Method 2:¶þ·Ö\n");
+	printf("Method 2:ï¿½ï¿½ï¿½ï¿½\n");
 	int left=1,right=1e5,ans;
 	while (left<=right){
 		int mid=(left+right)>>1;
@@ -28,7 +25,7 @@ signed main(){
 	}
 	printf("%lld\n",ans);
 	// method 3
-	printf("Method 3:cbrtº¯Êý\n");
+	printf("Method 3:cbrtï¿½ï¿½ï¿½ï¿½\n");
 	printf("%.0f",cbrt(n));
 	return 0;
 }

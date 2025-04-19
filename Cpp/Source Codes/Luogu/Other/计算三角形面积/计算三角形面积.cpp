@@ -1,7 +1,4 @@
-#include<iostream>
-#include<cstdio>
-#include<algorithm>
-#include<cmath>
+#include<bits/stdc++.h> 
 using namespace std;
 #define int long long
 double x[3],y[3],a,b,c,p,ans;

@@ -1,6 +1,4 @@
-#include<iostream>
-#include<cstdio>
-#include<algorithm>
+#include<bits/stdc++.h> 
 using namespace std;
 #define int long long
 int k,target,num;
@@ -43,7 +41,7 @@ signed main(){
 				printf("\n");
 			}
 		}
-		printf("\nÒ»¹²ÓĞ %lld ¸ö¿ìÀÖÊı",num);
+		printf("\nÒ»ï¿½ï¿½ï¿½ï¿½ %lld ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½",num);
 	}
 	return 0;
 }

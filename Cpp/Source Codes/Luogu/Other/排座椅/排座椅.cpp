@@ -1,8 +1,4 @@
-#include<iostream>
-#include<cstdio>
-#include<algorithm>
-#include<cstring>
-#include<cmath> 
+#include<bits/stdc++.h>  
 using namespace std;
 int m,n,k,l,d;
 int x[1005],y[1005];

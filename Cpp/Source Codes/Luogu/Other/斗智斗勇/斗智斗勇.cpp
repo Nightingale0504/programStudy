@@ -1,6 +1,4 @@
-#include<iostream>
-#include<cstdio>
-#include<algorithm>
+#include<bits/stdc++.h> 
 using namespace std;
 int f[4][2]={ { 0,1 },{ 0,-1 },{ 1,0 },{ -1,0 } };
 int m,n,t,sx,sy,ex,ey,ans=INT_MAX;

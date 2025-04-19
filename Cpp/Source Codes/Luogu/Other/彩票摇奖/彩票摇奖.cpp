@@ -1,7 +1,4 @@
-#include<iostream>
-#include<cstdio>
-#include<algorithm>
-#include<cstring>
+#include<bits/stdc++.h> 
 using namespace std;
 int main(){
 	int n,a[10],num[10]={ 0 };

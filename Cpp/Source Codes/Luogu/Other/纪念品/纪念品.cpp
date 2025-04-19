@@ -1,6 +1,4 @@
-#include<iostream>
-#include<cstdio>
-#include<algorithm>
+#include<bits/stdc++.h> 
 using namespace std;
 const int maxN=1e4+5;
 int t,n,m,a[maxN][maxN],dp[105][maxN]; 

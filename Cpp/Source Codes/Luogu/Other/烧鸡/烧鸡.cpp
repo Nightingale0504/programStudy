@@ -1,6 +1,4 @@
-#include<iostream>
-#include<cstdio>
-#include<algorithm>
+#include<bits/stdc++.h> 
 using namespace std;
 #define rep(i,a,b) for (int i=max(1,a);i<=min(3,b);i++)
 int li[60000][10],n,ans,cnt=10;

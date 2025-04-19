@@ -1,6 +1,4 @@
-#include<iostream>
-#include<cstdio>
-#include<algorithm>
+#include<bits/stdc++.h> 
 using namespace std;
 #define int long long
 int n,finalCost,fishCost[105],oilCost[105],mmin=INT_MAX;

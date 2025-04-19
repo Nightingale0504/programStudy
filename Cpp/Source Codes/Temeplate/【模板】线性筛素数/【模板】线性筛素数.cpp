@@ -1,6 +1,4 @@
-#include<iostream>
-#include<cstdio>
-#include<algorithm>
+#include<bits/stdc++.h> 
 using namespace std;
 const int maxN=1e8+5;
 int n,m,cnt,isPrime[maxN];

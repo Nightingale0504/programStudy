@@ -1,6 +1,4 @@
-#include<cstdio>
-#include<cmath>
-#include<algorithm>
+#include<bits/stdc++.h> 
 using namespace std;
 const int M=15;
 int a[M],b[M],n,ans=0x7fffffff;

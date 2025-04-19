@@ -1,7 +1,4 @@
-#include<iostream>
-#include<cstdio>
-#include<algorithm>
-#include<queue> 
+#include<bits/stdc++.h>  
 #include<cstring>
 #include<string.h>
 using namespace std;

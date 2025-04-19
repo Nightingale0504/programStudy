@@ -1,9 +1,4 @@
-#include<iostream>
-#include<cstdio>
-#include<algorithm>
-#include<queue>
-#include<cstring>
-#include<string>
+#include<bits/stdc++.h> 
 using namespace std;
 #define int long long
 queue<int> que;

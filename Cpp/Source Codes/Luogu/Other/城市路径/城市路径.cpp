@@ -1,7 +1,4 @@
-#include<iostream>
-#include<cstdio>
-#include<algorithm>
-#include<cstring>
+#include<bits/stdc++.h> 
 #include<string.h>
 using namespace std;
 int n,m,map[105][105],book[105],answerStorage[105],tx,ty;

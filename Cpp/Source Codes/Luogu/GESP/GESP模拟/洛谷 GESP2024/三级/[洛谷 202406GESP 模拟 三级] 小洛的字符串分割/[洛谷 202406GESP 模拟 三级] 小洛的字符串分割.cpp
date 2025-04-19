@@ -1,13 +1,4 @@
-#include<iostream>
-#include<cstdio>
-#include<algorithm>
-#include<cstring>
-#include<string>
-#include<map>
-#include<stack>
-#include<queue>
-#include<climits>
-#include<cmath>
+#include<bits/stdc++.h> 
 using namespace std;
 #define int long long
 const int maxS=1e6+5;

@@ -1,6 +1,4 @@
-#include<iostream>
-#include<cstdio>
-#include<algorithm>
+#include<bits/stdc++.h> 
 using namespace std;
 #define ll long long
 const int fx[10]={ 0,-2,-1,1,2,2,1,-1,-2 };

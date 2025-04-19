@@ -1,6 +1,4 @@
-#include<iostream>
-#include<cstdio>
-#include<cmath>
+#include<bits/stdc++.h> 
 using namespace std;
 int main(){
 	int n,a[100005],m,x,l,r;

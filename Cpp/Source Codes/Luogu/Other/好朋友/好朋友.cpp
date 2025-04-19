@@ -1,7 +1,4 @@
-#include<iostream>
-#include<cstdio>
-#include<algorithm>
-#include<cstdlib>
+#include<bits/stdc++.h> 
 using namespace std;
 #define int long long
 int a[17]={284,1210,2924,5564,6386,10856,14595,18416,66992,71145,76084,87633,88730};

@@ -1,7 +1,4 @@
-#include<iostream>
-#include<cstdio>
-#include<algorithm>
-#include<deque>
+#include<bits/stdc++.h> 
 using namespace std;
 #define int long long
 int s,num,m;

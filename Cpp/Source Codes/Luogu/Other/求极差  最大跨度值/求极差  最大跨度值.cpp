@@ -1,6 +1,4 @@
-#include<iostream>
-#include<cstdio>
-#include<algorithm>
+#include<bits/stdc++.h> 
 using namespace std;
 int n,tmp,minNum=1e6,maxNum=1e-6,ans;
 int main(){

@@ -1,7 +1,4 @@
-#include<iostream>
-#include<cstdio>
-#include<algorithm>
-#include<cmath>
+#include<bits/stdc++.h> 
 using namespace std;
 void mov(unsigned long long n,char a,char b,char c){
 	if (n==1){
@@ -17,7 +14,7 @@ int main(){
 	scanf("%d",&n);
 	mov(n,'A','B','C');
 	i=pow(2,n)-1;
-	printf("%s%d%s","¹²ÐèÒÆ¶¯",i,"´Î");
+	printf("%s%d%s","ï¿½ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½",i,"ï¿½ï¿½");
 	return 0;
 }
 

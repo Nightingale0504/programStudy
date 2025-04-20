@@ -54,7 +54,7 @@ dkms.conf
 
 ### C++ ###
 # Prerequisites
-
+CppProperties.json
 # Compiled Object files
 *.slo
 
@@ -739,3 +739,6 @@ sync.ffs_db
 #Special
 *.txt
 *.ini
+*.in
+*.out
+*.ans

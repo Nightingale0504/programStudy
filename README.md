@@ -1,2 +1,2 @@
 # programStudy
-My programs(in C++) backup repo.
+My programs backup repo.

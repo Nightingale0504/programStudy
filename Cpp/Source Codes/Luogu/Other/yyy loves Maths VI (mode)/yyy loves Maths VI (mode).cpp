@@ -1,6 +1,4 @@
-#include<bits/stdc++.h> 
-#include<map>
-#include<climits>
+#include<bits/stdc++.h>
 using namespace std;
 #define int long long
 int n,tmp,ans;

@@ -1,7 +1,4 @@
-#include<iostream>
-#include<cstdio>
-#include<queue>
-#include<algorithm>
+#include<bits/stdc++.h> 
 using namespace std;
 queue<int>que;
 int main(){

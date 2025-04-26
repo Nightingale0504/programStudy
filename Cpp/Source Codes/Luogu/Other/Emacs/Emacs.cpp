@@ -1,6 +1,4 @@
-#include<cstdio>
-#include<iostream>
-#include<algorithm>
+#include<bits/stdc++.h> 
 using namespace std;
 #define maxN 105
 char field[maxN][maxN];

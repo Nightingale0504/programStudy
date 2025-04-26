@@ -1,8 +1,4 @@
-#include<cstdio>
-#include<iostream>
-#include<cstring>
-#include<vector>
-#include<queue>
+#include<bits/stdc++.h> 
 #define LL long long
 using namespace std;
 int n,p,t1,t2,b[305][305],cnt[305],maxx,dis[305];

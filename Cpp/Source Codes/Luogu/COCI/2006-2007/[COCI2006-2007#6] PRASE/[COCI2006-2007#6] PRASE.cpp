@@ -1,7 +1,4 @@
 #include<bits/stdc++.h> 
-#include<map>
-#include<cstring>
-#include<string>
 using namespace std;
 #define int long long
 int n,abandon,rest;

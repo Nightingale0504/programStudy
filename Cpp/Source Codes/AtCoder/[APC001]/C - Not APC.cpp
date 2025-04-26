@@ -1,5 +1,4 @@
-#include <iostream>
-#include <cstring>
+#include<bits/stdc++.h> 
 using namespace std;
 const int MAX_LEN=1000000;
 char S[MAX_LEN+1];

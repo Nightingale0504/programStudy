@@ -1,6 +1,4 @@
-#include<bits/stdc++.h> 
-#include<map>
-#include<cctype>
+#include<bits/stdc++.h>
 using namespace std;
 #define int long long
 int n,m,k,a[23][23],w,s;

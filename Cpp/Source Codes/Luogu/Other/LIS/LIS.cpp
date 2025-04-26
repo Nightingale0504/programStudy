@@ -1,7 +1,4 @@
-#include<iostream>
-#include<cstdio>
-#include<climits>
-#include<algorithm>
+#include<bits/stdc++.h> 
 using namespace std;
 int n,a[10005],dp[10005],mmax=INT_MIN;
 int main(){

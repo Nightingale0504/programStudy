@@ -1,5 +1,4 @@
-#include<iostream>
-#include<cstdio>
+#include<bits/stdc++.h> 
 using namespace std;
 struct Node{
 	float weight,value,preWeightValue;

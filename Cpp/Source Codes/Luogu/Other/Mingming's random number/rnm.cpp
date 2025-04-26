@@ -1,5 +1,4 @@
-#include<bits/stdc++.h> 
-#include<set>
+#include<bits/stdc++.h>
 using namespace std;
 set<int>s;
 int n,a[105];

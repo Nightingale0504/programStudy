@@ -1,13 +1,7 @@
-#include <iostream>
-#include <vector>
-#include <fstream>
-#include <conio.h>
-#include <cstdlib>
-#include <ctime>
-
+#include<bits/stdc++.h> 
 using namespace std;
 
-const int BOARD_SIZE = 4;  // ÐÞ¸ÄºóµÄ³£Á¿Ãû
+const int BOARD_SIZE = 4;  // ï¿½Þ¸Äºï¿½Ä³ï¿½ï¿½ï¿½ï¿½ï¿½
 int score = 0;
 
 class Game {
@@ -89,7 +83,7 @@ public:
 
     void display() {
         system("cls");
-        cout << "·ÖÊý: " << score << "\n\n";
+        cout << "ï¿½ï¿½ï¿½ï¿½: " << score << "\n\n";
         for (auto &row : board) {
             for (int num : row) {
                 if (num) printf("%4d", num);
@@ -101,7 +95,7 @@ public:
 
     bool move(int dir) {
         moved = false;
-        // ·½Ïò¶ÔÓ¦: 0:ÉÏ 1:ÓÒ 2:ÏÂ 3:×ó
+        // ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦: 0:ï¿½ï¿½ 1:ï¿½ï¿½ 2:ï¿½ï¿½ 3:ï¿½ï¿½
         for (int i = 0; i < BOARD_SIZE; i++) {
             for (int j = 0; j < BOARD_SIZE; j++) {
                 int row = (dir == 2) ? BOARD_SIZE-1 - j : j;
@@ -137,20 +131,20 @@ public:
     }
 
     void saveGame(const string& filename) {
-        ofstream file((filename + ".sav").c_str()); // ¼æÈÝÎÄ¼þÃû´¦Àí
+        ofstream file((filename + ".sav").c_str()); // ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         file << score << "\n";
         for (auto &row : board)
             for (int num : row)
                 file << num << " ";
         file.close();
-        cout << "ÓÎÏ·ÒÑ±£´æ£¡°´ÈÎÒâ¼ü¼ÌÐø...";
+        cout << "ï¿½ï¿½Ï·ï¿½Ñ±ï¿½ï¿½æ£¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½...";
         _getch();
     }
 
     void loadGame(const string& filename) {
         ifstream file((filename + ".sav").c_str());
         if (!file) {
-            cout << "´æµµ²»´æÔÚ£¡°´ÈÎÒâ¼ü¼ÌÐø...";
+            cout << "ï¿½æµµï¿½ï¿½ï¿½ï¿½ï¿½Ú£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½...";
             _getch();
             return;
         }
@@ -165,26 +159,26 @@ public:
 int getDirection() {
     if (!_kbhit()) return -1;
     int ch = _getch();
-    if (ch == 0 || ch == 0xE0) {  // ´¦ÀíÀ©Õ¹¼ü
+    if (ch == 0 || ch == 0xE0) {  // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ¹ï¿½ï¿½
         ch = _getch();
         switch(ch) {
-            case 72: return 0; // ÉÏ
-            case 77: return 1; // ÓÒ
-            case 80: return 2; // ÏÂ
-            case 75: return 3; // ×ó
+            case 72: return 0; // ï¿½ï¿½
+            case 77: return 1; // ï¿½ï¿½
+            case 80: return 2; // ï¿½ï¿½
+            case 75: return 3; // ï¿½ï¿½
         }
     }
-    else if (ch == 's' || ch == 'S') return 4; // ±£´æÓÎÏ·
+    else if (ch == 's' || ch == 'S') return 4; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï·
     return -1;
 }
 
 void mainMenu() {
     system("cls");
-    cout << "=== 2048ÓÎÏ· ===\n";
-    cout << "1. ÐÂÓÎÏ·\n";
-    cout << "2. ¼ÓÔØ´æµµ\n";
-    cout << "3. ÍË³ö\n";
-    cout << "ÇëÑ¡Ôñ: ";
+    cout << "=== 2048ï¿½ï¿½Ï· ===\n";
+    cout << "1. ï¿½ï¿½ï¿½ï¿½Ï·\n";
+    cout << "2. ï¿½ï¿½ï¿½Ø´æµµ\n";
+    cout << "3. ï¿½Ë³ï¿½\n";
+    cout << "ï¿½ï¿½Ñ¡ï¿½ï¿½: ";
 }
 
 int main() {
@@ -196,14 +190,14 @@ int main() {
         mainMenu();
         int choice;
         cin >> choice;
-        cin.ignore();  // Çå³ýÊäÈë»º³åÇø
+        cin.ignore();  // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë»ºï¿½ï¿½ï¿½ï¿½
         
         if (choice == 1) {
             game = Game();
             break;
         } else if (choice == 2) {
             string filename;
-            cout << "ÊäÈë´æµµÎÄ¼þÃû£¨ÎÞºó×º£©: ";
+            cout << "ï¿½ï¿½ï¿½ï¿½æµµï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þºï¿½×ºï¿½ï¿½: ";
             getline(cin, filename);
             game.loadGame(filename);
             gameLoaded = true;
@@ -216,16 +210,16 @@ int main() {
     while(true) {
         game.display();
         if (game.isGameOver()) {
-            cout << "\nÓÎÏ·½áÊø£¡×îÖÕµÃ·Ö: " << score << endl;
+            cout << "\nï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÕµÃ·ï¿½: " << score << endl;
             break;
         }
         
         int dir = getDirection();
         if (dir == -1) continue;
         
-        if (dir == 4) { // ±£´æÓÎÏ·
+        if (dir == 4) { // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï·
             string filename;
-            cout << "ÊäÈë´æµµÎÄ¼þÃû£¨ÎÞºó×º£©: ";
+            cout << "ï¿½ï¿½ï¿½ï¿½æµµï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þºï¿½×ºï¿½ï¿½: ";
             getline(cin, filename);
             game.saveGame(filename);
             continue;
@@ -236,7 +230,7 @@ int main() {
         }
     }
     
-    cout << "°´ÈÎÒâ¼üÍË³ö...";
+    cout << "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë³ï¿½...";
     _getch();
     return 0;
 }

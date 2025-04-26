@@ -1,5 +1,4 @@
 #include<bits/stdc++.h> 
-#include<ctime>
 using namespace std;
 int main(){
 	int n,ans=0;

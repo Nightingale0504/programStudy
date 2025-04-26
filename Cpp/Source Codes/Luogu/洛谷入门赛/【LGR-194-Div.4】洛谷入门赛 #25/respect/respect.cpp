@@ -1,5 +1,4 @@
-#include<bits/stdc++.h> 
-#include<sstream>
+#include<bits/stdc++.h>
 using namespace std;
 #define int long long
 const string tgt="respect";

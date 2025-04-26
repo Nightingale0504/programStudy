@@ -1,5 +1,4 @@
-#include<bits/stdc++.h> 
-#include<map>
+#include<bits/stdc++.h>
 using namespace std;
 map<char, int> m;
 char c;

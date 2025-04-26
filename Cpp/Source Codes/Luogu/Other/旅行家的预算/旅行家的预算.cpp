@@ -1,5 +1,4 @@
-#include<iostream>
-#include<cstdio>
+#include<bits/stdc++.h> 
 using namespace std;
 int main(){
 	double d[2],c,p;

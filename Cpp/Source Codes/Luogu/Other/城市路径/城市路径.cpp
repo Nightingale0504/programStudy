@@ -1,5 +1,4 @@
-#include<bits/stdc++.h> 
-#include<string.h>
+#include<bits/stdc++.h>
 using namespace std;
 int n,m,map[105][105],book[105],answerStorage[105],tx,ty;
 string cl="->";

@@ -1,6 +1,4 @@
-#include<bits/stdc++.h>  
-#include<cstring>
-#include<string.h>
+#include<bits/stdc++.h> 
 using namespace std;
 struct Node{
 	int x,y;

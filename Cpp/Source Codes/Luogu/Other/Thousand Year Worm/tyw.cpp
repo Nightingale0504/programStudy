@@ -1,8 +1,4 @@
-#include<iostream>
-#include<cstdio>
-#include<cstring>
-#include<string>
-#include<algorithm>
+#include<bits/stdc++.h> 
 using namespace std;
 #define maxN 1000010
 #define inf 0x3f3f3f3f

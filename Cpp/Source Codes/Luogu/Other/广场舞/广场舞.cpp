@@ -1,7 +1,6 @@
-#include<iostream>
-#include<cstdio>
+#include<bits/stdc++.h> 
 using namespace std;
-int z[1005][1005]={{0}} 
+int z[1005][1005]={{0}} ;
 int main(){
 	int m,n,a,b,sum=0;
 	scanf("%d%d%d%d",&m,&n,&a,&b);

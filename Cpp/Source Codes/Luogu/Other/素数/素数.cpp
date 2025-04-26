@@ -1,7 +1,4 @@
-#include<iostream>
-#include<cstdio>
-#include<cstdlib>
-#include<cmath>
+#include<bits/stdc++.h> 
 using namespace std;
 #define maxN 10010
 // part:define function

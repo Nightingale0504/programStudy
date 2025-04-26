@@ -1,7 +1,4 @@
-#include <cstdlib>
-#include <iostream>
-#include <fstream>
-#include <vector>
+#include<bits/stdc++.h> 
 
 std::ofstream score("score.txt");
 

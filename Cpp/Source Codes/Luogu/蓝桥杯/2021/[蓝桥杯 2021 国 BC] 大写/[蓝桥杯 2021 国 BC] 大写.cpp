@@ -1,5 +1,4 @@
-#include<bits/stdc++.h> 
-#include<cctype>
+#include<bits/stdc++.h>
 using namespace std;
 string s;
 int main(){

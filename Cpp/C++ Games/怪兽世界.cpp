@@ -1,12 +1,5 @@
-#include<cmath>
-#include<time.h>
-#include<cstdio>
-#include<iostream>
-#include<cstring>
+#include<bits/stdc++.h>
 #include<windows.h>
-#include<conio.h>
-#include<string>
-#include<cstdlib>
 using namespace std;
 int where,x,y;
 void print(string a){
@@ -18,26 +11,26 @@ void print(string a){
     return;
 }
 char qwe;
-string mapname[5]={"¡¾ÖÐ²¿Ö÷³Ç¡¿","¡¾É­ÁÖ¡¿","¡¾É­ÁÖÉî´¦¡¿","¡¾É³Ä®¡¿","¡¾Ä§ÍõÀÏ³²¡¿"};
+string mapname[5]={"ï¿½ï¿½ï¿½Ð²ï¿½ï¿½ï¿½ï¿½Ç¡ï¿½","ï¿½ï¿½É­ï¿½Ö¡ï¿½","ï¿½ï¿½É­ï¿½ï¿½ï¿½î´¦ï¿½ï¿½","ï¿½ï¿½É³Ä®ï¿½ï¿½","ï¿½ï¿½Ä§ï¿½ï¿½ï¿½Ï³ï¿½ï¿½ï¿½"};
 string maps[5][20]= {{{"####################"},// 0
-                      {"#Îä#   #           #"},// 1
-                      {"#Æ÷|   # *         #"},// 2
-                      {"#µê#   # |         #"},// 3
+                      {"#ï¿½ï¿½#   #           #"},// 1
+                      {"#ï¿½ï¿½|   # *         #"},// 2
+                      {"#ï¿½ï¿½#   # |         #"},// 3
                       {"####   #           #"},// 4
-                      {"#·À#   # *         #"},// 5
-                      {"#¾ß|   # |        =="},// 6
-                      {"#µê#   #           @"},// 7
+                      {"#ï¿½ï¿½#   # *         #"},// 5
+                      {"#ï¿½ï¿½|   # |        =="},// 6
+                      {"#ï¿½ï¿½#   #           @"},// 7
                       {"####   # *        =="},// 8
-                      {"#µÀ#   # |         #"},// 9
-                      {"#¾ß|   #           #"},// 0
-                      {"#µê#   # *         #"},// 1
+                      {"#ï¿½ï¿½#   # |         #"},// 9
+                      {"#ï¿½ï¿½|   #           #"},// 0
+                      {"#ï¿½ï¿½#   # *         #"},// 1
                       {"####   # |         #"},// 2
                       {"#      #           #"},// 3
                       {"#      #           #"},// 4
                       {"#      #           #"},// 5
                       {"#      ####| |######"},// 6
-                      {"#               |¼ò#"},// 7
-                      {"#               |À§#"},// 8
+                      {"#               |ï¿½ï¿½#"},// 7
+                      {"#               |ï¿½ï¿½#"},// 8
                       {"####################"}},// 9
                      {{" |#######_#####|=O=|"},// 0
                       {"| ##    AAA     VUV#"},// 1
@@ -81,7 +74,7 @@ string maps[5][20]= {{{"####################"},// 0
                       {"##U#################"}},// 9
                      {{"##############Z#####"},// 0
                       {"# |O #       ZZ    #"},// 1
-                      {"# #´ó#       ZZZ   #"},// 2
+                      {"# #ï¿½ï¿½#       ZZZ   #"},// 2
                       {"# ####       ZZZZ  #"},// 3
                       {"#           ZZZZZ  #"},// 4
                       {"#    Z             #"},// 5
@@ -96,8 +89,8 @@ string maps[5][20]= {{{"####################"},// 0
                       {"#  ZZ              #"},// 4
                       {"#  ZZZ             #"},// 5
                       {"#  ZZZZ         ####"},// 6
-                      {"# ZZZZZ         |¼ò#"},// 7
-                      {"#               |À§#"},// 8
+                      {"# ZZZZZ         |ï¿½ï¿½#"},// 7
+                      {"#               |ï¿½ï¿½#"},// 8
                       {"####################"}},// 9
                      {{"####################"},// 0
                       {"#      #     #     #"},// 1
@@ -134,111 +127,111 @@ struct PlayerDec{
 PlayerDec Player;
 void shop1(){
     system("cls");
-    print("ÎäÆ÷µêÀÏ°å£ºÕâÎ»ÉÙÏÀ£¬ÎÒ¿´ÄãÁ¦´óÈçÅ££¬À´ÂòÒ»°ÑºÃÎäÆ÷°É£¡");
+    print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï°å£ºï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½Ñºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É£ï¿½");
     system("cls");
-    print("1.ÉúÌú³¤½£¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤200½ð±Ò");printf("\n");
-    print("2.¾«¸Ö³¤µ¶¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤500½ð±Ò");printf("\n");
-    print("3.ÅüÉ½¸«¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤800½ð±Ò");printf("\n");
-    print("4.¶á»êÖØÇ¹¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤1000½ð±Ò");printf("\n");
-    print("5.Ê¯ÖÐÉñ½£¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤2000½ð±Ò");printf("\n");
+    print("1.ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½200ï¿½ï¿½ï¿½");printf("\n");
+    print("2.ï¿½ï¿½ï¿½Ö³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½500ï¿½ï¿½ï¿½");printf("\n");
+    print("3.ï¿½ï¿½É½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½800ï¿½ï¿½ï¿½");printf("\n");
+    print("4.ï¿½ï¿½ï¿½ï¿½ï¿½Ç¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1000ï¿½ï¿½ï¿½");printf("\n");
+    print("5.Ê¯ï¿½ï¿½ï¿½ñ½£¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½2000ï¿½ï¿½ï¿½");printf("\n");
     qwe=_getch();
     switch (qwe){
-        case '1':if (Player.Money>=200)Player.s1++,Player.Money-=200;else cout<<"ÕâÎ»¿Í¹Ù£¬ÄúµÄÇ®²»¹»£¡ÎÒÆ¢ÆøºÜºÃµÄ£¡";break;
-        case '2':if (Player.Money>=500)Player.s2++,Player.Money-=500;else cout<<"ÕâÎ»¿Í¹Ù£¬ÄúµÄÇ®²»¹»£¡ÎÒÆ¢ÆøºÜºÃµÄ£¡";break;
-        case '3':if (Player.Money>=800)Player.s3++,Player.Money-=800;else cout<<"ÕâÎ»¿Í¹Ù£¬ÄúµÄÇ®²»¹»£¡ÎÒÆ¢ÆøºÜºÃµÄ£¡";break;
-        case '4':if (Player.Money>=1000)Player.s4++,Player.Money-=1000;else cout<<"ÕâÎ»¿Í¹Ù£¬ÄúµÄÇ®²»¹»£¡ÎÒÆ¢ÆøºÜºÃµÄ£¡";break;
-        case '5':if (Player.Money>=2000)Player.s5++,Player.Money-=2000;else cout<<"ÕâÎ»¿Í¹Ù£¬ÄúµÄÇ®²»¹»£¡ÎÒÆ¢ÆøºÜºÃµÄ£¡";break;
+        case '1':if (Player.Money>=200)Player.s1++,Player.Money-=200;else cout<<"ï¿½ï¿½Î»ï¿½Í¹Ù£ï¿½ï¿½ï¿½ï¿½ï¿½Ç®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¢ï¿½ï¿½ï¿½ÜºÃµÄ£ï¿½";break;
+        case '2':if (Player.Money>=500)Player.s2++,Player.Money-=500;else cout<<"ï¿½ï¿½Î»ï¿½Í¹Ù£ï¿½ï¿½ï¿½ï¿½ï¿½Ç®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¢ï¿½ï¿½ï¿½ÜºÃµÄ£ï¿½";break;
+        case '3':if (Player.Money>=800)Player.s3++,Player.Money-=800;else cout<<"ï¿½ï¿½Î»ï¿½Í¹Ù£ï¿½ï¿½ï¿½ï¿½ï¿½Ç®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¢ï¿½ï¿½ï¿½ÜºÃµÄ£ï¿½";break;
+        case '4':if (Player.Money>=1000)Player.s4++,Player.Money-=1000;else cout<<"ï¿½ï¿½Î»ï¿½Í¹Ù£ï¿½ï¿½ï¿½ï¿½ï¿½Ç®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¢ï¿½ï¿½ï¿½ÜºÃµÄ£ï¿½";break;
+        case '5':if (Player.Money>=2000)Player.s5++,Player.Money-=2000;else cout<<"ï¿½ï¿½Î»ï¿½Í¹Ù£ï¿½ï¿½ï¿½ï¿½ï¿½Ç®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¢ï¿½ï¿½ï¿½ÜºÃµÄ£ï¿½";break;
     }
-    print("°Ý°Ý~~~~~~~~~~~~~~~");
+    print("ï¿½Ý°ï¿½~~~~~~~~~~~~~~~");
     system("cls");
     return;
 }
 void shop2(){
     system("cls");
-    print("·À¾ßµêÀÏ°å£ºÕâÎ»ÈÊÐÖ£¬ÄãÕâÃ´Èõ²»½û·ç£¬Ð¡ÐÄ¸øÒ°ÊÞ´òËÀÁË£¬ÎÒÕâµÄ·À¾ßÊÀ½çµÚÒ»£¬¿´¿´£¿");
+    print("ï¿½ï¿½ï¿½ßµï¿½ï¿½Ï°å£ºï¿½ï¿½Î»ï¿½ï¿½ï¿½Ö£ï¿½ï¿½ï¿½ï¿½ï¿½Ã´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ç£¬Ð¡ï¿½Ä¸ï¿½Ò°ï¿½Þ´ï¿½ï¿½ï¿½ï¿½Ë£ï¿½ï¿½ï¿½ï¿½ï¿½Ä·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
     system("cls");
-    print("1.»¤ÐÄ¾µ¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤100½ð±Ò");printf("\n");
-    print("2.ÌúËø¼×¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤200½ð±Ò");printf("\n");
-    print("3.ÔÉÌúÉñ¶Ü¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤500½ð±Ò");printf("\n");
-    print("4.Ì¹¿ËÆ¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤1250½ð±Ò");printf("\n");
-    print("5.·çÍõ½á½ç¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤1750½ð±Ò");printf("\n");
+    print("1.ï¿½ï¿½ï¿½Ä¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½100ï¿½ï¿½ï¿½");printf("\n");
+    print("2.ï¿½ï¿½ï¿½ï¿½ï¿½×¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½200ï¿½ï¿½ï¿½");printf("\n");
+    print("3.ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½500ï¿½ï¿½ï¿½");printf("\n");
+    print("4.Ì¹ï¿½ï¿½Æ¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1250ï¿½ï¿½ï¿½");printf("\n");
+    print("5.ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ç¡¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1750ï¿½ï¿½ï¿½");printf("\n");
     qwe=_getch();
     switch (qwe){
-        case '1':if (Player.Money>=100)Player.d1++,Player.Money-=100;else cout<<"ÕâÎ»¿Í¹Ù£¬ÄúµÄÇ®²»¹»£¡À´ÈË°¡£¡ºä³öÈ¥£¡";break;
-        case '2':if (Player.Money>=200)Player.d2++,Player.Money-=200;else cout<<"ÕâÎ»¿Í¹Ù£¬ÄúµÄÇ®²»¹»£¡À´ÈË°¡£¡ºä³öÈ¥£¡";break;
-        case '3':if (Player.Money>=500)Player.d3++,Player.Money-=500;else cout<<"ÕâÎ»¿Í¹Ù£¬ÄúµÄÇ®²»¹»£¡À´ÈË°¡£¡ºä³öÈ¥£¡";break;
-        case '4':if (Player.Money>=1250)Player.d4++,Player.Money-=1250;else cout<<"ÕâÎ»¿Í¹Ù£¬ÄúµÄÇ®²»¹»£¡À´ÈË°¡£¡ºä³öÈ¥£¡";break;
-        case '5':if (Player.Money>=1750)Player.d5++,Player.Money-=1750;else cout<<"ÕâÎ»¿Í¹Ù£¬ÄúµÄÇ®²»¹»£¡À´ÈË°¡£¡ºä³öÈ¥£¡";break;
+        case '1':if (Player.Money>=100)Player.d1++,Player.Money-=100;else cout<<"ï¿½ï¿½Î»ï¿½Í¹Ù£ï¿½ï¿½ï¿½ï¿½ï¿½Ç®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¥ï¿½ï¿½";break;
+        case '2':if (Player.Money>=200)Player.d2++,Player.Money-=200;else cout<<"ï¿½ï¿½Î»ï¿½Í¹Ù£ï¿½ï¿½ï¿½ï¿½ï¿½Ç®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¥ï¿½ï¿½";break;
+        case '3':if (Player.Money>=500)Player.d3++,Player.Money-=500;else cout<<"ï¿½ï¿½Î»ï¿½Í¹Ù£ï¿½ï¿½ï¿½ï¿½ï¿½Ç®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¥ï¿½ï¿½";break;
+        case '4':if (Player.Money>=1250)Player.d4++,Player.Money-=1250;else cout<<"ï¿½ï¿½Î»ï¿½Í¹Ù£ï¿½ï¿½ï¿½ï¿½ï¿½Ç®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¥ï¿½ï¿½";break;
+        case '5':if (Player.Money>=1750)Player.d5++,Player.Money-=1750;else cout<<"ï¿½ï¿½Î»ï¿½Í¹Ù£ï¿½ï¿½ï¿½ï¿½ï¿½Ç®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¥ï¿½ï¿½";break;
     }
-    print("°Ý°Ý~~~~~~~~~~~~~~~");
+    print("ï¿½Ý°ï¿½~~~~~~~~~~~~~~~");
     system("cls");
     return;
 }
 void shop3(){
     system("cls");
-    print("µÀ¾ßµêÀÏ°åÄï£ºà¾Ò©Âð£¿ÉÙÄê£¿");
+    print("ï¿½ï¿½ï¿½ßµï¿½ï¿½Ï°ï¿½ï¿½ï£ºï¿½Ò©ï¿½ï¿½ï¿½ï¿½ï¿½ê£¿");
     system("cls");
-    print("1.´ó²¹Íè£¨»Ø¸´200µãHP£©¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤60½ð±Ò");printf("\n");
-    print("2.½£Æø×Ýºáµ¤£¨ATKÓÀ¾ÃÔö¼Ó20µã£©¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤85½ð±Ò");printf("\n");
-    print("3.½ð¸ÕÏÉµ¤£¨DEFÓÀ¾ÃÔö¼Ó5µã£©¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤90½ð±Ò");printf("\n");
-    print("4.·ÊÕ¬¿ìÀÖµ¤£¨HPÓÀ¾ÃÔö¼Ó60µã£©¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤100½ð±Ò");printf("\n");
-    print("5.º×¶¥ºì£¨Á¢¼´¹·´ø£¬¾ø²»ºöÓÆ£¡£©¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤500½ð±Ò");printf("\n");
+    print("1.ï¿½ï¿½ï¿½è£¨ï¿½Ø¸ï¿½200ï¿½ï¿½HPï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½60ï¿½ï¿½ï¿½");printf("\n");
+    print("2.ï¿½ï¿½ï¿½ï¿½ï¿½Ýºáµ¤ï¿½ï¿½ATKï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½20ï¿½ã£©ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½85ï¿½ï¿½ï¿½");printf("\n");
+    print("3.ï¿½ï¿½ï¿½ï¿½Éµï¿½ï¿½ï¿½DEFï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½5ï¿½ã£©ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½90ï¿½ï¿½ï¿½");printf("\n");
+    print("4.ï¿½ï¿½Õ¬ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½HPï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½60ï¿½ã£©ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½100ï¿½ï¿½ï¿½");printf("\n");
+    print("5.ï¿½×¶ï¿½ï¿½ì£¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½500ï¿½ï¿½ï¿½");printf("\n");
     qwe=_getch();
     switch (qwe){
-        case '1':if (Player.Money>=60)Player.q1++,Player.Money-=60;else cout<<"ÕâÎ»¿Í¹Ù£¬ÄúµÄÇ®²»¹»£¡±ðÀ´µ÷Ï·ÀÏÄï£¡£¡";break;
-        case '2':if (Player.Money>=85)Player.q2++,Player.Money-=85;else cout<<"ÕâÎ»¿Í¹Ù£¬ÄúµÄÇ®²»¹»£¡±ðÀ´µ÷Ï·ÀÏÄï£¡£¡";break;
-        case '3':if (Player.Money>=90)Player.q3++,Player.Money-=90;else cout<<"ÕâÎ»¿Í¹Ù£¬ÄúµÄÇ®²»¹»£¡±ðÀ´µ÷Ï·ÀÏÄï£¡£¡";break;
-        case '4':if (Player.Money>=100)Player.q4++,Player.Money-=100;else cout<<"ÕâÎ»¿Í¹Ù£¬ÄúµÄÇ®²»¹»£¡±ðÀ´µ÷Ï·ÀÏÄï£¡£¡";break;
-        case '5':if (Player.Money>=500)Player.q5++,Player.Money-=500;else cout<<"ÕâÎ»¿Í¹Ù£¬ÄúµÄÇ®²»¹»£¡±ðÀ´µ÷Ï·ÀÏÄï£¡£¡";break;
+        case '1':if (Player.Money>=60)Player.q1++,Player.Money-=60;else cout<<"ï¿½ï¿½Î»ï¿½Í¹Ù£ï¿½ï¿½ï¿½ï¿½ï¿½Ç®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï£¡ï¿½ï¿½";break;
+        case '2':if (Player.Money>=85)Player.q2++,Player.Money-=85;else cout<<"ï¿½ï¿½Î»ï¿½Í¹Ù£ï¿½ï¿½ï¿½ï¿½ï¿½Ç®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï£¡ï¿½ï¿½";break;
+        case '3':if (Player.Money>=90)Player.q3++,Player.Money-=90;else cout<<"ï¿½ï¿½Î»ï¿½Í¹Ù£ï¿½ï¿½ï¿½ï¿½ï¿½Ç®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï£¡ï¿½ï¿½";break;
+        case '4':if (Player.Money>=100)Player.q4++,Player.Money-=100;else cout<<"ï¿½ï¿½Î»ï¿½Í¹Ù£ï¿½ï¿½ï¿½ï¿½ï¿½Ç®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï£¡ï¿½ï¿½";break;
+        case '5':if (Player.Money>=500)Player.q5++,Player.Money-=500;else cout<<"ï¿½ï¿½Î»ï¿½Í¹Ù£ï¿½ï¿½ï¿½ï¿½ï¿½Ç®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï£¡ï¿½ï¿½";break;
     }
-    print("°Ý°Ý~~~~~~~~~~~~~~~");
+    print("ï¿½Ý°ï¿½~~~~~~~~~~~~~~~");
     system("cls");
     return;
 }
 void shop4(){
     system("cls");
-    print("ºÚÊÐÉÌÈË£ºÐ¡¸ç£¬Âò·ûÂð£¿´ò¹Ö¸üÓÐÀû£¡");
+    print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë£ï¿½Ð¡ï¿½ç£¬ï¿½ï¿½ï¿½ï¿½ð£¿´ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
     system("cls");
-    print("1.»ØÑª·û£¨+500HP£©¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤60½ð±Ò");printf("\n");
-    print("2.ÄýÉñ¹éÔª·û£¨+1000HP£©¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤200½ð±Ò");printf("\n");
-    print("3.×óÓÒ»¥²«·û£¨ÓÀ¾ÃÉËº¦·­±¶£¡£©¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤2000½ð±Ò");printf("\n");
-    print("4.¿ºÁúÓÐ»Ú·û£¨¿´ÈËÆ·£¬Ôì³É50000ÒÔÄÚËæ»úÉËº¦£¡£©¡¤¡¤¡¤2500½ð±Ò");printf("\n");
-    print("5.¾ÆÉñ·û·û£¨Ôì³É20000ÒÔÉÏ£¬100000ÒÔÏÂÉËº¦£¡£©¡¤¡¤¡¤¡¤¡¤3000½ð±Ò");printf("\n");
-    print("6.¶á»êÖä·û£¨°Ù·ÖÖ®ÎåµÄ¼¸ÂÊÖ±½ÓËÀµô£©¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤5000½ð±Ò");printf("\n");
-    print("7.ÎüÐÇ´ó·¨·û£¨Ôì³É500µãÎüÑª£©¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤1000½ð±Ò");printf("\n");
-    print("8.¶À¹Â¾Å½£·û£¨ÓÀ¾ÃÉËº¦¾Å±¶£©¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤8000½ð±Ò");printf("\n");
-    print("9.ÄÆË®Éñ¹¦·û£¨Ëæ»úÉËº¦£©¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤9000½ð±Ò");printf("\n");
+    print("1.ï¿½ï¿½Ñªï¿½ï¿½ï¿½ï¿½+500HPï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½60ï¿½ï¿½ï¿½");printf("\n");
+    print("2.ï¿½ï¿½ï¿½ï¿½ï¿½Ôªï¿½ï¿½ï¿½ï¿½+1000HPï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½200ï¿½ï¿½ï¿½");printf("\n");
+    print("3.ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ëºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½2000ï¿½ï¿½ï¿½");printf("\n");
+    print("4.ï¿½ï¿½ï¿½ï¿½ï¿½Ð»Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½50000ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ëºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½2500ï¿½ï¿½ï¿½");printf("\n");
+    print("5.ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½20000ï¿½ï¿½ï¿½Ï£ï¿½100000ï¿½ï¿½ï¿½ï¿½ï¿½Ëºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½3000ï¿½ï¿½ï¿½");printf("\n");
+    print("6.ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ù·ï¿½Ö®ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½Ö±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½5000ï¿½ï¿½ï¿½");printf("\n");
+    print("7.ï¿½ï¿½ï¿½Ç´ó·¨·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½500ï¿½ï¿½ï¿½ï¿½Ñªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1000ï¿½ï¿½ï¿½");printf("\n");
+    print("8.ï¿½ï¿½ï¿½Â¾Å½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ëºï¿½ï¿½Å±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½8000ï¿½ï¿½ï¿½");printf("\n");
+    print("9.ï¿½ï¿½Ë®ï¿½ñ¹¦·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ëºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½9000ï¿½ï¿½ï¿½");printf("\n");
     qwe=_getch();
     switch (qwe){
-        case '1':if (Player.Money>=60)Player.k1++,Player.Money-=60;else cout<<"ÕâÎ»¿Í¹Ù£¬ÄúµÄÇ®²»¹»£¡Çë×ß¿ª£¡";break;
-        case '2':if (Player.Money>=200)Player.k2++,Player.Money-=200;else cout<<"ÕâÎ»¿Í¹Ù£¬ÄúµÄÇ®²»¹»£¡Çë×ß¿ª£¡";break;
-        case '3':if (Player.Money>=2000)Player.k3++,Player.Money-=2000;else cout<<"ÕâÎ»¿Í¹Ù£¬ÄúµÄÇ®²»¹»£¡Çë×ß¿ª£¡";break;
-        case '4':if (Player.Money>=2500)Player.k4++,Player.Money-=2500;else cout<<"ÕâÎ»¿Í¹Ù£¬ÄúµÄÇ®²»¹»£¡Çë×ß¿ª£¡";break;
-        case '5':if (Player.Money>=3000)Player.k5++,Player.Money-=3000;else cout<<"ÕâÎ»¿Í¹Ù£¬ÄúµÄÇ®²»¹»£¡Çë×ß¿ª£¡";break;
-        case '6':if (Player.Money>=5000)Player.k6++,Player.Money-=5000;else cout<<"ÕâÎ»¿Í¹Ù£¬ÄúµÄÇ®²»¹»£¡Çë×ß¿ª£¡";break;
-        case '7':if (Player.Money>=1000)Player.k7++,Player.Money-=1000;else cout<<"ÕâÎ»¿Í¹Ù£¬ÄúµÄÇ®²»¹»£¡Çë×ß¿ª£¡";break;
-        case '8':if (Player.Money>=8000)Player.k8++,Player.Money-=8000;else cout<<"ÕâÎ»¿Í¹Ù£¬ÄúµÄÇ®²»¹»£¡Çë×ß¿ª£¡";break;
-        case '9':if (Player.Money>=9000)Player.k9++,Player.Money-=9000;else cout<<"ÕâÎ»¿Í¹Ù£¬ÄúµÄÇ®²»¹»£¡Çë×ß¿ª£¡";break;
+        case '1':if (Player.Money>=60)Player.k1++,Player.Money-=60;else cout<<"ï¿½ï¿½Î»ï¿½Í¹Ù£ï¿½ï¿½ï¿½ï¿½ï¿½Ç®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß¿ï¿½ï¿½ï¿½";break;
+        case '2':if (Player.Money>=200)Player.k2++,Player.Money-=200;else cout<<"ï¿½ï¿½Î»ï¿½Í¹Ù£ï¿½ï¿½ï¿½ï¿½ï¿½Ç®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß¿ï¿½ï¿½ï¿½";break;
+        case '3':if (Player.Money>=2000)Player.k3++,Player.Money-=2000;else cout<<"ï¿½ï¿½Î»ï¿½Í¹Ù£ï¿½ï¿½ï¿½ï¿½ï¿½Ç®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß¿ï¿½ï¿½ï¿½";break;
+        case '4':if (Player.Money>=2500)Player.k4++,Player.Money-=2500;else cout<<"ï¿½ï¿½Î»ï¿½Í¹Ù£ï¿½ï¿½ï¿½ï¿½ï¿½Ç®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß¿ï¿½ï¿½ï¿½";break;
+        case '5':if (Player.Money>=3000)Player.k5++,Player.Money-=3000;else cout<<"ï¿½ï¿½Î»ï¿½Í¹Ù£ï¿½ï¿½ï¿½ï¿½ï¿½Ç®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß¿ï¿½ï¿½ï¿½";break;
+        case '6':if (Player.Money>=5000)Player.k6++,Player.Money-=5000;else cout<<"ï¿½ï¿½Î»ï¿½Í¹Ù£ï¿½ï¿½ï¿½ï¿½ï¿½Ç®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß¿ï¿½ï¿½ï¿½";break;
+        case '7':if (Player.Money>=1000)Player.k7++,Player.Money-=1000;else cout<<"ï¿½ï¿½Î»ï¿½Í¹Ù£ï¿½ï¿½ï¿½ï¿½ï¿½Ç®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß¿ï¿½ï¿½ï¿½";break;
+        case '8':if (Player.Money>=8000)Player.k8++,Player.Money-=8000;else cout<<"ï¿½ï¿½Î»ï¿½Í¹Ù£ï¿½ï¿½ï¿½ï¿½ï¿½Ç®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß¿ï¿½ï¿½ï¿½";break;
+        case '9':if (Player.Money>=9000)Player.k9++,Player.Money-=9000;else cout<<"ï¿½ï¿½Î»ï¿½Í¹Ù£ï¿½ï¿½ï¿½ï¿½ï¿½Ç®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß¿ï¿½ï¿½ï¿½";break;
     }
-    print("ÔÙ¼û£¡");
+    print("ï¿½Ù¼ï¿½ï¿½ï¿½");
     system("cls");
     return;
 }
 void sp(){
     system("cls");
-    print("ÕâÀïÊÇ¼ÀÌ³£¬¿ÉÒÔÇ¿»¯×ÔÉí£¬ÎäÆ÷¡£µ«ÊÇ»áÆÆ³ýÄãËùÓÐ·ÀÓù£¬ÓÃµôÄãËùÓÐ½ðÇ®£¡¡££¨y/n£©");
+    print("ï¿½ï¿½ï¿½ï¿½ï¿½Ç¼ï¿½Ì³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç»ï¿½ï¿½Æ³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð½ï¿½Ç®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½y/nï¿½ï¿½");
     qwe=_getch();
     if (qwe=='n'){
         system("cls");
-        print("×öºÃ¾õÎòºóÔÙÀ´°É£¡");
+        print("ï¿½ï¿½ï¿½Ã¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É£ï¿½");
         system("cls");
         return;
     }else{
         system("cls");
-        print("Äã½«ËùÓÐ½ð±ÒÈ÷ÔÚ¼ÀÌ³ÉÏ£¡");printf("\n");
-        print("ÄãµÄ»¤¼×È«¶¼±¬Õ¨£¡");printf("\n");
-        print("ÂýÂýµÄ£¬ÒâÊ¶Öð½¥»Ö¸´£¡");printf("\n");
-        print("³É¹¦£¡£¡");printf("\n");
+        print("ï¿½ã½«ï¿½ï¿½ï¿½Ð½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¼ï¿½Ì³ï¿½Ï£ï¿½");printf("\n");
+        print("ï¿½ï¿½Ä»ï¿½ï¿½ï¿½È«ï¿½ï¿½ï¿½ï¿½Õ¨ï¿½ï¿½");printf("\n");
+        print("ï¿½ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½ï¿½Ê¶ï¿½ð½¥»Ö¸ï¿½ï¿½ï¿½");printf("\n");
+        print("ï¿½É¹ï¿½ï¿½ï¿½ï¿½ï¿½");printf("\n");
         Player.ATK*=floor(Player.DEF/10);
         Player.DEF=0;
         Player.Money=0;
@@ -277,8 +270,8 @@ void go(int w){
 void lvup(){
     if (Player.EXP>=Player.MAXEXP){
         system("cls");
-        print("ÄãÉýÁË");
-        printf("%d¼¶£¡",Player.EXP/Player.MAXEXP);
+        print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
+        printf("%dï¿½ï¿½ï¿½ï¿½",Player.EXP/Player.MAXEXP);
         Sleep(1000);
         Player.LV+=Player.EXP/Player.MAXEXP;
         Player.ATK+=(Player.EXP/Player.MAXEXP)*20;
@@ -288,19 +281,19 @@ void lvup(){
         Player.MAXHP+=rand()%500;
     }else{
         system("cls");
-        print("È»¶øÄã²¢Ã»ÓÐÉý¼¶.");
+        print("È»ï¿½ï¿½ï¿½ã²¢Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.");
         system("cls");
         return;
     }
 }
 bool fight_to_jiangshi(){
     system("cls");
-    string name="½©Ê¬";
+    string name="ï¿½ï¿½Ê¬";
     int HP=1200,MAXHP=1200,ATK=70,DEF=16;
     while (1){
         printf("**************************");printf("\n");
-        printf("*     >  {=}        ½©Ê¬ *");printf("\n");
-        printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+        printf("*     >  {=}        ï¿½ï¿½Ê¬ *");printf("\n");
+        printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
         printf("*  |O O| {6}       |X X| *");printf("\n");
         printf("*  | V | [6]       | O | *");printf("\n");
         printf("*   OVO  ZXZ        CVD  *");printf("\n");
@@ -308,14 +301,14 @@ bool fight_to_jiangshi(){
         printf("* //N N   I     3oo=SSS  *");printf("\n");
         printf("*// ONO   O         RRR  *");printf("\n");
         printf("*P  UMU             S S  *");printf("\n");
-        printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+        printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
         printf("*   D D            SS SS *");printf("\n");
         printf("**************************");printf("\n");
-        printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");
+        printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");
         qwe=_getch();
         if (qwe=='2'){
             system("cls");
-            print("ÈýÊ®Áù¼Æ£¬×ßÎªÉÏ¼Æ£¡");
+            print("ï¿½ï¿½Ê®ï¿½ï¿½ï¿½Æ£ï¿½ï¿½ï¿½Îªï¿½Ï¼Æ£ï¿½");
             system("cls");
             return false;
         }else if (qwe=='1'){
@@ -324,8 +317,8 @@ bool fight_to_jiangshi(){
             sd=Player.ATK-DEF+(rand()%100);
             HP-=sd;
             printf("**************************");printf("\n");
-            printf("*     >  {=}        ½©Ê¬ *");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}        ï¿½ï¿½Ê¬ *");printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       |X X| *");printf("\n");
             printf("*  | V | [6]       | O | *");printf("\n");
             printf("*   OVO  ZXZ        CVD  *");printf("\n");
@@ -333,13 +326,13 @@ bool fight_to_jiangshi(){
             printf("* //N N   I     3oo=SSS  *");printf("\n");
             printf("*// ONO   O         RRR  *");printf("\n");
             printf("*P  UMU             S S  *");printf("\n");
-            printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*       >  {=}      ½©Ê¬ *");printf("\n");
-            printf("*     _/_  [6]      ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*       >  {=}      ï¿½ï¿½Ê¬ *");printf("\n");
+            printf("*     _/_  [6]      ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*    |O O| {6}     |X X| *");printf("\n");
             printf("*    | V | [6]     | O | *");printf("\n");
             printf("*     OVO  ZXZ      CVD  *");printf("\n");
@@ -347,13 +340,13 @@ bool fight_to_jiangshi(){
             printf("*   //N N   I   3oo=SSS  *");printf("\n");
             printf("*  // ONO   O       RRR  *");printf("\n");
             printf("*  P  UMU           S S  *");printf("\n");
-            printf("*     U U           S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*     U U           S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*     D D          SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*       >       //  ½©Ê¬ *");printf("\n");
-            printf("*     _/_      ///  ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*       >       //  ï¿½ï¿½Ê¬ *");printf("\n");
+            printf("*     _/_      ///  ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*    |O O|    ///  |X X| *");printf("\n");
             printf("*    | V |   ///   | O | *");printf("\n");
             printf("*     OVO    //     CVD  *");printf("\n");
@@ -361,13 +354,13 @@ bool fight_to_jiangshi(){
             printf("*   //N N       3oo=SSS  *");printf("\n");
             printf("*  // ONO           RRR  *");printf("\n");
             printf("*  P  UMU           S S  *");printf("\n");
-            printf("*     U U           S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*     U U           S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*     D D          SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*       >           ½©Ê¬ *");printf("\n");
-            printf("*     _/_           ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*       >           ï¿½ï¿½Ê¬ *");printf("\n");
+            printf("*     _/_           ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*    |O O|         |X X| *");printf("\n");
             printf("*    | V |         | O | *");printf("\n");
             printf("*     OVO    =========== *");printf("\n");
@@ -375,13 +368,13 @@ bool fight_to_jiangshi(){
             printf("*   //N N    =========== *");printf("\n");
             printf("*  // ONO           RRR  *");printf("\n");
             printf("*  P  UMU           S S  *");printf("\n");
-            printf("*     U U           S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*     U U           S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*     D D          SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}        ½©Ê¬ *");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}        ï¿½ï¿½Ê¬ *");printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       |X X| *");printf("\n");
             printf("*  | V | [6]       | O | *");printf("\n");
             printf("*   OVO  ZXZ        CVD  *");printf("\n");
@@ -389,12 +382,12 @@ bool fight_to_jiangshi(){
             printf("* //N N   I     3oo=SSS  *");printf("\n");
             printf("*// ONO   O         RRR  *");printf("\n");
             printf("*P  UMU             S S  *");printf("\n");
-            printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(500);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(500);system("cls");
             if (HP<=0){
-                print("ÄãÓ®ÁË£¡»ñµÃ100½ð±Ò£¡300¾­ÑéÖµ£¡");
+                print("ï¿½ï¿½Ó®ï¿½Ë£ï¿½ï¿½ï¿½ï¿½100ï¿½ï¿½Ò£ï¿½300ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½");
                 Player.EXP+=300;
                 lvup();Player.HP+=378;if (Player.HP>Player.MAXHP) Player.HP=Player.MAXHP;
                 Player.Money+=100;
@@ -404,8 +397,8 @@ bool fight_to_jiangshi(){
             sd=ATK-Player.DEF+(rand()%100);
             Player.HP-=sd;
             printf("**************************");printf("\n");
-            printf("*     >  {=}        ½©Ê¬ *");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}        ï¿½ï¿½Ê¬ *");printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       |X X| *");printf("\n");
             printf("*  | V | [6]       | O | *");printf("\n");
             printf("*   OVO  ZXZ        CVD  *");printf("\n");
@@ -413,13 +406,13 @@ bool fight_to_jiangshi(){
             printf("* //N N   I     3oo=SSS  *");printf("\n");
             printf("*// ONO   O         RRR  *");printf("\n");
             printf("*P  UMU             S S  *");printf("\n");
-            printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}        ½©Ê¬ *");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}        ï¿½ï¿½Ê¬ *");printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       |X X| *");printf("\n");
             printf("*  | V | [6]       | O | *");printf("\n");
             printf("*   OVO  ZXZ        CVD  *");printf("\n");
@@ -427,13 +420,13 @@ bool fight_to_jiangshi(){
             printf("* //N N   I     3oo=SSS  *");printf("\n");
             printf("*// ONO   O         RRR  *");printf("\n");
             printf("*P  UMU             S S  *");printf("\n");
-            printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}        ½©Ê¬ *");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}        ï¿½ï¿½Ê¬ *");printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       |X X| *");printf("\n");
             printf("*  | V | [6]       | O | *");printf("\n");
             printf("*   OVO  ZXZ        CVD  *");printf("\n");
@@ -441,13 +434,13 @@ bool fight_to_jiangshi(){
             printf("* //N N   I     3oo=SSS  *");printf("\n");
             printf("*// ONO   O         RRR  *");printf("\n");
             printf("*P  UMU             S S  *");printf("\n");
-            printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}        ½©Ê¬ *");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}        ï¿½ï¿½Ê¬ *");printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       |X X| *");printf("\n");
             printf("*  | V | [6]       | O | *");printf("\n");
             printf("*   OVO  ZXZ        CVD  *");printf("\n");
@@ -455,13 +448,13 @@ bool fight_to_jiangshi(){
             printf("* //N N   I     3oo=SSS  *");printf("\n");
             printf("*// ONO   O         RRR  *");printf("\n");
             printf("*P  UMU             S S  *");printf("\n");
-            printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}        ½©Ê¬ *");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}        ï¿½ï¿½Ê¬ *");printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       |X X| *");printf("\n");
             printf("*  | V ***6]       | O | *");printf("\n");
             printf("*   OV*+o+*Z        CVD  *");printf("\n");
@@ -469,41 +462,41 @@ bool fight_to_jiangshi(){
             printf("* //N *+o+*     3oo=SSS  *");printf("\n");
             printf("*// ONO***O         RRR  *");printf("\n");
             printf("*P  UMU             S S  *");printf("\n");
-            printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(500);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(500);system("cls");
             if (Player.HP<=0){
-                print("Äã±»Ò§ËÀÁË£¡");
+                print("ï¿½ã±»Ò§ï¿½ï¿½ï¿½Ë£ï¿½");
                 exit(1);
             }
         }else if (qwe=='3'){
             int sd;
             system("cls");
-            printf("q.ÄãÓÐ%dÕÅ»ØÑª·û£¡\n",Player.k1);
-            printf("w.ÄãÓÐ%dÕÅÄýÉñ¹éÔª·û£¡\n",Player.k2);
-            printf("e.ÄãÓÐ%dÕÅ×óÓÒ»¥²«·û£¡\n",Player.k3);
-            printf("r.ÄãÓÐ%dÕÅ¿ºÁúÓÐ»Ú·û£¡\n",Player.k4);
-            printf("t.ÄãÓÐ%dÕÅ¾ÆÉñ·û£¡\n",Player.k5);
-            printf("y.ÄãÓÐ%dÕÅ¶á»ê·û£¡\n",Player.k6);
-            printf("u.ÄãÓÐ%dÕÅÎüÐÇ´ó·¨·û£¡\n",Player.k7);
-            printf("i.ÄãÓÐ%dÕÅ¶À¹Â¾Å½£·û£¡\n",Player.k8);
-            printf("o.ÄãÓÐ%dÕÅÄÆË®Éñ¹¦·û£¡\n",Player.k9);
+            printf("q.ï¿½ï¿½ï¿½ï¿½%dï¿½Å»ï¿½Ñªï¿½ï¿½ï¿½ï¿½\n",Player.k1);
+            printf("w.ï¿½ï¿½ï¿½ï¿½%dï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôªï¿½ï¿½ï¿½ï¿½\n",Player.k2);
+            printf("e.ï¿½ï¿½ï¿½ï¿½%dï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n",Player.k3);
+            printf("r.ï¿½ï¿½ï¿½ï¿½%dï¿½Å¿ï¿½ï¿½ï¿½ï¿½Ð»Ú·ï¿½ï¿½ï¿½\n",Player.k4);
+            printf("t.ï¿½ï¿½ï¿½ï¿½%dï¿½Å¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n",Player.k5);
+            printf("y.ï¿½ï¿½ï¿½ï¿½%dï¿½Å¶ï¿½ï¿½ï¿½ï¿½ï¿½\n",Player.k6);
+            printf("u.ï¿½ï¿½ï¿½ï¿½%dï¿½ï¿½ï¿½ï¿½ï¿½Ç´ó·¨·ï¿½ï¿½ï¿½\n",Player.k7);
+            printf("i.ï¿½ï¿½ï¿½ï¿½%dï¿½Å¶ï¿½ï¿½Â¾Å½ï¿½ï¿½ï¿½ï¿½ï¿½\n",Player.k8);
+            printf("o.ï¿½ï¿½ï¿½ï¿½%dï¿½ï¿½ï¿½ï¿½Ë®ï¿½ñ¹¦·ï¿½ï¿½ï¿½\n",Player.k9);
             qwe=_getch();
             switch (qwe){
-                case 'q':if (Player.k1>=1){Player.k1--;print("¸Ðµ½Ò»ÕóÊæ³©£¡HP+500");Player.HP+=500;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'w':if (Player.k2>=1){Player.k2--;print("¸Ð¾õÒ»ÕóµçÁ÷Ò»°ãµÄ¿ì¸ÐÁ÷±éÈ«Éí£¡HP+1000");Player.HP+=1000;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'e':if (Player.k3>=1){Player.k3--;print("ÄãµÄË«ÊÖÄÜÊ¹ÓÃ²»Í¬µÄÕÐÊ½£¡ÉËº¦·­±¶£¡");Player.ATK*=2;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'r':if (Player.k4>=1){Player.k4--;print("ÕÆ·çÒ»ÏÂ×ÓºôÁË³öÈ¥£¬Ìì±ÀµØÁÑ£¡");sd=rand()%50000+1;HP-=sd;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 't':if (Player.k5>=1){Player.k5--;print("Ò»¹É¾Þ´óµÄÁ¦Á¿³åÁË³öÀ´£¡");sd=rand()%80000+20000;HP-=sd;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'y':if (Player.k6>=1){Player.k6--;print("¶á»ê£¡£¡£¡");if ((rand()%21)%10==0)HP=0;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'u':if (Player.k7>=1){Player.k7--;print("¿´ÎÒÉñ¹¦£¡£¡£¡£¡");HP-=500;Player.HP+=500;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'i':if (Player.k8>=1){Player.k8--;print("¶À¹Â¾Å½££¡ÃëÌìÃëµØ£¡");Player.ATK*=9;};break;
-                case 'o':if (Player.k9>=1){Player.k9--;print("ÄÆË®Éñ¹¦£¬ÕÀ·Å¼¤ÁÒµÄ»ð»¨£¡");sd=rand();HP-=sd;}else print("ÄãÃ»ÓÐ£¡");break;
+                case 'q':if (Player.k1>=1){Player.k1--;print("ï¿½Ðµï¿½Ò»ï¿½ï¿½ï¿½æ³©ï¿½ï¿½HP+500");Player.HP+=500;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'w':if (Player.k2>=1){Player.k2--;print("ï¿½Ð¾ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È«ï¿½ï¿½ï¿½ï¿½HP+1000");Player.HP+=1000;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'e':if (Player.k3>=1){Player.k3--;print("ï¿½ï¿½ï¿½Ë«ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½Ã²ï¿½Í¬ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½Ëºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");Player.ATK*=2;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'r':if (Player.k4>=1){Player.k4--;print("ï¿½Æ·ï¿½Ò»ï¿½ï¿½ï¿½Óºï¿½ï¿½Ë³ï¿½È¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ£ï¿½");sd=rand()%50000+1;HP-=sd;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 't':if (Player.k5>=1){Player.k5--;print("Ò»ï¿½É¾Þ´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½ï¿½ï¿½ï¿½");sd=rand()%80000+20000;HP-=sd;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'y':if (Player.k6>=1){Player.k6--;print("ï¿½ï¿½ê£¡ï¿½ï¿½ï¿½ï¿½");if ((rand()%21)%10==0)HP=0;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'u':if (Player.k7>=1){Player.k7--;print("ï¿½ï¿½ï¿½ï¿½ï¿½ñ¹¦£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");HP-=500;Player.HP+=500;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'i':if (Player.k8>=1){Player.k8--;print("ï¿½ï¿½ï¿½Â¾Å½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø£ï¿½");Player.ATK*=9;};break;
+                case 'o':if (Player.k9>=1){Player.k9--;print("ï¿½ï¿½Ë®ï¿½ñ¹¦£ï¿½ï¿½ï¿½ï¿½Å¼ï¿½ï¿½ÒµÄ»ð»¨£ï¿½");sd=rand();HP-=sd;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
             }
             printf("**************************");printf("\n");
-            printf("*     >  {=}        ½©Ê¬ *");printf("\n");
-            printf("*   _/_  [6]   /  / ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}        ï¿½ï¿½Ê¬ *");printf("\n");
+            printf("*   _/_  [6]   /  / ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}/      |X X| *");printf("\n");
             printf("*  | V | [6]      *| O | *");printf("\n");
             printf("*   OVO  ZXZ  *     CVD  *");printf("\n");
@@ -511,13 +504,13 @@ bool fight_to_jiangshi(){
             printf("* //N N   I  /  3oo=SSS  *");printf("\n");
             printf("*// ONO   O         RRR  *");printf("\n");
             printf("*P  UMU    * *      S S  *");printf("\n");
-            printf("*   U U /           S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U /           S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D  /      /  SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}        ½©Ê¬ *");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}        ï¿½ï¿½Ê¬ *");printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       |X X| *");printf("\n");
             printf("*  | V | [6]     / | O | *");printf("\n");
             printf("*   OVO  ZXZ   /    CVD  *");printf("\n");
@@ -525,13 +518,13 @@ bool fight_to_jiangshi(){
             printf("* //N N   I /// 3oo=SSS  *");printf("\n");
             printf("*// ONO   O //      RRR  *");printf("\n");
             printf("*P  UMU     ///     S S  *");printf("\n");
-            printf("*   U U   / *       S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U   / *       S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}        ½©Ê¬ *");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}        ï¿½ï¿½Ê¬ *");printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       |X X| *");printf("\n");
             printf("*  | V | [6]       | O | *");printf("\n");
             printf("*   OVO  ZXZ        CVD  *");printf("\n");
@@ -539,13 +532,13 @@ bool fight_to_jiangshi(){
             printf("* //N N   I  // 3oo=SSS  *");printf("\n");
             printf("*// ONO   O ///     RRR  *");printf("\n");
             printf("*P  UMU    ///      S S  *");printf("\n");
-            printf("*   U U   ////      S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U   ////      S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D   ///      SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}        ½©Ê¬/*");printf("\n");
-            printf("*   _/_  [6]        _////*µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}        ï¿½ï¿½Ê¬/*");printf("\n");
+            printf("*   _/_  [6]        _////*ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       |/////*");printf("\n");
             printf("*  | V | [6]       ///// *");printf("\n");
             printf("*   OVO  ZXZ       ////  *");printf("\n");
@@ -553,13 +546,13 @@ bool fight_to_jiangshi(){
             printf("* //N N   I     3oo=SSS  *");printf("\n");
             printf("*// ONO   O         RRR  *");printf("\n");
             printf("*P  UMU             S S  *");printf("\n");
-            printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}        ½©Ê¬ *");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}        ï¿½ï¿½Ê¬ *");printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       |X X| *");printf("\n");
             printf("*  | V | [6]       | O | *");printf("\n");
             printf("*   OVO  ZXZ        CVD  *");printf("\n");
@@ -567,13 +560,13 @@ bool fight_to_jiangshi(){
             printf("* //N N   I     3oo=SSS  *");printf("\n");
             printf("*// ONO   O         RRR  *");printf("\n");
             printf("*P  UMU             S S  *");printf("\n");
-            printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             system("cls");
             if (HP<=0){
-                print("ÄãÓ®ÁË£¡»ñµÃ100½ð±Ò£¡300¾­ÑéÖµ£¡");
+                print("ï¿½ï¿½Ó®ï¿½Ë£ï¿½ï¿½ï¿½ï¿½100ï¿½ï¿½Ò£ï¿½300ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½");
                 Player.EXP+=300;
                 lvup();Player.HP+=378;if (Player.HP>Player.MAXHP) Player.HP=Player.MAXHP;
                 Player.Money+=100;
@@ -583,8 +576,8 @@ bool fight_to_jiangshi(){
             sd=ATK-Player.DEF+(rand()%100);
             Player.HP-=sd;
             printf("**************************");printf("\n");
-            printf("*     >  {=}        ½©Ê¬ *");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}        ï¿½ï¿½Ê¬ *");printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       |X X| *");printf("\n");
             printf("*  | V | [6]       | O | *");printf("\n");
             printf("*   OVO  ZXZ        CVD  *");printf("\n");
@@ -592,13 +585,13 @@ bool fight_to_jiangshi(){
             printf("* //N N   I     3oo=SSS  *");printf("\n");
             printf("*// ONO   O         RRR  *");printf("\n");
             printf("*P  UMU             S S  *");printf("\n");
-            printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}        ½©Ê¬ *");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}        ï¿½ï¿½Ê¬ *");printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       |X X| *");printf("\n");
             printf("*  | V | [6]       | O | *");printf("\n");
             printf("*   OVO  ZXZ        CVD  *");printf("\n");
@@ -606,13 +599,13 @@ bool fight_to_jiangshi(){
             printf("* //N N   I     3oo=SSS  *");printf("\n");
             printf("*// ONO   O         RRR  *");printf("\n");
             printf("*P  UMU             S S  *");printf("\n");
-            printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}        ½©Ê¬ *");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}        ï¿½ï¿½Ê¬ *");printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       |X X| *");printf("\n");
             printf("*  | V | [6]       | O | *");printf("\n");
             printf("*   OVO  ZXZ        CVD  *");printf("\n");
@@ -620,13 +613,13 @@ bool fight_to_jiangshi(){
             printf("* //N N   I     3oo=SSS  *");printf("\n");
             printf("*// ONO   O         RRR  *");printf("\n");
             printf("*P  UMU             S S  *");printf("\n");
-            printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}        ½©Ê¬ *");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}        ï¿½ï¿½Ê¬ *");printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       |X X| *");printf("\n");
             printf("*  | V | [6]       | O | *");printf("\n");
             printf("*   OVO  ZXZ        CVD  *");printf("\n");
@@ -634,13 +627,13 @@ bool fight_to_jiangshi(){
             printf("* //N N   I     3oo=SSS  *");printf("\n");
             printf("*// ONO   O         RRR  *");printf("\n");
             printf("*P  UMU             S S  *");printf("\n");
-            printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}        ½©Ê¬ *");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}        ï¿½ï¿½Ê¬ *");printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       |X X| *");printf("\n");
             printf("*  | V ***6]       | O | *");printf("\n");
             printf("*   OV*+o+*Z        CVD  *");printf("\n");
@@ -648,12 +641,12 @@ bool fight_to_jiangshi(){
             printf("* //N *+o+*     3oo=SSS  *");printf("\n");
             printf("*// ONO***O         RRR  *");printf("\n");
             printf("*P  UMU             S S  *");printf("\n");
-            printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(500);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(500);system("cls");
             if (Player.HP<=0){
-                print("Äã±»Ò§ËÀÁË£¡");
+                print("ï¿½ã±»Ò§ï¿½ï¿½ï¿½Ë£ï¿½");
                 exit(1);
             }
         }
@@ -662,12 +655,12 @@ bool fight_to_jiangshi(){
 }
 bool fight_to_sheshou(){
     system("cls");
-    string name="½©Ê¬";
+    string name="ï¿½ï¿½Ê¬";
     int HP=750,MAXHP=750,ATK=100,DEF=2;
     while (1){
         printf("**************************");printf("\n");
-        printf("*     >  {=}     ÷¼÷ÃÉäÊÖ*");printf("\n");
-        printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+        printf("*     >  {=}     ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*");printf("\n");
+        printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
         printf("*  |O O| {6}      +|X X| *");printf("\n");
         printf("*  | V | [6]     +|| O | *");printf("\n");
         printf("*   OVO  ZXZ    + | ===  *");printf("\n");
@@ -675,14 +668,14 @@ bool fight_to_sheshou(){
         printf("* //N N   I    |-----|   *");printf("\n");
         printf("*// ONO   O     + |  |   *");printf("\n");
         printf("*P  UMU          +| ===  *");printf("\n");
-        printf("*   U U           + | |  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+        printf("*   U U           + | |  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
         printf("*   D D             | |  *");printf("\n");
         printf("**************************");printf("\n");
-        printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");
+        printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");
         qwe=_getch();
         if (qwe=='2'){
             system("cls");
-            print("ÈýÊ®Áù¼Æ£¬×ßÎªÉÏ¼Æ£¡");
+            print("ï¿½ï¿½Ê®ï¿½ï¿½ï¿½Æ£ï¿½ï¿½ï¿½Îªï¿½Ï¼Æ£ï¿½");
             system("cls");
             return false;
         }else if (qwe=='1'){
@@ -691,8 +684,8 @@ bool fight_to_sheshou(){
             sd=Player.ATK-DEF+(rand()%100);
             HP-=sd;
             printf("**************************");printf("\n");
-            printf("*     >  {=}     ÷¼÷ÃÉäÊÖ*");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}     ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*");printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}      +|X X| *");printf("\n");
             printf("*  | V | [6]     +|| O | *");printf("\n");
             printf("*   OVO  ZXZ    + | ===  *");printf("\n");
@@ -700,13 +693,13 @@ bool fight_to_sheshou(){
             printf("* //N N   I    |-----|   *");printf("\n");
             printf("*// ONO   O     + |  |   *");printf("\n");
             printf("*P  UMU          +| ===  *");printf("\n");
-            printf("*   U U           + | |  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U           + | |  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D             | |  *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >          ÷¼÷ÃÉäÊÖ*");printf("\n");
-            printf("*   _/_             ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >          ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*");printf("\n");
+            printf("*   _/_             ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O|          +|X X| *");printf("\n");
             printf("*  | V |         +|| O | *");printf("\n");
             printf("*   OVO   |     + | ===  *");printf("\n");
@@ -714,13 +707,13 @@ bool fight_to_sheshou(){
             printf("* //N N   |    |-----|   *");printf("\n");
             printf("*// ONO         + |  |   *");printf("\n");
             printf("*P  UMU          +| ===  *");printf("\n");
-            printf("*   U U           + | |  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U           + | |  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D             | |  *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >          ÷¼÷ÃÉäÊÖ*");printf("\n");
-            printf("*   _/_             ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >          ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*");printf("\n");
+            printf("*   _/_             ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O|          +|X X| *");printf("\n");
             printf("*  | V |  |      +|| O | *");printf("\n");
             printf("*   OVO  =+============= *");printf("\n");
@@ -728,13 +721,13 @@ bool fight_to_sheshou(){
             printf("* //N N        |-----|   *");printf("\n");
             printf("*// ONO         + |  |   *");printf("\n");
             printf("*P  UMU          +| ===  *");printf("\n");
-            printf("*   U U           + | |  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U           + | |  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D             | |  *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >          ÷¼÷ÃÉäÊÖ*");printf("\n");
-            printf("*   _/_             ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >          ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*");printf("\n");
+            printf("*   _/_             ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O|          +|X X| *");printf("\n");
             printf("*  | V |         +|| O | *");printf("\n");
             printf("*   OVO   |     + | ===  *");printf("\n");
@@ -742,13 +735,13 @@ bool fight_to_sheshou(){
             printf("* //N N   |    |-----|   *");printf("\n");
             printf("*// ONO         + |  |   *");printf("\n");
             printf("*P  UMU          +| ===  *");printf("\n");
-            printf("*   U U           + | |  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U           + | |  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D             | |  *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >          ÷¼÷ÃÉäÊÖ*");printf("\n");
-            printf("*   _/_             ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >          ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*");printf("\n");
+            printf("*   _/_             ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O|          +|X X| *");printf("\n");
             printf("*  | V |         +|| O | *");printf("\n");
             printf("*   OVO         + | ===  *");printf("\n");
@@ -756,12 +749,12 @@ bool fight_to_sheshou(){
             printf("* //N N ==+============= *");printf("\n");
             printf("*// ONO   |     + |  |   *");printf("\n");
             printf("*P  UMU          +| ===  *");printf("\n");
-            printf("*   U U           + | |  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U           + | |  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D             | |  *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             if (HP<=0){
-                print("ÄãÓ®ÁË£¡»ñµÃ50½ð±Ò£¡400¾­ÑéÖµ£¡");
+                print("ï¿½ï¿½Ó®ï¿½Ë£ï¿½ï¿½ï¿½ï¿½50ï¿½ï¿½Ò£ï¿½400ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½");
                 Player.EXP+=400;
                 lvup();Player.HP+=378;if (Player.HP>Player.MAXHP) Player.HP=Player.MAXHP;
                 Player.Money+=50;
@@ -771,8 +764,8 @@ bool fight_to_sheshou(){
             sd=ATK-Player.DEF+(rand()%100);
             Player.HP-=sd;
             printf("**************************");printf("\n");
-            printf("*     >  {=}     ÷¼÷ÃÉäÊÖ*");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}     ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*");printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}      +|X X| *");printf("\n");
             printf("*  | V | [6]     +|| O | *");printf("\n");
             printf("*   OVO  ZXZ    + | ===  *");printf("\n");
@@ -780,13 +773,13 @@ bool fight_to_sheshou(){
             printf("* //N N   I    |-----|   *");printf("\n");
             printf("*// ONO   O     + |  |   *");printf("\n");
             printf("*P  UMU          +| ===  *");printf("\n");
-            printf("*   U U           + | |  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U           + | |  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D             | |  *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}     ÷¼÷ÃÉäÊÖ*");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}     ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*");printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}      +|X X| *");printf("\n");
             printf("*  | V | [6]     +|| O | *");printf("\n");
             printf("*   OVO  ZXZ    + | ===  *");printf("\n");
@@ -794,13 +787,13 @@ bool fight_to_sheshou(){
             printf("* //N N   I    |-----|   *");printf("\n");
             printf("*// ONO   O     + |  |   *");printf("\n");
             printf("*P  UMU          +| ===  *");printf("\n");
-            printf("*   U U           + | |  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U           + | |  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D             | |  *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}     ÷¼÷ÃÉäÊÖ*");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}     ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*");printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}      +|X X| *");printf("\n");
             printf("*  | V | [6]     +|| O | *");printf("\n");
             printf("*   OVO  ZXZ    + | ===  *");printf("\n");
@@ -808,13 +801,13 @@ bool fight_to_sheshou(){
             printf("* //N N   I    |-----|   *");printf("\n");
             printf("*// ONO   O     + |  |   *");printf("\n");
             printf("*P  UMU          +| ===  *");printf("\n");
-            printf("*   U U           + | |  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U           + | |  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D             | |  *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}     ÷¼÷ÃÉäÊÖ*");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}     ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*");printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}      +|X X| *");printf("\n");
             printf("*  | V | [6]     +|| O | *");printf("\n");
             printf("*   OVO  ZXZ    + | ===  *");printf("\n");
@@ -822,13 +815,13 @@ bool fight_to_sheshou(){
             printf("* //N N   I    |-----|   *");printf("\n");
             printf("*// ONO   O     + |  |   *");printf("\n");
             printf("*P  UMU          +| ===  *");printf("\n");
-            printf("*   U U           + | |  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U           + | |  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D             | |  *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}     ÷¼÷ÃÉäÊÖ*");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}     ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*");printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}      +|X X| *");printf("\n");
             printf("*  AAAAAAAAA     +|| O | *");printf("\n");
             printf("*  AAAAAAAAA    + | ===  *");printf("\n");
@@ -836,42 +829,42 @@ bool fight_to_sheshou(){
             printf("* /AAAAAAAAA   |-----|   *");printf("\n");
             printf("*//AAAAAAAAA    + |  |   *");printf("\n");
             printf("*P  UMU          +| ===  *");printf("\n");
-            printf("*   U U           + | |  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U           + | |  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D             | |  *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             if (Player.HP<=0){
-                print("Äã±»Éä³ÉÂí·äÎÑÁË£¡»î²»¹ýÀ´ÁË£¡");
+                print("ï¿½ã±»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë£ï¿½ï¿½î²»ï¿½ï¿½ï¿½ï¿½ï¿½Ë£ï¿½");
                 exit(1);
             }
         }else if (qwe=='3'){
             int sd;
             system("cls");
-            printf("q.ÄãÓÐ%dÕÅ»ØÑª·û£¡\n",Player.k1);
-            printf("w.ÄãÓÐ%dÕÅÄýÉñ¹éÔª·û£¡\n",Player.k2);
-            printf("e.ÄãÓÐ%dÕÅ×óÓÒ»¥²«·û£¡\n",Player.k3);
-            printf("r.ÄãÓÐ%dÕÅ¿ºÁúÓÐ»Ú·û£¡\n",Player.k4);
-            printf("t.ÄãÓÐ%dÕÅ¾ÆÉñ·û£¡\n",Player.k5);
-            printf("y.ÄãÓÐ%dÕÅ¶á»ê·û£¡\n",Player.k6);
-            printf("u.ÄãÓÐ%dÕÅÎüÐÇ´ó·¨·û£¡\n",Player.k7);
-            printf("i.ÄãÓÐ%dÕÅ¶À¹Â¾Å½£·û£¡\n",Player.k8);
-            printf("o.ÄãÓÐ%dÕÅÄÆË®Éñ¹¦·û£¡\n",Player.k9);
+            printf("q.ï¿½ï¿½ï¿½ï¿½%dï¿½Å»ï¿½Ñªï¿½ï¿½ï¿½ï¿½\n",Player.k1);
+            printf("w.ï¿½ï¿½ï¿½ï¿½%dï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôªï¿½ï¿½ï¿½ï¿½\n",Player.k2);
+            printf("e.ï¿½ï¿½ï¿½ï¿½%dï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n",Player.k3);
+            printf("r.ï¿½ï¿½ï¿½ï¿½%dï¿½Å¿ï¿½ï¿½ï¿½ï¿½Ð»Ú·ï¿½ï¿½ï¿½\n",Player.k4);
+            printf("t.ï¿½ï¿½ï¿½ï¿½%dï¿½Å¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n",Player.k5);
+            printf("y.ï¿½ï¿½ï¿½ï¿½%dï¿½Å¶ï¿½ï¿½ï¿½ï¿½ï¿½\n",Player.k6);
+            printf("u.ï¿½ï¿½ï¿½ï¿½%dï¿½ï¿½ï¿½ï¿½ï¿½Ç´ó·¨·ï¿½ï¿½ï¿½\n",Player.k7);
+            printf("i.ï¿½ï¿½ï¿½ï¿½%dï¿½Å¶ï¿½ï¿½Â¾Å½ï¿½ï¿½ï¿½ï¿½ï¿½\n",Player.k8);
+            printf("o.ï¿½ï¿½ï¿½ï¿½%dï¿½ï¿½ï¿½ï¿½Ë®ï¿½ñ¹¦·ï¿½ï¿½ï¿½\n",Player.k9);
             qwe=_getch();
             switch (qwe){
-                case 'q':if (Player.k1>=1){Player.k1--;print("¸Ðµ½Ò»ÕóÊæ³©£¡HP+500");Player.HP+=500;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'w':if (Player.k2>=1){Player.k2--;print("¸Ð¾õÒ»ÕóµçÁ÷Ò»°ãµÄ¿ì¸ÐÁ÷±éÈ«Éí£¡HP+1000");Player.HP+=1000;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'e':if (Player.k3>=1){Player.k3--;print("ÄãµÄË«ÊÖÄÜÊ¹ÓÃ²»Í¬µÄÕÐÊ½£¡ÉËº¦·­±¶£¡");Player.ATK*=2;};break;
-                case 'r':if (Player.k4>=1){Player.k4--;print("ÕÆ·çÒ»ÏÂ×ÓºôÁË³öÈ¥£¬Ìì±ÀµØÁÑ£¡");sd=rand()%50000+1;HP-=sd;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 't':if (Player.k5>=1){Player.k5--;print("Ò»¹É¾Þ´óµÄÁ¦Á¿³åÁË³öÀ´£¡");sd=rand()%80000+20000;HP-=sd;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'y':if (Player.k6>=1){Player.k6--;print("¶á»ê£¡£¡£¡");if ((rand()%21)%10==0)HP=0;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'u':if (Player.k7>=1){Player.k7--;print("¿´ÎÒÉñ¹¦£¡£¡£¡£¡");HP-=500;Player.HP+=500;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'i':if (Player.k8>=1){Player.k8--;print("¶À¹Â¾Å½££¡ÃëÌìÃëµØ£¡");Player.ATK*=9;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'o':if (Player.k9>=1){Player.k9--;print("ÄÆË®Éñ¹¦£¬ÕÀ·Å¼¤ÁÒµÄ»ð»¨£¡");sd=rand();HP-=sd;}else print("ÄãÃ»ÓÐ£¡");break;
+                case 'q':if (Player.k1>=1){Player.k1--;print("ï¿½Ðµï¿½Ò»ï¿½ï¿½ï¿½æ³©ï¿½ï¿½HP+500");Player.HP+=500;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'w':if (Player.k2>=1){Player.k2--;print("ï¿½Ð¾ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È«ï¿½ï¿½ï¿½ï¿½HP+1000");Player.HP+=1000;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'e':if (Player.k3>=1){Player.k3--;print("ï¿½ï¿½ï¿½Ë«ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½Ã²ï¿½Í¬ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½Ëºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");Player.ATK*=2;};break;
+                case 'r':if (Player.k4>=1){Player.k4--;print("ï¿½Æ·ï¿½Ò»ï¿½ï¿½ï¿½Óºï¿½ï¿½Ë³ï¿½È¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ£ï¿½");sd=rand()%50000+1;HP-=sd;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 't':if (Player.k5>=1){Player.k5--;print("Ò»ï¿½É¾Þ´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½ï¿½ï¿½ï¿½");sd=rand()%80000+20000;HP-=sd;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'y':if (Player.k6>=1){Player.k6--;print("ï¿½ï¿½ê£¡ï¿½ï¿½ï¿½ï¿½");if ((rand()%21)%10==0)HP=0;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'u':if (Player.k7>=1){Player.k7--;print("ï¿½ï¿½ï¿½ï¿½ï¿½ñ¹¦£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");HP-=500;Player.HP+=500;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'i':if (Player.k8>=1){Player.k8--;print("ï¿½ï¿½ï¿½Â¾Å½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø£ï¿½");Player.ATK*=9;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'o':if (Player.k9>=1){Player.k9--;print("ï¿½ï¿½Ë®ï¿½ñ¹¦£ï¿½ï¿½ï¿½ï¿½Å¼ï¿½ï¿½ÒµÄ»ð»¨£ï¿½");sd=rand();HP-=sd;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
             }
             system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}     ÷¼÷ÃÉäÊÖ*");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}     ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*");printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}      +|X X| *");printf("\n");
             printf("*  | V | [6]     +|| O | *");printf("\n");
             printf("*   OVO  ZXZ    + | ===  *");printf("\n");
@@ -879,13 +872,13 @@ bool fight_to_sheshou(){
             printf("* //N N   I    |-----|   *");printf("\n");
             printf("*// ONO   O     + |  |   *");printf("\n");
             printf("*P  UMU          +| ===  *");printf("\n");
-            printf("*   U U           + | |  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U           + | |  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D             | |  *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}     ÷¼÷ÃÉäÊÖ*");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}     ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*");printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}      +|X X| *");printf("\n");
             printf("*  | V | [6]  ---------- *");printf("\n");
             printf("*   OVO  ZXZ    + | ===  *");printf("\n");
@@ -893,13 +886,13 @@ bool fight_to_sheshou(){
             printf("* //N N   I    |-----|   *");printf("\n");
             printf("*// ONO   O     + |  |   *");printf("\n");
             printf("*P  UMU        --------  *");printf("\n");
-            printf("*   U U           + | |  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U           + | |  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D             | |  *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}     ÷¼÷ÃÉäÊÖ*");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}     ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*");printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}      +|X X| *");printf("\n");
             printf("*  | V | [6]     +|| O | *");printf("\n");
             printf("*   OVO  ZXZ    + | ===  *");printf("\n");
@@ -907,13 +900,13 @@ bool fight_to_sheshou(){
             printf("* //N N   I    |------   *");printf("\n");
             printf("*// ONO   O     + |  |   *");printf("\n");
             printf("*P  UMU          +| ===  *");printf("\n");
-            printf("*   U U           + | |  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U           + | |  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D        --------  *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}     ÷¼÷ÃÉäÊÖ*");printf("\n");
-            printf("*   _/_  [6]        __/  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}     ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*");printf("\n");
+            printf("*   _/_  [6]        __/  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}      +|X/X| *");printf("\n");
             printf("*  | V | [6]     +||/O |/*");printf("\n");
             printf("*   OVO  ZXZ    + |/===/ *");printf("\n");
@@ -921,13 +914,13 @@ bool fight_to_sheshou(){
             printf("* //N N   I    |-/---/   *");printf("\n");
             printf("*// ONO   O     / / /| / *");printf("\n");
             printf("*P  UMU          /| ==/  *");printf("\n");
-            printf("*   U U         / + |/|  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U         / + |/|  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D        /    / |  *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}     ÷¼÷ÃÉäÊÖ*");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}     ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*");printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}  ++++++++++ *");printf("\n");
             printf("*  | V | [6]    ++|| O | *");printf("\n");
             printf("*   OVO  ZXZ    + | ===  *");printf("\n");
@@ -935,12 +928,12 @@ bool fight_to_sheshou(){
             printf("* //N N   I    |-+-++|   *");printf("\n");
             printf("*// ONO   O     * ++++   *");printf("\n");
             printf("*P  UMU          +| ===  *");printf("\n");
-            printf("*   U U         * + | |  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U         * + | |  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D             | |  *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             if (HP<=0){
-                print("ÄãÓ®ÁË£¡»ñµÃ100½ð±Ò£¡300¾­ÑéÖµ£¡");
+                print("ï¿½ï¿½Ó®ï¿½Ë£ï¿½ï¿½ï¿½ï¿½100ï¿½ï¿½Ò£ï¿½300ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½");
                 Player.EXP+=300;
                 lvup();Player.HP+=378;if (Player.HP>Player.MAXHP) Player.HP=Player.MAXHP;
                 Player.Money+=100;
@@ -950,8 +943,8 @@ bool fight_to_sheshou(){
             sd=ATK-Player.DEF+(rand()%100);
             Player.HP-=sd;
             printf("**************************");printf("\n");
-            printf("*     >  {=}     ÷¼÷ÃÉäÊÖ*");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}     ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*");printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}      +|X X| *");printf("\n");
             printf("*  | V | [6]     +|| O | *");printf("\n");
             printf("*   OVO  ZXZ    + | ===  *");printf("\n");
@@ -959,13 +952,13 @@ bool fight_to_sheshou(){
             printf("* //N N   I    |-----|   *");printf("\n");
             printf("*// ONO   O     + |  |   *");printf("\n");
             printf("*P  UMU          +| ===  *");printf("\n");
-            printf("*   U U           + | |  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U           + | |  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D             | |  *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}     ÷¼÷ÃÉäÊÖ*");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}     ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*");printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}      +|X X| *");printf("\n");
             printf("*  | V | [6]     +|| O | *");printf("\n");
             printf("*   OVO  ZXZ    + | ===  *");printf("\n");
@@ -973,13 +966,13 @@ bool fight_to_sheshou(){
             printf("* //N N   I    |-----|   *");printf("\n");
             printf("*// ONO   O     + |  |   *");printf("\n");
             printf("*P  UMU          +| ===  *");printf("\n");
-            printf("*   U U           + | |  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U           + | |  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D             | |  *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}     ÷¼÷ÃÉäÊÖ*");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}     ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*");printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}      +|X X| *");printf("\n");
             printf("*  | V | [6]     +|| O | *");printf("\n");
             printf("*   OVO  ZXZ    + | ===  *");printf("\n");
@@ -987,13 +980,13 @@ bool fight_to_sheshou(){
             printf("* //N N   I    |-----|   *");printf("\n");
             printf("*// ONO   O     + |  |   *");printf("\n");
             printf("*P  UMU          +| ===  *");printf("\n");
-            printf("*   U U           + | |  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U           + | |  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D             | |  *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}     ÷¼÷ÃÉäÊÖ*");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}     ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*");printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}      +|X X| *");printf("\n");
             printf("*  | V | [6]     +|| O | *");printf("\n");
             printf("*   OVO  ZXZ    + | ===  *");printf("\n");
@@ -1001,13 +994,13 @@ bool fight_to_sheshou(){
             printf("* //N N   I    |-----|   *");printf("\n");
             printf("*// ONO   O     + |  |   *");printf("\n");
             printf("*P  UMU          +| ===  *");printf("\n");
-            printf("*   U U           + | |  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U           + | |  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D             | |  *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}     ÷¼÷ÃÉäÊÖ*");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}     ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*");printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}      +|X X| *");printf("\n");
             printf("*  AAAAAAAAA     +|| O | *");printf("\n");
             printf("*  AAAAAAAAA    + | ===  *");printf("\n");
@@ -1015,12 +1008,12 @@ bool fight_to_sheshou(){
             printf("* /AAAAAAAAA   |-----|   *");printf("\n");
             printf("*//AAAAAAAAA    + |  |   *");printf("\n");
             printf("*P  UMU          +| ===  *");printf("\n");
-            printf("*   U U           + | |  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U           + | |  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D             | |  *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             if (Player.HP<=0){
-                print("Äã±»Éä³ÉÂí·äÎÑÁË£¡»î²»¹ýÀ´ÁË£¡");
+                print("ï¿½ã±»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë£ï¿½ï¿½î²»ï¿½ï¿½ï¿½ï¿½ï¿½Ë£ï¿½");
                 exit(1);
             }
         }
@@ -1029,12 +1022,12 @@ bool fight_to_sheshou(){
 }
 bool fight_to_kulipa(){
     system("cls");
-    string name="½©Ê¬";
+    string name="ï¿½ï¿½Ê¬";
     int HP=1300,MAXHP=1300,ATK=80,DEF=20;
     while (1){
         printf("**************************");printf("\n");
-        printf("*     >  {=}      ¿àÁ¦ÅÂ *");printf("\n");
-        printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+        printf("*     >  {=}      ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ *");printf("\n");
+        printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
         printf("*  |O O| {6}       |U U| *");printf("\n");
         printf("*  | V | [6]       | A | *");printf("\n");
         printf("*   OVO  ZXZ        CVD  *");printf("\n");
@@ -1042,14 +1035,14 @@ bool fight_to_kulipa(){
         printf("* //N N   I         SSS o*");printf("\n");
         printf("*// ONO   O         RRR M*");printf("\n");
         printf("*P  UMU             SSS  *");printf("\n");
-        printf("*   U U           SSSASSS*ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+        printf("*   U U           SSSASSS*ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
         printf("*   D D           SSSASSS*");printf("\n");
         printf("**************************");printf("\n");
-        printf("1.¹¥»÷   2.ÌÓÅÜ    3.¼¼ÄÜ ");printf("\n");
+        printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½    3.ï¿½ï¿½ï¿½ï¿½ ");printf("\n");
         qwe=_getch();
         if (qwe=='2'){
             system("cls");
-            print("ÈýÊ®Áù¼Æ£¬×ßÎªÉÏ¼Æ£¡");
+            print("ï¿½ï¿½Ê®ï¿½ï¿½ï¿½Æ£ï¿½ï¿½ï¿½Îªï¿½Ï¼Æ£ï¿½");
             system("cls");
             return false;
         }else if (qwe=='1'){
@@ -1058,8 +1051,8 @@ bool fight_to_kulipa(){
             sd=Player.ATK-DEF+(rand()%100);
             HP-=sd;
             printf("**************************");printf("\n");
-            printf("*     >  {=}      ¿àÁ¦ÅÂ *");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}      ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ *");printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       |U U| *");printf("\n");
             printf("*  | V | ZZZ       | A | *");printf("\n");
             printf("*   OVO  ZZZ        CVD  *");printf("\n");
@@ -1067,13 +1060,13 @@ bool fight_to_kulipa(){
             printf("* //N N   I         SSS o*");printf("\n");
             printf("*// ONO   O         RRR M*");printf("\n");
             printf("*P  UMU             SSS  *");printf("\n");
-            printf("*   U U           SSSASSS*ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U           SSSASSS*ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D           SSSASSS*");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ    3.¼¼ÄÜ ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½    3.ï¿½ï¿½ï¿½ï¿½ ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  ZZZ      ¿àÁ¦ÅÂ *");printf("\n");
-            printf("*   _/_  ZZZ        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  ZZZ      ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ *");printf("\n");
+            printf("*   _/_  ZZZ        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| ZZZ       |U U| *");printf("\n");
             printf("*  | V | ZZZ       | A | *");printf("\n");
             printf("*   OVO  ZZZ        CVD  *");printf("\n");
@@ -1081,13 +1074,13 @@ bool fight_to_kulipa(){
             printf("* //N N   Z         SSS o*");printf("\n");
             printf("*// ONO   Z         RRR M*");printf("\n");
             printf("*P  UMU             SSS  *");printf("\n");
-            printf("*   U U           SSSASSS*ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U           SSSASSS*ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D           SSSASSS*");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ    3.¼¼ÄÜ ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½    3.ï¿½ï¿½ï¿½ï¿½ ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*ZZZZZZ           ¿àÁ¦ÅÂ *");printf("\n");
-            printf("* ZZZZZZZ           ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*ZZZZZZ           ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ *");printf("\n");
+            printf("* ZZZZZZZ           ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O OZZZ         |U U| *");printf("\n");
             printf("*  | V ZZZZ        | A | *");printf("\n");
             printf("*   OVO ZZZ         CVD  *");printf("\n");
@@ -1095,13 +1088,13 @@ bool fight_to_kulipa(){
             printf("* //N N   Z         SSS o*");printf("\n");
             printf("*// ONO             RRR M*");printf("\n");
             printf("*P  UMU             SSS  *");printf("\n");
-            printf("*   U U           SSSASSS*ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U           SSSASSS*ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D           SSSASSS*");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ    3.¼¼ÄÜ ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½    3.ï¿½ï¿½ï¿½ï¿½ ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >       ZZZZ¿àÁ¦ÅÂ *");printf("\n");
-            printf("*   _/_         ZZZZ__  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >       ZZZZï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ *");printf("\n");
+            printf("*   _/_         ZZZZ__  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O|        ZZZZU U| *");printf("\n");
             printf("*  | V |       ZZZZ| A | *");printf("\n");
             printf("*   OVO        ZZZZZCVD  *");printf("\n");
@@ -1109,13 +1102,13 @@ bool fight_to_kulipa(){
             printf("* //N N       ZZZZ  SSS o*");printf("\n");
             printf("*// ONO     ZZZZ    RRR M*");printf("\n");
             printf("*P  UMU    ZZZZZ    SSS  *");printf("\n");
-            printf("*   U U   ZZZZ    SSSASSS*ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U   ZZZZ    SSSASSS*ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D  ZZZZZZ   SSSASSS*");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ    3.¼¼ÄÜ ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½    3.ï¿½ï¿½ï¿½ï¿½ ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}      ¿àÁ¦ÅÂ *");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}      ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ *");printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       |U U| *");printf("\n");
             printf("*  | V | [6]       | A | *");printf("\n");
             printf("*   OVO  ZXZ        CVD  *");printf("\n");
@@ -1123,12 +1116,12 @@ bool fight_to_kulipa(){
             printf("* //N N   I         SSS o*");printf("\n");
             printf("*// ONO   O         RRR M*");printf("\n");
             printf("*P  UMU             SSS  *");printf("\n");
-            printf("*   U U           SSSASSS*ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U           SSSASSS*ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D           SSSASSS*");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ    3.¼¼ÄÜ ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½    3.ï¿½ï¿½ï¿½ï¿½ ");printf("\n");Sleep(200);system("cls");
             if (HP<=0){
-                print("ÄãÓ®ÁË£¡»ñµÃ150½ð±Ò£¡200¾­ÑéÖµ£¡");
+                print("ï¿½ï¿½Ó®ï¿½Ë£ï¿½ï¿½ï¿½ï¿½150ï¿½ï¿½Ò£ï¿½200ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½");
                 Player.EXP+=200;
                 lvup();Player.HP+=378;if (Player.HP>Player.MAXHP) Player.HP=Player.MAXHP;
                 Player.Money+=150;
@@ -1138,8 +1131,8 @@ bool fight_to_kulipa(){
             sd=ATK-Player.DEF+(rand()%100);
             Player.HP-=sd;
             printf("**************************");printf("\n");
-            printf("*     >  {=}      ¿àÁ¦ÅÂ *");printf("\n");
-            printf("*   _/_  [6]        TTT  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}      ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ *");printf("\n");
+            printf("*   _/_  [6]        TTT  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       TTTTT *");printf("\n");
             printf("*  | V | [6]       TTTTT *");printf("\n");
             printf("*   OVO  ZXZ        TTT  *");printf("\n");
@@ -1147,13 +1140,13 @@ bool fight_to_kulipa(){
             printf("* //N N   I         TTT T*");printf("\n");
             printf("*// ONO   O        TTTTTT*");printf("\n");
             printf("*P  UMU            TTTTT *");printf("\n");
-            printf("*   U U           TTTTTTT*ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U           TTTTTTT*ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D           SSSASSS*");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ    3.¼¼ÄÜ ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½    3.ï¿½ï¿½ï¿½ï¿½ ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}      ¿àÁ¦ÅÂ *");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}      ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ *");printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}TTTTTTTTTTTT *");printf("\n");
             printf("*  | V | [6]       | A | *");printf("\n");
             printf("*   OVO  ZXZ        CVD  *");printf("\n");
@@ -1161,13 +1154,13 @@ bool fight_to_kulipa(){
             printf("* //N N   I         SSS o*");printf("\n");
             printf("*// ONOTTTTTTTTTTTTTTTT M*");printf("\n");
             printf("*P  UMU             SSS  *");printf("\n");
-            printf("*   U U           SSSASSS*ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U           SSSASSS*ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D           SSSASSS*");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ    3.¼¼ÄÜ ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½    3.ï¿½ï¿½ï¿½ï¿½ ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}      ¿àÁ¦ÅÂ *");printf("\n");
-            printf("*TTTTTTTTT6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}      ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ *");printf("\n");
+            printf("*TTTTTTTTT6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       |U U| *");printf("\n");
             printf("*  TTTTTTTT6]       | A | *");printf("\n");
             printf("*   OVO  ZXZ        CVD  *");printf("\n");
@@ -1175,13 +1168,13 @@ bool fight_to_kulipa(){
             printf("* /TT TTTTTTTT      SSS o*");printf("\n");
             printf("*// ONO   O         RRR M*");printf("\n");
             printf("*P  TTTTTT          SSS  *");printf("\n");
-            printf("*   U U           SSSASSS*ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U           SSSASSS*ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("* TTTTTTTT        SSSASSS*");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ    3.¼¼ÄÜ ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½    3.ï¿½ï¿½ï¿½ï¿½ ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}      ¿àÁ¦ÅÂ *");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}      ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ *");printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       |TTT| *");printf("\n");
             printf("*  | V | [6]       | A | *");printf("\n");
             printf("*   OVO  ZXZ        CVD  *");printf("\n");
@@ -1189,13 +1182,13 @@ bool fight_to_kulipa(){
             printf("* //N N   ITTTTTTTT SSS o*");printf("\n");
             printf("*// ONO   O         RRR M*");printf("\n");
             printf("*P  UMU             SSS  *");printf("\n");
-            printf("*   U U           SSSASSS*ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U           SSSASSS*ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D           SSSASSS*");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ    3.¼¼ÄÜ ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½    3.ï¿½ï¿½ï¿½ï¿½ ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}      ¿àÁ¦ÅÂ *");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}      ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ *");printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       |U U| *");printf("\n");
             printf("*  | V | [6]       | A | *");printf("\n");
             printf("*   OVO  ZXZ        CVD  *");printf("\n");
@@ -1203,42 +1196,42 @@ bool fight_to_kulipa(){
             printf("* //N N   I         SSS o*");printf("\n");
             printf("*// ONO   O         RRR M*");printf("\n");
             printf("*P  UMU             SSS  *");printf("\n");
-            printf("*   U U           SSSASSS*ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U           SSSASSS*ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D           SSSASSS*");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ    3.¼¼ÄÜ ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½    3.ï¿½ï¿½ï¿½ï¿½ ");printf("\n");Sleep(200);system("cls");
             if (Player.HP<=0){
-                print("Äã±»Õ¨ËÀÁË£¡»î²»¹ýÀ´ÁË£¡");
+                print("ï¿½ã±»Õ¨ï¿½ï¿½ï¿½Ë£ï¿½ï¿½î²»ï¿½ï¿½ï¿½ï¿½ï¿½Ë£ï¿½");
                 exit(1);
             }
         }else if (qwe=='3'){
             int sd;
             system("cls");
-            printf("q.ÄãÓÐ%dÕÅ»ØÑª·û£¡\n",Player.k1);
-            printf("w.ÄãÓÐ%dÕÅÄýÉñ¹éÔª·û£¡\n",Player.k2);
-            printf("e.ÄãÓÐ%dÕÅ×óÓÒ»¥²«·û£¡\n",Player.k3);
-            printf("r.ÄãÓÐ%dÕÅ¿ºÁúÓÐ»Ú·û£¡\n",Player.k4);
-            printf("t.ÄãÓÐ%dÕÅ¾ÆÉñ·û£¡\n",Player.k5);
-            printf("y.ÄãÓÐ%dÕÅ¶á»ê·û£¡\n",Player.k6);
-            printf("u.ÄãÓÐ%dÕÅÎüÐÇ´ó·¨·û£¡\n",Player.k7);
-            printf("i.ÄãÓÐ%dÕÅ¶À¹Â¾Å½£·û£¡\n",Player.k8);
-            printf("o.ÄãÓÐ%dÕÅÄÆË®Éñ¹¦·û£¡\n",Player.k9);
+            printf("q.ï¿½ï¿½ï¿½ï¿½%dï¿½Å»ï¿½Ñªï¿½ï¿½ï¿½ï¿½\n",Player.k1);
+            printf("w.ï¿½ï¿½ï¿½ï¿½%dï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôªï¿½ï¿½ï¿½ï¿½\n",Player.k2);
+            printf("e.ï¿½ï¿½ï¿½ï¿½%dï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n",Player.k3);
+            printf("r.ï¿½ï¿½ï¿½ï¿½%dï¿½Å¿ï¿½ï¿½ï¿½ï¿½Ð»Ú·ï¿½ï¿½ï¿½\n",Player.k4);
+            printf("t.ï¿½ï¿½ï¿½ï¿½%dï¿½Å¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n",Player.k5);
+            printf("y.ï¿½ï¿½ï¿½ï¿½%dï¿½Å¶ï¿½ï¿½ï¿½ï¿½ï¿½\n",Player.k6);
+            printf("u.ï¿½ï¿½ï¿½ï¿½%dï¿½ï¿½ï¿½ï¿½ï¿½Ç´ó·¨·ï¿½ï¿½ï¿½\n",Player.k7);
+            printf("i.ï¿½ï¿½ï¿½ï¿½%dï¿½Å¶ï¿½ï¿½Â¾Å½ï¿½ï¿½ï¿½ï¿½ï¿½\n",Player.k8);
+            printf("o.ï¿½ï¿½ï¿½ï¿½%dï¿½ï¿½ï¿½ï¿½Ë®ï¿½ñ¹¦·ï¿½ï¿½ï¿½\n",Player.k9);
             qwe=_getch();
             switch (qwe){
-                case 'q':if (Player.k1>=1){Player.k1--;print("¸Ðµ½Ò»ÕóÊæ³©£¡HP+500");Player.HP+=500;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'w':if (Player.k2>=1){Player.k2--;print("¸Ð¾õÒ»ÕóµçÁ÷Ò»°ãµÄ¿ì¸ÐÁ÷±éÈ«Éí£¡HP+1000");Player.HP+=1000;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'e':if (Player.k3>=1){Player.k3--;print("ÄãµÄË«ÊÖÄÜÊ¹ÓÃ²»Í¬µÄÕÐÊ½£¡ÉËº¦·­±¶£¡");Player.ATK*=2;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'r':if (Player.k4>=1){Player.k4--;print("ÕÆ·çÒ»ÏÂ×ÓºôÁË³öÈ¥£¬Ìì±ÀµØÁÑ£¡");sd=rand()%50000+1;HP-=sd;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 't':if (Player.k5>=1){Player.k5--;print("Ò»¹É¾Þ´óµÄÁ¦Á¿³åÁË³öÀ´£¡");sd=rand()%80000+20000;HP-=sd;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'y':if (Player.k6>=1){Player.k6--;print("¶á»ê£¡£¡£¡");if ((rand()%21)%10==0)HP=0;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'u':if (Player.k7>=1){Player.k7--;print("¿´ÎÒÉñ¹¦£¡£¡£¡£¡");HP-=500;Player.HP+=500;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'i':if (Player.k8>=1){Player.k8--;print("¶À¹Â¾Å½££¡ÃëÌìÃëµØ£¡");Player.ATK*=9;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'o':if (Player.k9>=1){Player.k9--;print("ÄÆË®Éñ¹¦£¬ÕÀ·Å¼¤ÁÒµÄ»ð»¨£¡");sd=rand();HP-=sd;}else print("ÄãÃ»ÓÐ£¡");break;
+                case 'q':if (Player.k1>=1){Player.k1--;print("ï¿½Ðµï¿½Ò»ï¿½ï¿½ï¿½æ³©ï¿½ï¿½HP+500");Player.HP+=500;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'w':if (Player.k2>=1){Player.k2--;print("ï¿½Ð¾ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È«ï¿½ï¿½ï¿½ï¿½HP+1000");Player.HP+=1000;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'e':if (Player.k3>=1){Player.k3--;print("ï¿½ï¿½ï¿½Ë«ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½Ã²ï¿½Í¬ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½Ëºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");Player.ATK*=2;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'r':if (Player.k4>=1){Player.k4--;print("ï¿½Æ·ï¿½Ò»ï¿½ï¿½ï¿½Óºï¿½ï¿½Ë³ï¿½È¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ£ï¿½");sd=rand()%50000+1;HP-=sd;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 't':if (Player.k5>=1){Player.k5--;print("Ò»ï¿½É¾Þ´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½ï¿½ï¿½ï¿½");sd=rand()%80000+20000;HP-=sd;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'y':if (Player.k6>=1){Player.k6--;print("ï¿½ï¿½ê£¡ï¿½ï¿½ï¿½ï¿½");if ((rand()%21)%10==0)HP=0;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'u':if (Player.k7>=1){Player.k7--;print("ï¿½ï¿½ï¿½ï¿½ï¿½ñ¹¦£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");HP-=500;Player.HP+=500;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'i':if (Player.k8>=1){Player.k8--;print("ï¿½ï¿½ï¿½Â¾Å½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø£ï¿½");Player.ATK*=9;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'o':if (Player.k9>=1){Player.k9--;print("ï¿½ï¿½Ë®ï¿½ñ¹¦£ï¿½ï¿½ï¿½ï¿½Å¼ï¿½ï¿½ÒµÄ»ð»¨£ï¿½");sd=rand();HP-=sd;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
             }
             system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}      ¿àÁ¦ÅÂ *");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}      ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ *");printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       |U U| *");printf("\n");
             printf("*  | V | ZZZ       | A | *");printf("\n");
             printf("*   OVO  ZZZ        CVD  *");printf("\n");
@@ -1246,13 +1239,13 @@ bool fight_to_kulipa(){
             printf("* //N N   I         SSS o*");printf("\n");
             printf("*// ONO   O         RRR M*");printf("\n");
             printf("*P  UMU             SSS  *");printf("\n");
-            printf("*   U U           SSSASSS*ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U           SSSASSS*ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D           SSSASSS*");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ    3.¼¼ÄÜ ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½    3.ï¿½ï¿½ï¿½ï¿½ ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  ZZZ      ¿àÁ¦ÅÂ *");printf("\n");
-            printf("*   _/_  ZZZ        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  ZZZ      ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ *");printf("\n");
+            printf("*   _/_  ZZZ        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| ZZZ       |U U| *");printf("\n");
             printf("*  | V | ZZZ       | A | *");printf("\n");
             printf("*   OVO  ZZZ        CVD  *");printf("\n");
@@ -1260,13 +1253,13 @@ bool fight_to_kulipa(){
             printf("* //N N   Z         SSS o*");printf("\n");
             printf("*// ONO   Z         RRR M*");printf("\n");
             printf("*P  UMU             SSS  *");printf("\n");
-            printf("*   U U           SSSASSS*ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U           SSSASSS*ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D           SSSASSS*");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ    3.¼¼ÄÜ ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½    3.ï¿½ï¿½ï¿½ï¿½ ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*ZZZZZZ           ¿àÁ¦ÅÂ *");printf("\n");
-            printf("* ZZZZZZZ           ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*ZZZZZZ           ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ *");printf("\n");
+            printf("* ZZZZZZZ           ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O OZZZ         |U U| *");printf("\n");
             printf("*  | V ZZZZ        | A | *");printf("\n");
             printf("*   OVO ZZZ         CVD  *");printf("\n");
@@ -1274,13 +1267,13 @@ bool fight_to_kulipa(){
             printf("* //N N   Z         SSS o*");printf("\n");
             printf("*// ONO             RRR M*");printf("\n");
             printf("*P  UMU             SSS  *");printf("\n");
-            printf("*   U U           SSSASSS*ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U           SSSASSS*ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D           SSSASSS*");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ    3.¼¼ÄÜ ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½    3.ï¿½ï¿½ï¿½ï¿½ ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >       ZZZZ¿àÁ¦ÅÂ *");printf("\n");
-            printf("*   _/_         ZZZZ__  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >       ZZZZï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ *");printf("\n");
+            printf("*   _/_         ZZZZ__  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O|        ZZZZU U| *");printf("\n");
             printf("*  | V |       ZZZZ| A | *");printf("\n");
             printf("*   OVO        ZZZZZCVD  *");printf("\n");
@@ -1288,13 +1281,13 @@ bool fight_to_kulipa(){
             printf("* //N N       ZZZZ  SSS o*");printf("\n");
             printf("*// ONO     ZZZZ    RRR M*");printf("\n");
             printf("*P  UMU    ZZZZZ    SSS  *");printf("\n");
-            printf("*   U U   ZZZZ    SSSASSS*ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U   ZZZZ    SSSASSS*ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D  ZZZZZZ   SSSASSS*");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ    3.¼¼ÄÜ ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½    3.ï¿½ï¿½ï¿½ï¿½ ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}      ¿àÁ¦ÅÂ *");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}      ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ *");printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       |U U| *");printf("\n");
             printf("*  | V | [6]       | A | *");printf("\n");
             printf("*   OVO  ZXZ        CVD  *");printf("\n");
@@ -1302,12 +1295,12 @@ bool fight_to_kulipa(){
             printf("* //N N   I         SSS o*");printf("\n");
             printf("*// ONO   O         RRR M*");printf("\n");
             printf("*P  UMU             SSS  *");printf("\n");
-            printf("*   U U           SSSASSS*ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U           SSSASSS*ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D           SSSASSS*");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ    3.¼¼ÄÜ ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½    3.ï¿½ï¿½ï¿½ï¿½ ");printf("\n");Sleep(200);system("cls");
             if (HP<=0){
-                print("ÄãÓ®ÁË£¡»ñµÃ100½ð±Ò£¡300¾­ÑéÖµ£¡");
+                print("ï¿½ï¿½Ó®ï¿½Ë£ï¿½ï¿½ï¿½ï¿½100ï¿½ï¿½Ò£ï¿½300ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½");
                 Player.EXP+=300;
                 lvup();Player.HP+=378;if (Player.HP>Player.MAXHP) Player.HP=Player.MAXHP;
                 Player.Money+=100;
@@ -1317,8 +1310,8 @@ bool fight_to_kulipa(){
             sd=ATK-Player.DEF+(rand()%100);
             Player.HP-=sd;
             printf("**************************");printf("\n");
-            printf("*     >  {=}      ¿àÁ¦ÅÂ *");printf("\n");
-            printf("*   _/_  [6]        TTT  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}      ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ *");printf("\n");
+            printf("*   _/_  [6]        TTT  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       TTTTT *");printf("\n");
             printf("*  | V | [6]       TTTTT *");printf("\n");
             printf("*   OVO  ZXZ        TTT  *");printf("\n");
@@ -1326,13 +1319,13 @@ bool fight_to_kulipa(){
             printf("* //N N   I         TTT T*");printf("\n");
             printf("*// ONO   O        TTTTTT*");printf("\n");
             printf("*P  UMU            TTTTT *");printf("\n");
-            printf("*   U U           TTTTTTT*ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U           TTTTTTT*ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D           SSSASSS*");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ    3.¼¼ÄÜ ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½    3.ï¿½ï¿½ï¿½ï¿½ ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}      ¿àÁ¦ÅÂ *");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}      ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ *");printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}TTTTTTTTTTTT *");printf("\n");
             printf("*  | V | [6]       | A | *");printf("\n");
             printf("*   OVO  ZXZ        CVD  *");printf("\n");
@@ -1340,13 +1333,13 @@ bool fight_to_kulipa(){
             printf("* //N N   I         SSS o*");printf("\n");
             printf("*// ONOTTTTTTTTTTTTTTTT M*");printf("\n");
             printf("*P  UMU             SSS  *");printf("\n");
-            printf("*   U U           SSSASSS*ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U           SSSASSS*ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D           SSSASSS*");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ    3.¼¼ÄÜ ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½    3.ï¿½ï¿½ï¿½ï¿½ ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}      ¿àÁ¦ÅÂ *");printf("\n");
-            printf("*TTTTTTTTT6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}      ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ *");printf("\n");
+            printf("*TTTTTTTTT6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       |U U| *");printf("\n");
             printf("*  TTTTTTTT6]       | A | *");printf("\n");
             printf("*   OVO  ZXZ        CVD  *");printf("\n");
@@ -1354,13 +1347,13 @@ bool fight_to_kulipa(){
             printf("* /TT TTTTTTTT      SSS o*");printf("\n");
             printf("*// ONO   O         RRR M*");printf("\n");
             printf("*P  TTTTTT          SSS  *");printf("\n");
-            printf("*   U U           SSSASSS*ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U           SSSASSS*ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("* TTTTTTTT        SSSASSS*");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ    3.¼¼ÄÜ ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½    3.ï¿½ï¿½ï¿½ï¿½ ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}      ¿àÁ¦ÅÂ *");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}      ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ *");printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       |TTT| *");printf("\n");
             printf("*  | V | [6]       | A | *");printf("\n");
             printf("*   OVO  ZXZ        CVD  *");printf("\n");
@@ -1368,13 +1361,13 @@ bool fight_to_kulipa(){
             printf("* //N N   ITTTTTTTT SSS o*");printf("\n");
             printf("*// ONO   O         RRR M*");printf("\n");
             printf("*P  UMU             SSS  *");printf("\n");
-            printf("*   U U           SSSASSS*ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U           SSSASSS*ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D           SSSASSS*");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ    3.¼¼ÄÜ ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½    3.ï¿½ï¿½ï¿½ï¿½ ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}      ¿àÁ¦ÅÂ *");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}      ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ *");printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       |U U| *");printf("\n");
             printf("*  | V | [6]       | A | *");printf("\n");
             printf("*   OVO  ZXZ        CVD  *");printf("\n");
@@ -1382,12 +1375,12 @@ bool fight_to_kulipa(){
             printf("* //N N   I         SSS o*");printf("\n");
             printf("*// ONO   O         RRR M*");printf("\n");
             printf("*P  UMU             SSS  *");printf("\n");
-            printf("*   U U           SSSASSS*ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U           SSSASSS*ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D           SSSASSS*");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ    3.¼¼ÄÜ ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½    3.ï¿½ï¿½ï¿½ï¿½ ");printf("\n");Sleep(200);system("cls");
             if (Player.HP<=0){
-                print("Äã±»Õ¨ËÀÁË£¡»î²»¹ýÀ´ÁË£¡");
+                print("ï¿½ã±»Õ¨ï¿½ï¿½ï¿½Ë£ï¿½ï¿½î²»ï¿½ï¿½ï¿½ï¿½ï¿½Ë£ï¿½");
                 exit(1);
             }
         }
@@ -1396,12 +1389,12 @@ bool fight_to_kulipa(){
 }
 bool fight_to_jiangshiwang(){
     system("cls");
-    string name="½©Ê¬";
+    string name="ï¿½ï¿½Ê¬";
     int HP=4000,MAXHP=4000,ATK=100,DEF=30;
     while (1){
         printf("**************************");printf("\n");
-        printf("*     >  {=}   6   ½©Ê¬Íõ*");printf("\n");
-        printf("*   _/_  [6]   6    ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+        printf("*     >  {=}   6   ï¿½ï¿½Ê¬ï¿½ï¿½*");printf("\n");
+        printf("*   _/_  [6]   6    ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
         printf("*  |O O| {6} 66666 |X X| *");printf("\n");
         printf("*  | V | [6]   6   | O | *");printf("\n");
         printf("*   OVO  ZXZ   6    666  *");printf("\n");
@@ -1409,14 +1402,14 @@ bool fight_to_jiangshiwang(){
         printf("* //N N   I         666 6*");printf("\n");
         printf("*// ONO   O         666 6*");printf("\n");
         printf("*P  UMU             6 6 6*");printf("\n");
-        printf("*   U U             6 6  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+        printf("*   U U             6 6  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
         printf("*   D D            66 66 *");printf("\n");
         printf("**************************");printf("\n");
-        printf("1.¹¥»÷   2.ÌÓÅÜ    3.¼¼ÄÜ ");printf("\n");
+        printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½    3.ï¿½ï¿½ï¿½ï¿½ ");printf("\n");
         qwe=_getch();
         if (qwe=='2'){
             system("cls");
-            print("ÈýÊ®Áù¼Æ£¬×ßÎªÉÏ¼Æ£¡");
+            print("ï¿½ï¿½Ê®ï¿½ï¿½ï¿½Æ£ï¿½ï¿½ï¿½Îªï¿½Ï¼Æ£ï¿½");
             system("cls");
             return false;
         }else if (qwe=='1'){
@@ -1425,8 +1418,8 @@ bool fight_to_jiangshiwang(){
             sd=Player.ATK-DEF+(rand()%100);
             HP-=sd;
             printf("**************************");printf("\n");
-            printf("*     >  {=}   6   ½©Ê¬Íõ*");printf("\n");
-            printf("*   _/_  [6]   6    ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}   6   ï¿½ï¿½Ê¬ï¿½ï¿½*");printf("\n");
+            printf("*   _/_  [6]   6    ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6} 66666 |X X| *");printf("\n");
             printf("*  | V | [6]   6   | O | *");printf("\n");
             printf("*   OVO  ZXZ   6    666  *");printf("\n");
@@ -1434,13 +1427,13 @@ bool fight_to_jiangshiwang(){
             printf("* //N N   I         666 6*");printf("\n");
             printf("*// ONO   O         666 6*");printf("\n");
             printf("*P  UMU             6 6 6*");printf("\n");
-            printf("*   U U             6 6  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             6 6  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            66 66 *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ    3.¼¼ÄÜ ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½    3.ï¿½ï¿½ï¿½ï¿½ ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}   6   ½©Ê¬Íõ*");printf("\n");
-            printf("*   _/_  [6]   6    ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}   6   ï¿½ï¿½Ê¬ï¿½ï¿½*");printf("\n");
+            printf("*   _/_  [6]   6    ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |+ +| {6} 66666 |X X| *");printf("\n");
             printf("*  | V | [6]   6   | O | *");printf("\n");
             printf("*   OVO  ZXZ   6    666  *");printf("\n");
@@ -1448,13 +1441,13 @@ bool fight_to_jiangshiwang(){
             printf("* //N N   I         666 6*");printf("\n");
             printf("*// ONO   O         666 6*");printf("\n");
             printf("*P  UMU             6 6 6*");printf("\n");
-            printf("*   U U             6 6  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             6 6  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            66 66 *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ    3.¼¼ÄÜ ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½    3.ï¿½ï¿½ï¿½ï¿½ ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}   6   ½©Ê¬Íõ*");printf("\n");
-            printf("*   |/|  [6]   6    ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}   6   ï¿½ï¿½Ê¬ï¿½ï¿½*");printf("\n");
+            printf("*   |/|  [6]   6    ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |+ +| {6} 66666 |X X| *");printf("\n");
             printf("*  ||V|| [6]   6   | O | *");printf("\n");
             printf("*   OVO  ZXZ   6    666  *");printf("\n");
@@ -1462,13 +1455,13 @@ bool fight_to_jiangshiwang(){
             printf("* //N N   I         666 6*");printf("\n");
             printf("*// ONO   O         666 6*");printf("\n");
             printf("*P  UMU             6 6 6*");printf("\n");
-            printf("*   U U             6 6  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             6 6  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            66 66 *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ    3.¼¼ÄÜ ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½    3.ï¿½ï¿½ï¿½ï¿½ ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}   6   ½©Ê¬Íõ*");printf("\n");
-            printf("*   |/|  [6]   6    asdf *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}   6   ï¿½ï¿½Ê¬ï¿½ï¿½*");printf("\n");
+            printf("*   |/|  [6]   6    asdf *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |+ +| {6} 66666 |X X| *");printf("\n");
             printf("*  ||V|| [6]   6   | sdv *");printf("\n");
             printf("*   OVO  ZXZ   6    666  *");printf("\n");
@@ -1476,13 +1469,13 @@ bool fight_to_jiangshiwang(){
             printf("* //N N   I         666 6*");printf("\n");
             printf("*// ONO   O      sdfaa6 6*");printf("\n");
             printf("*P  UMU             6 6 6*");printf("\n");
-            printf("*   U U             6 6  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             6 6  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            66 66 *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ    3.¼¼ÄÜ ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½    3.ï¿½ï¿½ï¿½ï¿½ ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}   6   ½©Ê¬Íõ*");printf("\n");
-            printf("*   _/_  [6]   6    ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}   6   ï¿½ï¿½Ê¬ï¿½ï¿½*");printf("\n");
+            printf("*   _/_  [6]   6    ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6} 66666 |X X| *");printf("\n");
             printf("*  | V | [6]   6   | O | *");printf("\n");
             printf("*   OVO  ZXZ   6    666  *");printf("\n");
@@ -1490,12 +1483,12 @@ bool fight_to_jiangshiwang(){
             printf("* //N N   I         666 6*");printf("\n");
             printf("*// ONO   O         666 6*");printf("\n");
             printf("*P  UMU             6 6 6*");printf("\n");
-            printf("*   U U             6 6  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             6 6  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            66 66 *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ    3.¼¼ÄÜ ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½    3.ï¿½ï¿½ï¿½ï¿½ ");printf("\n");Sleep(200);system("cls");
             if (HP<=0){
-                print("ÄãÓ®ÁË£¡»ñµÃ1000½ð±Ò£¡1000¾­ÑéÖµ£¡");
+                print("ï¿½ï¿½Ó®ï¿½Ë£ï¿½ï¿½ï¿½ï¿½1000ï¿½ï¿½Ò£ï¿½1000ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½");
                 Player.EXP+=1000;
                 lvup();Player.HP+=378;if (Player.HP>Player.MAXHP) Player.HP=Player.MAXHP;
                 Player.Money+=1000;
@@ -1505,8 +1498,8 @@ bool fight_to_jiangshiwang(){
             sd=ATK-Player.DEF+(rand()%100);
             Player.HP-=sd;
             printf("**************************");printf("\n");
-            printf("*     >  {=}   6   ½©Ê¬Íõ*");printf("\n");
-            printf("*   _/_  [6]   6    ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}   6   ï¿½ï¿½Ê¬ï¿½ï¿½*");printf("\n");
+            printf("*   _/_  [6]   6    ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6} 66666 |X X| *");printf("\n");
             printf("*  | V | [6]   6   | O | *");printf("\n");
             printf("*   OVO  ZXZ   6    666  *");printf("\n");
@@ -1514,13 +1507,13 @@ bool fight_to_jiangshiwang(){
             printf("* //N N   I         666 6*");printf("\n");
             printf("*// ONO   O         666 6*");printf("\n");
             printf("*P  UMU             6 6 6*");printf("\n");
-            printf("*   U U             6 6  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             6 6  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            66 66 *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ    3.¼¼ÄÜ ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½    3.ï¿½ï¿½ï¿½ï¿½ ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}   6   ½©Ê¬Íõ*");printf("\n");
-            printf("*   _/_  [6]   6    ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}   6   ï¿½ï¿½Ê¬ï¿½ï¿½*");printf("\n");
+            printf("*   _/_  [6]   6    ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*66666666666666666 |X X| *");printf("\n");
             printf("*  | V | [6]   6   | O | *");printf("\n");
             printf("*   OVO  ZXZ   6    666  *");printf("\n");
@@ -1528,13 +1521,13 @@ bool fight_to_jiangshiwang(){
             printf("* //N N   I         666 6*");printf("\n");
             printf("*// ONO   O         666 6*");printf("\n");
             printf("*P  UMU             6 6 6*");printf("\n");
-            printf("*   U U             6 6  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             6 6  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            66 66 *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ    3.¼¼ÄÜ ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½    3.ï¿½ï¿½ï¿½ï¿½ ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}   6   ½©Ê¬Íõ*");printf("\n");
-            printf("*   _/_  [6]   6    ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}   6   ï¿½ï¿½Ê¬ï¿½ï¿½*");printf("\n");
+            printf("*   _/_  [6]   6    ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6} 66666 |X X| *");printf("\n");
             printf("*  | V | [6]   6   | O | *");printf("\n");
             printf("*   OVO  ZXZ   6    666  *");printf("\n");
@@ -1542,13 +1535,13 @@ bool fight_to_jiangshiwang(){
             printf("* //N N   I         666 6*");printf("\n");
             printf("*// ONO   O         666 6*");printf("\n");
             printf("*P  UMU             6 6 6*");printf("\n");
-            printf("*   U U             6 6  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             6 6  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            66 66 *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ    3.¼¼ÄÜ ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½    3.ï¿½ï¿½ï¿½ï¿½ ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}   6   ½©Ê¬Íõ*");printf("\n");
-            printf("*   _/_  [6]   6    ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}   6   ï¿½ï¿½Ê¬ï¿½ï¿½*");printf("\n");
+            printf("*   _/_  [6]   6    ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*66666666666666666 |X X| *");printf("\n");
             printf("*  | V | [6]   6   | O | *");printf("\n");
             printf("*   OVO  ZXZ   6    666  *");printf("\n");
@@ -1556,13 +1549,13 @@ bool fight_to_jiangshiwang(){
             printf("* //N N   I         666 6*");printf("\n");
             printf("*// ONO   O         666 6*");printf("\n");
             printf("*P  UMU             6 6 6*");printf("\n");
-            printf("*   U U             6 6  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             6 6  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            66 66 *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ    3.¼¼ÄÜ ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½    3.ï¿½ï¿½ï¿½ï¿½ ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}   6   ½©Ê¬Íõ*");printf("\n");
-            printf("*   _/_  [6]   6    ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}   6   ï¿½ï¿½Ê¬ï¿½ï¿½*");printf("\n");
+            printf("*   _/_  [6]   6    ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6} 66666 |X X| *");printf("\n");
             printf("*  | V | [6]   6   | O | *");printf("\n");
             printf("*   OVO  ZXZ   6    666  *");printf("\n");
@@ -1570,42 +1563,42 @@ bool fight_to_jiangshiwang(){
             printf("* //N N   I         666 6*");printf("\n");
             printf("*// ONO   O         666 6*");printf("\n");
             printf("*P  UMU             6 6 6*");printf("\n");
-            printf("*   U U             6 6  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             6 6  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            66 66 *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ    3.¼¼ÄÜ ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½    3.ï¿½ï¿½ï¿½ï¿½ ");printf("\n");Sleep(200);system("cls");
             if (Player.HP<=0){
-                print("Äã±»´òËÀÁË£¡");
+                print("ï¿½ã±»ï¿½ï¿½ï¿½ï¿½ï¿½Ë£ï¿½");
                 exit(1);
             }
         }else if (qwe=='3'){
             int sd;
             system("cls");
-            printf("q.ÄãÓÐ%dÕÅ»ØÑª·û£¡\n",Player.k1);
-            printf("w.ÄãÓÐ%dÕÅÄýÉñ¹éÔª·û£¡\n",Player.k2);
-            printf("e.ÄãÓÐ%dÕÅ×óÓÒ»¥²«·û£¡\n",Player.k3);
-            printf("r.ÄãÓÐ%dÕÅ¿ºÁúÓÐ»Ú·û£¡\n",Player.k4);
-            printf("t.ÄãÓÐ%dÕÅ¾ÆÉñ·û£¡\n",Player.k5);
-            printf("y.ÄãÓÐ%dÕÅ¶á»ê·û£¡\n",Player.k6);
-            printf("u.ÄãÓÐ%dÕÅÎüÐÇ´ó·¨·û£¡\n",Player.k7);
-            printf("i.ÄãÓÐ%dÕÅ¶À¹Â¾Å½£·û£¡\n",Player.k8);
-            printf("o.ÄãÓÐ%dÕÅÄÆË®Éñ¹¦·û£¡\n",Player.k9);
+            printf("q.ï¿½ï¿½ï¿½ï¿½%dï¿½Å»ï¿½Ñªï¿½ï¿½ï¿½ï¿½\n",Player.k1);
+            printf("w.ï¿½ï¿½ï¿½ï¿½%dï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôªï¿½ï¿½ï¿½ï¿½\n",Player.k2);
+            printf("e.ï¿½ï¿½ï¿½ï¿½%dï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n",Player.k3);
+            printf("r.ï¿½ï¿½ï¿½ï¿½%dï¿½Å¿ï¿½ï¿½ï¿½ï¿½Ð»Ú·ï¿½ï¿½ï¿½\n",Player.k4);
+            printf("t.ï¿½ï¿½ï¿½ï¿½%dï¿½Å¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n",Player.k5);
+            printf("y.ï¿½ï¿½ï¿½ï¿½%dï¿½Å¶ï¿½ï¿½ï¿½ï¿½ï¿½\n",Player.k6);
+            printf("u.ï¿½ï¿½ï¿½ï¿½%dï¿½ï¿½ï¿½ï¿½ï¿½Ç´ó·¨·ï¿½ï¿½ï¿½\n",Player.k7);
+            printf("i.ï¿½ï¿½ï¿½ï¿½%dï¿½Å¶ï¿½ï¿½Â¾Å½ï¿½ï¿½ï¿½ï¿½ï¿½\n",Player.k8);
+            printf("o.ï¿½ï¿½ï¿½ï¿½%dï¿½ï¿½ï¿½ï¿½Ë®ï¿½ñ¹¦·ï¿½ï¿½ï¿½\n",Player.k9);
             qwe=_getch();
             switch (qwe){
-                case 'q':if (Player.k1>=1){Player.k1--;print("¸Ðµ½Ò»ÕóÊæ³©£¡HP+500");Player.HP+=500;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'w':if (Player.k2>=1){Player.k2--;print("¸Ð¾õÒ»ÕóµçÁ÷Ò»°ãµÄ¿ì¸ÐÁ÷±éÈ«Éí£¡HP+1000");Player.HP+=1000;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'e':if (Player.k3>=1){Player.k3--;print("ÄãµÄË«ÊÖÄÜÊ¹ÓÃ²»Í¬µÄÕÐÊ½£¡ÉËº¦·­±¶£¡");Player.ATK*=2;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'r':if (Player.k4>=1){Player.k4--;print("ÕÆ·çÒ»ÏÂ×ÓºôÁË³öÈ¥£¬Ìì±ÀµØÁÑ£¡");sd=rand()%50000+1;HP-=sd;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 't':if (Player.k5>=1){Player.k5--;print("Ò»¹É¾Þ´óµÄÁ¦Á¿³åÁË³öÀ´£¡");sd=rand()%80000+20000;HP-=sd;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'y':if (Player.k6>=1){Player.k6--;print("¶á»ê£¡£¡£¡");if ((rand()%21)%10==0)HP=0;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'u':if (Player.k7>=1){Player.k7--;print("¿´ÎÒÉñ¹¦£¡£¡£¡£¡");HP-=500;Player.HP+=500;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'i':if (Player.k8>=1){Player.k8--;print("¶À¹Â¾Å½££¡ÃëÌìÃëµØ£¡");Player.ATK*=9;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'o':if (Player.k9>=1){Player.k9--;print("ÄÆË®Éñ¹¦£¬ÕÀ·Å¼¤ÁÒµÄ»ð»¨£¡");sd=rand();HP-=sd;}else print("ÄãÃ»ÓÐ£¡");break;
+                case 'q':if (Player.k1>=1){Player.k1--;print("ï¿½Ðµï¿½Ò»ï¿½ï¿½ï¿½æ³©ï¿½ï¿½HP+500");Player.HP+=500;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'w':if (Player.k2>=1){Player.k2--;print("ï¿½Ð¾ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È«ï¿½ï¿½ï¿½ï¿½HP+1000");Player.HP+=1000;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'e':if (Player.k3>=1){Player.k3--;print("ï¿½ï¿½ï¿½Ë«ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½Ã²ï¿½Í¬ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½Ëºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");Player.ATK*=2;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'r':if (Player.k4>=1){Player.k4--;print("ï¿½Æ·ï¿½Ò»ï¿½ï¿½ï¿½Óºï¿½ï¿½Ë³ï¿½È¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ£ï¿½");sd=rand()%50000+1;HP-=sd;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 't':if (Player.k5>=1){Player.k5--;print("Ò»ï¿½É¾Þ´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½ï¿½ï¿½ï¿½");sd=rand()%80000+20000;HP-=sd;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'y':if (Player.k6>=1){Player.k6--;print("ï¿½ï¿½ê£¡ï¿½ï¿½ï¿½ï¿½");if ((rand()%21)%10==0)HP=0;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'u':if (Player.k7>=1){Player.k7--;print("ï¿½ï¿½ï¿½ï¿½ï¿½ñ¹¦£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");HP-=500;Player.HP+=500;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'i':if (Player.k8>=1){Player.k8--;print("ï¿½ï¿½ï¿½Â¾Å½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø£ï¿½");Player.ATK*=9;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'o':if (Player.k9>=1){Player.k9--;print("ï¿½ï¿½Ë®ï¿½ñ¹¦£ï¿½ï¿½ï¿½ï¿½Å¼ï¿½ï¿½ÒµÄ»ð»¨£ï¿½");sd=rand();HP-=sd;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
             }
             system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}   6   ½©Ê¬Íõ*");printf("\n");
-            printf("*   _/_  [6]   6    ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}   6   ï¿½ï¿½Ê¬ï¿½ï¿½*");printf("\n");
+            printf("*   _/_  [6]   6    ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6} 66666 |X X| *");printf("\n");
             printf("*  | V | [6]   6   | O | *");printf("\n");
             printf("*   OVO  ZXZ   6    666  *");printf("\n");
@@ -1613,13 +1606,13 @@ bool fight_to_jiangshiwang(){
             printf("* //N N   I         666 6*");printf("\n");
             printf("*// ONO   O         666 6*");printf("\n");
             printf("*P  UMU             6 6 6*");printf("\n");
-            printf("*   U U             6 6  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             6 6  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            66 66 *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ    3.¼¼ÄÜ ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½    3.ï¿½ï¿½ï¿½ï¿½ ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}   6   ½©Ê¬Íõ*");printf("\n");
-            printf("*   _/_  [6]   6    ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}   6   ï¿½ï¿½Ê¬ï¿½ï¿½*");printf("\n");
+            printf("*   _/_  [6]   6    ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |+ +| {6} 66666 |X X| *");printf("\n");
             printf("*  | V | [6]   6   | O | *");printf("\n");
             printf("*   OVO  ZXZ   6    666  *");printf("\n");
@@ -1627,13 +1620,13 @@ bool fight_to_jiangshiwang(){
             printf("* //N N   I         666 6*");printf("\n");
             printf("*// ONO   O         666 6*");printf("\n");
             printf("*P  UMU             6 6 6*");printf("\n");
-            printf("*   U U             6 6  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             6 6  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            66 66 *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ    3.¼¼ÄÜ ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½    3.ï¿½ï¿½ï¿½ï¿½ ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}   6   ½©Ê¬Íõ*");printf("\n");
-            printf("*   |/|  [6]   6    ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}   6   ï¿½ï¿½Ê¬ï¿½ï¿½*");printf("\n");
+            printf("*   |/|  [6]   6    ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |+ +| {6} 66666 |X X| *");printf("\n");
             printf("*  ||V|| [6]   6   | O | *");printf("\n");
             printf("*   OVO  ZXZ   6    666  *");printf("\n");
@@ -1641,13 +1634,13 @@ bool fight_to_jiangshiwang(){
             printf("* //N N   I         666 6*");printf("\n");
             printf("*// ONO   O         666 6*");printf("\n");
             printf("*P  UMU             6 6 6*");printf("\n");
-            printf("*   U U             6 6  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             6 6  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            66 66 *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ    3.¼¼ÄÜ ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½    3.ï¿½ï¿½ï¿½ï¿½ ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}   6   ½©Ê¬Íõ*");printf("\n");
-            printf("*   |/|  [6]   6    asdf *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}   6   ï¿½ï¿½Ê¬ï¿½ï¿½*");printf("\n");
+            printf("*   |/|  [6]   6    asdf *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |+ +| {6} 66666 |X X| *");printf("\n");
             printf("*  ||V|| [6]   6   | sdv *");printf("\n");
             printf("*   OVO  ZXZ   6    666  *");printf("\n");
@@ -1655,13 +1648,13 @@ bool fight_to_jiangshiwang(){
             printf("* //N N   I         666 6*");printf("\n");
             printf("*// ONO   O      sdfaa6 6*");printf("\n");
             printf("*P  UMU             6 6 6*");printf("\n");
-            printf("*   U U             6 6  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             6 6  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            66 66 *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ    3.¼¼ÄÜ ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½    3.ï¿½ï¿½ï¿½ï¿½ ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}   6   ½©Ê¬Íõ*");printf("\n");
-            printf("*   _/_  [6]   6    ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}   6   ï¿½ï¿½Ê¬ï¿½ï¿½*");printf("\n");
+            printf("*   _/_  [6]   6    ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6} 66666 |X X| *");printf("\n");
             printf("*  | V | [6]   6   | O | *");printf("\n");
             printf("*   OVO  ZXZ   6    666  *");printf("\n");
@@ -1669,12 +1662,12 @@ bool fight_to_jiangshiwang(){
             printf("* //N N   I         666 6*");printf("\n");
             printf("*// ONO   O         666 6*");printf("\n");
             printf("*P  UMU             6 6 6*");printf("\n");
-            printf("*   U U             6 6  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             6 6  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            66 66 *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ    3.¼¼ÄÜ ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½    3.ï¿½ï¿½ï¿½ï¿½ ");printf("\n");Sleep(200);system("cls");
             if (HP<=0){
-                print("ÄãÓ®ÁË£¡»ñµÃ100½ð±Ò£¡300¾­ÑéÖµ£¡");
+                print("ï¿½ï¿½Ó®ï¿½Ë£ï¿½ï¿½ï¿½ï¿½100ï¿½ï¿½Ò£ï¿½300ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½");
                 Player.EXP+=300;
                 lvup();Player.HP+=378;if (Player.HP>Player.MAXHP) Player.HP=Player.MAXHP;
                 Player.Money+=100;
@@ -1684,8 +1677,8 @@ bool fight_to_jiangshiwang(){
             sd=ATK-Player.DEF+(rand()%100);
             Player.HP-=sd;
             printf("**************************");printf("\n");
-            printf("*     >  {=}   6   ½©Ê¬Íõ*");printf("\n");
-            printf("*   _/_  [6]   6    ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}   6   ï¿½ï¿½Ê¬ï¿½ï¿½*");printf("\n");
+            printf("*   _/_  [6]   6    ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6} 66666 |X X| *");printf("\n");
             printf("*  | V | [6]   6   | O | *");printf("\n");
             printf("*   OVO  ZXZ   6    666  *");printf("\n");
@@ -1693,13 +1686,13 @@ bool fight_to_jiangshiwang(){
             printf("* //N N   I         666 6*");printf("\n");
             printf("*// ONO   O         666 6*");printf("\n");
             printf("*P  UMU             6 6 6*");printf("\n");
-            printf("*   U U             6 6  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             6 6  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            66 66 *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ    3.¼¼ÄÜ ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½    3.ï¿½ï¿½ï¿½ï¿½ ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}   6   ½©Ê¬Íõ*");printf("\n");
-            printf("*   _/_  [6]   6    ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}   6   ï¿½ï¿½Ê¬ï¿½ï¿½*");printf("\n");
+            printf("*   _/_  [6]   6    ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*66666666666666666 |X X| *");printf("\n");
             printf("*  | V | [6]   6   | O | *");printf("\n");
             printf("*   OVO  ZXZ   6    666  *");printf("\n");
@@ -1707,13 +1700,13 @@ bool fight_to_jiangshiwang(){
             printf("* //N N   I         666 6*");printf("\n");
             printf("*// ONO   O         666 6*");printf("\n");
             printf("*P  UMU             6 6 6*");printf("\n");
-            printf("*   U U             6 6  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             6 6  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            66 66 *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ    3.¼¼ÄÜ ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½    3.ï¿½ï¿½ï¿½ï¿½ ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}   6   ½©Ê¬Íõ*");printf("\n");
-            printf("*   _/_  [6]   6    ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}   6   ï¿½ï¿½Ê¬ï¿½ï¿½*");printf("\n");
+            printf("*   _/_  [6]   6    ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6} 66666 |X X| *");printf("\n");
             printf("*  | V | [6]   6   | O | *");printf("\n");
             printf("*   OVO  ZXZ   6    666  *");printf("\n");
@@ -1721,13 +1714,13 @@ bool fight_to_jiangshiwang(){
             printf("* //N N   I         666 6*");printf("\n");
             printf("*// ONO   O         666 6*");printf("\n");
             printf("*P  UMU             6 6 6*");printf("\n");
-            printf("*   U U             6 6  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             6 6  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            66 66 *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ    3.¼¼ÄÜ ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½    3.ï¿½ï¿½ï¿½ï¿½ ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}   6   ½©Ê¬Íõ*");printf("\n");
-            printf("*   _/_  [6]   6    ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}   6   ï¿½ï¿½Ê¬ï¿½ï¿½*");printf("\n");
+            printf("*   _/_  [6]   6    ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*66666666666666666 |X X| *");printf("\n");
             printf("*  | V | [6]   6   | O | *");printf("\n");
             printf("*   OVO  ZXZ   6    666  *");printf("\n");
@@ -1735,13 +1728,13 @@ bool fight_to_jiangshiwang(){
             printf("* //N N   I         666 6*");printf("\n");
             printf("*// ONO   O         666 6*");printf("\n");
             printf("*P  UMU             6 6 6*");printf("\n");
-            printf("*   U U             6 6  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             6 6  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            66 66 *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ    3.¼¼ÄÜ ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½    3.ï¿½ï¿½ï¿½ï¿½ ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}   6   ½©Ê¬Íõ*");printf("\n");
-            printf("*   _/_  [6]   6    ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}   6   ï¿½ï¿½Ê¬ï¿½ï¿½*");printf("\n");
+            printf("*   _/_  [6]   6    ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6} 66666 |X X| *");printf("\n");
             printf("*  | V | [6]   6   | O | *");printf("\n");
             printf("*   OVO  ZXZ   6    666  *");printf("\n");
@@ -1749,12 +1742,12 @@ bool fight_to_jiangshiwang(){
             printf("* //N N   I         666 6*");printf("\n");
             printf("*// ONO   O         666 6*");printf("\n");
             printf("*P  UMU             6 6 6*");printf("\n");
-            printf("*   U U             6 6  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             6 6  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            66 66 *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ    3.¼¼ÄÜ ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½    3.ï¿½ï¿½ï¿½ï¿½ ");printf("\n");Sleep(200);system("cls");
             if (Player.HP<=0){
-                print("Äã±»´òËÀÁË£¡");
+                print("ï¿½ã±»ï¿½ï¿½ï¿½ï¿½ï¿½Ë£ï¿½");
                 exit(1);
             }
         }
@@ -1763,13 +1756,13 @@ bool fight_to_jiangshiwang(){
 }
 bool fight_to_kkk(){
     system("cls");
-    string name="½©Ê¬";
+    string name="ï¿½ï¿½Ê¬";
     long long HP=999999999,MAXHP=999999999,ATK=Player.DEF+750,DEF=0;
-    print("KKK£ººß£¬Èõ¼¦Ö¨Ö¨ÂÒ½Ð£¡ÉÏ´ÎÎÒ´óÒâÁË£¡ÏÖÔÚÈ¥ËÀ°É£¡£¡£¡");
+    print("KKKï¿½ï¿½ï¿½ß£ï¿½ï¿½ï¿½ï¿½ï¿½Ö¨Ö¨ï¿½Ò½Ð£ï¿½ï¿½Ï´ï¿½ï¿½Ò´ï¿½ï¿½ï¿½ï¿½Ë£ï¿½ï¿½ï¿½ï¿½ï¿½È¥ï¿½ï¿½ï¿½É£ï¿½ï¿½ï¿½ï¿½ï¿½");
     while (1){
         printf("**************************");printf("\n");
-        printf("*     >  {=}  ±©×ßkkksc06*");printf("\n");
-        printf("*   _/_  [6]    ==+ DDD  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+        printf("*     >  {=}  ï¿½ï¿½ï¿½ï¿½kkksc06*");printf("\n");
+        printf("*   _/_  [6]    ==+ DDD  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
         printf("*  |O O| {6}       DFDFD *");printf("\n");
         printf("*  | V | [6]   ==+ |FFF| *");printf("\n");
         printf("*   OVO  ZXZ ==+    CFD  *");printf("\n");
@@ -1777,14 +1770,14 @@ bool fight_to_kkk(){
         printf("* //N N   I       ==+SS o*");printf("\n");
         printf("*// ONO   O  ==+    RRR M*");printf("\n");
         printf("*P  UMU ==+        sS Ss *");printf("\n");
-        printf("*   U U   ==+   ==+sS Ss=+ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+        printf("*   U U   ==+   ==+sS Ss=+ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
         printf("*   D D            sS Ss *");printf("\n");
         printf("**************************");printf("\n");
-        printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");
+        printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");
         qwe=_getch();
         if (qwe=='2'){
             system("cls");
-            print("´óÕ½ÔÚ¼´£¬Äã»¹ÏëÅÜ£¿");
+            print("ï¿½ï¿½Õ½ï¿½Ú¼ï¿½ï¿½ï¿½ï¿½ã»¹ï¿½ï¿½ï¿½Ü£ï¿½");
             system("cls");
         }else if (qwe=='1'){
             int sd;
@@ -1792,8 +1785,8 @@ bool fight_to_kkk(){
             sd=Player.ATK-DEF+(rand()%100);
             HP-=sd;
             printf("**************************");printf("\n");
-            printf("*     >  {=}  ±©×ßkkksc06*");printf("\n");
-            printf("*   _/_  [6]    ==+ DDD  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}  ï¿½ï¿½ï¿½ï¿½kkksc06*");printf("\n");
+            printf("*   _/_  [6]    ==+ DDD  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       DFDFD *");printf("\n");
             printf("*  | V | [6]   ==+ |FFF| *");printf("\n");
             printf("*   OVO  ZXZ ==+    CFD  *");printf("\n");
@@ -1801,13 +1794,13 @@ bool fight_to_kkk(){
             printf("* //N N   I       ==+SS o*");printf("\n");
             printf("*// ONO   O  ==+    RRR M*");printf("\n");
             printf("*P  UMU            sS Ss *");printf("\n");
-            printf("*   U U         ==+sS Ss=+ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U         ==+sS Ss=+ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            sS Ss *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}  ±©×ßkkksc06*");printf("\n");
-            printf("*   _/_  [6]    ==+ DDD  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}  ï¿½ï¿½ï¿½ï¿½kkksc06*");printf("\n");
+            printf("*   _/_  [6]    ==+ DDD  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       DFDFD *");printf("\n");
             printf("*  | V | [6]   ==+ |FFF| *");printf("\n");
             printf("*   OVO  ZXZ        CFD  *");printf("\n");
@@ -1815,13 +1808,13 @@ bool fight_to_kkk(){
             printf("* //N N   I       ==+SS o*");printf("\n");
             printf("*// ONO   O         RRR M*");printf("\n");
             printf("*P  UMU            sS Ss *");printf("\n");
-            printf("*   U U         ==+sS Ss=+ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U         ==+sS Ss=+ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            sS Ss *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}  ±©×ßkkksc06*");printf("\n");
-            printf("*   _/_  [6]        DDD  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}  ï¿½ï¿½ï¿½ï¿½kkksc06*");printf("\n");
+            printf("*   _/_  [6]        DDD  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       DFDFD *");printf("\n");
             printf("*  | V | [6]       |FFF| *");printf("\n");
             printf("*   OVO  ZXZ        CFD  *");printf("\n");
@@ -1829,13 +1822,13 @@ bool fight_to_kkk(){
             printf("* //N N   I         SSS o*");printf("\n");
             printf("*// ONO   O         RRR M*");printf("\n");
             printf("*P  UMU            sS Ss *");printf("\n");
-            printf("*   U U            sS Ss=+ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U            sS Ss=+ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            sS Ss *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}  ±©×ßkkksc06*");printf("\n");
-            printf("*   _/_  [6]        DDD  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}  ï¿½ï¿½ï¿½ï¿½kkksc06*");printf("\n");
+            printf("*   _/_  [6]        DDD  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}        FDFD *");printf("\n");
             printf("*  | V | [6]         FF| *");printf("\n");
             printf("*   OVO  ZXZ          D  *");printf("\n");
@@ -1843,13 +1836,13 @@ bool fight_to_kkk(){
             printf("* //N N   I           S o*");printf("\n");
             printf("*// ONO   O           R M*");printf("\n");
             printf("*P  UMU               Ss *");printf("\n");
-            printf("*   U U               Ss=+ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U               Ss=+ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D               Ss *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}  ±©×ßkkksc06*");printf("\n");
-            printf("*   _/_  [6]        DDD  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}  ï¿½ï¿½ï¿½ï¿½kkksc06*");printf("\n");
+            printf("*   _/_  [6]        DDD  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       DFDFD *");printf("\n");
             printf("*  | V | [6]       |FFF| *");printf("\n");
             printf("*   OVO  ZXZ        CFD  *");printf("\n");
@@ -1857,13 +1850,13 @@ bool fight_to_kkk(){
             printf("* //N N   I         SSS o*");printf("\n");
             printf("*// ONO   O         RRR M*");printf("\n");
             printf("*P  UMU            sS Ss *");printf("\n");
-            printf("*   U U            sS Ss=+ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U            sS Ss=+ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            sS Ss *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             if (HP<=0){
-                print("kkk:Ã»Ïëµ½!!ÎØÍÛ~~~~£¨Ò»¿ÚÀÏÑª£©");
-                print("ÓÎÏ·Í¨¹Ø£¡Äã°ïÖúÃæ°ü½ã½ãÌÓÀëkkkµÄÄ§×¦£¡");
+                print("kkk:Ã»ï¿½ëµ½!!ï¿½ï¿½ï¿½ï¿½~~~~ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Ñªï¿½ï¿½");
+                print("ï¿½ï¿½Ï·Í¨ï¿½Ø£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½kkkï¿½ï¿½Ä§×¦ï¿½ï¿½");
                 Player.EXP+=999999;
                 lvup();Player.HP+=378;if (Player.HP>Player.MAXHP) Player.HP=Player.MAXHP;
                 Player.Money+=999999;
@@ -1873,8 +1866,8 @@ bool fight_to_kkk(){
             sd=ATK-Player.DEF+(rand()%100);
             Player.HP-=sd;
             printf("**************************");printf("\n");
-            printf("*     >  {=}  ±©×ßkkksc06*");printf("\n");
-            printf("*   _/_  [6]==+     DDD  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}  ï¿½ï¿½ï¿½ï¿½kkksc06*");printf("\n");
+            printf("*   _/_  [6]==+     DDD  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       DFDFD *");printf("\n");
             printf("*  | V | [6]  ==+  |FFF| *");printf("\n");
             printf("*==+OVO  ZXZ        CFD  *");printf("\n");
@@ -1882,13 +1875,13 @@ bool fight_to_kkk(){
             printf("* //N N   I       ==+SS o*");printf("\n");
             printf("*// ONO   O ==+     RRR M*");printf("\n");
             printf("*P  UMU            sS Ss *");printf("\n");
-            printf("*   U U   ==+      sS Ss=+ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U   ==+      sS Ss=+ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            sS Ss *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}  ±©×ßkkksc06*");printf("\n");
-            printf("*   _/==+[6]        DDD  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}  ï¿½ï¿½ï¿½ï¿½kkksc06*");printf("\n");
+            printf("*   _/==+[6]        DDD  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       DFDFD *");printf("\n");
             printf("*  | V | [6]==+    |FFF| *");printf("\n");
             printf("*==+OVO  ZXZ        CFD  *");printf("\n");
@@ -1896,13 +1889,13 @@ bool fight_to_kkk(){
             printf("* //N N   I       ==+SS o*");printf("\n");
             printf("*// ONO==+O         RRR M*");printf("\n");
             printf("*P  UMU            sS Ss *");printf("\n");
-            printf("*==+U U            sS Ss=+ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*==+U U            sS Ss=+ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            sS Ss *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     sss{=}  ±©×ßkkksc06*");printf("\n");
-            printf("*   _/sss[6]        DDD  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     sss{=}  ï¿½ï¿½ï¿½ï¿½kkksc06*");printf("\n");
+            printf("*   _/sss[6]        DDD  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O sss{6}sss    DFDFD *");printf("\n");
             printf("*sss V | [6]sss    |FFF| *");printf("\n");
             printf("*sssOVO  ZXZsss     CFD  *");printf("\n");
@@ -1910,13 +1903,13 @@ bool fight_to_kkk(){
             printf("* //N NsssI       ==+SS o*");printf("\n");
             printf("*// ONOsssO         RRR M*");printf("\n");
             printf("*P  UMUsss         sS Ss *");printf("\n");
-            printf("*==+U U            sS Ss=+ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*==+U U            sS Ss=+ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            sS Ss *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}  ±©×ßkkksc06*");printf("\n");
-            printf("*   _/==+[6]        DDD  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}  ï¿½ï¿½ï¿½ï¿½kkksc06*");printf("\n");
+            printf("*   _/==+[6]        DDD  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       DFDFD *");printf("\n");
             printf("*  | V | [6]==+    |FFF| *");printf("\n");
             printf("*==+OVO  ZXZ        CFD  *");printf("\n");
@@ -1924,13 +1917,13 @@ bool fight_to_kkk(){
             printf("* //ssssssI       ==+SS o*");printf("\n");
             printf("*// ssssssO         RRR M*");printf("\n");
             printf("*P  ssssss         sS Ss *");printf("\n");
-            printf("*==+ssssss         sS Ss=+ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*==+ssssss         sS Ss=+ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   ssssss         sS Ss *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*sssssssssssss±©×ßkkksc06*");printf("\n");
-            printf("*sssssssssssss      DDD  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*sssssssssssssï¿½ï¿½ï¿½ï¿½kkksc06*");printf("\n");
+            printf("*sssssssssssss      DDD  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*sssssssssssss     DFDFD *");printf("\n");
             printf("*sssssssssssss+    |FFF| *");printf("\n");
             printf("*sssssssssssss      CFD  *");printf("\n");
@@ -1938,42 +1931,42 @@ bool fight_to_kkk(){
             printf("*sssssssssssss    ==+SS o*");printf("\n");
             printf("*sssssssssssss      RRR M*");printf("\n");
             printf("*sssssssssssss     sS Ss *");printf("\n");
-            printf("*sssssssssssss     sS Ss=+ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*sssssssssssss     sS Ss=+ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*sssssssssssss     sS Ss *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             if (Player.HP<=0){
-                print("Äã±»´ÌËÀÁË£¡»î²»¹ýÀ´ÁË£¡");
+                print("ï¿½ã±»ï¿½ï¿½ï¿½ï¿½ï¿½Ë£ï¿½ï¿½î²»ï¿½ï¿½ï¿½ï¿½ï¿½Ë£ï¿½");
                 exit(1);
             }
         }else if (qwe=='3'){
             int sd;
             system("cls");
-            printf("q.ÄãÓÐ%dÕÅ»ØÑª·û£¡\n",Player.k1);
-            printf("w.ÄãÓÐ%dÕÅÄýÉñ¹éÔª·û£¡\n",Player.k2);
-            printf("e.ÄãÓÐ%dÕÅ×óÓÒ»¥²«·û£¡\n",Player.k3);
-            printf("r.ÄãÓÐ%dÕÅ¿ºÁúÓÐ»Ú·û£¡\n",Player.k4);
-            printf("t.ÄãÓÐ%dÕÅ¾ÆÉñ·û£¡\n",Player.k5);
-            printf("y.ÄãÓÐ%dÕÅ¶á»ê·û£¡\n",Player.k6);
-            printf("u.ÄãÓÐ%dÕÅÎüÐÇ´ó·¨·û£¡\n",Player.k7);
-            printf("i.ÄãÓÐ%dÕÅ¶À¹Â¾Å½£·û£¡\n",Player.k8);
-            printf("o.ÄãÓÐ%dÕÅÄÆË®Éñ¹¦·û£¡\n",Player.k9);
+            printf("q.ï¿½ï¿½ï¿½ï¿½%dï¿½Å»ï¿½Ñªï¿½ï¿½ï¿½ï¿½\n",Player.k1);
+            printf("w.ï¿½ï¿½ï¿½ï¿½%dï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôªï¿½ï¿½ï¿½ï¿½\n",Player.k2);
+            printf("e.ï¿½ï¿½ï¿½ï¿½%dï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n",Player.k3);
+            printf("r.ï¿½ï¿½ï¿½ï¿½%dï¿½Å¿ï¿½ï¿½ï¿½ï¿½Ð»Ú·ï¿½ï¿½ï¿½\n",Player.k4);
+            printf("t.ï¿½ï¿½ï¿½ï¿½%dï¿½Å¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n",Player.k5);
+            printf("y.ï¿½ï¿½ï¿½ï¿½%dï¿½Å¶ï¿½ï¿½ï¿½ï¿½ï¿½\n",Player.k6);
+            printf("u.ï¿½ï¿½ï¿½ï¿½%dï¿½ï¿½ï¿½ï¿½ï¿½Ç´ó·¨·ï¿½ï¿½ï¿½\n",Player.k7);
+            printf("i.ï¿½ï¿½ï¿½ï¿½%dï¿½Å¶ï¿½ï¿½Â¾Å½ï¿½ï¿½ï¿½ï¿½ï¿½\n",Player.k8);
+            printf("o.ï¿½ï¿½ï¿½ï¿½%dï¿½ï¿½ï¿½ï¿½Ë®ï¿½ñ¹¦·ï¿½ï¿½ï¿½\n",Player.k9);
             qwe=_getch();
             switch (qwe){
-                case 'q':if (Player.k1>=1){Player.k1--;print("¸Ðµ½Ò»ÕóÊæ³©£¡HP+500");Player.HP+=500;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'w':if (Player.k2>=1){Player.k2--;print("¸Ð¾õÒ»ÕóµçÁ÷Ò»°ãµÄ¿ì¸ÐÁ÷±éÈ«Éí£¡HP+1000");Player.HP+=1000;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'e':if (Player.k3>=1){Player.k3--;print("ÄãµÄË«ÊÖÄÜÊ¹ÓÃ²»Í¬µÄÕÐÊ½£¡ÉËº¦·­±¶£¡");Player.ATK*=2;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'r':if (Player.k4>=1){Player.k4--;print("ÕÆ·çÒ»ÏÂ×ÓºôÁË³öÈ¥£¬Ìì±ÀµØÁÑ£¡");sd=rand()%50000+1;HP-=sd;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 't':if (Player.k5>=1){Player.k5--;print("Ò»¹É¾Þ´óµÄÁ¦Á¿³åÁË³öÀ´£¡");sd=rand()%80000+20000;HP-=sd;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'y':if (Player.k6>=1){Player.k6--;print("¶á»ê£¡£¡£¡");if ((rand()%21)%10==0)HP=0;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'u':if (Player.k7>=1){Player.k7--;print("¿´ÎÒÉñ¹¦£¡£¡£¡£¡");HP-=500;Player.HP+=500;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'i':if (Player.k8>=1){Player.k8--;print("¶À¹Â¾Å½££¡ÃëÌìÃëµØ£¡");Player.ATK*=9;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'o':if (Player.k9>=1){Player.k9--;print("ÄÆË®Éñ¹¦£¬ÕÀ·Å¼¤ÁÒµÄ»ð»¨£¡");sd=rand();HP-=sd;}else print("ÄãÃ»ÓÐ£¡");break;
+                case 'q':if (Player.k1>=1){Player.k1--;print("ï¿½Ðµï¿½Ò»ï¿½ï¿½ï¿½æ³©ï¿½ï¿½HP+500");Player.HP+=500;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'w':if (Player.k2>=1){Player.k2--;print("ï¿½Ð¾ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È«ï¿½ï¿½ï¿½ï¿½HP+1000");Player.HP+=1000;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'e':if (Player.k3>=1){Player.k3--;print("ï¿½ï¿½ï¿½Ë«ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½Ã²ï¿½Í¬ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½Ëºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");Player.ATK*=2;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'r':if (Player.k4>=1){Player.k4--;print("ï¿½Æ·ï¿½Ò»ï¿½ï¿½ï¿½Óºï¿½ï¿½Ë³ï¿½È¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ£ï¿½");sd=rand()%50000+1;HP-=sd;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 't':if (Player.k5>=1){Player.k5--;print("Ò»ï¿½É¾Þ´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½ï¿½ï¿½ï¿½");sd=rand()%80000+20000;HP-=sd;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'y':if (Player.k6>=1){Player.k6--;print("ï¿½ï¿½ê£¡ï¿½ï¿½ï¿½ï¿½");if ((rand()%21)%10==0)HP=0;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'u':if (Player.k7>=1){Player.k7--;print("ï¿½ï¿½ï¿½ï¿½ï¿½ñ¹¦£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");HP-=500;Player.HP+=500;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'i':if (Player.k8>=1){Player.k8--;print("ï¿½ï¿½ï¿½Â¾Å½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø£ï¿½");Player.ATK*=9;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'o':if (Player.k9>=1){Player.k9--;print("ï¿½ï¿½Ë®ï¿½ñ¹¦£ï¿½ï¿½ï¿½ï¿½Å¼ï¿½ï¿½ÒµÄ»ð»¨£ï¿½");sd=rand();HP-=sd;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
             }
             system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}  ±©×ßkkksc06*");printf("\n");
-            printf("*   _/_  [6]    ==+ DDD  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}  ï¿½ï¿½ï¿½ï¿½kkksc06*");printf("\n");
+            printf("*   _/_  [6]    ==+ DDD  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       DFDFD *");printf("\n");
             printf("*  | V | [6]   ==+ |FFF| *");printf("\n");
             printf("*   OVO  ZXZ ==+    CFD  *");printf("\n");
@@ -1981,13 +1974,13 @@ bool fight_to_kkk(){
             printf("* //N N   I       ==+SS o*");printf("\n");
             printf("*// ONO   O  ==+    RRR M*");printf("\n");
             printf("*P  UMU            sS Ss *");printf("\n");
-            printf("*   U U         ==+sS Ss=+ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U         ==+sS Ss=+ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            sS Ss *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}  ±©×ßkkksc06*");printf("\n");
-            printf("*   _/_  [6]    ==+ DDD  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}  ï¿½ï¿½ï¿½ï¿½kkksc06*");printf("\n");
+            printf("*   _/_  [6]    ==+ DDD  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       DFDFD *");printf("\n");
             printf("*  | V | [6]   ==+ |FFF| *");printf("\n");
             printf("*   OVO  ZXZ        CFD  *");printf("\n");
@@ -1995,13 +1988,13 @@ bool fight_to_kkk(){
             printf("* //N N   I       ==+SS o*");printf("\n");
             printf("*// ONO   O         RRR M*");printf("\n");
             printf("*P  UMU            sS Ss *");printf("\n");
-            printf("*   U U         ==+sS Ss=+ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U         ==+sS Ss=+ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            sS Ss *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}  ±©×ßkkksc06*");printf("\n");
-            printf("*   _/_  [6]        DDD  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}  ï¿½ï¿½ï¿½ï¿½kkksc06*");printf("\n");
+            printf("*   _/_  [6]        DDD  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       DFDFD *");printf("\n");
             printf("*  | V | [6]       |FFF| *");printf("\n");
             printf("*   OVO  ZXZ        CFD  *");printf("\n");
@@ -2009,13 +2002,13 @@ bool fight_to_kkk(){
             printf("* //N N   I         SSS o*");printf("\n");
             printf("*// ONO   O         RRR M*");printf("\n");
             printf("*P  UMU            sS Ss *");printf("\n");
-            printf("*   U U            sS Ss=+ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U            sS Ss=+ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            sS Ss *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}  ±©×ßkkksc06*");printf("\n");
-            printf("*   _/_  [6]        DDD  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}  ï¿½ï¿½ï¿½ï¿½kkksc06*");printf("\n");
+            printf("*   _/_  [6]        DDD  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}        FDFD *");printf("\n");
             printf("*  | V | [6]         FF| *");printf("\n");
             printf("*   OVO  ZXZ          D  *");printf("\n");
@@ -2023,13 +2016,13 @@ bool fight_to_kkk(){
             printf("* //N N   I           S o*");printf("\n");
             printf("*// ONO   O           R M*");printf("\n");
             printf("*P  UMU               Ss *");printf("\n");
-            printf("*   U U               Ss=+ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U               Ss=+ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D               Ss *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}  ±©×ßkkksc06*");printf("\n");
-            printf("*   _/_  [6]        DDD  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}  ï¿½ï¿½ï¿½ï¿½kkksc06*");printf("\n");
+            printf("*   _/_  [6]        DDD  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       DFDFD *");printf("\n");
             printf("*  | V | [6]       |FFF| *");printf("\n");
             printf("*   OVO  ZXZ        CFD  *");printf("\n");
@@ -2037,12 +2030,12 @@ bool fight_to_kkk(){
             printf("* //N N   I         SSS o*");printf("\n");
             printf("*// ONO   O         RRR M*");printf("\n");
             printf("*P  UMU            sS Ss *");printf("\n");
-            printf("*   U U            sS Ss=+ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U            sS Ss=+ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            sS Ss *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             if (HP<=0){
-                print("ÄãÓ®ÁË£¡»ñµÃ9999999½ð±Ò£¡99999¾­ÑéÖµ£¡Äã¾È³öÁËÃæ°ü£¡");
+                print("ï¿½ï¿½Ó®ï¿½Ë£ï¿½ï¿½ï¿½ï¿½9999999ï¿½ï¿½Ò£ï¿½99999ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½È³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
                 Player.EXP+=99999999;
                 lvup();Player.HP+=378;if (Player.HP>Player.MAXHP) Player.HP=Player.MAXHP;
                 Player.Money+=99999;
@@ -2052,8 +2045,8 @@ bool fight_to_kkk(){
             sd=ATK-Player.DEF+(rand()%100);
             Player.HP-=sd;
             printf("**************************");printf("\n");
-            printf("*     >  {=}  ±©×ßkkksc06*");printf("\n");
-            printf("*   _/_  [6]==+     DDD  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}  ï¿½ï¿½ï¿½ï¿½kkksc06*");printf("\n");
+            printf("*   _/_  [6]==+     DDD  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       DFDFD *");printf("\n");
             printf("*  | V | [6]  ==+  |FFF| *");printf("\n");
             printf("*==+OVO  ZXZ        CFD  *");printf("\n");
@@ -2061,13 +2054,13 @@ bool fight_to_kkk(){
             printf("* //N N   I       ==+SS o*");printf("\n");
             printf("*// ONO   O ==+     RRR M*");printf("\n");
             printf("*P  UMU            sS Ss *");printf("\n");
-            printf("*   U U   ==+      sS Ss=+ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U   ==+      sS Ss=+ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            sS Ss *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}  ±©×ßkkksc06*");printf("\n");
-            printf("*   _/==+[6]        DDD  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}  ï¿½ï¿½ï¿½ï¿½kkksc06*");printf("\n");
+            printf("*   _/==+[6]        DDD  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       DFDFD *");printf("\n");
             printf("*  | V | [6]==+    |FFF| *");printf("\n");
             printf("*==+OVO  ZXZ        CFD  *");printf("\n");
@@ -2075,13 +2068,13 @@ bool fight_to_kkk(){
             printf("* //N N   I       ==+SS o*");printf("\n");
             printf("*// ONO==+O         RRR M*");printf("\n");
             printf("*P  UMU            sS Ss *");printf("\n");
-            printf("*==+U U            sS Ss=+ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*==+U U            sS Ss=+ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            sS Ss *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     sss{=}  ±©×ßkkksc06*");printf("\n");
-            printf("*   _/sss[6]        DDD  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     sss{=}  ï¿½ï¿½ï¿½ï¿½kkksc06*");printf("\n");
+            printf("*   _/sss[6]        DDD  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O sss{6}sss    DFDFD *");printf("\n");
             printf("*sss V | [6]sss    |FFF| *");printf("\n");
             printf("*sssOVO  ZXZsss     CFD  *");printf("\n");
@@ -2089,13 +2082,13 @@ bool fight_to_kkk(){
             printf("* //N NsssI       ==+SS o*");printf("\n");
             printf("*// ONOsssO         RRR M*");printf("\n");
             printf("*P  UMUsss         sS Ss *");printf("\n");
-            printf("*==+U U            sS Ss=+ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*==+U U            sS Ss=+ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            sS Ss *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}  ±©×ßkkksc06*");printf("\n");
-            printf("*   _/==+[6]        DDD  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}  ï¿½ï¿½ï¿½ï¿½kkksc06*");printf("\n");
+            printf("*   _/==+[6]        DDD  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       DFDFD *");printf("\n");
             printf("*  | V | [6]==+    |FFF| *");printf("\n");
             printf("*==+OVO  ZXZ        CFD  *");printf("\n");
@@ -2103,13 +2096,13 @@ bool fight_to_kkk(){
             printf("* //ssssssI       ==+SS o*");printf("\n");
             printf("*// ssssssO         RRR M*");printf("\n");
             printf("*P  ssssss         sS Ss *");printf("\n");
-            printf("*==+ssssss         sS Ss=+ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*==+ssssss         sS Ss=+ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   ssssss         sS Ss *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*sssssssssssss±©×ßkkksc06*");printf("\n");
-            printf("*sssssssssssss      DDD  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*sssssssssssssï¿½ï¿½ï¿½ï¿½kkksc06*");printf("\n");
+            printf("*sssssssssssss      DDD  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*sssssssssssss     DFDFD *");printf("\n");
             printf("*sssssssssssss+    |FFF| *");printf("\n");
             printf("*sssssssssssss      CFD  *");printf("\n");
@@ -2117,12 +2110,12 @@ bool fight_to_kkk(){
             printf("*sssssssssssss    ==+SS o*");printf("\n");
             printf("*sssssssssssss      RRR M*");printf("\n");
             printf("*sssssssssssss     sS Ss *");printf("\n");
-            printf("*sssssssssssss     sS Ss=+ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*sssssssssssss     sS Ss=+ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*sssssssssssss     sS Ss *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             if (Player.HP<=0){
-                print("Äã±»ÐßÈèÖÂËÀÁË£¡»î²»¹ýÀ´ÁË£¡");
+                print("ï¿½ã±»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë£ï¿½ï¿½î²»ï¿½ï¿½ï¿½ï¿½ï¿½Ë£ï¿½");
                 exit(1);
             }
         }
@@ -2131,12 +2124,12 @@ bool fight_to_kkk(){
 }
 bool fight_to_kkkshiwei(){
     system("cls");
-    string name="½©Ê¬";
+    string name="ï¿½ï¿½Ê¬";
     int HP=100000,MAXHP=100000,ATK=260,DEF=20;
     while (1){
         printf("**************************");printf("\n");
-        printf("*     >  {=}    A kkkÊÌÎÀ*");printf("\n");
-        printf("*   _/_  [6]    V   ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+        printf("*     >  {=}    A kkkï¿½ï¿½ï¿½ï¿½*");printf("\n");
+        printf("*   _/_  [6]    V   ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
         printf("*  |O O| {6}    A  |O#O| *");printf("\n");
         printf("*  | V | [6]    V  |###| *");printf("\n");
         printf("*   OVO  ZXZ    A   NNN  *");printf("\n");
@@ -2144,14 +2137,14 @@ bool fight_to_kkkshiwei(){
         printf("* //N N   I     Ioo=SSS  *");printf("\n");
         printf("*// ONO   O         RRR  *");printf("\n");
         printf("*P  UMU             S S  *");printf("\n");
-        printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+        printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
         printf("*   D D            SS SS *");printf("\n");
         printf("**************************");printf("\n");
-        printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");
+        printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");
         qwe=_getch();
         if (qwe=='2'){
             system("cls");
-            print("ÈýÊ®Áù¼Æ£¬×ßÎªÉÏ¼Æ£¡");
+            print("ï¿½ï¿½Ê®ï¿½ï¿½ï¿½Æ£ï¿½ï¿½ï¿½Îªï¿½Ï¼Æ£ï¿½");
             system("cls");
             return false;
         }else if (qwe=='1'){
@@ -2160,8 +2153,8 @@ bool fight_to_kkkshiwei(){
             sd=Player.ATK-DEF+(rand()%100);
             HP-=sd;
             printf("**************************");printf("\n");
-            printf("*     >  {=}    A kkkÊÌÎÀ*");printf("\n");
-            printf("*   _/_  [6]    V   ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}    A kkkï¿½ï¿½ï¿½ï¿½*");printf("\n");
+            printf("*   _/_  [6]    V   ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}    A  |O#O| *");printf("\n");
             printf("*  | V | [6]    V  |###| *");printf("\n");
             printf("*   OVO  ZXZ   AA   NNN  *");printf("\n");
@@ -2169,13 +2162,13 @@ bool fight_to_kkkshiwei(){
             printf("* //N N   I    AIoo=SSS  *");printf("\n");
             printf("*// ONO   O    A    RRR  *");printf("\n");
             printf("*P  UMU        A    S S  *");printf("\n");
-            printf("*   U U        A    S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U        A    S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D        A   SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}    A kkkÊÌÎÀ*");printf("\n");
-            printf("*   _/_  [6]    V   AAA  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}    A kkkï¿½ï¿½ï¿½ï¿½*");printf("\n");
+            printf("*   _/_  [6]    V   AAA  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}    A  AO#O| *");printf("\n");
             printf("*  | V | [6]    V A|###| *");printf("\n");
             printf("*   OVO  ZXZ    AA  NNN  *");printf("\n");
@@ -2183,13 +2176,13 @@ bool fight_to_kkkshiwei(){
             printf("* //N N   I     IAo=SSS  *");printf("\n");
             printf("*// ONO   O      A  RRR  *");printf("\n");
             printf("*P  UMU          A  S S  *");printf("\n");
-            printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D         A  SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}    A kkkÊÌÎÀ*");printf("\n");
-            printf("*   _/_  [6]    V   __AA *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}    A kkkï¿½ï¿½ï¿½ï¿½*");printf("\n");
+            printf("*   _/_  [6]    V   __AA *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}    A  |OAA| *");printf("\n");
             printf("*  | V | [6]    V  |AA#| *");printf("\n");
             printf("*   OVO  ZXZ    A  AANN  *");printf("\n");
@@ -2197,13 +2190,13 @@ bool fight_to_kkkshiwei(){
             printf("* //N N   I    AAAAAAAAA *");printf("\n");
             printf("*// ONO   O    AAA  RRAA *");printf("\n");
             printf("*P  UMU        A A  S AA *");printf("\n");
-            printf("*   U U       AA A  S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U       AA A  S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D       A  A SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}    A kkkÊÌÎÀ*");printf("\n");
-            printf("*   _/_  [6]    V   ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}    A kkkï¿½ï¿½ï¿½ï¿½*");printf("\n");
+            printf("*   _/_  [6]    V   ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}    A  AA#O| *");printf("\n");
             printf("*  | V | [6]    V  |###| *");printf("\n");
             printf("*   OVO  ZXZ    A   NNN  *");printf("\n");
@@ -2211,13 +2204,13 @@ bool fight_to_kkkshiwei(){
             printf("* //N N   I     Ioo=SSS  *");printf("\n");
             printf("*// ONO   O         RRR  *");printf("\n");
             printf("*P  UMU            AAAA  *");printf("\n");
-            printf("*   U U             SAAA *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             SAAA *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}    A kkkÊÌÎÀ*");printf("\n");
-            printf("*   _/_  [6]    V   ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}    A kkkï¿½ï¿½ï¿½ï¿½*");printf("\n");
+            printf("*   _/_  [6]    V   ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}    A  |O#O| *");printf("\n");
             printf("*  | V | [6]    V  |###| *");printf("\n");
             printf("*   OVO  ZXZ    A   NNN  *");printf("\n");
@@ -2225,12 +2218,12 @@ bool fight_to_kkkshiwei(){
             printf("* //N N   I     Ioo=SSS  *");printf("\n");
             printf("*// ONO   O         RRR  *");printf("\n");
             printf("*P  UMU             S S  *");printf("\n");
-            printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             if (HP<=0){
-                print("ÄãÓ®ÁË£¡»ñµÃ2000½ð±Ò£¡1000¾­ÑéÖµ£¡");
+                print("ï¿½ï¿½Ó®ï¿½Ë£ï¿½ï¿½ï¿½ï¿½2000ï¿½ï¿½Ò£ï¿½1000ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½");
                 Player.EXP+=1000;
                 lvup();Player.HP+=378;if (Player.HP>Player.MAXHP) Player.HP=Player.MAXHP;
                 Player.Money+=2000;
@@ -2240,8 +2233,8 @@ bool fight_to_kkkshiwei(){
             sd=ATK-Player.DEF+(rand()%100);
             Player.HP-=sd;
             printf("**************************");printf("\n");
-            printf("*     >  {=}    A kkkÊÌÎÀ*");printf("\n");
-            printf("*   _/_  [6]    V   ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}    A kkkï¿½ï¿½ï¿½ï¿½*");printf("\n");
+            printf("*   _/_  [6]    V   ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}    A  |O#O| *");printf("\n");
             printf("*  | V | [6]    V  |###| *");printf("\n");
             printf("*   OVO  ZXZ    A   NNN  *");printf("\n");
@@ -2249,13 +2242,13 @@ bool fight_to_kkkshiwei(){
             printf("* //N N   I     Ioo=SSS  *");printf("\n");
             printf("*// ONO   O         RRR  *");printf("\n");
             printf("*P  UMU             S S  *");printf("\n");
-            printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}   A kkkÊÌÎÀ *");printf("\n");
-            printf("*   _/_  [6]   V   ___   *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}   A kkkï¿½ï¿½ï¿½ï¿½ *");printf("\n");
+            printf("*   _/_  [6]   V   ___   *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}   A  |O#O|  *");printf("\n");
             printf("*  | V | [6]   V  |###|  *");printf("\n");
             printf("*   OVO  ZXZ   A   NNN   *");printf("\n");
@@ -2263,13 +2256,13 @@ bool fight_to_kkkshiwei(){
             printf("* //N N   I    Ioo=SSS   *");printf("\n");
             printf("*// ONO   O        RRR   *");printf("\n");
             printf("*P  UMU            S S   *");printf("\n");
-            printf("*   U U            S S   *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U            S S   *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D           SS SS  *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     > AAAAAAAA kkkÊÌÎÀ *");printf("\n");
-            printf("*   _/AAAAVVVVVV   ___   *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     > AAAAAAAA kkkï¿½ï¿½ï¿½ï¿½ *");printf("\n");
+            printf("*   _/AAAAVVVVVV   ___   *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |OAAAVVVVVVVA  |O#O|  *");printf("\n");
             printf("*  |AAAVVVVV   V  |###|  *");printf("\n");
             printf("*   AAAVVVXZ   A   NNN   *");printf("\n");
@@ -2277,13 +2270,13 @@ bool fight_to_kkkshiwei(){
             printf("* //N AAVVVV   Ioo=SSS   *");printf("\n");
             printf("*// ONOAAAVVV      RRR   *");printf("\n");
             printf("*P  UMU AAVVVV     S S   *");printf("\n");
-            printf("*   U U  AAA       S S   *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U  AAA       S S   *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D           SS SS  *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     > AAAAAAA  kkkÊÌÎÀ *");printf("\n");
-            printf("*   _/AAAAVVVVV    ___   *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     > AAAAAAA  kkkï¿½ï¿½ï¿½ï¿½ *");printf("\n");
+            printf("*   _/AAAAVVVVV    ___   *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |OAAAVVVVVVV   |O#O|  *");printf("\n");
             printf("*  |AAAVVVVV      |###|  *");printf("\n");
             printf("*   AAAVVVXZ       NNN   *");printf("\n");
@@ -2291,13 +2284,13 @@ bool fight_to_kkkshiwei(){
             printf("* //N AAVVVV   Ioo=SSS   *");printf("\n");
             printf("*// ONOAAAVVV  A   RRR   *");printf("\n");
             printf("*P  UMU AAVVVV V   S S   *");printf("\n");
-            printf("*   U U  AAA   A   S S   *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U  AAA   A   S S   *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D        V  SS SS  *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}   A kkkÊÌÎÀ *");printf("\n");
-            printf("*   _/_  [6]   V   ___   *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}   A kkkï¿½ï¿½ï¿½ï¿½ *");printf("\n");
+            printf("*   _/_  [6]   V   ___   *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}   A  |O#O|  *");printf("\n");
             printf("*  | V | [6]   V  |###|  *");printf("\n");
             printf("*   OVO  ZXZ   A   NNN   *");printf("\n");
@@ -2305,42 +2298,42 @@ bool fight_to_kkkshiwei(){
             printf("* //N N   I    Ioo=SSS   *");printf("\n");
             printf("*// ONO   O        RRR   *");printf("\n");
             printf("*P  UMU            S S   *");printf("\n");
-            printf("*   U U            S S   *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U            S S   *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D           SS SS  *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             if (Player.HP<=0){
-                print("Äã±»¿³ËÀÁË£¡");
+                print("ï¿½ã±»ï¿½ï¿½ï¿½ï¿½ï¿½Ë£ï¿½");
                 exit(1);
             }
         }else if (qwe=='3'){
             int sd;
             system("cls");
-            printf("q.ÄãÓÐ%dÕÅ»ØÑª·û£¡\n",Player.k1);
-            printf("w.ÄãÓÐ%dÕÅÄýÉñ¹éÔª·û£¡\n",Player.k2);
-            printf("e.ÄãÓÐ%dÕÅ×óÓÒ»¥²«·û£¡\n",Player.k3);
-            printf("r.ÄãÓÐ%dÕÅ¿ºÁúÓÐ»Ú·û£¡\n",Player.k4);
-            printf("t.ÄãÓÐ%dÕÅ¾ÆÉñ·û£¡\n",Player.k5);
-            printf("y.ÄãÓÐ%dÕÅ¶á»ê·û£¡\n",Player.k6);
-            printf("u.ÄãÓÐ%dÕÅÎüÐÇ´ó·¨·û£¡\n",Player.k7);
-            printf("i.ÄãÓÐ%dÕÅ¶À¹Â¾Å½£·û£¡\n",Player.k8);
-            printf("o.ÄãÓÐ%dÕÅÄÆË®Éñ¹¦·û£¡\n",Player.k9);
+            printf("q.ï¿½ï¿½ï¿½ï¿½%dï¿½Å»ï¿½Ñªï¿½ï¿½ï¿½ï¿½\n",Player.k1);
+            printf("w.ï¿½ï¿½ï¿½ï¿½%dï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôªï¿½ï¿½ï¿½ï¿½\n",Player.k2);
+            printf("e.ï¿½ï¿½ï¿½ï¿½%dï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n",Player.k3);
+            printf("r.ï¿½ï¿½ï¿½ï¿½%dï¿½Å¿ï¿½ï¿½ï¿½ï¿½Ð»Ú·ï¿½ï¿½ï¿½\n",Player.k4);
+            printf("t.ï¿½ï¿½ï¿½ï¿½%dï¿½Å¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n",Player.k5);
+            printf("y.ï¿½ï¿½ï¿½ï¿½%dï¿½Å¶ï¿½ï¿½ï¿½ï¿½ï¿½\n",Player.k6);
+            printf("u.ï¿½ï¿½ï¿½ï¿½%dï¿½ï¿½ï¿½ï¿½ï¿½Ç´ó·¨·ï¿½ï¿½ï¿½\n",Player.k7);
+            printf("i.ï¿½ï¿½ï¿½ï¿½%dï¿½Å¶ï¿½ï¿½Â¾Å½ï¿½ï¿½ï¿½ï¿½ï¿½\n",Player.k8);
+            printf("o.ï¿½ï¿½ï¿½ï¿½%dï¿½ï¿½ï¿½ï¿½Ë®ï¿½ñ¹¦·ï¿½ï¿½ï¿½\n",Player.k9);
             qwe=_getch();
             switch (qwe){
-                case 'q':if (Player.k1>=1){Player.k1--;print("¸Ðµ½Ò»ÕóÊæ³©£¡HP+500");Player.HP+=500;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'w':if (Player.k2>=1){Player.k2--;print("¸Ð¾õÒ»ÕóµçÁ÷Ò»°ãµÄ¿ì¸ÐÁ÷±éÈ«Éí£¡HP+1000");Player.HP+=1000;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'e':if (Player.k3>=1){Player.k3--;print("ÄãµÄË«ÊÖÄÜÊ¹ÓÃ²»Í¬µÄÕÐÊ½£¡ÉËº¦·­±¶£¡");Player.ATK*=2;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'r':if (Player.k4>=1){Player.k4--;print("ÕÆ·çÒ»ÏÂ×ÓºôÁË³öÈ¥£¬Ìì±ÀµØÁÑ£¡");sd=rand()%50000+1;HP-=sd;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 't':if (Player.k5>=1){Player.k5--;print("Ò»¹É¾Þ´óµÄÁ¦Á¿³åÁË³öÀ´£¡");sd=rand()%80000+20000;HP-=sd;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'y':if (Player.k6>=1){Player.k6--;print("¶á»ê£¡£¡£¡");if ((rand()%21)%10==0)HP=0;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'u':if (Player.k7>=1){Player.k7--;print("¿´ÎÒÉñ¹¦£¡£¡£¡£¡");HP-=500;Player.HP+=500;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'i':if (Player.k8>=1){Player.k8--;print("¶À¹Â¾Å½££¡ÃëÌìÃëµØ£¡");Player.ATK*=9;};break;
-                case 'o':if (Player.k9>=1){Player.k9--;print("ÄÆË®Éñ¹¦£¬ÕÀ·Å¼¤ÁÒµÄ»ð»¨£¡");sd=rand();HP-=sd;}else print("ÄãÃ»ÓÐ£¡");break;
+                case 'q':if (Player.k1>=1){Player.k1--;print("ï¿½Ðµï¿½Ò»ï¿½ï¿½ï¿½æ³©ï¿½ï¿½HP+500");Player.HP+=500;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'w':if (Player.k2>=1){Player.k2--;print("ï¿½Ð¾ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È«ï¿½ï¿½ï¿½ï¿½HP+1000");Player.HP+=1000;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'e':if (Player.k3>=1){Player.k3--;print("ï¿½ï¿½ï¿½Ë«ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½Ã²ï¿½Í¬ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½Ëºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");Player.ATK*=2;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'r':if (Player.k4>=1){Player.k4--;print("ï¿½Æ·ï¿½Ò»ï¿½ï¿½ï¿½Óºï¿½ï¿½Ë³ï¿½È¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ£ï¿½");sd=rand()%50000+1;HP-=sd;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 't':if (Player.k5>=1){Player.k5--;print("Ò»ï¿½É¾Þ´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½ï¿½ï¿½ï¿½");sd=rand()%80000+20000;HP-=sd;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'y':if (Player.k6>=1){Player.k6--;print("ï¿½ï¿½ê£¡ï¿½ï¿½ï¿½ï¿½");if ((rand()%21)%10==0)HP=0;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'u':if (Player.k7>=1){Player.k7--;print("ï¿½ï¿½ï¿½ï¿½ï¿½ñ¹¦£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");HP-=500;Player.HP+=500;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'i':if (Player.k8>=1){Player.k8--;print("ï¿½ï¿½ï¿½Â¾Å½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø£ï¿½");Player.ATK*=9;};break;
+                case 'o':if (Player.k9>=1){Player.k9--;print("ï¿½ï¿½Ë®ï¿½ñ¹¦£ï¿½ï¿½ï¿½ï¿½Å¼ï¿½ï¿½ÒµÄ»ð»¨£ï¿½");sd=rand();HP-=sd;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
             }
             system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}    A kkkÊÌÎÀ*");printf("\n");
-            printf("*   _/_  [6]    V   ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}    A kkkï¿½ï¿½ï¿½ï¿½*");printf("\n");
+            printf("*   _/_  [6]    V   ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}    A  |O#O| *");printf("\n");
             printf("*  | V | [6]    V  |###| *");printf("\n");
             printf("*   OVO  ZXZ   AA   NNN  *");printf("\n");
@@ -2348,13 +2341,13 @@ bool fight_to_kkkshiwei(){
             printf("* //N N   I    AIoo=SSS  *");printf("\n");
             printf("*// ONO   O    A    RRR  *");printf("\n");
             printf("*P  UMU        A    S S  *");printf("\n");
-            printf("*   U U        A    S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U        A    S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D        A   SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}    A kkkÊÌÎÀ*");printf("\n");
-            printf("*   _/_  [6]    V   AAA  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}    A kkkï¿½ï¿½ï¿½ï¿½*");printf("\n");
+            printf("*   _/_  [6]    V   AAA  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}    A  AO#O| *");printf("\n");
             printf("*  | V | [6]    V A|###| *");printf("\n");
             printf("*   OVO  ZXZ    AA  NNN  *");printf("\n");
@@ -2362,13 +2355,13 @@ bool fight_to_kkkshiwei(){
             printf("* //N N   I     IAo=SSS  *");printf("\n");
             printf("*// ONO   O      A  RRR  *");printf("\n");
             printf("*P  UMU          A  S S  *");printf("\n");
-            printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D         A  SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}    A kkkÊÌÎÀ*");printf("\n");
-            printf("*   _/_  [6]    V   __AA *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}    A kkkï¿½ï¿½ï¿½ï¿½*");printf("\n");
+            printf("*   _/_  [6]    V   __AA *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}    A  |OAA| *");printf("\n");
             printf("*  | V | [6]    V  |AA#| *");printf("\n");
             printf("*   OVO  ZXZ    A  AANN  *");printf("\n");
@@ -2376,13 +2369,13 @@ bool fight_to_kkkshiwei(){
             printf("* //N N   I    AAAAAAAAA *");printf("\n");
             printf("*// ONO   O    AAA  RRAA *");printf("\n");
             printf("*P  UMU        A A  S AA *");printf("\n");
-            printf("*   U U       AA A  S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U       AA A  S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D       A  A SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}    A kkkÊÌÎÀ*");printf("\n");
-            printf("*   _/_  [6]    V   ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}    A kkkï¿½ï¿½ï¿½ï¿½*");printf("\n");
+            printf("*   _/_  [6]    V   ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}    A  AA#O| *");printf("\n");
             printf("*  | V | [6]    V  |###| *");printf("\n");
             printf("*   OVO  ZXZ    A   NNN  *");printf("\n");
@@ -2390,13 +2383,13 @@ bool fight_to_kkkshiwei(){
             printf("* //N N   I     Ioo=SSS  *");printf("\n");
             printf("*// ONO   O         RRR  *");printf("\n");
             printf("*P  UMU            AAAA  *");printf("\n");
-            printf("*   U U             SAAA *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             SAAA *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}    A kkkÊÌÎÀ*");printf("\n");
-            printf("*   _/_  [6]    V   ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}    A kkkï¿½ï¿½ï¿½ï¿½*");printf("\n");
+            printf("*   _/_  [6]    V   ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}    A  |O#O| *");printf("\n");
             printf("*  | V | [6]    V  |###| *");printf("\n");
             printf("*   OVO  ZXZ    A   NNN  *");printf("\n");
@@ -2404,12 +2397,12 @@ bool fight_to_kkkshiwei(){
             printf("* //N N   I     Ioo=SSS  *");printf("\n");
             printf("*// ONO   O         RRR  *");printf("\n");
             printf("*P  UMU             S S  *");printf("\n");
-            printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             if (HP<=0){
-                print("ÄãÓ®ÁË£¡»ñµÃ2000½ð±Ò£¡1000¾­ÑéÖµ£¡");
+                print("ï¿½ï¿½Ó®ï¿½Ë£ï¿½ï¿½ï¿½ï¿½2000ï¿½ï¿½Ò£ï¿½1000ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½");
                 Player.EXP+=1000;
                 lvup();Player.HP+=378;if (Player.HP>Player.MAXHP) Player.HP=Player.MAXHP;
                 Player.Money+=2000;
@@ -2419,8 +2412,8 @@ bool fight_to_kkkshiwei(){
             sd=ATK-Player.DEF+(rand()%100)+100;
             Player.HP-=sd;
             printf("**************************");printf("\n");
-            printf("*     >  {=}    A kkkÊÌÎÀ*");printf("\n");
-            printf("*   _/_  [6]    V   ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}    A kkkï¿½ï¿½ï¿½ï¿½*");printf("\n");
+            printf("*   _/_  [6]    V   ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}    A  |O#O| *");printf("\n");
             printf("*  | V | [6]    V  |###| *");printf("\n");
             printf("*   OVO  ZXZ    A   NNN  *");printf("\n");
@@ -2428,13 +2421,13 @@ bool fight_to_kkkshiwei(){
             printf("* //N N   I     Ioo=SSS  *");printf("\n");
             printf("*// ONO   O         RRR  *");printf("\n");
             printf("*P  UMU             S S  *");printf("\n");
-            printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}   A kkkÊÌÎÀ *");printf("\n");
-            printf("*   _/_  [6]   V   ___   *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}   A kkkï¿½ï¿½ï¿½ï¿½ *");printf("\n");
+            printf("*   _/_  [6]   V   ___   *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}   A  |O#O|  *");printf("\n");
             printf("*  | V | [6]   V  |###|  *");printf("\n");
             printf("*   OVO  ZXZ   A   NNN   *");printf("\n");
@@ -2442,13 +2435,13 @@ bool fight_to_kkkshiwei(){
             printf("* //N N   I    Ioo=SSS   *");printf("\n");
             printf("*// ONO   O        RRR   *");printf("\n");
             printf("*P  UMU            S S   *");printf("\n");
-            printf("*   U U            S S   *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U            S S   *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D           SS SS  *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     > AAAAAAAA kkkÊÌÎÀ *");printf("\n");
-            printf("*   _/AAAAVVVVVV   ___   *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     > AAAAAAAA kkkï¿½ï¿½ï¿½ï¿½ *");printf("\n");
+            printf("*   _/AAAAVVVVVV   ___   *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |OAAAVVVVVVVA  |O#O|  *");printf("\n");
             printf("*  |AAAVVVVV   V  |###|  *");printf("\n");
             printf("*   AAAVVVXZ   A   NNN   *");printf("\n");
@@ -2456,13 +2449,13 @@ bool fight_to_kkkshiwei(){
             printf("* //N AAVVVV   Ioo=SSS   *");printf("\n");
             printf("*// ONOAAAVVV      RRR   *");printf("\n");
             printf("*P  UMU AAVVVV     S S   *");printf("\n");
-            printf("*   U U  AAA       S S   *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U  AAA       S S   *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D           SS SS  *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     > AAAAAAA  kkkÊÌÎÀ *");printf("\n");
-            printf("*   _/AAAAVVVVV    ___   *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     > AAAAAAA  kkkï¿½ï¿½ï¿½ï¿½ *");printf("\n");
+            printf("*   _/AAAAVVVVV    ___   *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |OAAAVVVVVVV   |O#O|  *");printf("\n");
             printf("*  |AAAVVVVV      |###|  *");printf("\n");
             printf("*   AAAVVVXZ       NNN   *");printf("\n");
@@ -2470,13 +2463,13 @@ bool fight_to_kkkshiwei(){
             printf("* //N AAVVVV   Ioo=SSS   *");printf("\n");
             printf("*// ONOAAAVVV  A   RRR   *");printf("\n");
             printf("*P  UMU AAVVVV V   S S   *");printf("\n");
-            printf("*   U U  AAA   A   S S   *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U  AAA   A   S S   *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D        V  SS SS  *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}   A kkkÊÌÎÀ *");printf("\n");
-            printf("*   _/_  [6]   V   ___   *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}   A kkkï¿½ï¿½ï¿½ï¿½ *");printf("\n");
+            printf("*   _/_  [6]   V   ___   *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}   A  |O#O|  *");printf("\n");
             printf("*  | V | [6]   V  |###|  *");printf("\n");
             printf("*   OVO  ZXZ   A   NNN   *");printf("\n");
@@ -2484,12 +2477,12 @@ bool fight_to_kkkshiwei(){
             printf("* //N N   I    Ioo=SSS   *");printf("\n");
             printf("*// ONO   O        RRR   *");printf("\n");
             printf("*P  UMU            S S   *");printf("\n");
-            printf("*   U U            S S   *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U            S S   *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D           SS SS  *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             if (Player.HP<=0){
-                print("Äã±»¿³ËÀÁË£¡");
+                print("ï¿½ã±»ï¿½ï¿½ï¿½ï¿½ï¿½Ë£ï¿½");
                 exit(1);
             }
         }
@@ -2498,12 +2491,12 @@ bool fight_to_kkkshiwei(){
 }
 bool fight_to_kkkmofashi(){
     system("cls");
-    string name="½©Ê¬";
+    string name="ï¿½ï¿½Ê¬";
     int HP=120000,MAXHP=120000,ATK=400,DEF=0;
     while (1){
         printf("**************************");printf("\n");
-        printf("*     >  {=}    kkkÄ§·¨Ê¦*");printf("\n");
-        printf("*   _/_  [6]        _A_  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+        printf("*     >  {=}    kkkÄ§ï¿½ï¿½Ê¦*");printf("\n");
+        printf("*   _/_  [6]        _A_  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
         printf("*  |O O| {6}   O   |C C| *");printf("\n");
         printf("*  | V | [6]   T   |MMM| *");printf("\n");
         printf("*   OVO  ZXZ   T    MMM  *");printf("\n");
@@ -2511,14 +2504,14 @@ bool fight_to_kkkmofashi(){
         printf("* //N N   I    T    SSS o*");printf("\n");
         printf("*// ONO   O    T    RRR 3*");printf("\n");
         printf("*P  UMU        T    S S  *");printf("\n");
-        printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+        printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
         printf("*   D D            SS SS *");printf("\n");
         printf("**************************");printf("\n");
-        printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");
+        printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");
         qwe=_getch();
         if (qwe=='2'){
             system("cls");
-            print("ÈýÊ®Áù¼Æ£¬×ßÎªÉÏ¼Æ£¡");
+            print("ï¿½ï¿½Ê®ï¿½ï¿½ï¿½Æ£ï¿½ï¿½ï¿½Îªï¿½Ï¼Æ£ï¿½");
             system("cls");
             return false;
         }else if (qwe=='1'){
@@ -2527,8 +2520,8 @@ bool fight_to_kkkmofashi(){
             sd=Player.ATK-DEF+(rand()%100);
             HP-=sd;
             printf("**************************");printf("\n");
-            printf("*     >  {=}    kkkÄ§·¨Ê¦*");printf("\n");
-            printf("*   _/_  [6]        _A_  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}    kkkÄ§ï¿½ï¿½Ê¦*");printf("\n");
+            printf("*   _/_  [6]        _A_  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}   O   |C C| *");printf("\n");
             printf("*  | V | [6]   T   |MMM| *");printf("\n");
             printf("*   OVO  ZXZ   T    MMM  *");printf("\n");
@@ -2536,13 +2529,13 @@ bool fight_to_kkkmofashi(){
             printf("* //N N   I    T    SSS o*");printf("\n");
             printf("*// ONO   O    T    RRR 3*");printf("\n");
             printf("*P  UMU        T    S S  *");printf("\n");
-            printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}    kkkÄ§·¨Ê¦*");printf("\n");
-            printf("*   _/_  [6]        _A_  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}    kkkÄ§ï¿½ï¿½Ê¦*");printf("\n");
+            printf("*   _/_  [6]        _A_  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |   | {6}   O   |C C| *");printf("\n");
             printf("*  |   | [6]   T   |MMM| *");printf("\n");
             printf("*        ZXZ   T    MMM  *");printf("\n");
@@ -2550,13 +2543,13 @@ bool fight_to_kkkmofashi(){
             printf("* //      I    T    SSS o*");printf("\n");
             printf("*//       O    T    RRR 3*");printf("\n");
             printf("*P             T    S S  *");printf("\n");
-            printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*               kkkÄ§·¨Ê¦*");printf("\n");
-            printf("*                   _A_  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*               kkkÄ§ï¿½ï¿½Ê¦*");printf("\n");
+            printf("*                   _A_  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*              O   |C C| *");printf("\n");
             printf("*              T   |MMM| *");printf("\n");
             printf("*              T    MMM  *");printf("\n");
@@ -2564,13 +2557,13 @@ bool fight_to_kkkmofashi(){
             printf("*              T    SSS o*");printf("\n");
             printf("*              T    RRR 3*");printf("\n");
             printf("*              T    S S  *");printf("\n");
-            printf("*                   S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*                   S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*                  SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*               kkkÄ§·¨Ê¦*");printf("\n");
-            printf("*                   _A_  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*               kkkÄ§ï¿½ï¿½Ê¦*");printf("\n");
+            printf("*                   _A_  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*              O   |C C| *");printf("\n");
             printf("*  0000        T   |MMM| *");printf("\n");
             printf("* 0    0       T    MMM  *");printf("\n");
@@ -2578,13 +2571,13 @@ bool fight_to_kkkmofashi(){
             printf("* 0    0       T    SSS o*");printf("\n");
             printf("* 0    0       T    RRR 3*");printf("\n");
             printf("*  0000        T    S S  *");printf("\n");
-            printf("*                   S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*                   S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*                  SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("* 000000000000  kkkÄ§·¨Ê¦*");printf("\n");
-            printf("*0            0     _A_  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("* 000000000000  kkkÄ§ï¿½ï¿½Ê¦*");printf("\n");
+            printf("*0            0     _A_  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*0            0O   |C C| *");printf("\n");
             printf("*0            0T   |MMM| *");printf("\n");
             printf("*0            0T    MMM  *");printf("\n");
@@ -2592,12 +2585,12 @@ bool fight_to_kkkmofashi(){
             printf("*0            0T    SSS o*");printf("\n");
             printf("*0            0T    RRR 3*");printf("\n");
             printf("*0            0T    S S  *");printf("\n");
-            printf("* 000000000000      S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("* 000000000000      S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*                  SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             if (HP<=0){
-                print("ÄãÓ®ÁË£¡»ñµÃ2500½ð±Ò£¡500¾­ÑéÖµ£¡");
+                print("ï¿½ï¿½Ó®ï¿½Ë£ï¿½ï¿½ï¿½ï¿½2500ï¿½ï¿½Ò£ï¿½500ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½");
                 Player.EXP+=500;
                 lvup();Player.HP+=378;if (Player.HP>Player.MAXHP) Player.HP=Player.MAXHP;
                 Player.Money+=2500;
@@ -2607,8 +2600,8 @@ bool fight_to_kkkmofashi(){
             sd=ATK-Player.DEF+(rand()%100);
             Player.HP-=sd;
             printf("**************************");printf("\n");
-            printf("*     >  {=}    kkkÄ§·¨Ê¦*");printf("\n");
-            printf("*   _/_  [6]        _A_  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}    kkkÄ§ï¿½ï¿½Ê¦*");printf("\n");
+            printf("*   _/_  [6]        _A_  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}   O   |C C| *");printf("\n");
             printf("*  | V | [6]   T   |MMM| *");printf("\n");
             printf("*   OVO  ZXZ   T    MMM  *");printf("\n");
@@ -2616,13 +2609,13 @@ bool fight_to_kkkmofashi(){
             printf("* //N N   I    T    SSS o*");printf("\n");
             printf("*// ONO   O    T    RRR 3*");printf("\n");
             printf("*P  UMU        T    S S  *");printf("\n");
-            printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}    kkkÄ§·¨Ê¦*");printf("\n");
-            printf("*   _/_  [6]        _A_  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}    kkkÄ§ï¿½ï¿½Ê¦*");printf("\n");
+            printf("*   _/_  [6]        _A_  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |   | {6}   O   |C C| *");printf("\n");
             printf("*  |   | [6]   T   |MMM| *");printf("\n");
             printf("*        ZXZ   T    MMM  *");printf("\n");
@@ -2630,13 +2623,13 @@ bool fight_to_kkkmofashi(){
             printf("* //      I    T    SSS o*");printf("\n");
             printf("*//       O    T    RRR 3*");printf("\n");
             printf("*P             T    S S  *");printf("\n");
-            printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*               kkkÄ§·¨Ê¦*");printf("\n");
-            printf("*                   _A_  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*               kkkÄ§ï¿½ï¿½Ê¦*");printf("\n");
+            printf("*                   _A_  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*              O   |C C| *");printf("\n");
             printf("*              T   |MMM| *");printf("\n");
             printf("*              T    MMM  *");printf("\n");
@@ -2644,13 +2637,13 @@ bool fight_to_kkkmofashi(){
             printf("*              T    SSS o*");printf("\n");
             printf("*              T    RRR 3*");printf("\n");
             printf("*              T    S S  *");printf("\n");
-            printf("*                   S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*                   S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*                  SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*               kkkÄ§·¨Ê¦*");printf("\n");
-            printf("*                   _A_  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*               kkkÄ§ï¿½ï¿½Ê¦*");printf("\n");
+            printf("*                   _A_  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*              O   |C C| *");printf("\n");
             printf("*  0000        T   |MMM| *");printf("\n");
             printf("* 0    0       T    MMM  *");printf("\n");
@@ -2658,13 +2651,13 @@ bool fight_to_kkkmofashi(){
             printf("* 0    0       T    SSS o*");printf("\n");
             printf("* 0    0       T    RRR 3*");printf("\n");
             printf("*  0000        T    S S  *");printf("\n");
-            printf("*                   S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*                   S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*                  SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("* 000000000000  kkkÄ§·¨Ê¦*");printf("\n");
-            printf("*0            0     _A_  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("* 000000000000  kkkÄ§ï¿½ï¿½Ê¦*");printf("\n");
+            printf("*0            0     _A_  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*0            0O   |C C| *");printf("\n");
             printf("*0            0T   |MMM| *");printf("\n");
             printf("*0            0T    MMM  *");printf("\n");
@@ -2672,42 +2665,42 @@ bool fight_to_kkkmofashi(){
             printf("*0            0T    SSS o*");printf("\n");
             printf("*0            0T    RRR 3*");printf("\n");
             printf("*0            0T    S S  *");printf("\n");
-            printf("* 000000000000      S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("* 000000000000      S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*                  SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             if (Player.HP<=0){
-                print("Äã±»ÉÕËÀÁË£¡");
+                print("ï¿½ã±»ï¿½ï¿½ï¿½ï¿½ï¿½Ë£ï¿½");
                 exit(1);
             }
         }else if (qwe=='3'){
             int sd;
             system("cls");
-            printf("q.ÄãÓÐ%dÕÅ»ØÑª·û£¡\n",Player.k1);
-            printf("w.ÄãÓÐ%dÕÅÄýÉñ¹éÔª·û£¡\n",Player.k2);
-            printf("e.ÄãÓÐ%dÕÅ×óÓÒ»¥²«·û£¡\n",Player.k3);
-            printf("r.ÄãÓÐ%dÕÅ¿ºÁúÓÐ»Ú·û£¡\n",Player.k4);
-            printf("t.ÄãÓÐ%dÕÅ¾ÆÉñ·û£¡\n",Player.k5);
-            printf("y.ÄãÓÐ%dÕÅ¶á»ê·û£¡\n",Player.k6);
-            printf("u.ÄãÓÐ%dÕÅÎüÐÇ´ó·¨·û£¡\n",Player.k7);
-            printf("i.ÄãÓÐ%dÕÅ¶À¹Â¾Å½£·û£¡\n",Player.k8);
-            printf("o.ÄãÓÐ%dÕÅÄÆË®Éñ¹¦·û£¡\n",Player.k9);
+            printf("q.ï¿½ï¿½ï¿½ï¿½%dï¿½Å»ï¿½Ñªï¿½ï¿½ï¿½ï¿½\n",Player.k1);
+            printf("w.ï¿½ï¿½ï¿½ï¿½%dï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôªï¿½ï¿½ï¿½ï¿½\n",Player.k2);
+            printf("e.ï¿½ï¿½ï¿½ï¿½%dï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n",Player.k3);
+            printf("r.ï¿½ï¿½ï¿½ï¿½%dï¿½Å¿ï¿½ï¿½ï¿½ï¿½Ð»Ú·ï¿½ï¿½ï¿½\n",Player.k4);
+            printf("t.ï¿½ï¿½ï¿½ï¿½%dï¿½Å¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n",Player.k5);
+            printf("y.ï¿½ï¿½ï¿½ï¿½%dï¿½Å¶ï¿½ï¿½ï¿½ï¿½ï¿½\n",Player.k6);
+            printf("u.ï¿½ï¿½ï¿½ï¿½%dï¿½ï¿½ï¿½ï¿½ï¿½Ç´ó·¨·ï¿½ï¿½ï¿½\n",Player.k7);
+            printf("i.ï¿½ï¿½ï¿½ï¿½%dï¿½Å¶ï¿½ï¿½Â¾Å½ï¿½ï¿½ï¿½ï¿½ï¿½\n",Player.k8);
+            printf("o.ï¿½ï¿½ï¿½ï¿½%dï¿½ï¿½ï¿½ï¿½Ë®ï¿½ñ¹¦·ï¿½ï¿½ï¿½\n",Player.k9);
             qwe=_getch();
             switch (qwe){
-                case 'q':if (Player.k1>=1){Player.k1--;print("¸Ðµ½Ò»ÕóÊæ³©£¡HP+500");Player.HP+=500;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'w':if (Player.k2>=1){Player.k2--;print("¸Ð¾õÒ»ÕóµçÁ÷Ò»°ãµÄ¿ì¸ÐÁ÷±éÈ«Éí£¡HP+1000");Player.HP+=1000;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'e':if (Player.k3>=1){Player.k3--;print("ÄãµÄË«ÊÖÄÜÊ¹ÓÃ²»Í¬µÄÕÐÊ½£¡ÉËº¦·­±¶£¡");Player.ATK*=2;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'r':if (Player.k4>=1){Player.k4--;print("ÕÆ·çÒ»ÏÂ×ÓºôÁË³öÈ¥£¬Ìì±ÀµØÁÑ£¡");sd=rand()%50000+1;HP-=sd;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 't':if (Player.k5>=1){Player.k5--;print("Ò»¹É¾Þ´óµÄÁ¦Á¿³åÁË³öÀ´£¡");sd=rand()%80000+20000;HP-=sd;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'y':if (Player.k6>=1){Player.k6--;print("¶á»ê£¡£¡£¡");if ((rand()%21)%10==0)HP=0;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'u':if (Player.k7>=1){Player.k7--;print("¿´ÎÒÉñ¹¦£¡£¡£¡£¡");HP-=500;Player.HP+=500;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'i':if (Player.k8>=1){Player.k8--;print("¶À¹Â¾Å½££¡ÃëÌìÃëµØ£¡");Player.ATK*=9;};break;
-                case 'o':if (Player.k9>=1){Player.k9--;print("ÄÆË®Éñ¹¦£¬ÕÀ·Å¼¤ÁÒµÄ»ð»¨£¡");sd=rand();HP-=sd;}else print("ÄãÃ»ÓÐ£¡");break;
+                case 'q':if (Player.k1>=1){Player.k1--;print("ï¿½Ðµï¿½Ò»ï¿½ï¿½ï¿½æ³©ï¿½ï¿½HP+500");Player.HP+=500;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'w':if (Player.k2>=1){Player.k2--;print("ï¿½Ð¾ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È«ï¿½ï¿½ï¿½ï¿½HP+1000");Player.HP+=1000;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'e':if (Player.k3>=1){Player.k3--;print("ï¿½ï¿½ï¿½Ë«ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½Ã²ï¿½Í¬ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½Ëºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");Player.ATK*=2;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'r':if (Player.k4>=1){Player.k4--;print("ï¿½Æ·ï¿½Ò»ï¿½ï¿½ï¿½Óºï¿½ï¿½Ë³ï¿½È¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ£ï¿½");sd=rand()%50000+1;HP-=sd;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 't':if (Player.k5>=1){Player.k5--;print("Ò»ï¿½É¾Þ´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½ï¿½ï¿½ï¿½");sd=rand()%80000+20000;HP-=sd;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'y':if (Player.k6>=1){Player.k6--;print("ï¿½ï¿½ê£¡ï¿½ï¿½ï¿½ï¿½");if ((rand()%21)%10==0)HP=0;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'u':if (Player.k7>=1){Player.k7--;print("ï¿½ï¿½ï¿½ï¿½ï¿½ñ¹¦£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");HP-=500;Player.HP+=500;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'i':if (Player.k8>=1){Player.k8--;print("ï¿½ï¿½ï¿½Â¾Å½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø£ï¿½");Player.ATK*=9;};break;
+                case 'o':if (Player.k9>=1){Player.k9--;print("ï¿½ï¿½Ë®ï¿½ñ¹¦£ï¿½ï¿½ï¿½ï¿½Å¼ï¿½ï¿½ÒµÄ»ð»¨£ï¿½");sd=rand();HP-=sd;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
             }
             system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}    kkkÄ§·¨Ê¦*");printf("\n");
-            printf("*   _/_  [6]        _A_  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}    kkkÄ§ï¿½ï¿½Ê¦*");printf("\n");
+            printf("*   _/_  [6]        _A_  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}   O   |C C| *");printf("\n");
             printf("*  | V | [6]   T   |MMM| *");printf("\n");
             printf("*   OVO  ZXZ   T    MMM  *");printf("\n");
@@ -2715,13 +2708,13 @@ bool fight_to_kkkmofashi(){
             printf("* //N N   I    T    SSS o*");printf("\n");
             printf("*// ONO   O    T    RRR 3*");printf("\n");
             printf("*P  UMU        T    S S  *");printf("\n");
-            printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}    kkkÄ§·¨Ê¦*");printf("\n");
-            printf("*   _/_  [6]        _A_  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}    kkkÄ§ï¿½ï¿½Ê¦*");printf("\n");
+            printf("*   _/_  [6]        _A_  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |   | {6}   O   |C C| *");printf("\n");
             printf("*  |   | [6]   T   |MMM| *");printf("\n");
             printf("*        ZXZ   T    MMM  *");printf("\n");
@@ -2729,13 +2722,13 @@ bool fight_to_kkkmofashi(){
             printf("* //      I    T    SSS o*");printf("\n");
             printf("*//       O    T    RRR 3*");printf("\n");
             printf("*P             T    S S  *");printf("\n");
-            printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*               kkkÄ§·¨Ê¦*");printf("\n");
-            printf("*                   _A_  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*               kkkÄ§ï¿½ï¿½Ê¦*");printf("\n");
+            printf("*                   _A_  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*              O   |C C| *");printf("\n");
             printf("*              T   |MMM| *");printf("\n");
             printf("*              T    MMM  *");printf("\n");
@@ -2743,13 +2736,13 @@ bool fight_to_kkkmofashi(){
             printf("*              T    SSS o*");printf("\n");
             printf("*              T    RRR 3*");printf("\n");
             printf("*              T    S S  *");printf("\n");
-            printf("*                   S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*                   S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*                  SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*               kkkÄ§·¨Ê¦*");printf("\n");
-            printf("*                   _A_  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*               kkkÄ§ï¿½ï¿½Ê¦*");printf("\n");
+            printf("*                   _A_  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*              O   |C C| *");printf("\n");
             printf("*  0000        T   |MMM| *");printf("\n");
             printf("* 0    0       T    MMM  *");printf("\n");
@@ -2757,13 +2750,13 @@ bool fight_to_kkkmofashi(){
             printf("* 0    0       T    SSS o*");printf("\n");
             printf("* 0    0       T    RRR 3*");printf("\n");
             printf("*  0000        T    S S  *");printf("\n");
-            printf("*                   S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*                   S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*                  SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("* 000000000000  kkkÄ§·¨Ê¦*");printf("\n");
-            printf("*0            0     _A_  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("* 000000000000  kkkÄ§ï¿½ï¿½Ê¦*");printf("\n");
+            printf("*0            0     _A_  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*0            0O   |C C| *");printf("\n");
             printf("*0            0T   |MMM| *");printf("\n");
             printf("*0            0T    MMM  *");printf("\n");
@@ -2771,12 +2764,12 @@ bool fight_to_kkkmofashi(){
             printf("*0            0T    SSS o*");printf("\n");
             printf("*0            0T    RRR 3*");printf("\n");
             printf("*0            0T    S S  *");printf("\n");
-            printf("* 000000000000      S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("* 000000000000      S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*                  SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             if (HP<=0){
-                print("ÄãÓ®ÁË£¡»ñµÃ2100½ð±Ò£¡400¾­ÑéÖµ£¡");
+                print("ï¿½ï¿½Ó®ï¿½Ë£ï¿½ï¿½ï¿½ï¿½2100ï¿½ï¿½Ò£ï¿½400ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½");
                 Player.EXP+=400;
                 lvup();Player.HP+=378;if (Player.HP>Player.MAXHP) Player.HP=Player.MAXHP;
                 Player.Money+=2100;
@@ -2786,8 +2779,8 @@ bool fight_to_kkkmofashi(){
             sd=ATK-Player.DEF+(rand()%100);
             Player.HP-=sd;
             printf("**************************");printf("\n");
-            printf("*     >  {=}    kkkÄ§·¨Ê¦*");printf("\n");
-            printf("*   _/_  [6]        _A_  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}    kkkÄ§ï¿½ï¿½Ê¦*");printf("\n");
+            printf("*   _/_  [6]        _A_  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}   O   |C C| *");printf("\n");
             printf("*  | V | [6]   T   |MMM| *");printf("\n");
             printf("*   OVO  ZXZ   T    MMM  *");printf("\n");
@@ -2795,13 +2788,13 @@ bool fight_to_kkkmofashi(){
             printf("* //N N   I    T    SSS o*");printf("\n");
             printf("*// ONO   O    T    RRR 3*");printf("\n");
             printf("*P  UMU        T    S S  *");printf("\n");
-            printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}    kkkÄ§·¨Ê¦*");printf("\n");
-            printf("*   _/_  [6]        _A_  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}    kkkÄ§ï¿½ï¿½Ê¦*");printf("\n");
+            printf("*   _/_  [6]        _A_  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |   | {6}   O   |C C| *");printf("\n");
             printf("*  |   | [6]   T   |MMM| *");printf("\n");
             printf("*        ZXZ   T    MMM  *");printf("\n");
@@ -2809,13 +2802,13 @@ bool fight_to_kkkmofashi(){
             printf("* //      I    T    SSS o*");printf("\n");
             printf("*//       O    T    RRR 3*");printf("\n");
             printf("*P             T    S S  *");printf("\n");
-            printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*               kkkÄ§·¨Ê¦*");printf("\n");
-            printf("*                   _A_  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*               kkkÄ§ï¿½ï¿½Ê¦*");printf("\n");
+            printf("*                   _A_  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*              O   |C C| *");printf("\n");
             printf("*              T   |MMM| *");printf("\n");
             printf("*              T    MMM  *");printf("\n");
@@ -2823,13 +2816,13 @@ bool fight_to_kkkmofashi(){
             printf("*              T    SSS o*");printf("\n");
             printf("*              T    RRR 3*");printf("\n");
             printf("*              T    S S  *");printf("\n");
-            printf("*                   S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*                   S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*                  SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*               kkkÄ§·¨Ê¦*");printf("\n");
-            printf("*                   _A_  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*               kkkÄ§ï¿½ï¿½Ê¦*");printf("\n");
+            printf("*                   _A_  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*              O   |C C| *");printf("\n");
             printf("*  0000        T   |MMM| *");printf("\n");
             printf("* 0    0       T    MMM  *");printf("\n");
@@ -2837,13 +2830,13 @@ bool fight_to_kkkmofashi(){
             printf("* 0    0       T    SSS o*");printf("\n");
             printf("* 0    0       T    RRR 3*");printf("\n");
             printf("*  0000        T    S S  *");printf("\n");
-            printf("*                   S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*                   S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*                  SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("* 000000000000  kkkÄ§·¨Ê¦*");printf("\n");
-            printf("*0            0     _A_  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("* 000000000000  kkkÄ§ï¿½ï¿½Ê¦*");printf("\n");
+            printf("*0            0     _A_  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*0            0O   |C C| *");printf("\n");
             printf("*0            0T   |MMM| *");printf("\n");
             printf("*0            0T    MMM  *");printf("\n");
@@ -2851,12 +2844,12 @@ bool fight_to_kkkmofashi(){
             printf("*0            0T    SSS o*");printf("\n");
             printf("*0            0T    RRR 3*");printf("\n");
             printf("*0            0T    S S  *");printf("\n");
-            printf("* 000000000000      S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("* 000000000000      S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*                  SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");Sleep(200);system("cls");
             if (Player.HP<=0){
-                print("Äã±»¶³ËÀÁË£¡");
+                print("ï¿½ã±»ï¿½ï¿½ï¿½ï¿½ï¿½Ë£ï¿½");
                 exit(1);
             }
         }
@@ -2865,12 +2858,12 @@ bool fight_to_kkkmofashi(){
 }
 bool fight_to_cike(){
     system("cls");
-    string name="½©Ê¬";
+    string name="ï¿½ï¿½Ê¬";
     int HP=60000,MAXHP=60000,ATK=800,DEF=1;
     while (1){
         printf("**************************");printf("\n");
-        printf("*     >  {=}      kkk´Ì¿Í*");printf("\n");
-        printf("*   _/_  [6]  -+    ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+        printf("*     >  {=}      kkkï¿½Ì¿ï¿½*");printf("\n");
+        printf("*   _/_  [6]  -+    ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
         printf("*  |O O| {6}      | $ $ |*");printf("\n");
         printf("*  | V | [6]     -+| V | *");printf("\n");
         printf("*   OVO  ZXZ   |    CVD  *");printf("\n");
@@ -2878,14 +2871,14 @@ bool fight_to_cike(){
         printf("* //N N   I   -+    SSS o*");printf("\n");
         printf("*// ONO   O      -+ RRR-+*");printf("\n");
         printf("*P  UMU             S S  *");printf("\n");
-        printf("*   U U       -+    S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+        printf("*   U U       -+    S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
         printf("*   D D            SS SS *");printf("\n");
         printf("**************************");printf("\n");
-        printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");
+        printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");
         qwe=_getch();
         if (qwe=='2'){
             system("cls");
-            print("ÈýÊ®Áù¼Æ£¬×ßÎªÉÏ¼Æ£¡");
+            print("ï¿½ï¿½Ê®ï¿½ï¿½ï¿½Æ£ï¿½ï¿½ï¿½Îªï¿½Ï¼Æ£ï¿½");
             system("cls");
             return false;
         }
@@ -2895,8 +2888,8 @@ bool fight_to_cike(){
             sd=Player.ATK-DEF+(rand()%100);
             HP-=sd;
             printf("**************************");printf("\n");
-            printf("*     >  {=}      kkk´Ì¿Í*");printf("\n");
-            printf("*   _/_  [6]  -+    ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}      kkkï¿½Ì¿ï¿½*");printf("\n");
+            printf("*   _/_  [6]  -+    ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}      | $ $ |*");printf("\n");
             printf("*  | 1 | [6]     -+| V | *");printf("\n");
             printf("*   OVO  ZXZ   |    CVD  *");printf("\n");
@@ -2904,13 +2897,13 @@ bool fight_to_cike(){
             printf("* //N N   I   -+    SSS o*");printf("\n");
             printf("*// ONO   O      -+ RRR-+*");printf("\n");
             printf("*P  UM1             S S  *");printf("\n");
-            printf("*   U U       -+    S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U       -+    S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}      kkk´Ì¿Í*");printf("\n");
-            printf("*   _/_  [6]  -+    ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}      kkkï¿½Ì¿ï¿½*");printf("\n");
+            printf("*   _/_  [6]  -+    ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}      | $ $ |*");printf("\n");
             printf("*  | V | [6]     -+| V | *");printf("\n");
             printf("*   OVO  ZXZ   |    CVD  *");printf("\n");
@@ -2918,13 +2911,13 @@ bool fight_to_cike(){
             printf("* /1N 1   I   -+    SSS o*");printf("\n");
             printf("*// ONO   O      -+ RRR-+*");printf("\n");
             printf("*P  UMU             S S  *");printf("\n");
-            printf("*   U U       -+    S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U       -+    S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}      kkk´Ì¿Í*");printf("\n");
-            printf("*   _/_  [6]  -+    ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}      kkkï¿½Ì¿ï¿½*");printf("\n");
+            printf("*   _/_  [6]  -+    ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O 1| {6}      | $ $ |*");printf("\n");
             printf("*  | V | [6]     -+| V | *");printf("\n");
             printf("*   OVO  ZXZ   |    CVD  *");printf("\n");
@@ -2932,13 +2925,13 @@ bool fight_to_cike(){
             printf("* //N 1   I   -+    SSS o*");printf("\n");
             printf("*// O1O   O      -+ RRR-+*");printf("\n");
             printf("*P  UMU             S S  *");printf("\n");
-            printf("*   U U       -+    S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U       -+    S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}      kkk´Ì¿Í*");printf("\n");
-            printf("*   _/_  [6]  -+    ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}      kkkï¿½Ì¿ï¿½*");printf("\n");
+            printf("*   _/_  [6]  -+    ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |1 1| {6}      | $ $ |*");printf("\n");
             printf("*  1 V | [6]     -+| V | *");printf("\n");
             printf("*   OVO  ZXZ   |    CVD  *");printf("\n");
@@ -2946,13 +2939,13 @@ bool fight_to_cike(){
             printf("* //N1N   I   -+    SSS o*");printf("\n");
             printf("*// ONO   O      -+ RRR-+*");printf("\n");
             printf("*P  UMU             S S  *");printf("\n");
-            printf("*   U U       -+    S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U       -+    S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}      kkk´Ì¿Í*");printf("\n");
-            printf("*   _/_  [6]  -+    ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}      kkkï¿½Ì¿ï¿½*");printf("\n");
+            printf("*   _/_  [6]  -+    ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}      | $ $ |*");printf("\n");
             printf("*  | V | [6]     -+| V | *");printf("\n");
             printf("*   OVO  ZXZ   |    CVD  *");printf("\n");
@@ -2960,12 +2953,12 @@ bool fight_to_cike(){
             printf("* //N N   I   -+    SSS o*");printf("\n");
             printf("*// ONO   O      -+ RRR-+*");printf("\n");
             printf("*P  UMU             S S  *");printf("\n");
-            printf("*   U U       -+    S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U       -+    S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");printf("\n");Sleep(200);system("cls");
             if (HP<=0){
-                print("ÄãÓ®ÁË£¡»ñµÃ1000½ð±Ò£¡4000¾­ÑéÖµ£¡");
+                print("ï¿½ï¿½Ó®ï¿½Ë£ï¿½ï¿½ï¿½ï¿½1000ï¿½ï¿½Ò£ï¿½4000ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½");
                 Player.EXP+=4000;
                 lvup();Player.HP+=378;if (Player.HP>Player.MAXHP) Player.HP=Player.MAXHP;
                 Player.Money+=1000;
@@ -2975,8 +2968,8 @@ bool fight_to_cike(){
             sd-=ATK-Player.DEF+(rand()%100);
             Player.HP-=sd;
             printf("**************************");printf("\n");
-            printf("*     >  {=}      kkk´Ì¿Í*");printf("\n");
-            printf("*   _/_  [6]  -+    ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}      kkkï¿½Ì¿ï¿½*");printf("\n");
+            printf("*   _/_  [6]  -+    ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}      | $ $ |*");printf("\n");
             printf("*  | 1 | [6]     -+| V | *");printf("\n");
             printf("*   OVO  ZXZ   |    CVD  *");printf("\n");
@@ -2984,13 +2977,13 @@ bool fight_to_cike(){
             printf("* //N N   I   -+    SSS o*");printf("\n");
             printf("*// ONO   O      -+ RRR-+*");printf("\n");
             printf("*P  UM1             S S  *");printf("\n");
-            printf("*   U U       -+    S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U       -+    S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}      kkk´Ì¿Í*");printf("\n");
-            printf("*   _/_  [6]  -+    ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}      kkkï¿½Ì¿ï¿½*");printf("\n");
+            printf("*   _/_  [6]  -+    ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}      | $ $ |*");printf("\n");
             printf("*  | V | [6]     -+| V | *");printf("\n");
             printf("*   OVO  ZXZ   |    CVD  *");printf("\n");
@@ -2998,13 +2991,13 @@ bool fight_to_cike(){
             printf("* /1N 1   I   -+    SSS o*");printf("\n");
             printf("*// ONO   O      -+ RRR-+*");printf("\n");
             printf("*P  UMU             S S  *");printf("\n");
-            printf("*   U U       -+    S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U       -+    S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}      kkk´Ì¿Í*");printf("\n");
-            printf("*   _/_  [6]  -+    ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}      kkkï¿½Ì¿ï¿½*");printf("\n");
+            printf("*   _/_  [6]  -+    ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O 1| {6}      | $ $ |*");printf("\n");
             printf("*  | V | [6]     -+| V | *");printf("\n");
             printf("*   OVO  ZXZ   |    CVD  *");printf("\n");
@@ -3012,13 +3005,13 @@ bool fight_to_cike(){
             printf("* //N 1   I   -+    SSS o*");printf("\n");
             printf("*// O1O   O      -+ RRR-+*");printf("\n");
             printf("*P  UMU             S S  *");printf("\n");
-            printf("*   U U       -+    S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U       -+    S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}      kkk´Ì¿Í*");printf("\n");
-            printf("*   _/_  [6]  -+    ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}      kkkï¿½Ì¿ï¿½*");printf("\n");
+            printf("*   _/_  [6]  -+    ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |1 1| {6}      | $ $ |*");printf("\n");
             printf("*  1 V | [6]     -+| V | *");printf("\n");
             printf("*   OVO  ZXZ   |    CVD  *");printf("\n");
@@ -3026,13 +3019,13 @@ bool fight_to_cike(){
             printf("* //N1N   I   -+    SSS o*");printf("\n");
             printf("*// ONO   O      -+ RRR-+*");printf("\n");
             printf("*P  UMU             S S  *");printf("\n");
-            printf("*   U U       -+    S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U       -+    S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}      kkk´Ì¿Í*");printf("\n");
-            printf("*   _/_  [6]  -+    ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}      kkkï¿½Ì¿ï¿½*");printf("\n");
+            printf("*   _/_  [6]  -+    ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}      | $ $ |*");printf("\n");
             printf("*  | V | [6]     -+| V | *");printf("\n");
             printf("*   OVO  ZXZ   |    CVD  *");printf("\n");
@@ -3040,42 +3033,42 @@ bool fight_to_cike(){
             printf("* //N N   I   -+    SSS o*");printf("\n");
             printf("*// ONO   O      -+ RRR-+*");printf("\n");
             printf("*P  UMU             S S  *");printf("\n");
-            printf("*   U U       -+    S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U       -+    S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");printf("\n");Sleep(200);system("cls");
             if (Player.HP<=0){
-                print("Äã±»ÅªËÀÁË£¡");
+                print("ï¿½ã±»Åªï¿½ï¿½ï¿½Ë£ï¿½");
                 exit(1);
             }
         }else if (qwe=='3'){
             int sd;
             system("cls");
-            printf("q.ÄãÓÐ%dÕÅ»ØÑª·û£¡\n",Player.k1);
-            printf("w.ÄãÓÐ%dÕÅÄýÉñ¹éÔª·û£¡\n",Player.k2);
-            printf("e.ÄãÓÐ%dÕÅ×óÓÒ»¥²«·û£¡\n",Player.k3);
-            printf("r.ÄãÓÐ%dÕÅ¿ºÁúÓÐ»Ú·û£¡\n",Player.k4);
-            printf("t.ÄãÓÐ%dÕÅ¾ÆÉñ·û£¡\n",Player.k5);
-            printf("y.ÄãÓÐ%dÕÅ¶á»ê·û£¡\n",Player.k6);
-            printf("u.ÄãÓÐ%dÕÅÎüÐÇ´ó·¨·û£¡\n",Player.k7);
-            printf("i.ÄãÓÐ%dÕÅ¶À¹Â¾Å½£·û£¡\n",Player.k8);
-            printf("o.ÄãÓÐ%dÕÅÄÆË®Éñ¹¦·û£¡\n",Player.k9);
+            printf("q.ï¿½ï¿½ï¿½ï¿½%dï¿½Å»ï¿½Ñªï¿½ï¿½ï¿½ï¿½\n",Player.k1);
+            printf("w.ï¿½ï¿½ï¿½ï¿½%dï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôªï¿½ï¿½ï¿½ï¿½\n",Player.k2);
+            printf("e.ï¿½ï¿½ï¿½ï¿½%dï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n",Player.k3);
+            printf("r.ï¿½ï¿½ï¿½ï¿½%dï¿½Å¿ï¿½ï¿½ï¿½ï¿½Ð»Ú·ï¿½ï¿½ï¿½\n",Player.k4);
+            printf("t.ï¿½ï¿½ï¿½ï¿½%dï¿½Å¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n",Player.k5);
+            printf("y.ï¿½ï¿½ï¿½ï¿½%dï¿½Å¶ï¿½ï¿½ï¿½ï¿½ï¿½\n",Player.k6);
+            printf("u.ï¿½ï¿½ï¿½ï¿½%dï¿½ï¿½ï¿½ï¿½ï¿½Ç´ó·¨·ï¿½ï¿½ï¿½\n",Player.k7);
+            printf("i.ï¿½ï¿½ï¿½ï¿½%dï¿½Å¶ï¿½ï¿½Â¾Å½ï¿½ï¿½ï¿½ï¿½ï¿½\n",Player.k8);
+            printf("o.ï¿½ï¿½ï¿½ï¿½%dï¿½ï¿½ï¿½ï¿½Ë®ï¿½ñ¹¦·ï¿½ï¿½ï¿½\n",Player.k9);
             qwe=_getch();
             switch (qwe){
-                case 'q':if (Player.k1>=1){Player.k1--;print("¸Ðµ½Ò»ÕóÊæ³©£¡HP+500");Player.HP+=500;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'w':if (Player.k2>=1){Player.k2--;print("¸Ð¾õÒ»ÕóµçÁ÷Ò»°ãµÄ¿ì¸ÐÁ÷±éÈ«Éí£¡HP+1000");Player.HP+=1000;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'e':if (Player.k3>=1){Player.k3--;print("ÄãµÄË«ÊÖÄÜÊ¹ÓÃ²»Í¬µÄÕÐÊ½£¡ÉËº¦·­±¶£¡");Player.ATK*=2;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'r':if (Player.k4>=1){Player.k4--;print("ÕÆ·çÒ»ÏÂ×ÓºôÁË³öÈ¥£¬Ìì±ÀµØÁÑ£¡");sd=rand()%50000+1;HP-=sd;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 't':if (Player.k5>=1){Player.k5--;print("Ò»¹É¾Þ´óµÄÁ¦Á¿³åÁË³öÀ´£¡");sd=rand()%80000+20000;HP-=sd;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'y':if (Player.k6>=1){Player.k6--;print("¶á»ê£¡£¡£¡");if ((rand()%21)%10==0)HP=0;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'u':if (Player.k7>=1){Player.k7--;print("¿´ÎÒÉñ¹¦£¡£¡£¡£¡");HP-=500;Player.HP+=500;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'i':if (Player.k8>=1){Player.k8--;print("¶À¹Â¾Å½££¡ÃëÌìÃëµØ£¡");Player.ATK*=9;};break;
-                case 'o':if (Player.k9>=1){Player.k9--;print("ÄÆË®Éñ¹¦£¬ÕÀ·Å¼¤ÁÒµÄ»ð»¨£¡");sd=rand();HP-=sd;}else print("ÄãÃ»ÓÐ£¡");break;
+                case 'q':if (Player.k1>=1){Player.k1--;print("ï¿½Ðµï¿½Ò»ï¿½ï¿½ï¿½æ³©ï¿½ï¿½HP+500");Player.HP+=500;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'w':if (Player.k2>=1){Player.k2--;print("ï¿½Ð¾ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È«ï¿½ï¿½ï¿½ï¿½HP+1000");Player.HP+=1000;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'e':if (Player.k3>=1){Player.k3--;print("ï¿½ï¿½ï¿½Ë«ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½Ã²ï¿½Í¬ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½Ëºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");Player.ATK*=2;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'r':if (Player.k4>=1){Player.k4--;print("ï¿½Æ·ï¿½Ò»ï¿½ï¿½ï¿½Óºï¿½ï¿½Ë³ï¿½È¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ£ï¿½");sd=rand()%50000+1;HP-=sd;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 't':if (Player.k5>=1){Player.k5--;print("Ò»ï¿½É¾Þ´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½ï¿½ï¿½ï¿½");sd=rand()%80000+20000;HP-=sd;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'y':if (Player.k6>=1){Player.k6--;print("ï¿½ï¿½ê£¡ï¿½ï¿½ï¿½ï¿½");if ((rand()%21)%10==0)HP=0;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'u':if (Player.k7>=1){Player.k7--;print("ï¿½ï¿½ï¿½ï¿½ï¿½ñ¹¦£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");HP-=500;Player.HP+=500;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'i':if (Player.k8>=1){Player.k8--;print("ï¿½ï¿½ï¿½Â¾Å½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø£ï¿½");Player.ATK*=9;};break;
+                case 'o':if (Player.k9>=1){Player.k9--;print("ï¿½ï¿½Ë®ï¿½ñ¹¦£ï¿½ï¿½ï¿½ï¿½Å¼ï¿½ï¿½ÒµÄ»ð»¨£ï¿½");sd=rand();HP-=sd;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
             }
             system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}      kkk´Ì¿Í*");printf("\n");
-            printf("*   _/_  [6]  -+    ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}      kkkï¿½Ì¿ï¿½*");printf("\n");
+            printf("*   _/_  [6]  -+    ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}      | $ $ |*");printf("\n");
             printf("*  | 1 | [6]     -+| V | *");printf("\n");
             printf("*   OVO  ZXZ   |    CVD  *");printf("\n");
@@ -3083,13 +3076,13 @@ bool fight_to_cike(){
             printf("* //N N   I   -+    SSS o*");printf("\n");
             printf("*// ONO   O      -+ RRR-+*");printf("\n");
             printf("*P  UM1             S S  *");printf("\n");
-            printf("*   U U       -+    S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U       -+    S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}      kkk´Ì¿Í*");printf("\n");
-            printf("*   _/_  [6]  -+    ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}      kkkï¿½Ì¿ï¿½*");printf("\n");
+            printf("*   _/_  [6]  -+    ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}      | $ $ |*");printf("\n");
             printf("*  | V | [6]     -+| V | *");printf("\n");
             printf("*   OVO  ZXZ   |    CVD  *");printf("\n");
@@ -3097,13 +3090,13 @@ bool fight_to_cike(){
             printf("* /1N 1   I   -+    SSS o*");printf("\n");
             printf("*// ONO   O      -+ RRR-+*");printf("\n");
             printf("*P  UMU             S S  *");printf("\n");
-            printf("*   U U       -+    S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U       -+    S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}      kkk´Ì¿Í*");printf("\n");
-            printf("*   _/_  [6]  -+    ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}      kkkï¿½Ì¿ï¿½*");printf("\n");
+            printf("*   _/_  [6]  -+    ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O 1| {6}      | $ $ |*");printf("\n");
             printf("*  | V | [6]     -+| V | *");printf("\n");
             printf("*   OVO  ZXZ   |    CVD  *");printf("\n");
@@ -3111,13 +3104,13 @@ bool fight_to_cike(){
             printf("* //N 1   I   -+    SSS o*");printf("\n");
             printf("*// O1O   O      -+ RRR-+*");printf("\n");
             printf("*P  UMU             S S  *");printf("\n");
-            printf("*   U U       -+    S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U       -+    S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}      kkk´Ì¿Í*");printf("\n");
-            printf("*   _/_  [6]  -+    ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}      kkkï¿½Ì¿ï¿½*");printf("\n");
+            printf("*   _/_  [6]  -+    ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |1 1| {6}      | $ $ |*");printf("\n");
             printf("*  1 V | [6]     -+| V | *");printf("\n");
             printf("*   OVO  ZXZ   |    CVD  *");printf("\n");
@@ -3125,13 +3118,13 @@ bool fight_to_cike(){
             printf("* //N1N   I   -+    SSS o*");printf("\n");
             printf("*// ONO   O      -+ RRR-+*");printf("\n");
             printf("*P  UMU             S S  *");printf("\n");
-            printf("*   U U       -+    S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U       -+    S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}      kkk´Ì¿Í*");printf("\n");
-            printf("*   _/_  [6]  -+    ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}      kkkï¿½Ì¿ï¿½*");printf("\n");
+            printf("*   _/_  [6]  -+    ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}      | $ $ |*");printf("\n");
             printf("*  | V | [6]     -+| V | *");printf("\n");
             printf("*   OVO  ZXZ   |    CVD  *");printf("\n");
@@ -3139,12 +3132,12 @@ bool fight_to_cike(){
             printf("* //N N   I   -+    SSS o*");printf("\n");
             printf("*// ONO   O      -+ RRR-+*");printf("\n");
             printf("*P  UMU             S S  *");printf("\n");
-            printf("*   U U       -+    S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U       -+    S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");printf("\n");Sleep(200);system("cls");
             if (HP<=0){
-                print("ÄãÓ®ÁË£¡»ñµÃ300½ð±Ò£¡8000¾­ÑéÖµ£¡");
+                print("ï¿½ï¿½Ó®ï¿½Ë£ï¿½ï¿½ï¿½ï¿½300ï¿½ï¿½Ò£ï¿½8000ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½");
                 Player.EXP+=8000;
                 lvup();Player.HP+=378;if (Player.HP>Player.MAXHP) Player.HP=Player.MAXHP;
                 Player.Money+=300;
@@ -3154,8 +3147,8 @@ bool fight_to_cike(){
             sd=ATK-Player.DEF+(rand()%100);
             Player.HP-=sd;
             printf("**************************");printf("\n");
-            printf("*     >  {=}      kkk´Ì¿Í*");printf("\n");
-            printf("*   _/_  [6]  -+    ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}      kkkï¿½Ì¿ï¿½*");printf("\n");
+            printf("*   _/_  [6]  -+    ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}      | $ $ |*");printf("\n");
             printf("*  | 1 | [6]     -+| V | *");printf("\n");
             printf("*   OVO  ZXZ   |    CVD  *");printf("\n");
@@ -3163,13 +3156,13 @@ bool fight_to_cike(){
             printf("* //N N   I   -+    SSS o*");printf("\n");
             printf("*// ONO   O      -+ RRR-+*");printf("\n");
             printf("*P  UM1             S S  *");printf("\n");
-            printf("*   U U       -+    S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U       -+    S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}      kkk´Ì¿Í*");printf("\n");
-            printf("*   _/_  [6]  -+    ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}      kkkï¿½Ì¿ï¿½*");printf("\n");
+            printf("*   _/_  [6]  -+    ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}      | $ $ |*");printf("\n");
             printf("*  | V | [6]     -+| V | *");printf("\n");
             printf("*   OVO  ZXZ   |    CVD  *");printf("\n");
@@ -3177,13 +3170,13 @@ bool fight_to_cike(){
             printf("* /1N 1   I   -+    SSS o*");printf("\n");
             printf("*// ONO   O      -+ RRR-+*");printf("\n");
             printf("*P  UMU             S S  *");printf("\n");
-            printf("*   U U       -+    S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U       -+    S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}      kkk´Ì¿Í*");printf("\n");
-            printf("*   _/_  [6]  -+    ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}      kkkï¿½Ì¿ï¿½*");printf("\n");
+            printf("*   _/_  [6]  -+    ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O 1| {6}      | $ $ |*");printf("\n");
             printf("*  | V | [6]     -+| V | *");printf("\n");
             printf("*   OVO  ZXZ   |    CVD  *");printf("\n");
@@ -3191,13 +3184,13 @@ bool fight_to_cike(){
             printf("* //N 1   I   -+    SSS o*");printf("\n");
             printf("*// O1O   O      -+ RRR-+*");printf("\n");
             printf("*P  UMU             S S  *");printf("\n");
-            printf("*   U U       -+    S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U       -+    S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}      kkk´Ì¿Í*");printf("\n");
-            printf("*   _/_  [6]  -+    ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}      kkkï¿½Ì¿ï¿½*");printf("\n");
+            printf("*   _/_  [6]  -+    ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |1 1| {6}      | $ $ |*");printf("\n");
             printf("*  1 V | [6]     -+| V | *");printf("\n");
             printf("*   OVO  ZXZ   |    CVD  *");printf("\n");
@@ -3205,13 +3198,13 @@ bool fight_to_cike(){
             printf("* //N1N   I   -+    SSS o*");printf("\n");
             printf("*// ONO   O      -+ RRR-+*");printf("\n");
             printf("*P  UMU             S S  *");printf("\n");
-            printf("*   U U       -+    S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U       -+    S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
-            printf("*     >  {=}      kkk´Ì¿Í*");printf("\n");
-            printf("*   _/_  [6]  -+    ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*     >  {=}      kkkï¿½Ì¿ï¿½*");printf("\n");
+            printf("*   _/_  [6]  -+    ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}      | $ $ |*");printf("\n");
             printf("*  | V | [6]     -+| V | *");printf("\n");
             printf("*   OVO  ZXZ   |    CVD  *");printf("\n");
@@ -3219,12 +3212,12 @@ bool fight_to_cike(){
             printf("* //N N   I   -+    SSS o*");printf("\n");
             printf("*// ONO   O      -+ RRR-+*");printf("\n");
             printf("*P  UMU             S S  *");printf("\n");
-            printf("*   U U       -+    S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U       -+    S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");printf("\n");Sleep(200);system("cls");
             if (Player.HP<=0){
-                print("Äã±»ÅªËÀÁË£¡");
+                print("ï¿½ã±»Åªï¿½ï¿½ï¿½Ë£ï¿½");
                 exit(1);
             }
         }
@@ -3233,13 +3226,13 @@ bool fight_to_cike(){
 }
 bool fight_to_kkkk(){
     system("cls");
-    string name="½©Ê¬";
+    string name="ï¿½ï¿½Ê¬";
     int HP=300000,MAXHP=300000,ATK=200,DEF=10;
-    print("Äã¿´¼ûkkksc06³åÁË¹ýÀ´£¬Äã¶¨¾¦Ò»¿´£¬ÊÇ¼ÙµÄ£¡");
+    print("ï¿½ã¿´ï¿½ï¿½kkksc06ï¿½ï¿½ï¿½Ë¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ã¶¨ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Ç¼ÙµÄ£ï¿½");
     while (1){
         printf("**************************");printf("\n");
         printf("*     >  {=}    kkkksc06 *");printf("\n");
-        printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+        printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
         printf("*  |O O| {6}       |X X| *");printf("\n");
         printf("*  | V | [6]       | O | *");printf("\n");
         printf("*   OVO  ZXZ        CVD  *");printf("\n");
@@ -3247,14 +3240,14 @@ bool fight_to_kkkk(){
         printf("* //N N   I     3oo=SSS  *");printf("\n");
         printf("*// ONO   O         RRR  *");printf("\n");
         printf("*P  UMU             S S  *");printf("\n");
-        printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+        printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
         printf("*   D D            SS SS *");printf("\n");
         printf("**************************");printf("\n");
-        printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");
+        printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");
         qwe=_getch();
         if (qwe=='2'){
             system("cls");
-            print("ÈýÊ®Áù¼Æ£¬×ßÎªÉÏ¼Æ£¡");
+            print("ï¿½ï¿½Ê®ï¿½ï¿½ï¿½Æ£ï¿½ï¿½ï¿½Îªï¿½Ï¼Æ£ï¿½");
             system("cls");
             return false;
         }else if (qwe=='1'){
@@ -3264,7 +3257,7 @@ bool fight_to_kkkk(){
             HP-=sd;
             printf("**************************");printf("\n");
             printf("*     >  {=}    kkkksc06 *");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       |X X| *");printf("\n");
             printf("*  | V | [6]       | O | *");printf("\n");
             printf("*   OVO  ZXZ        CVD  *");printf("\n");
@@ -3272,13 +3265,13 @@ bool fight_to_kkkk(){
             printf("* //N N   I     3oo=SSS  *");printf("\n");
             printf("*// ONO   O         RRR  *");printf("\n");
             printf("*P  UMU             S S  *");printf("\n");
-            printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
             printf("*     >  {=}    kkkksc06 *");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       |X X| *");printf("\n");
             printf("*  | V | [6]       | O | *");printf("\n");
             printf("*   OVO  ZXZ        CVD  *");printf("\n");
@@ -3286,13 +3279,13 @@ bool fight_to_kkkk(){
             printf("* //N N   I    3oo =SSS  *");printf("\n");
             printf("*// ONO   O         RRR  *");printf("\n");
             printf("*P  UMU             S S  *");printf("\n");
-            printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
             printf("*     >  {=}    kkkksc06 *");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       |X X| *");printf("\n");
             printf("*  | V | [6]       | O | *");printf("\n");
             printf("*   OVO  ZXZ        CVD  *");printf("\n");
@@ -3300,13 +3293,13 @@ bool fight_to_kkkk(){
             printf("* //N N   I     3oo=SSS  *");printf("\n");
             printf("*// ONO   O         RRR  *");printf("\n");
             printf("*P  UMU             S S  *");printf("\n");
-            printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
             printf("*     >  {=}    kkkksc06 *");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       |X X| *");printf("\n");
             printf("*  | V | [6]       | O | *");printf("\n");
             printf("*   OVO  ZXZ        CVD  *");printf("\n");
@@ -3314,13 +3307,13 @@ bool fight_to_kkkk(){
             printf("* //N N   I    3oo =SSS  *");printf("\n");
             printf("*// ONO   O         RRR  *");printf("\n");
             printf("*P  UMU             S S  *");printf("\n");
-            printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
             printf("*     >  {=}    kkkksc06 *");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       |X X| *");printf("\n");
             printf("*  | V | [6]       | O | *");printf("\n");
             printf("*   OVO  ZXZ        CVD  *");printf("\n");
@@ -3328,12 +3321,12 @@ bool fight_to_kkkk(){
             printf("* //N N   I     3oo=SSS  *");printf("\n");
             printf("*// ONO   O         RRR  *");printf("\n");
             printf("*P  UMU             S S  *");printf("\n");
-            printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");printf("\n");Sleep(200);system("cls");
             if (HP<=0){
-                print("ÄãÓ®ÁË£¡»ñµÃ10000½ð±Ò£¡1000¾­ÑéÖµ£¡");
+                print("ï¿½ï¿½Ó®ï¿½Ë£ï¿½ï¿½ï¿½ï¿½10000ï¿½ï¿½Ò£ï¿½1000ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½");
                 Player.EXP+=1000;
                 lvup();Player.HP+=378;if (Player.HP>Player.MAXHP) Player.HP=Player.MAXHP;
                 Player.Money+=10000;
@@ -3344,7 +3337,7 @@ bool fight_to_kkkk(){
             Player.HP-=sd;
             printf("**************************");printf("\n");
             printf("*     >  {=}    kkkksc06 *");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       |X X| *");printf("\n");
             printf("*  | V | [6]       | O | *");printf("\n");
             printf("*   OVO  ZXZ        CVD  *");printf("\n");
@@ -3352,13 +3345,13 @@ bool fight_to_kkkk(){
             printf("* //N N   I     3oo=SSS  *");printf("\n");
             printf("*// ONO   O         RRR  *");printf("\n");
             printf("*P  UMU             S S  *");printf("\n");
-            printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
             printf("*     >  {=}    kkkksc06 *");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       |X X| *");printf("\n");
             printf("*  | V | [6]       | O | *");printf("\n");
             printf("*   OVO  ZXZ        CVD  *");printf("\n");
@@ -3366,13 +3359,13 @@ bool fight_to_kkkk(){
             printf("* //N N   I    3oo =SSS  *");printf("\n");
             printf("*// ONO   O         RRR  *");printf("\n");
             printf("*P  UMU             S S  *");printf("\n");
-            printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
             printf("*     >  {=}    kkkksc06 *");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       |X X| *");printf("\n");
             printf("*  | V | [6]       | O | *");printf("\n");
             printf("*   OVO  ZXZ        CVD  *");printf("\n");
@@ -3380,13 +3373,13 @@ bool fight_to_kkkk(){
             printf("* //N N   I     3oo=SSS  *");printf("\n");
             printf("*// ONO   O         RRR  *");printf("\n");
             printf("*P  UMU             S S  *");printf("\n");
-            printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
             printf("*     >  {=}    kkkksc06 *");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       |X X| *");printf("\n");
             printf("*  | V | [6]       | O | *");printf("\n");
             printf("*   OVO  ZXZ        CVD  *");printf("\n");
@@ -3394,13 +3387,13 @@ bool fight_to_kkkk(){
             printf("* //N N   I    3oo =SSS  *");printf("\n");
             printf("*// ONO   O         RRR  *");printf("\n");
             printf("*P  UMU             S S  *");printf("\n");
-            printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
             printf("*     >  {=}    kkkksc06 *");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       |X X| *");printf("\n");
             printf("*  | V | [6]       | O | *");printf("\n");
             printf("*   OVO  ZXZ        CVD  *");printf("\n");
@@ -3408,42 +3401,42 @@ bool fight_to_kkkk(){
             printf("* //N N   I     3oo=SSS  *");printf("\n");
             printf("*// ONO   O         RRR  *");printf("\n");
             printf("*P  UMU             S S  *");printf("\n");
-            printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");printf("\n");Sleep(200);system("cls");
             if (Player.HP<=0){
-                print("Äã±»¼ÙËÀÁË£¡");
+                print("ï¿½ã±»ï¿½ï¿½ï¿½ï¿½ï¿½Ë£ï¿½");
                 exit(1);
             }
         }else if (qwe=='3'){
             int sd;
             system("cls");
-            printf("q.ÄãÓÐ%dÕÅ»ØÑª·û£¡\n",Player.k1);
-            printf("w.ÄãÓÐ%dÕÅÄýÉñ¹éÔª·û£¡\n",Player.k2);
-            printf("e.ÄãÓÐ%dÕÅ×óÓÒ»¥²«·û£¡\n",Player.k3);
-            printf("r.ÄãÓÐ%dÕÅ¿ºÁúÓÐ»Ú·û£¡\n",Player.k4);
-            printf("t.ÄãÓÐ%dÕÅ¾ÆÉñ·û£¡\n",Player.k5);
-            printf("y.ÄãÓÐ%dÕÅ¶á»ê·û£¡\n",Player.k6);
-            printf("u.ÄãÓÐ%dÕÅÎüÐÇ´ó·¨·û£¡\n",Player.k7);
-            printf("i.ÄãÓÐ%dÕÅ¶À¹Â¾Å½£·û£¡\n",Player.k8);
-            printf("o.ÄãÓÐ%dÕÅÄÆË®Éñ¹¦·û£¡\n",Player.k9);
+            printf("q.ï¿½ï¿½ï¿½ï¿½%dï¿½Å»ï¿½Ñªï¿½ï¿½ï¿½ï¿½\n",Player.k1);
+            printf("w.ï¿½ï¿½ï¿½ï¿½%dï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôªï¿½ï¿½ï¿½ï¿½\n",Player.k2);
+            printf("e.ï¿½ï¿½ï¿½ï¿½%dï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n",Player.k3);
+            printf("r.ï¿½ï¿½ï¿½ï¿½%dï¿½Å¿ï¿½ï¿½ï¿½ï¿½Ð»Ú·ï¿½ï¿½ï¿½\n",Player.k4);
+            printf("t.ï¿½ï¿½ï¿½ï¿½%dï¿½Å¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n",Player.k5);
+            printf("y.ï¿½ï¿½ï¿½ï¿½%dï¿½Å¶ï¿½ï¿½ï¿½ï¿½ï¿½\n",Player.k6);
+            printf("u.ï¿½ï¿½ï¿½ï¿½%dï¿½ï¿½ï¿½ï¿½ï¿½Ç´ó·¨·ï¿½ï¿½ï¿½\n",Player.k7);
+            printf("i.ï¿½ï¿½ï¿½ï¿½%dï¿½Å¶ï¿½ï¿½Â¾Å½ï¿½ï¿½ï¿½ï¿½ï¿½\n",Player.k8);
+            printf("o.ï¿½ï¿½ï¿½ï¿½%dï¿½ï¿½ï¿½ï¿½Ë®ï¿½ñ¹¦·ï¿½ï¿½ï¿½\n",Player.k9);
             qwe=_getch();
             switch (qwe){
-                case 'q':if (Player.k1>=1){Player.k1--;print("¸Ðµ½Ò»ÕóÊæ³©£¡HP+500");Player.HP+=500;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'w':if (Player.k2>=1){Player.k2--;print("¸Ð¾õÒ»ÕóµçÁ÷Ò»°ãµÄ¿ì¸ÐÁ÷±éÈ«Éí£¡HP+1000");Player.HP+=1000;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'e':if (Player.k3>=1){Player.k3--;print("ÄãµÄË«ÊÖÄÜÊ¹ÓÃ²»Í¬µÄÕÐÊ½£¡ÉËº¦·­±¶£¡");Player.ATK*=2;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'r':if (Player.k4>=1){Player.k4--;print("ÕÆ·çÒ»ÏÂ×ÓºôÁË³öÈ¥£¬Ìì±ÀµØÁÑ£¡");sd=rand()%50000+1;HP-=sd;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 't':if (Player.k5>=1){Player.k5--;print("Ò»¹É¾Þ´óµÄÁ¦Á¿³åÁË³öÀ´£¡");sd=rand()%80000+20000;HP-=sd;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'y':if (Player.k6>=1){Player.k6--;print("¶á»ê£¡£¡£¡");if ((rand()%21)%10==0)HP=0;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'u':if (Player.k7>=1){Player.k7--;print("¿´ÎÒÉñ¹¦£¡£¡£¡£¡");HP-=500;Player.HP+=500;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'i':if (Player.k8>=1){Player.k8--;print("¶À¹Â¾Å½££¡ÃëÌìÃëµØ£¡");Player.ATK*=9;};break;
-                case 'o':if (Player.k9>=1){Player.k9--;print("ÄÆË®Éñ¹¦£¬ÕÀ·Å¼¤ÁÒµÄ»ð»¨£¡");sd=rand();HP-=sd;}else print("ÄãÃ»ÓÐ£¡");break;
+                case 'q':if (Player.k1>=1){Player.k1--;print("ï¿½Ðµï¿½Ò»ï¿½ï¿½ï¿½æ³©ï¿½ï¿½HP+500");Player.HP+=500;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'w':if (Player.k2>=1){Player.k2--;print("ï¿½Ð¾ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È«ï¿½ï¿½ï¿½ï¿½HP+1000");Player.HP+=1000;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'e':if (Player.k3>=1){Player.k3--;print("ï¿½ï¿½ï¿½Ë«ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½Ã²ï¿½Í¬ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½Ëºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");Player.ATK*=2;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'r':if (Player.k4>=1){Player.k4--;print("ï¿½Æ·ï¿½Ò»ï¿½ï¿½ï¿½Óºï¿½ï¿½Ë³ï¿½È¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ£ï¿½");sd=rand()%50000+1;HP-=sd;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 't':if (Player.k5>=1){Player.k5--;print("Ò»ï¿½É¾Þ´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½ï¿½ï¿½ï¿½");sd=rand()%80000+20000;HP-=sd;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'y':if (Player.k6>=1){Player.k6--;print("ï¿½ï¿½ê£¡ï¿½ï¿½ï¿½ï¿½");if ((rand()%21)%10==0)HP=0;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'u':if (Player.k7>=1){Player.k7--;print("ï¿½ï¿½ï¿½ï¿½ï¿½ñ¹¦£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");HP-=500;Player.HP+=500;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'i':if (Player.k8>=1){Player.k8--;print("ï¿½ï¿½ï¿½Â¾Å½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø£ï¿½");Player.ATK*=9;};break;
+                case 'o':if (Player.k9>=1){Player.k9--;print("ï¿½ï¿½Ë®ï¿½ñ¹¦£ï¿½ï¿½ï¿½ï¿½Å¼ï¿½ï¿½ÒµÄ»ð»¨£ï¿½");sd=rand();HP-=sd;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
             }
             system("cls");
             printf("**************************");printf("\n");
             printf("*     >  {=}    kkkksc06 *");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       |X X| *");printf("\n");
             printf("*  | V | [6]       | O | *");printf("\n");
             printf("*   OVO  ZXZ        CVD  *");printf("\n");
@@ -3451,13 +3444,13 @@ bool fight_to_kkkk(){
             printf("* //N N   I     3oo=SSS  *");printf("\n");
             printf("*// ONO   O         RRR  *");printf("\n");
             printf("*P  UMU             S S  *");printf("\n");
-            printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
             printf("*     >  {=}    kkkksc06 *");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       |X X| *");printf("\n");
             printf("*  | V | [6]       | O | *");printf("\n");
             printf("*   OVO  ZXZ        CVD  *");printf("\n");
@@ -3465,13 +3458,13 @@ bool fight_to_kkkk(){
             printf("* //N N   I    3oo =SSS  *");printf("\n");
             printf("*// ONO   O         RRR  *");printf("\n");
             printf("*P  UMU             S S  *");printf("\n");
-            printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
             printf("*     >  {=}    kkkksc06 *");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       |X X| *");printf("\n");
             printf("*  | V | [6]       | O | *");printf("\n");
             printf("*   OVO  ZXZ        CVD  *");printf("\n");
@@ -3479,13 +3472,13 @@ bool fight_to_kkkk(){
             printf("* //N N   I     3oo=SSS  *");printf("\n");
             printf("*// ONO   O         RRR  *");printf("\n");
             printf("*P  UMU             S S  *");printf("\n");
-            printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
             printf("*     >  {=}    kkkksc06 *");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       |X X| *");printf("\n");
             printf("*  | V | [6]       | O | *");printf("\n");
             printf("*   OVO  ZXZ        CVD  *");printf("\n");
@@ -3493,13 +3486,13 @@ bool fight_to_kkkk(){
             printf("* //N N   I    3oo =SSS  *");printf("\n");
             printf("*// ONO   O         RRR  *");printf("\n");
             printf("*P  UMU             S S  *");printf("\n");
-            printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
             printf("*     >  {=}    kkkksc06 *");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       |X X| *");printf("\n");
             printf("*  | V | [6]       | O | *");printf("\n");
             printf("*   OVO  ZXZ        CVD  *");printf("\n");
@@ -3507,12 +3500,12 @@ bool fight_to_kkkk(){
             printf("* //N N   I     3oo=SSS  *");printf("\n");
             printf("*// ONO   O         RRR  *");printf("\n");
             printf("*P  UMU             S S  *");printf("\n");
-            printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");printf("\n");Sleep(200);system("cls");
             if (HP<=0){
-                print("ÄãÓ®ÁË£¡»ñµÃ10000½ð±Ò£¡1000¾­ÑéÖµ£¡");
+                print("ï¿½ï¿½Ó®ï¿½Ë£ï¿½ï¿½ï¿½ï¿½10000ï¿½ï¿½Ò£ï¿½1000ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½");
                 Player.EXP+=1000;
                 lvup();Player.HP+=378;if (Player.HP>Player.MAXHP) Player.HP=Player.MAXHP;
                 Player.Money+=10000;
@@ -3523,7 +3516,7 @@ bool fight_to_kkkk(){
             Player.HP-=sd;
             printf("**************************");printf("\n");
             printf("*     >  {=}    kkkksc06 *");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       |X X| *");printf("\n");
             printf("*  | V | [6]       | O | *");printf("\n");
             printf("*   OVO  ZXZ        CVD  *");printf("\n");
@@ -3531,13 +3524,13 @@ bool fight_to_kkkk(){
             printf("* //N N   I     3oo=SSS  *");printf("\n");
             printf("*// ONO   O         RRR  *");printf("\n");
             printf("*P  UMU             S S  *");printf("\n");
-            printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
             printf("*     >  {=}    kkkksc06 *");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       |X X| *");printf("\n");
             printf("*  | V | [6]       | O | *");printf("\n");
             printf("*   OVO  ZXZ        CVD  *");printf("\n");
@@ -3545,13 +3538,13 @@ bool fight_to_kkkk(){
             printf("* //N N   I    3oo =SSS  *");printf("\n");
             printf("*// ONO   O         RRR  *");printf("\n");
             printf("*P  UMU             S S  *");printf("\n");
-            printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
             printf("*     >  {=}    kkkksc06 *");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       |X X| *");printf("\n");
             printf("*  | V | [6]       | O | *");printf("\n");
             printf("*   OVO  ZXZ        CVD  *");printf("\n");
@@ -3559,13 +3552,13 @@ bool fight_to_kkkk(){
             printf("* //N N   I     3oo=SSS  *");printf("\n");
             printf("*// ONO   O         RRR  *");printf("\n");
             printf("*P  UMU             S S  *");printf("\n");
-            printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
             printf("*     >  {=}    kkkksc06 *");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       |X X| *");printf("\n");
             printf("*  | V | [6]       | O | *");printf("\n");
             printf("*   OVO  ZXZ        CVD  *");printf("\n");
@@ -3573,13 +3566,13 @@ bool fight_to_kkkk(){
             printf("* //N N   I    3oo =SSS  *");printf("\n");
             printf("*// ONO   O         RRR  *");printf("\n");
             printf("*P  UMU             S S  *");printf("\n");
-            printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
             printf("*     >  {=}    kkkksc06 *");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6}       |X X| *");printf("\n");
             printf("*  | V | [6]       | O | *");printf("\n");
             printf("*   OVO  ZXZ        CVD  *");printf("\n");
@@ -3587,12 +3580,12 @@ bool fight_to_kkkk(){
             printf("* //N N   I     3oo=SSS  *");printf("\n");
             printf("*// ONO   O         RRR  *");printf("\n");
             printf("*P  UMU             S S  *");printf("\n");
-            printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");printf("\n");Sleep(200);system("cls");
             if (Player.HP<=0){
-                print("Äã±»¼ÙËÀÁË£¡");
+                print("ï¿½ã±»ï¿½ï¿½ï¿½ï¿½ï¿½Ë£ï¿½");
                 exit(1);
             }
         }
@@ -3601,32 +3594,32 @@ bool fight_to_kkkk(){
 }
 bool fight_to_KKKKK(){
     system("cls");
-    string name="½©Ê¬";
+    string name="ï¿½ï¿½Ê¬";
     int HP=1000000,MAXHP=1000000,ATK=999999,DEF=100;
-    print("Ãæ°üÊÇÎÒµÄ£¡Äã±ðÏë¾È×ß£¡£¡£¡");printf("\n");
-    print("ºßºß£¡ÄãÕâÉXÈõ£¡£¡");printf("\n");
-    print("ÓÀÔ¶Ä¤°ÝÎÒ°É£¡£¡£¡");printf("\n");
-    print("kkksc06´óÄ§ÍõÄÃ³öÁË¾ÞÇ¿Å£Éñµç´ÅÅÚ£¡");printf("\n");
+    print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÒµÄ£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß£ï¿½ï¿½ï¿½ï¿½ï¿½");printf("\n");
+    print("ï¿½ßºß£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");printf("\n");
+    print("ï¿½ï¿½Ô¶Ä¤ï¿½ï¿½ï¿½Ò°É£ï¿½ï¿½ï¿½ï¿½ï¿½");printf("\n");
+    print("kkksc06ï¿½ï¿½Ä§ï¿½ï¿½ï¿½Ã³ï¿½ï¿½Ë¾ï¿½Ç¿Å£ï¿½ï¿½ï¿½ï¿½ï¿½Ú£ï¿½");printf("\n");
     print(" ");
     while (1){
         printf("**************************");printf("\n");
         printf("*     >  {=}     kkksc06 *");printf("\n");
-        printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+        printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
         printf("*  |O O| {6} +==+  |E E| *");printf("\n");
         printf("*  | V | [6] |  |  | V | *");printf("\n");
-        printf("*   OVO  ZXZ   Ç¿¾Þ HHH  *");printf("\n");
+        printf("*   OVO  ZXZ   Ç¿ï¿½ï¿½ HHH  *");printf("\n");
         printf("*  /N N===I   O==ooo=H=oo*");printf("\n");
-        printf("* //N N   I    Å£Éñ  H  o*");printf("\n");
+        printf("* //N N   I    Å£ï¿½ï¿½  H  o*");printf("\n");
         printf("*// ONO   O  |  |   HHH 3*");printf("\n");
         printf("*P  UMU      +==+   S S  *");printf("\n");
-        printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+        printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
         printf("*   D D            SS SS *");printf("\n");
         printf("**************************");printf("\n");
-        printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");
+        printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");
         qwe=_getch();
         if (qwe=='2'){
             system("cls");
-            print("ÎÒ²»¾ÈÃæ°üÁË£¬°Ý°Ý£¡");
+            print("ï¿½Ò²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë£ï¿½ï¿½Ý°Ý£ï¿½");
             system("cls");
             return false;
         }else if (qwe=='1'){
@@ -3636,76 +3629,76 @@ bool fight_to_KKKKK(){
             HP-=sd;
             printf("**************************");printf("\n");
             printf("*     >  {=}     kkksc06 *");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6} +==+ =======*");printf("\n");
             printf("*  | V | [6] |  |  | V | *");printf("\n");
-            printf("*   OVO  ZXZ   Ç¿¾Þ HHH  *");printf("\n");
+            printf("*   OVO  ZXZ   Ç¿ï¿½ï¿½ HHH  *");printf("\n");
             printf("*  /N N===I   O==ooo=H=oo*");printf("\n");
-            printf("* //N N   I    Å£Éñ  H  o*");printf("\n");
+            printf("* //N N   I    Å£ï¿½ï¿½  H  o*");printf("\n");
             printf("*// ONO   O  |  |   HHH 3*");printf("\n");
             printf("*P  UMU      +==+   S S  *");printf("\n");
-            printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
             printf("*     >  {=}     kkksc06 *");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6} +==+  |E E| *");printf("\n");
             printf("*  | V | [6] |  |  | V | *");printf("\n");
-            printf("*   OVO  ZXZ   Ç¿¾Þ HHH  *");printf("\n");
+            printf("*   OVO  ZXZ   Ç¿ï¿½ï¿½ HHH  *");printf("\n");
             printf("*  /N N===I   O==ooo=H=oo*");printf("\n");
-            printf("* //N N   I    Å£Éñ  H  o*");printf("\n");
+            printf("* //N N   I    Å£ï¿½ï¿½  H  o*");printf("\n");
             printf("*// ONO   O  |  |   HHH 3*");printf("\n");
             printf("*P  UMU      +==+   S S  *");printf("\n");
-            printf("*   U U       ======S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U       ======S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
             printf("*     >  {=}     kkksc06 *");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6} +==+  |E E| *");printf("\n");
             printf("*  | V | [6] |  |  | V | *");printf("\n");
-            printf("*   OVO  ZXZ   Ç¿¾Þ HHH  *");printf("\n");
+            printf("*   OVO  ZXZ   Ç¿ï¿½ï¿½ HHH  *");printf("\n");
             printf("*  /N N===I   O==ooo=H=oo*");printf("\n");
-            printf("* //N N   I    Å£Éñ  H  o*");printf("\n");
+            printf("* //N N   I    Å£ï¿½ï¿½  H  o*");printf("\n");
             printf("*// ONO   O  |  |   HHH 3*");printf("\n");
             printf("*P  UMU      +==+   S S  *");printf("\n");
-            printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            ======*");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
             printf("*     >  {=}     kkksc06 *");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6} +==+  |E E| *");printf("\n");
             printf("*  | V | [6] |  |  | V | *");printf("\n");
             printf("*   OVO  ZXZ  =======HH  *");printf("\n");
             printf("*  /N N===I   O==ooo=H=oo*");printf("\n");
-            printf("* //N N   I    Å£Éñ  H  o*");printf("\n");
+            printf("* //N N   I    Å£ï¿½ï¿½  H  o*");printf("\n");
             printf("*// ONO   O  |  |   HHH 3*");printf("\n");
             printf("*P  UMU      +==+   S S  *");printf("\n");
-            printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
             printf("*     >  {=}     kkksc06 *");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6} +==+  |E E| *");printf("\n");
             printf("*  | V | [6] |  |  | V | *");printf("\n");
-            printf("*   OVO  ZXZ   Ç¿¾Þ HHH  *");printf("\n");
+            printf("*   OVO  ZXZ   Ç¿ï¿½ï¿½ HHH  *");printf("\n");
             printf("*  /N N===I   O==ooo=H=oo*");printf("\n");
-            printf("* //N N   I    Å£Éñ  H  o*");printf("\n");
+            printf("* //N N   I    Å£ï¿½ï¿½  H  o*");printf("\n");
             printf("*// ONO   O  |  |   HHH 3*");printf("\n");
             printf("*P  UMU      +=========  *");printf("\n");
-            printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");printf("\n");Sleep(200);system("cls");
             if (HP<=0){
-                print("ÄãÓ®ÁË£¡»ñµÃ10000½ð±Ò£¡1000¾­ÑéÖµ£¡È»¶øÃæ°ü²»ÔÚÕâÀï£¡£¡");
+                print("ï¿½ï¿½Ó®ï¿½Ë£ï¿½ï¿½ï¿½ï¿½10000ï¿½ï¿½Ò£ï¿½1000ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½È»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï£¡ï¿½ï¿½");
                 Player.EXP+=1000;
                 lvup();Player.HP+=378;if (Player.HP>Player.MAXHP) Player.HP=Player.MAXHP;
                 Player.Money+=10000;
@@ -3715,110 +3708,110 @@ bool fight_to_KKKKK(){
             sd=ATK-Player.DEF+(rand()%100);
             Player.HP-=sd;
             for (int i=1;i<=10;++i)
-            print("kkksc06£ºÉXÉm£¡£¡£¡ÄÉÃüÀ´£¡£¡Ôì³É");
+            print("kkksc06ï¿½ï¿½ï¿½Xï¿½mï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
             printf("%d",sd);
-            print("µãÉËº¦£¡");
+            print("ï¿½ï¿½ï¿½Ëºï¿½ï¿½ï¿½");
             if (Player.HP<=0){
-                print("Äã±»´òËÀÁË£¡");
+                print("ï¿½ã±»ï¿½ï¿½ï¿½ï¿½ï¿½Ë£ï¿½");
                 exit(1);
             }
         }else if (qwe=='3'){
             int sd;
             system("cls");
-            printf("q.ÄãÓÐ%dÕÅ»ØÑª·û£¡\n",Player.k1);
-            printf("w.ÄãÓÐ%dÕÅÄýÉñ¹éÔª·û£¡\n",Player.k2);
-            printf("e.ÄãÓÐ%dÕÅ×óÓÒ»¥²«·û£¡\n",Player.k3);
-            printf("r.ÄãÓÐ%dÕÅ¿ºÁúÓÐ»Ú·û£¡\n",Player.k4);
-            printf("t.ÄãÓÐ%dÕÅ¾ÆÉñ·û£¡\n",Player.k5);
-            printf("y.ÄãÓÐ%dÕÅ¶á»ê·û£¡\n",Player.k6);
-            printf("u.ÄãÓÐ%dÕÅÎüÐÇ´ó·¨·û£¡\n",Player.k7);
-            printf("i.ÄãÓÐ%dÕÅ¶À¹Â¾Å½£·û£¡\n",Player.k8);
-            printf("o.ÄãÓÐ%dÕÅÄÆË®Éñ¹¦·û£¡\n",Player.k9);
+            printf("q.ï¿½ï¿½ï¿½ï¿½%dï¿½Å»ï¿½Ñªï¿½ï¿½ï¿½ï¿½\n",Player.k1);
+            printf("w.ï¿½ï¿½ï¿½ï¿½%dï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôªï¿½ï¿½ï¿½ï¿½\n",Player.k2);
+            printf("e.ï¿½ï¿½ï¿½ï¿½%dï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n",Player.k3);
+            printf("r.ï¿½ï¿½ï¿½ï¿½%dï¿½Å¿ï¿½ï¿½ï¿½ï¿½Ð»Ú·ï¿½ï¿½ï¿½\n",Player.k4);
+            printf("t.ï¿½ï¿½ï¿½ï¿½%dï¿½Å¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n",Player.k5);
+            printf("y.ï¿½ï¿½ï¿½ï¿½%dï¿½Å¶ï¿½ï¿½ï¿½ï¿½ï¿½\n",Player.k6);
+            printf("u.ï¿½ï¿½ï¿½ï¿½%dï¿½ï¿½ï¿½ï¿½ï¿½Ç´ó·¨·ï¿½ï¿½ï¿½\n",Player.k7);
+            printf("i.ï¿½ï¿½ï¿½ï¿½%dï¿½Å¶ï¿½ï¿½Â¾Å½ï¿½ï¿½ï¿½ï¿½ï¿½\n",Player.k8);
+            printf("o.ï¿½ï¿½ï¿½ï¿½%dï¿½ï¿½ï¿½ï¿½Ë®ï¿½ñ¹¦·ï¿½ï¿½ï¿½\n",Player.k9);
             qwe=_getch();
             switch (qwe){
-                case 'q':if (Player.k1>=1){Player.k1--;print("¸Ðµ½Ò»ÕóÊæ³©£¡HP+500");Player.HP+=500;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'w':if (Player.k2>=1){Player.k2--;print("¸Ð¾õÒ»ÕóµçÁ÷Ò»°ãµÄ¿ì¸ÐÁ÷±éÈ«Éí£¡HP+1000");Player.HP+=1000;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'e':if (Player.k3>=1){Player.k3--;print("ÄãµÄË«ÊÖÄÜÊ¹ÓÃ²»Í¬µÄÕÐÊ½£¡ÉËº¦·­±¶£¡");Player.ATK*=2;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'r':if (Player.k4>=1){Player.k4--;print("ÕÆ·çÒ»ÏÂ×ÓºôÁË³öÈ¥£¬Ìì±ÀµØÁÑ£¡");sd=rand()%50000+1;HP-=sd;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 't':if (Player.k5>=1){Player.k5--;print("Ò»¹É¾Þ´óµÄÁ¦Á¿³åÁË³öÀ´£¡");sd=rand()%80000+20000;HP-=sd;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'y':if (Player.k6>=1){Player.k6--;print("¶á»ê£¡£¡£¡");if ((rand()%21)%10==0)HP=0;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'u':if (Player.k7>=1){Player.k7--;print("¿´ÎÒÉñ¹¦£¡£¡£¡£¡");HP-=500;Player.HP+=500;}else print("ÄãÃ»ÓÐ£¡");break;
-                case 'i':if (Player.k8>=1){Player.k8--;print("¶À¹Â¾Å½££¡ÃëÌìÃëµØ£¡");Player.ATK*=9;};break;
-                case 'o':if (Player.k9>=1){Player.k9--;print("ÄÆË®Éñ¹¦£¬ÕÀ·Å¼¤ÁÒµÄ»ð»¨£¡");sd=rand();HP-=sd;}else print("ÄãÃ»ÓÐ£¡");break;
+                case 'q':if (Player.k1>=1){Player.k1--;print("ï¿½Ðµï¿½Ò»ï¿½ï¿½ï¿½æ³©ï¿½ï¿½HP+500");Player.HP+=500;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'w':if (Player.k2>=1){Player.k2--;print("ï¿½Ð¾ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È«ï¿½ï¿½ï¿½ï¿½HP+1000");Player.HP+=1000;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'e':if (Player.k3>=1){Player.k3--;print("ï¿½ï¿½ï¿½Ë«ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½Ã²ï¿½Í¬ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½Ëºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");Player.ATK*=2;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'r':if (Player.k4>=1){Player.k4--;print("ï¿½Æ·ï¿½Ò»ï¿½ï¿½ï¿½Óºï¿½ï¿½Ë³ï¿½È¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ£ï¿½");sd=rand()%50000+1;HP-=sd;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 't':if (Player.k5>=1){Player.k5--;print("Ò»ï¿½É¾Þ´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½ï¿½ï¿½ï¿½");sd=rand()%80000+20000;HP-=sd;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'y':if (Player.k6>=1){Player.k6--;print("ï¿½ï¿½ê£¡ï¿½ï¿½ï¿½ï¿½");if ((rand()%21)%10==0)HP=0;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'u':if (Player.k7>=1){Player.k7--;print("ï¿½ï¿½ï¿½ï¿½ï¿½ñ¹¦£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");HP-=500;Player.HP+=500;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
+                case 'i':if (Player.k8>=1){Player.k8--;print("ï¿½ï¿½ï¿½Â¾Å½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø£ï¿½");Player.ATK*=9;};break;
+                case 'o':if (Player.k9>=1){Player.k9--;print("ï¿½ï¿½Ë®ï¿½ñ¹¦£ï¿½ï¿½ï¿½ï¿½Å¼ï¿½ï¿½ÒµÄ»ð»¨£ï¿½");sd=rand();HP-=sd;}else print("ï¿½ï¿½Ã»ï¿½Ð£ï¿½");break;
             }
             system("cls");
             printf("**************************");printf("\n");
             printf("*     >  {=}     kkksc06 *");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6} +==+ =======*");printf("\n");
             printf("*  | V | [6] |  |  | V | *");printf("\n");
-            printf("*   OVO  ZXZ   Ç¿¾Þ HHH  *");printf("\n");
+            printf("*   OVO  ZXZ   Ç¿ï¿½ï¿½ HHH  *");printf("\n");
             printf("*  /N N===I   O==ooo=H=oo*");printf("\n");
-            printf("* //N N   I    Å£Éñ  H  o*");printf("\n");
+            printf("* //N N   I    Å£ï¿½ï¿½  H  o*");printf("\n");
             printf("*// ONO   O  |  |   HHH 3*");printf("\n");
             printf("*P  UMU      +==+   S S  *");printf("\n");
-            printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
             printf("*     >  {=}     kkksc06 *");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6} +==+  |E E| *");printf("\n");
             printf("*  | V | [6] |  |  | V | *");printf("\n");
-            printf("*   OVO  ZXZ   Ç¿¾Þ HHH  *");printf("\n");
+            printf("*   OVO  ZXZ   Ç¿ï¿½ï¿½ HHH  *");printf("\n");
             printf("*  /N N===I   O==ooo=H=oo*");printf("\n");
-            printf("* //N N   I    Å£Éñ  H  o*");printf("\n");
+            printf("* //N N   I    Å£ï¿½ï¿½  H  o*");printf("\n");
             printf("*// ONO   O  |  |   HHH 3*");printf("\n");
             printf("*P  UMU      +==+   S S  *");printf("\n");
-            printf("*   U U       ======S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U       ======S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
             printf("*     >  {=}     kkksc06 *");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6} +==+  |E E| *");printf("\n");
             printf("*  | V | [6] |  |  | V | *");printf("\n");
-            printf("*   OVO  ZXZ   Ç¿¾Þ HHH  *");printf("\n");
+            printf("*   OVO  ZXZ   Ç¿ï¿½ï¿½ HHH  *");printf("\n");
             printf("*  /N N===I   O==ooo=H=oo*");printf("\n");
-            printf("* //N N   I    Å£Éñ  H  o*");printf("\n");
+            printf("* //N N   I    Å£ï¿½ï¿½  H  o*");printf("\n");
             printf("*// ONO   O  |  |   HHH 3*");printf("\n");
             printf("*P  UMU      +==+   S S  *");printf("\n");
-            printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            ======*");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
             printf("*     >  {=}     kkksc06 *");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6} +==+  |E E| *");printf("\n");
             printf("*  | V | [6] |  |  | V | *");printf("\n");
             printf("*   OVO  ZXZ  =======HH  *");printf("\n");
             printf("*  /N N===I   O==ooo=H=oo*");printf("\n");
-            printf("* //N N   I    Å£Éñ  H  o*");printf("\n");
+            printf("* //N N   I    Å£ï¿½ï¿½  H  o*");printf("\n");
             printf("*// ONO   O  |  |   HHH 3*");printf("\n");
             printf("*P  UMU      +==+   S S  *");printf("\n");
-            printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");printf("\n");Sleep(200);system("cls");
             printf("**************************");printf("\n");
             printf("*     >  {=}     kkksc06 *");printf("\n");
-            printf("*   _/_  [6]        ___  *µÐ·½ÑªÁ¿£º%d/%d",HP,MAXHP);printf("\n");
+            printf("*   _/_  [6]        ___  *ï¿½Ð·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",HP,MAXHP);printf("\n");
             printf("*  |O O| {6} +==+  |E E| *");printf("\n");
             printf("*  | V | [6] |  |  | V | *");printf("\n");
-            printf("*   OVO  ZXZ   Ç¿¾Þ HHH  *");printf("\n");
+            printf("*   OVO  ZXZ   Ç¿ï¿½ï¿½ HHH  *");printf("\n");
             printf("*  /N N===I   O==ooo=H=oo*");printf("\n");
-            printf("* //N N   I    Å£Éñ  H  o*");printf("\n");
+            printf("* //N N   I    Å£ï¿½ï¿½  H  o*");printf("\n");
             printf("*// ONO   O  |  |   HHH 3*");printf("\n");
             printf("*P  UMU      +=========  *");printf("\n");
-            printf("*   U U             S S  *ÎÒ·½ÑªÁ¿£º%d/%d",Player.HP,Player.MAXHP);printf("\n");
+            printf("*   U U             S S  *ï¿½Ò·ï¿½Ñªï¿½ï¿½ï¿½ï¿½%d/%d",Player.HP,Player.MAXHP);printf("\n");
             printf("*   D D            SS SS *");printf("\n");
             printf("**************************");printf("\n");
-            printf("1.¹¥»÷   2.ÌÓÅÜ   3.¼¼ÄÜ  ");printf("\n");printf("\n");Sleep(200);system("cls");
+            printf("1.ï¿½ï¿½ï¿½ï¿½   2.ï¿½ï¿½ï¿½ï¿½   3.ï¿½ï¿½ï¿½ï¿½  ");printf("\n");printf("\n");Sleep(200);system("cls");
             if (HP<=0){
-                print("ÄãÓ®ÁË£¡»ñµÃ10000½ð±Ò£¡1000¾­ÑéÖµ£¡È»¶øÃæ°ü²»ÔÚÕâÀï£¡£¡");
+                print("ï¿½ï¿½Ó®ï¿½Ë£ï¿½ï¿½ï¿½ï¿½10000ï¿½ï¿½Ò£ï¿½1000ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½È»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï£¡ï¿½ï¿½");
                 Player.EXP+=1000000;
                 lvup();Player.HP+=378;if (Player.HP>Player.MAXHP) Player.HP=Player.MAXHP;
                 Player.Money+=100000;
@@ -3828,11 +3821,11 @@ bool fight_to_KKKKK(){
             sd=ATK-Player.DEF+(rand()%100);
             Player.HP-=sd;
             for (int i=1;i<=10;++i)
-            print("kkksc06£ºÃæ°üÊÇÎÒµÄ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!v!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+            print("kkksc06ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òµï¿½!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!v!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
             printf("%d",sd);
-            print("µãÉËº¦£¡");
+            print("ï¿½ï¿½ï¿½Ëºï¿½ï¿½ï¿½");
             if (Player.HP<=0){
-                print("Äã±»´òËÀÁË£¡");
+                print("ï¿½ã±»ï¿½ï¿½ï¿½ï¿½ï¿½Ë£ï¿½");
                 exit(1);
             }
         }
@@ -3840,7 +3833,7 @@ bool fight_to_KKKKK(){
     }
 }
 int main(){
-    print("Âå¹ÈÍõ¹úµÄ³¬¼¶¿É°®µÄÃæ°ü½ã½ã±»kkksc06´óÄ§Íõ×¥×ßÀ²£¡ÓÂÊ¿£¡ÎªÁËÃæ°ü¼ÐÂÌÄñ£¡Çë¾È³öÃæ°ü½ã½ã°É£¡£¡");
+    print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä³ï¿½ï¿½ï¿½ï¿½É°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ã±»kkksc06ï¿½ï¿½Ä§ï¿½ï¿½×¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¿ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É£ï¿½ï¿½ï¿½");
     system("cls");
     srand(time(NULL));
     Player.HP=1000;Player.MAXHP=1000;
@@ -3848,24 +3841,24 @@ int main(){
     Player.ATK=200;Player.DEF=5;
     Player.Money=100;
     for (int i=1;i<=4;++i){
-        cout<<"¼ÓÔØÖÐ|";
+        cout<<"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½|";
         Sleep(200);
         system("cls");
-        cout<<"¼ÓÔØÖÐ/";
+        cout<<"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/";
         Sleep(200);
         system("cls");
-        cout<<"¼ÓÔØÖÐ-";
+        cout<<"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-";
         Sleep(200);
         system("cls");
-        cout<<"¼ÓÔØÖÐ\\";
+        cout<<"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\\";
         Sleep(200);
         system("cls");
     }
-    cout<<"¡¾W¡¿¡¾A¡¿¡¾S¡¿¡¾D¡¿ÒÆ¶¯£¡£¡¡¾E¡¿²é¿´×´Ì¬£¡"<<endl;
+    cout<<"ï¿½ï¿½Wï¿½ï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½Sï¿½ï¿½ï¿½ï¿½Dï¿½ï¿½ï¿½Æ¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Eï¿½ï¿½ï¿½é¿´×´Ì¬ï¿½ï¿½"<<endl;
     Sleep(1000);
-    cout<<"ÉÌµêÇëÔÚÃÅ¿Ú£¨|£©´¦µã»÷¡¾F¡¿½øÈë£¡£¡¡¾B¡¿Ê¹ÓÃµÀ¾ß!"<<endl;
+    cout<<"ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å¿Ú£ï¿½|ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Fï¿½ï¿½ï¿½ï¿½ï¿½ë£¡ï¿½ï¿½ï¿½ï¿½Bï¿½ï¿½Ê¹ï¿½Ãµï¿½ï¿½ï¿½!"<<endl;
     Sleep(1000);
-    cout<<"ÇÐ»»µØÍ¼ÇëÔÚÃÅ¿Ú×îÉî´¦µã»÷¡¾F¡¿£¡¡¾Q¡¿²é¿´ÄãµÄ·û£¡"<<endl;
+    cout<<"ï¿½Ð»ï¿½ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½Å¿ï¿½ï¿½ï¿½ï¿½î´¦ï¿½ï¿½ï¿½ï¿½ï¿½Fï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Qï¿½ï¿½ï¿½é¿´ï¿½ï¿½Ä·ï¿½ï¿½ï¿½"<<endl;
     Sleep(4000);
     system("cls");
     go(0);
@@ -3953,39 +3946,39 @@ int main(){
             }
             case 'e':{
                 system("cls");
-                printf("ÄãÓÐ%dÃ¶½ð±Ò£¡\n",Player.Money);
-                printf("ÄãÏÖÔÚÊÇ%d¼¶£¡\n",Player.LV);
-                printf("ÄãÏÖÔÚ¾­ÑéÊÇ%d/%d\n",Player.EXP,Player.MAXEXP);
-                printf("Äã¹¥»÷Á¦ÊÇ%d\n",Player.ATK);
-                printf("Äã·ÀÓùÁ¦ÊÇ%d\n",Player.DEF);
+                printf("ï¿½ï¿½ï¿½ï¿½%dÃ¶ï¿½ï¿½Ò£ï¿½\n",Player.Money);
+                printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½%dï¿½ï¿½ï¿½ï¿½\n",Player.LV);
+                printf("ï¿½ï¿½ï¿½ï¿½ï¿½Ú¾ï¿½ï¿½ï¿½ï¿½ï¿½%d/%d\n",Player.EXP,Player.MAXEXP);
+                printf("ï¿½ã¹¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½%d\n",Player.ATK);
+                printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½%d\n",Player.DEF);
                 qwe=_getch();
                 system("cls");
                 break;
             }
             case 'b':{
                 system("cls");
-                printf("1.´ó²¹Íè  %d\n",Player.q1);
-                printf("2.½£Æø×Ýºáµ¤  %d\n",Player.q2);
-                printf("3.½ð¸ÕÏÉµ¤  %d\n",Player.q3);
-                printf("4.·ÊÕ¬¿ìÀÖµ¤  %d\n",Player.q4);
-                printf("5.º×¶¥ºì  %d\n",Player.q5);
-                printf("6.ÉúÌú³¤½£  %d\n",Player.s1);
-                printf("7.¾«¸Ö³¤µ¶  %d\n",Player.s2);
-                printf("8.ÅüÉ½¸«  %d\n",Player.s3);
-                printf("9.¶á»êÖØÇ¹  %d\n",Player.s4);
-                printf("a.Ê¯ÖÐÉñ½£  %d\n",Player.s5);
-                printf("b.»¤ÐÄ¾µ  %d\n",Player.d1);
-                printf("c.ÌúËø¼×  %d\n",Player.d2);
-                printf("d.ÔÉÌúÉñ¶Ü  %d\n",Player.d3);
-                printf("e.Ì¹¿ËÆ¤  %d\n",Player.d4);
-                printf("f.·çÍõ½á½ç  %d\n",Player.d5);
+                printf("1.ï¿½ï¿½ï¿½ï¿½  %d\n",Player.q1);
+                printf("2.ï¿½ï¿½ï¿½ï¿½ï¿½Ýºáµ¤  %d\n",Player.q2);
+                printf("3.ï¿½ï¿½ï¿½ï¿½Éµï¿½  %d\n",Player.q3);
+                printf("4.ï¿½ï¿½Õ¬ï¿½ï¿½ï¿½Öµï¿½  %d\n",Player.q4);
+                printf("5.ï¿½×¶ï¿½ï¿½ï¿½  %d\n",Player.q5);
+                printf("6.ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  %d\n",Player.s1);
+                printf("7.ï¿½ï¿½ï¿½Ö³ï¿½ï¿½ï¿½  %d\n",Player.s2);
+                printf("8.ï¿½ï¿½É½ï¿½ï¿½  %d\n",Player.s3);
+                printf("9.ï¿½ï¿½ï¿½ï¿½ï¿½Ç¹  %d\n",Player.s4);
+                printf("a.Ê¯ï¿½ï¿½ï¿½ï¿½  %d\n",Player.s5);
+                printf("b.ï¿½ï¿½ï¿½Ä¾ï¿½  %d\n",Player.d1);
+                printf("c.ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  %d\n",Player.d2);
+                printf("d.ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  %d\n",Player.d3);
+                printf("e.Ì¹ï¿½ï¿½Æ¤  %d\n",Player.d4);
+                printf("f.ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  %d\n",Player.d5);
                 qwe=_getch();
                 switch(qwe){
                     case '1':{
                         if (Player.q1>=1){
                             Player.q1--;
                             Player.HP+=200;
-                            print("Äã»ØÁË200µãHP");
+                            print("ï¿½ï¿½ï¿½ï¿½ï¿½200ï¿½ï¿½HP");
                             if (Player.HP>Player.MAXHP)
                                 Player.HP=Player.MAXHP;
                             system("cls");
@@ -3997,7 +3990,7 @@ int main(){
                             Player.q2--;
                             Player.HP+=200;
                             Player.ATK+=20;
-                            print("Äã¾õµÃ×Ô¼º³äÂúÁ¦Æø£¬¹¥»÷Á¦ÉÏÉý20µã");
+                            print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½20ï¿½ï¿½");
                             system("cls");
                         }
                         break;
@@ -4007,7 +4000,7 @@ int main(){
                             Player.q3--;
                             Player.HP+=200;
                             Player.DEF+=5;
-                            print("Äã¾õµÃ×Ô¼ºµ¶Ç¹²»Èë£¬·ÀÓùÁ¦ÉÏÉý5µã");
+                            print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½Ç¹ï¿½ï¿½ï¿½ë£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½5ï¿½ï¿½");
                             system("cls");
                         }
                         break;
@@ -4017,7 +4010,7 @@ int main(){
                             Player.q4--;
                             Player.HP+=200;
                             Player.MAXHP+=60;
-                            print("Äã¾õµÃ×Ô¼º»¹ÄÜÔÙ¸É£¡×î´óÉúÃüÖµÉÏÉý60µã£¡");
+                            print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ù¸É£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½60ï¿½ã£¡");
                             system("cls");
                         }
                         break;
@@ -4025,16 +4018,16 @@ int main(){
                     case '5':{
                         if (Player.q5>=1){
                             Player.HP+=200;
-                            print("Äã»º»º·þÏÂº×¶¥ºì£¡");printf("\n");
-                            print("Äã¾õµÃ×Ô¼ºÊ±ÈÕ²»¶àÁË£¡");printf("\n");
-                            print("ÕæÊÇµÄ£¡£¡");printf("\n");
-                            print("Äã¸ÉÊ²Ã´Òª³ÔÕâÖÖ¶«Î÷ÄØ£¿");printf("\n");
-                            print("Ã÷Ã÷¶¼ºÍÄãËµ¹ýÁËÓÐ¶¾£¡");printf("\n");
-                            print("ÄãÕâ¸ö´óÀÐ¾ÍÊÇ²»Ìý£¡");printf("\n");
-                            print("Äã¿ìËÀÁË£¡");printf("\n");
-                            print("ºÇºÇºÇ");printf("\n");
+                            print("ï¿½ã»ºï¿½ï¿½ï¿½ï¿½ï¿½Âº×¶ï¿½ï¿½ì£¡");printf("\n");
+                            print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½Ê±ï¿½Õ²ï¿½ï¿½ï¿½ï¿½Ë£ï¿½");printf("\n");
+                            print("ï¿½ï¿½ï¿½ÇµÄ£ï¿½ï¿½ï¿½");printf("\n");
+                            print("ï¿½ï¿½ï¿½Ê²Ã´Òªï¿½ï¿½ï¿½ï¿½ï¿½Ö¶ï¿½ï¿½ï¿½ï¿½Ø£ï¿½");printf("\n");
+                            print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½ï¿½ï¿½");printf("\n");
+                            print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¾ï¿½ï¿½Ç²ï¿½ï¿½ï¿½ï¿½ï¿½");printf("\n");
+                            print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë£ï¿½");printf("\n");
+                            print("ï¿½ÇºÇºï¿½");printf("\n");
                             print("exit(0)");printf("\n");
-                            print("È»¶øÄã²¢Ã»ÓÐËÀ£¬Ö»ÊÇÀË·ÑÁË500½ð±Ò¶øÒÑ¡£");printf("\n");
+                            print("È»ï¿½ï¿½ï¿½ã²¢Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö»ï¿½ï¿½ï¿½Ë·ï¿½ï¿½ï¿½500ï¿½ï¿½Ò¶ï¿½ï¿½Ñ¡ï¿½");printf("\n");
                         }
                         break;
                     }
@@ -4114,15 +4107,15 @@ int main(){
             }
             case 'q':{
                 system("cls");
-                printf("ÄãÓÐ%dÕÅ»ØÑª·û£¡\n",Player.k1);
-                printf("ÄãÓÐ%dÕÅÄýÉñ¹éÔª·û£¡\n",Player.k2);
-                printf("ÄãÓÐ%dÕÅ×óÓÒ»¥²«·û£¡\n",Player.k3);
-                printf("ÄãÓÐ%dÕÅ¿ºÁúÓÐ»Ú·û£¡\n",Player.k4);
-                printf("ÄãÓÐ%dÕÅ¾ÆÉñ·û£¡\n",Player.k5);
-                printf("ÄãÓÐ%dÕÅ¶á»ê·û£¡\n",Player.k6);
-                printf("ÄãÓÐ%dÕÅÎüÐÇ´ó·¨·û£¡\n",Player.k7);
-                printf("ÄãÓÐ%dÕÅ¶À¹Â¾Å½£·û£¡\n",Player.k8);
-                printf("ÄãÓÐ%dÕÅÄÆË®Éñ¹¦·û£¡\n",Player.k9);
+                printf("ï¿½ï¿½ï¿½ï¿½%dï¿½Å»ï¿½Ñªï¿½ï¿½ï¿½ï¿½\n",Player.k1);
+                printf("ï¿½ï¿½ï¿½ï¿½%dï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôªï¿½ï¿½ï¿½ï¿½\n",Player.k2);
+                printf("ï¿½ï¿½ï¿½ï¿½%dï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n",Player.k3);
+                printf("ï¿½ï¿½ï¿½ï¿½%dï¿½Å¿ï¿½ï¿½ï¿½ï¿½Ð»Ú·ï¿½ï¿½ï¿½\n",Player.k4);
+                printf("ï¿½ï¿½ï¿½ï¿½%dï¿½Å¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n",Player.k5);
+                printf("ï¿½ï¿½ï¿½ï¿½%dï¿½Å¶ï¿½ï¿½ï¿½ï¿½ï¿½\n",Player.k6);
+                printf("ï¿½ï¿½ï¿½ï¿½%dï¿½ï¿½ï¿½ï¿½ï¿½Ç´ó·¨·ï¿½ï¿½ï¿½\n",Player.k7);
+                printf("ï¿½ï¿½ï¿½ï¿½%dï¿½Å¶ï¿½ï¿½Â¾Å½ï¿½ï¿½ï¿½ï¿½ï¿½\n",Player.k8);
+                printf("ï¿½ï¿½ï¿½ï¿½%dï¿½ï¿½ï¿½ï¿½Ë®ï¿½ñ¹¦·ï¿½ï¿½ï¿½\n",Player.k9);
                 qwe=_getch();
                 system("cls");
                 break;

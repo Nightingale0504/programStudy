@@ -1,5 +1,4 @@
-#include<bits/stdc++.h> 
-#include<map>
+#include<bits/stdc++.h>
 using namespace std;
 #define int long long
 int qua[6]={0,2000,1000,200,36,6};

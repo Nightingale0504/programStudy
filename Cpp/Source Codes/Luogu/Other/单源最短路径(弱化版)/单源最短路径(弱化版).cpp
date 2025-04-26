@@ -1,7 +1,4 @@
-#include<iostream>
-#include<cstdio>
-#include<climits>
-#include<algorithm>
+#include<bits/stdc++.h> 
 using namespace std;
 #define int long long
 int n,m,s,u=0;
@@ -19,21 +16,21 @@ signed main(){
 		scanf("%lld%lld%lld",&p,&q,&r);
 		a[p][q]=min(a[p][q],r);
 	}
-	// Dijkstra Ëã·¨
+	// Dijkstra ï¿½ã·¨
 	for (int i=1;i<=n;i++){
 		dis[i]=INT_MAX;
 	}
 	dis[s]=0;
-	for (int j=1;j<=n;j++){ // °Ñ n ¸öµã¶¼±ê¼ÇÎª»Æµã
+	for (int j=1;j<=n;j++){ // ï¿½ï¿½ n ï¿½ï¿½ï¿½ã¶¼ï¿½ï¿½ï¿½Îªï¿½Æµï¿½
 		int mmin=INT_MAX;
-		// 1.´ÓËùÓÐÃ»±ê¼ÇµÄµãÖÐÕÒµ½×îÐ¡Öµ£¬²¢ÕÒµ½ËüµÄÏÂ±ê u
+		// 1.ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ÇµÄµï¿½ï¿½ï¿½ï¿½Òµï¿½ï¿½ï¿½Ð¡Öµï¿½ï¿½ï¿½ï¿½ï¿½Òµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â±ï¿½ u
 		for (int i=1;i<=n;i++){
 			if (book[i]==0 && dis[i]<mmin){
 				mmin=dis[i];
 				u=i;
 			}
 		}
-		// 2.±ê¼Ç»Æµã£¬ÕÒÏàÁÚÇÒÃ»±ê¼ÇµÄµã£¬¸üÐÂ dis Êý×é
+		// 2.ï¿½ï¿½Ç»Æµã£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ÇµÄµã£¬ï¿½ï¿½ï¿½ï¿½ dis ï¿½ï¿½ï¿½ï¿½
 		book[u]=1;
 		for (int i=1;i<=n;i++){
 			if (book[i]==0 && a[u][i]!=INT_MAX){

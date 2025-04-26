@@ -1,8 +1,4 @@
-#include <cstdio>
-#include <cstdlib>
-#include <algorithm>
-#include <cstring>
-#include <cctype>
+#include<bits/stdc++.h>
 #define INF 2000000000
 using namespace std;
 typedef long long ll;

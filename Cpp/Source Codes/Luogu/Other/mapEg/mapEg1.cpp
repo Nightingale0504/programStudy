@@ -1,7 +1,4 @@
 #include<bits/stdc++.h> 
-#include<map>
-#include<string>
-#include<cstring>
 using namespace std;
 #define int long long
 map<string,int> mmap;

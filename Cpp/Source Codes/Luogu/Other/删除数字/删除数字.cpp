@@ -1,5 +1,4 @@
-#include<bits/stdc++.h> 
-#include<cctype>
+#include<bits/stdc++.h>
 using namespace std;
 #define int long long
 string s;

@@ -1,5 +1,4 @@
-#include<iostream>
-#include<cstdio>
+#include<bits/stdc++.h> 
 using namespace std;
 int main(){
 	int a[11]={ 10,9,7,1,3,2,5,6,4,8 };

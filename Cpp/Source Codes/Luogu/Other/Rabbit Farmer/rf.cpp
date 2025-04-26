@@ -1,8 +1,4 @@
-#include<cstdio>
-#include<algorithm>
-#include<cstring>
-#include<string>
-#include<iostream>
+#include<bits/stdc++.h> 
 using namespace std;
 #define ll long long
 const int KR=1e6+10,SZ=3;

@@ -1,6 +1,4 @@
-#include<bits/stdc++.h> 
-#include<ctime>
-#include<cstring>
+#include<bits/stdc++.h>
 using namespace std;
 int n,m;
 const int maxNum=1e3+5;

@@ -1,8 +1,4 @@
-#include<iostream>
-#include<string>
-#include<cstdio>
-#include<cstring>
-#include<algorithm>
+#include<bits/stdc++.h> 
 using namespace std;
 string a;
 int main(){

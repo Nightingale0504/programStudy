@@ -1,7 +1,4 @@
-#include<iostream>
-#include<cstdio>
-#include<cstring>
-#include<algorithm>
+#include<bits/stdc++.h> 
 using namespace std;
 int n,ans;
 int dp[110];

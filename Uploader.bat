@@ -45,6 +45,10 @@ git commit -m "%commitMsg%" >> "%LOGFILE%" 2>&1 || goto ERROR
 
 git push               >> "%LOGFILE%" 2>&1 || goto ERROR
 
+
+:: —— 恢复原始 CodePage ——
+chcp %OLDCP% >nul
+
 :: --- 3. 记录结束时间并计算用时 ---
 set "ENDTIME=%time: =0%"
 for /f "tokens=1-4 delims=:.," %%a in ("%ENDTIME%") do (
@@ -78,6 +82,4 @@ exit /b 1
 
 
 :EOF
-:: —— 恢复原始 CodePage ——
-chcp %OLDCP% >nul
 endlocal

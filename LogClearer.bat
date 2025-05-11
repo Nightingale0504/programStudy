@@ -1,41 +1,42 @@
 @echo off
 setlocal enabledelayedexpansion
 
-:: 配置参数
+:: Configuration
 set "log_dir=C:\MyDocuments\programStudyLogs"
 set "retention_days=30"
 
-:: 获取当前日期序列（兼容XP系统）
-for /f "tokens=2 delims==" %%a in ('wmic os get localdatetime /value') do set "now=%%a"
-set "now=!now:~0,8!"
+:: Get current date using PowerShell
+for /f "tokens=1-3 delims= " %%a in ('powershell -command "Get-Date -Format 'yyyy MM dd'"') do (
+    set "current_year=%%a"
+    set "current_month=%%b"
+    set "current_day=%%c"
+)
 
-:: 计算过期日期（使用PowerShell计算精确日期）
+:: Calculate expiration date (30 days ago)
 for /f %%d in ('powershell -command "(Get-Date).AddDays(-%retention_days%).ToString('yyyyMMdd')"') do (
     set "expire_date=%%d"
 )
 
-echo 正在清理 [!now!] 之前的日志（保留%retention_days%天）
-echo 过期阈值日期：%expire_date%
+echo Cleaning up logs older than %retention_days% days (before %expire_date%)
 
-:: 遍历日志文件
+:: Process log files
 for %%F in ("%log_dir%\*.log") do (
     set "filename=%%~nF"
     set "file_date=!filename:~0,8!"
     
-    :: 验证日期有效性
-    echo !file_date! | findstr /r "^20[0-9][0-9][01][0-9][0-3][0-9]$" >nul
+    :: Validate date format using PowerShell
+    echo !file_date! | powershell -command "$input | ForEach-Object { if ($_ -match '^\d{8}$') { exit 0 } else { exit 1 } }"
     if !errorlevel! equ 0 (
-        if !file_date! lss !expire_date! (
+        if !file_date! lss %expire_date% (
             del /q "%%F"
-            echo [DEL] !filename!.log
+            echo [DELETED] !filename!.log
         ) else (
-            echo [KEEP] !filename!.log
+            echo [RETAINED] !filename!.log
         )
     ) else (
-        echo [SKIP] 非法日期格式: !filename!.log
+        echo [SKIPPED] Invalid date format: !filename!.log
     )
 )
 
-endlocal
-echo 清理操作完成
+echo Cleanup operation completed
 pause

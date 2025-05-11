@@ -1,6 +1,13 @@
 @echo off
 setlocal EnableDelayedExpansion
 
+:: —— 切换至 UTF-8 并保存旧 CodePage ——
+for /f "tokens=2 delims=: " %%A in ('chcp') do set "OLDCP=%%A"
+chcp 65001 >nul
+
+:: —— 确保 Git 输出中文 ——  
+git config --global core.quotepath false
+
 :: --- 1. 打印开始提示并记录开始时间 ---
 echo Starting Git Sync: %date% %time%
 set "STARTTIME=%time: =0%"
@@ -69,5 +76,8 @@ echo.
 pause
 exit /b 1
 
+
 :EOF
+:: —— 恢复原始 CodePage ——
+chcp %OLDCP% >nul
 endlocal

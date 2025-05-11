@@ -10,9 +10,9 @@ if not exist "%LOGDIR%" (
     mkdir "%LOGDIR%"
 )
 
-:: 获取当前日期（格式：YYYYMMDD）
-for /f %%I in ('PowerShell -NoProfile -Command "Get-Date -Format yyyyMMdd"') do set "LOGDATE=%%I"
-set "LOGFILE=%LOGDIR%\%LOGDATE%.log"
+:: 获取当前日期和时间（格式：YYYYMMDD-HHmmss）
+for /f %%I in ('PowerShell -NoProfile -Command "Get-Date -Format yyyyMMdd-HHmmss"') do set "LOGDATETIME=%%I"
+set "LOGFILE=%LOGDIR%\%LOGDATETIME%.log"
 
 :: 记录开始时间（Unix 时间戳）
 for /f %%I in ('PowerShell -NoProfile -Command "[int][double]::Parse((Get-Date).ToUniversalTime().Subtract([datetime]'1970-01-01').TotalSeconds)"') do set "STARTTIME=%%I"

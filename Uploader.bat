@@ -35,7 +35,7 @@ echo Log file: %LOGFILE%
 
     :: Perform Git operations
     git pull
-    git rm -r --cached .
+    git rm -r -f --cached .
     git add .
     git commit -m "Update"
     git push

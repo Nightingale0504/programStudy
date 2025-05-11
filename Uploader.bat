@@ -1,71 +1,62 @@
 @echo off
-chcp 65001 >nul
-setlocal enabledelayedexpansion
+setlocal EnableDelayedExpansion
 
-rem Set log directory and timestamp
+:: Set working and log directories
+set "WORKDIR=C:\MyDocuments\programStudy"
 set "LOGDIR=C:\MyDocuments\programStudyLogs"
-for /f %%I in ('powershell -NoLogo -NoProfile -Command "Get-Date -Format yyyyMMdd-HHmmss"') do set "TS=%%I"
-set "LOGFILE=%LOGDIR%\%TS%.log"
 
-rem Create log directory if it doesn't exist
-if not exist "%LOGDIR%" mkdir "%LOGDIR%"
+:: Create log directory if it doesn't exist
+if not exist "%LOGDIR%" (
+    mkdir "%LOGDIR%"
+)
 
-rem Record start time
-for /f %%I in ('powershell -NoLogo -NoProfile -Command "Get-Date"') do set "START_TIME=%%I"
+:: Get current date in YYYYMMDD format
+for /f "tokens=2 delims==" %%I in ('PowerShell -Command "Get-Date -Format yyyyMMdd"') do set "LOGDATE=%%I"
+set "LOGFILE=%LOGDIR%\%LOGDATE%.log"
 
-echo ===== Script started at %START_TIME% =====
-echo ===== Script started at %START_TIME% ===== | powershell -Command "Out-File -FilePath '%LOGFILE%' -Encoding utf8"
+:: Record start time in seconds
+for /f %%I in ('PowerShell -Command "(Get-Date).ToUniversalTime().Subtract([datetime]'1970-01-01').TotalSeconds"') do set "STARTTIME=%%I"
 
-rem Change to the repository directory
-cd /d "C:\MyDocuments\programStudy"
-if errorlevel 1 goto ERR
+:: Display start message
+echo Starting Git synchronization...
+echo Log file: %LOGFILE%
 
-rem Execute git pull
-echo [1/6] git pull
-git pull 2>&1 | powershell -Command "Out-File -FilePath '%LOGFILE%' -Encoding utf8 -Append"
-if errorlevel 1 goto ERR
+:: Redirect output to log file
+(
+    echo === Git Synchronization Started at %date% %time% ===
+    echo.
 
-rem Execute git rm -r --cached .
-echo [2/6] git rm -r --cached .
-git rm -r --cached . 2>&1 | powershell -Command "Out-File -FilePath '%LOGFILE%' -Encoding utf8 -Append"
-if errorlevel 1 goto ERR
+    :: Change to working directory
+    cd /d "%WORKDIR%"
 
-rem Execute git add .
-echo [3/6] git add .
-git add . 2>&1 | powershell -Command "Out-File -FilePath '%LOGFILE%' -Encoding utf8 -Append"
-if errorlevel 1 goto ERR
+    :: Set Git to use UTF-8 encoding to handle Chinese characters properly
+    git config --global core.quotepath false
+    git config --global i18n.logoutputencoding utf-8
 
-rem Get current time for commit message
-for /f %%I in ('powershell -NoLogo -NoProfile -Command "Get-Date -Format yyyy/MM/dd HH:mm:ss"') do set "CTIME=%%I"
+    :: Perform Git operations
+    git pull
+    git rm -r --cached .
+    git add .
+    git commit -m "Update"
+    git push
 
-rem Execute git commit
-echo [4/6] git commit -m "Update %CTIME%"
-git commit -m "Update %CTIME%" 2>&1 | powershell -Command "Out-File -FilePath '%LOGFILE%' -Encoding utf8 -Append"
-if errorlevel 1 goto ERR
+    echo.
+    echo === Git Synchronization Completed at %date% %time% ===
+) > "%LOGFILE%" 2>&1
 
-rem Execute git push
-echo [5/6] git push
-git push 2>&1 | powershell -Command "Out-File -FilePath '%LOGFILE%' -Encoding utf8 -Append"
-if errorlevel 1 goto ERR
+:: Record end time in seconds
+for /f %%I in ('PowerShell -Command "(Get-Date).ToUniversalTime().Subtract([datetime]'1970-01-01').TotalSeconds"') do set "ENDTIME=%%I"
 
-rem Record end time
-for /f %%I in ('powershell -NoLogo -NoProfile -Command "Get-Date"') do set "END_TIME=%%I"
+:: Calculate duration in seconds
+set /a DURATION=ENDTIME - STARTTIME
 
-rem Calculate elapsed time
-for /f %%I in ('powershell -NoLogo -NoProfile -Command "(New-TimeSpan -Start ([datetime]::Parse('%START_TIME%')) -End ([datetime]::Parse('%END_TIME%'))).ToString()"') do set "ELAPSED=%%I"
+:: Append duration to log file
+echo. >> "%LOGFILE%"
+echo Total synchronization time: %DURATION% seconds >> "%LOGFILE%"
 
-rem Log end time and elapsed time
-echo. | powershell -Command "Out-File -FilePath '%LOGFILE%' -Encoding utf8 -Append"
-echo ===== Script ended at %END_TIME% ===== | powershell -Command "Out-File -FilePath '%LOGFILE%' -Encoding utf8 -Append"
-echo Total elapsed time: %ELAPSED% | powershell -Command "Out-File -FilePath '%LOGFILE%' -Encoding utf8 -Append"
+:: Display completion message
+echo Git synchronization completed.
+echo Total time: %DURATION% seconds
 
-echo ===== Script completed successfully at %END_TIME% =====
-echo Total elapsed time: %ELAPSED%
-
-exit /b 0
-
-:ERR
-echo.
-echo !!! ERROR: Git command failed. Exiting. !!!
-pause
-exit /b 1
+endlocal
+exit /b

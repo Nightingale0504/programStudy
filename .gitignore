@@ -733,10 +733,10 @@ FodyWeavers.xsd
 ### VisualStudio Patch ###
 # Additional files built by Visual Studio
 
-#FreeFileSync
+# FreeFileSync
 sync.ffs_db
 
-#Special
+# OI
 *.txt
 *.ini
 *.in

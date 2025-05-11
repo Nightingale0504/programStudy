@@ -1,39 +1,39 @@
 @echo off
 setlocal EnableDelayedExpansion
 
-:: Set working and log directories
+:: 设置工作目录和日志目录
 set "WORKDIR=C:\MyDocuments\programStudy"
 set "LOGDIR=C:\MyDocuments\programStudyLogs"
 
-:: Create log directory if it doesn't exist
+:: 创建日志目录（如果不存在）
 if not exist "%LOGDIR%" (
     mkdir "%LOGDIR%"
 )
 
-:: Get current date in YYYYMMDD format
-for /f "tokens=2 delims==" %%I in ('PowerShell -Command "Get-Date -Format yyyyMMdd"') do set "LOGDATE=%%I"
+:: 获取当前日期（格式：YYYYMMDD）
+for /f %%I in ('PowerShell -NoProfile -Command "Get-Date -Format yyyyMMdd"') do set "LOGDATE=%%I"
 set "LOGFILE=%LOGDIR%\%LOGDATE%.log"
 
-:: Record start time in seconds
-for /f %%I in ('PowerShell -Command "(Get-Date).ToUniversalTime().Subtract([datetime]'1970-01-01').TotalSeconds"') do set "STARTTIME=%%I"
+:: 记录开始时间（Unix 时间戳）
+for /f %%I in ('PowerShell -NoProfile -Command "[int][double]::Parse((Get-Date).ToUniversalTime().Subtract([datetime]'1970-01-01').TotalSeconds)"') do set "STARTTIME=%%I"
 
-:: Display start message
+:: 显示开始提示
 echo Starting Git synchronization...
 echo Log file: %LOGFILE%
 
-:: Redirect output to log file
+:: 将输出重定向到日志文件
 (
     echo === Git Synchronization Started at %date% %time% ===
     echo.
 
-    :: Change to working directory
+    :: 切换到工作目录
     cd /d "%WORKDIR%"
 
-    :: Set Git to use UTF-8 encoding to handle Chinese characters properly
+    :: 设置 Git 配置以正确处理中文文件名
     git config --global core.quotepath false
     git config --global i18n.logoutputencoding utf-8
 
-    :: Perform Git operations
+    :: 执行 Git 操作
     git pull
     git rm -r -f --cached .
     git add .
@@ -44,17 +44,17 @@ echo Log file: %LOGFILE%
     echo === Git Synchronization Completed at %date% %time% ===
 ) > "%LOGFILE%" 2>&1
 
-:: Record end time in seconds
-for /f %%I in ('PowerShell -Command "(Get-Date).ToUniversalTime().Subtract([datetime]'1970-01-01').TotalSeconds"') do set "ENDTIME=%%I"
+:: 记录结束时间（Unix 时间戳）
+for /f %%I in ('PowerShell -NoProfile -Command "[int][double]::Parse((Get-Date).ToUniversalTime().Subtract([datetime]'1970-01-01').TotalSeconds)"') do set "ENDTIME=%%I"
 
-:: Calculate duration in seconds
+:: 计算同步所用时间（秒）
 set /a DURATION=ENDTIME - STARTTIME
 
-:: Append duration to log file
+:: 将用时追加到日志文件末尾
 echo. >> "%LOGFILE%"
 echo Total synchronization time: %DURATION% seconds >> "%LOGFILE%"
 
-:: Display completion message
+:: 显示完成提示
 echo Git synchronization completed.
 echo Total time: %DURATION% seconds
 

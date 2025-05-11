@@ -14,6 +14,9 @@ if not exist "%LOGDIR%" (
 for /f %%I in ('PowerShell -NoProfile -Command "Get-Date -Format yyyyMMdd-HHmmss"') do set "LOGDATETIME=%%I"
 set "LOGFILE=%LOGDIR%\%LOGDATETIME%.log"
 
+:: 获取当前日期和时间（格式：YYYY-MM-DD HH:mm:ss）用于日志内容
+for /f %%I in ('PowerShell -NoProfile -Command "Get-Date -Format 'yyyy-MM-dd HH:mm:ss'"') do set "LOGTIME=%%I"
+
 :: 记录开始时间（Unix 时间戳）
 for /f %%I in ('PowerShell -NoProfile -Command "[int][double]::Parse((Get-Date).ToUniversalTime().Subtract([datetime]'1970-01-01').TotalSeconds)"') do set "STARTTIME=%%I"
 
@@ -23,13 +26,13 @@ echo Log file: %LOGFILE%
 
 :: 将输出重定向到日志文件
 (
-    echo === Git Synchronization Started at %date% %time% ===
+    echo === Git Synchronization Started at %LOGTIME% ===
     echo.
 
     :: 切换到工作目录
     cd /d "%WORKDIR%"
 
-    :: 设置 Git 配置以正确处理中文字符
+    :: 设置 Git 配置以正确处理中文文件名
     git config --global core.quotepath false
     git config --global i18n.commitEncoding utf-8
     git config --global i18n.logOutputEncoding utf-8
@@ -42,7 +45,7 @@ echo Log file: %LOGFILE%
     git push
 
     echo.
-    echo === Git Synchronization Completed at %date% %time% ===
+    echo === Git Synchronization Completed at %LOGTIME% ===
 ) > "%LOGFILE%" 2>&1
 
 :: 记录结束时间（Unix 时间戳）

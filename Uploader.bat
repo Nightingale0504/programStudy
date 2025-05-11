@@ -15,10 +15,10 @@ for /f %%I in ('PowerShell -NoProfile -Command "Get-Date -Format yyyyMMdd-HHmmss
 set "LOGFILE=%LOGDIR%\%LOGDATETIME%.log"
 
 :: 获取当前日期和时间（格式：YYYY-MM-DD HH:mm:ss）用于日志内容
-for /f %%I in ('PowerShell -NoProfile -Command "Get-Date -Format 'yyyy-MM-dd HH:mm:ss'"') do set "LOGTIME=%%I"
+for /f %%I in ('PowerShell -NoProfile -Command "Get-Date -Format ''yyyy-MM-dd HH:mm:ss''"') do set "LOGTIME=%%I"
 
-:: 记录开始时间（Unix 时间戳）
-for /f %%I in ('PowerShell -NoProfile -Command "[int][double]::Parse((Get-Date).ToUniversalTime().Subtract([datetime]'1970-01-01').TotalSeconds)"') do set "STARTTIME=%%I"
+:: 记录开始时间（Unix 时间戳，精确到毫秒）
+for /f %%I in ('PowerShell -NoProfile -Command "[int64]::Parse((Get-Date).ToUniversalTime().Subtract([datetime]''1970-01-01'').TotalMilliseconds)"') do set "STARTTIME=%%I"
 
 :: 显示开始提示
 echo Starting Git synchronization...
@@ -48,19 +48,22 @@ echo Log file: %LOGFILE%
     echo === Git Synchronization Completed at %LOGTIME% ===
 ) > "%LOGFILE%" 2>&1
 
-:: 记录结束时间（Unix 时间戳）
-for /f %%I in ('PowerShell -NoProfile -Command "[int][double]::Parse((Get-Date).ToUniversalTime().Subtract([datetime]'1970-01-01').TotalSeconds)"') do set "ENDTIME=%%I"
+:: 记录结束时间（Unix 时间戳，精确到毫秒）
+for /f %%I in ('PowerShell -NoProfile -Command "[int64]::Parse((Get-Date).ToUniversalTime().Subtract([datetime]''1970-01-01'').TotalMilliseconds)"') do set "ENDTIME=%%I"
 
-:: 计算同步所用时间（秒）
-set /a DURATION=ENDTIME - STARTTIME
+:: 计算同步所用时间（毫秒）
+set /a DURATION_MS=ENDTIME - STARTTIME
+
+:: 将用时转换为秒，保留两位小数
+for /f %%I in ('PowerShell -NoProfile -Command "[math]::Round(%DURATION_MS% / 1000.0, 2)"') do set "DURATION=%%I"
 
 :: 将用时追加到日志文件末尾
 echo. >> "%LOGFILE%"
-echo Total synchronization time: %DURATION% seconds >> "%LOGFILE%"
+echo Total synchronization time: %DURATION%s >> "%LOGFILE%"
 
 :: 显示完成提示
 echo Git synchronization completed.
-echo Total time: %DURATION% seconds
+echo Total time: %DURATION%s
 
 endlocal
 exit /b

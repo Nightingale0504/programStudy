@@ -15,10 +15,10 @@ for /f %%I in ('PowerShell -NoProfile -Command "Get-Date -Format yyyyMMdd-HHmmss
 set "LOGFILE=%LOGDIR%\%LOGDATETIME%.log"
 
 :: 获取当前时间（格式：HH:mm:ss）用于日志内容
-for /f %%I in ('PowerShell -NoProfile -Command "Get-Date -Format ''HH:mm:ss''"') do set "LOGTIME=%%I"
+for /f %%I in ('PowerShell -NoProfile -Command "Get-Date -Format HH:mm:ss"') do set "LOGTIME=%%I"
 
 :: 记录开始时间（Unix 时间戳，精确到毫秒）
-for /f %%I in ('PowerShell -NoProfile -Command "[int64]::Parse((Get-Date).ToUniversalTime().Subtract([datetime]''1970-01-01'').TotalMilliseconds)"') do set "STARTTIME=%%I"
+for /f %%I in ('PowerShell -NoProfile -Command "[int64]::Parse((Get-Date).ToUniversalTime().Subtract([datetime]\"1970-01-01\").TotalMilliseconds)"') do set "STARTTIME=%%I"
 
 :: 显示开始提示
 echo Starting Git synchronization...
@@ -39,17 +39,19 @@ echo Log file: %LOGFILE%
 
     :: 执行 Git 操作
     git pull
-    git rm -r -f --cached .
+    git rm -r --cached .
     git add .
     git commit -m "Update"
     git push
 
     echo.
-    echo === Git Synchronization Completed at %LOGTIME% ===
+    :: 获取当前时间用于日志尾部
+    for /f %%I in ('PowerShell -NoProfile -Command "Get-Date -Format HH:mm:ss"') do set "LOGTIME_END=%%I"
+    echo === Git Synchronization Completed at !LOGTIME_END! ===
 ) > "%LOGFILE%" 2>&1
 
 :: 记录结束时间（Unix 时间戳，精确到毫秒）
-for /f %%I in ('PowerShell -NoProfile -Command "[int64]::Parse((Get-Date).ToUniversalTime().Subtract([datetime]''1970-01-01'').TotalMilliseconds)"') do set "ENDTIME=%%I"
+for /f %%I in ('PowerShell -NoProfile -Command "[int64]::Parse((Get-Date).ToUniversalTime().Subtract([datetime]\"1970-01-01\").TotalMilliseconds)"') do set "ENDTIME=%%I"
 
 :: 计算同步所用时间（毫秒）
 set /a DURATION_MS=ENDTIME - STARTTIME

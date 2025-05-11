@@ -5,36 +5,45 @@ setlocal enabledelayedexpansion
 set "log_dir=C:\MyDocuments\programStudyLogs"
 set "retention_days=30"
 
-:: Get current date using PowerShell
-for /f "tokens=1-3 delims= " %%a in ('powershell -command "Get-Date -Format 'yyyy MM dd'"') do (
-    set "current_year=%%a"
-    set "current_month=%%b"
-    set "current_day=%%c"
-)
+:: Get current date in YYYYMMDD format using PowerShell
+for /f %%d in ('powershell -command "(Get-Date).ToString('yyyyMMdd')"') do set "now=%%d"
 
 :: Calculate expiration date (30 days ago)
-for /f %%d in ('powershell -command "(Get-Date).AddDays(-%retention_days%).ToString('yyyyMMdd')"') do (
-    set "expire_date=%%d"
-)
+for /f %%d in ('powershell -command "(Get-Date).AddDays(-%retention_days%).ToString('yyyyMMdd')"') do set "expire_date=%%d"
 
 echo Cleaning up logs older than %retention_days% days (before %expire_date%)
 
-:: Process log files
+:: Improved filename processing
 for %%F in ("%log_dir%\*.log") do (
-    set "filename=%%~nF"
-    set "file_date=!filename:~0,8!"
+    set "full_filename=%%~nF"
     
-    :: Validate date format using PowerShell
-    echo !file_date! | powershell -command "$input | ForEach-Object { if ($_ -match '^\d{8}$') { exit 0 } else { exit 1 } }"
+    :: Extract date part from filename (YYYYMMDD)
+    set "file_date=!full_filename:~0,8!"
+    
+    :: Enhanced validation with PowerShell
+    echo !file_date! | powershell -command "$input | ForEach-Object { 
+        $datePart = $_.Trim()
+        if ($datePart -match '^\d{8}$') {
+            try {
+                $year  = $datePart.Substring(0,4)
+                $month = $datePart.Substring(4,2)
+                $day   = $datePart.Substring(6,2)
+                [datetime]::ParseExact($datePart, 'yyyyMMdd', $null) | Out-Null
+                exit 0
+            } catch { exit 1 }
+        } 
+        exit 1 
+    }"
+    
     if !errorlevel! equ 0 (
         if !file_date! lss %expire_date% (
             del /q "%%F"
-            echo [DELETED] !filename!.log
+            echo [DELETED] %%F
         ) else (
-            echo [RETAINED] !filename!.log
+            echo [RETAINED] %%F
         )
     ) else (
-        echo [SKIPPED] Invalid date format: !filename!.log
+        echo [SKIPPED] Invalid date format: %%F
     )
 )
 

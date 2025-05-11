@@ -14,8 +14,8 @@ if not exist "%LOGDIR%" (
 for /f %%I in ('PowerShell -NoProfile -Command "Get-Date -Format yyyyMMdd-HHmmss"') do set "LOGDATETIME=%%I"
 set "LOGFILE=%LOGDIR%\%LOGDATETIME%.log"
 
-:: 获取当前日期和时间（格式：YYYY-MM-DD HH:mm:ss）用于日志内容
-for /f %%I in ('PowerShell -NoProfile -Command "Get-Date -Format ''yyyy-MM-dd HH:mm:ss''"') do set "LOGTIME=%%I"
+:: 获取当前时间（格式：HH:mm:ss）用于日志内容
+for /f %%I in ('PowerShell -NoProfile -Command "Get-Date -Format ''HH:mm:ss''"') do set "LOGTIME=%%I"
 
 :: 记录开始时间（Unix 时间戳，精确到毫秒）
 for /f %%I in ('PowerShell -NoProfile -Command "[int64]::Parse((Get-Date).ToUniversalTime().Subtract([datetime]''1970-01-01'').TotalMilliseconds)"') do set "STARTTIME=%%I"

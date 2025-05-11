@@ -1,51 +1,46 @@
 @echo off
 setlocal enabledelayedexpansion
+chcp 65001 >nul
 
 :: Configuration
 set "log_dir=C:\MyDocuments\programStudyLogs"
 set "retention_days=30"
 
-:: Get current date in YYYYMMDD format using PowerShell
+:: Get current date using PowerShell
 for /f %%d in ('powershell -command "(Get-Date).ToString('yyyyMMdd')"') do set "now=%%d"
 
-:: Calculate expiration date (30 days ago)
+:: Calculate expiration date
 for /f %%d in ('powershell -command "(Get-Date).AddDays(-%retention_days%).ToString('yyyyMMdd')"') do set "expire_date=%%d"
 
-echo Cleaning up logs older than %retention_days% days (before %expire_date%)
+echo === Log Cleanup Operation ===
+echo Current Date    : !now!
+echo Expiration Date : !expire_date!
+echo Retention Policy: Delete files older than %retention_days% days
+echo Future Date File: Immediate deletion
+echo.
 
-:: Improved filename processing
+:: File processing loop
 for %%F in ("%log_dir%\*.log") do (
-    set "full_filename=%%~nF"
+    set "filename=%%~nF"
+    set "file_date=!filename:~0,8!"
     
-    :: Extract date part from filename (YYYYMMDD)
-    set "file_date=!full_filename:~0,8!"
+    :: PowerShell validation (single-line command)
+    echo !file_date! | powershell -command "$d=$input.Trim();try{[datetime]$fd=[datetime]::ParseExact($d,'yyyyMMdd',$null);if($fd -gt [datetime]::Today){exit 2}else{exit 0}}catch{exit 1}"
     
-    :: Enhanced validation with PowerShell
-    echo !file_date! | powershell -command "$input | ForEach-Object { 
-        $datePart = $_.Trim()
-        if ($datePart -match '^\d{8}$') {
-            try {
-                $year  = $datePart.Substring(0,4)
-                $month = $datePart.Substring(4,2)
-                $day   = $datePart.Substring(6,2)
-                [datetime]::ParseExact($datePart, 'yyyyMMdd', $null) | Out-Null
-                exit 0
-            } catch { exit 1 }
-        } 
-        exit 1 
-    }"
-    
+    :: Handle validation results
     if !errorlevel! equ 0 (
-        if !file_date! lss %expire_date% (
-            del /q "%%F"
-            echo [DELETED] %%F
+        if !file_date! lss !expire_date! (
+            del /q "%%F" && echo [DEL-EXPIRED] %%F
         ) else (
-            echo [RETAINED] %%F
+            echo [KEEP-VALID] %%F
         )
+    ) else if !errorlevel! equ 2 (
+        del /q "%%F" && echo [DEL-FUTURE] %%F
     ) else (
-        echo [SKIPPED] Invalid date format: %%F
+        echo [SKIP-INVALID] %%F
     )
 )
 
-echo Cleanup operation completed
+echo.
+echo Cleanup operation completed.
 pause

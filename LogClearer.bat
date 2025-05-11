@@ -43,4 +43,3 @@ for %%F in ("%log_dir%\*.log") do (
 
 echo.
 echo Cleanup operation completed.
-pause

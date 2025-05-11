@@ -29,9 +29,10 @@ echo Log file: %LOGFILE%
     :: 切换到工作目录
     cd /d "%WORKDIR%"
 
-    :: 设置 Git 配置以正确处理中文文件名
+    :: 设置 Git 配置以正确处理中文字符
     git config --global core.quotepath false
-    git config --global i18n.logoutputencoding utf-8
+    git config --global i18n.commitEncoding utf-8
+    git config --global i18n.logOutputEncoding utf-8
 
     :: 执行 Git 操作
     git pull

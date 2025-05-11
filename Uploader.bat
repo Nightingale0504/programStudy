@@ -21,9 +21,6 @@ for /f %%I in ('PowerShell -NoProfile -Command "Get-Date -Format HH:mm:ss"') do 
 echo Starting Git synchronization...
 echo Log file: %LOGFILE%
 
-:: 使用 PowerShell 的 Measure-Command 测量 Git 操作的执行时间
-for /f %%I in ('PowerShell -NoProfile -Command "Measure-Command { cd '%WORKDIR%' ^& git pull ^& git rm -r --cached . ^& git add . ^& git commit -m 'Update' ^& git push } | Select-Object -ExpandProperty TotalSeconds"') do set "DURATION=%%I"
-
 :: 将输出重定向到日志文件
 (
     echo === Git Synchronization Started at %LOGTIME% ===
@@ -32,7 +29,7 @@ for /f %%I in ('PowerShell -NoProfile -Command "Measure-Command { cd '%WORKDIR%'
     :: 执行 Git 操作并将输出保存到日志文件
     cd /d "%WORKDIR%"
     git pull
-    git rm -r -f --cached .
+    git rm -r --cached .
     git add .
     git commit -m "Update"
     git push
@@ -40,12 +37,10 @@ for /f %%I in ('PowerShell -NoProfile -Command "Measure-Command { cd '%WORKDIR%'
     echo.
     echo === Git Synchronization Completed at %LOGTIME% ===
     echo.
-    echo Total synchronization time: !DURATION!s
 ) > "%LOGFILE%" 2>&1
 
 :: 显示完成提示
 echo Git synchronization completed.
-echo Total time: !DURATION!s
 
 endlocal
 exit /b

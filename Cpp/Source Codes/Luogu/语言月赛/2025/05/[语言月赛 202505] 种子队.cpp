@@ -1,33 +1,30 @@
 #include<bits/stdc++.h>
 #define int long long
 using namespace std;
-const int maxN=1e6+5,maxK=1e4+5;
-int n,k,num;
-int seed[maxK],group[maxK][maxK];
-bool flag=true;
+const int maxN=1e6+5,maxK=1e3+5;
+int n,k,num,cnt,s;
+int seed[maxK];
+bool flag=true,used[maxN];
 signed main(){
     scanf("%lld%lld",&n,&k);
     num=n/k;
     for (int i=1;i<=k;i++){
         scanf("%lld",&seed[i]);
+        used[i]=false;
     }
     for (int i=1;i<=k;i++){
+        cnt=0;
         for (int j=1;j<=num;j++){
-            scanf("%lld",&group[i][j]);
-        }
-    }
-    for (int i=1;i<=k;i++){
-        int x=0;
-        for (int j=1;j<=num;j++){
+            scanf("%lld",&s);
             for (int z=1;z<=k;z++){
-                if (group[i][j]==seed[z]){
-                    x++;
+                if (s==seed[z]){
+                    cnt++;
+                    break;
                 }
             }
         }
-        if (x!=1){
+        if (cnt!=1){
             flag=false;
-            break;
         }
     }
     if (flag){

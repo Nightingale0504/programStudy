@@ -742,3 +742,6 @@ sync.ffs_db
 *.in
 *.out
 *.ans
+
+# sp.
+*.lnk

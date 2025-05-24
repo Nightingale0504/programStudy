@@ -4,13 +4,12 @@ using namespace std;
 const int maxN=1e6+5,maxK=1e3+5;
 int n,k,num,cnt,s;
 int seed[maxK];
-bool flag=true,used[maxN];
+bool flag=true;
 signed main(){
     scanf("%lld%lld",&n,&k);
     num=n/k;
     for (int i=1;i<=k;i++){
         scanf("%lld",&seed[i]);
-        used[i]=false;
     }
     for (int i=1;i<=k;i++){
         cnt=0;

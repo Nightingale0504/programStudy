@@ -4,7 +4,7 @@ chcp 65001 >nul
 
 :: Configuration
 set "log_dir=C:\MyDocuments\programStudyLogs"
-set "retention_days=30"
+set "retention_days=15"
 
 :: Get current date using PowerShell
 for /f %%d in ('powershell -command "(Get-Date).ToString('yyyyMMdd')"') do set "now=%%d"

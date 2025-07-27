@@ -1,23 +1,30 @@
 #include<bits/stdc++.h> 
 using namespace std;
-#define maxN 2005
-int n;
-int p[maxN];
-int main(){
-	cin>>n;
+#define int long long
+const int maxN=2e3+5;
+int n,x,a[maxN];
+deque<int> que;
+signed main(){
+	scanf("%lld",&n);
 	for (int i=1;i<=n;i++){
-		cin>>p[i];
+		scanf("%lld",x);
+		que.push_back(x);
 	}
-	do{
-		int tmp=p[n];
-		for (int i=n;i>=2;i--){
-			p[i]=p[i-1];
+	while (que.back()!=n){
+		que.push_front(que.back());
+		que.pop_back();
+		int k=1;
+		memset(a,0,sizeof(a));
+		while (!que.empty()){
+			a[k++]=que.front();
+			que.pop_front();
 		}
-		p[1]=tmp;
-		for (int i=1;i<=n;i++){
-			cout<<p[i]<<" \n"[i==n];
+		for (int i=1;i<=k;i++){
+			printf("%lld ",a[i]);
+			que.push_front(a[i]);
 		}
-	} while(p[n]!=n);
+		printf("\n");
+	}
 	return 0;
 }
 

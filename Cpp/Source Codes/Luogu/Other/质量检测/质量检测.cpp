@@ -1,7 +1,7 @@
 #include<bits/stdc++.h> 
 using namespace std;
 #define int long long
-const int maxN=2e6+5;
+const int maxN=1e5+5;
 int n,k,a[maxN];
 deque<int> que;
 signed main(){
@@ -9,9 +9,7 @@ signed main(){
 	for (int i=1;i<=n;i++){
 		scanf("%lld",&a[i]);
 	}
-	printf("0\n");
-	a[1]=1;
-	for (int i=2;i<=n;i++){
+	for (int i=1;i<=n;i++){
 		if (!que.empty() && i-k+1>que.front()){
 			que.pop_front();
 		}
@@ -25,3 +23,4 @@ signed main(){
 	}
 	return 0;
 }
+

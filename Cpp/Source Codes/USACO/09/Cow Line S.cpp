@@ -1,52 +1,35 @@
-#include<bits/stdc++.h> 
+#include<bits/stdc++.h>
 using namespace std;
 #define int long long
-int s,num,m;
-deque<int> deq;
-char t,d;
+deque<int> que;
+int s,x,m=1;
+char c,d;
 signed main(){
-	cin>>s;
-	while (s--){
-		cin>>t;
-		switch (t){
-			case 'A':{
-				cin>>d;
-				switch (d){
-					case 'L':{
-						deq.push_front(++m);
-						break;
-					}
-					case 'R':{
-						deq.push_back(++m);
-						break;
-					}
-				}
-				break;
+	scanf("%lld",&s);
+	for (int i=1;i<=s;i++){
+		cin>>c>>d;
+		if (c=='A'){
+			if (d=='L'){
+				que.push_front(m++);
+			}else{
+				que.push_back(m++);
 			}
-			case 'D':{
-				cin>>d>>num;
-				switch (d){
-					case 'L':{
-						while (num--){
-							deq.pop_front();
-						}
-						break;
-					}
-					case 'R':{
-						while (num--){
-							deq.pop_back();
-						}
-						break;
-					}
+		}else if (c=='D'){
+			scanf("%lld",&x);
+			if (d=='L'){
+				for (int j=1;j<=x;j++){
+					que.pop_front();
 				}
-				break;
+			}else{
+				for (int j=1;j<=x;j++){
+					que.pop_back();
+				}
 			}
 		}
 	}
-	while (!deq.empty()){
-		printf("%lld\n",deq.front());
-		deq.pop_front();
+	while (!que.empty()){
+		printf("%lld\n",que.front());
+		que.pop_front();
 	}
 	return 0;
 }
-

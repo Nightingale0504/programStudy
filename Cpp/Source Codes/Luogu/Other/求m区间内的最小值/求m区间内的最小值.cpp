@@ -9,9 +9,7 @@ signed main(){
 	for (int i=1;i<=n;i++){
 		scanf("%lld",&a[i]);
 	}
-	printf("0\n");
-	a[1]=1;
-	for (int i=2;i<=n;i++){
+	for (int i=1;i<=n;i++){
 		if (!que.empty() && i-k+1>que.front()){
 			que.pop_front();
 		}
@@ -19,7 +17,9 @@ signed main(){
 			que.pop_back();
 		}
 		que.push_back(i);
-		if (i>=k){
+		if (i==1){
+			printf("0\n");
+		}else{
 			printf("%lld\n",a[que.front()]);
 		}
 	}

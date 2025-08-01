@@ -1,10 +1,7 @@
 #include<bits/stdc++.h> 
 using namespace std;
 int main(){
-//	#ifndef ONLINE_JUDGE
-//		freopen("nightingale.in","r",stdin);
-//		freopen("nightingale.out","w",stdout);
-//	#endif
+
 	char s[105];
     scanf("%s",s);
     for(int i=0;i<strlen(s);i++)

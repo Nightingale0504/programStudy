@@ -48,10 +48,7 @@ int dfs(int x,int y){
 	}
 }
 int main() {
-//	#ifndef ONLINE_JUDGE
-//		freopen("nightingale.in","r",stdin);
-//		freopen("nightingale.out","w",stdout);
-//	#endif
+
 	scanf("%d%d",&w,&h);
 	for (int i=0;i<w;i++){
 		for (int j=0;j<h;j++){

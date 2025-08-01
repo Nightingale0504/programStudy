@@ -3,10 +3,7 @@ using namespace std;
 #define rep(i,a,b) for (int i=max(1,a);i<=min(3,b);i++)
 int li[60000][10],n,ans,cnt=10;
 int main(){
-//	#ifndef ONLINE_JUDGE
-//		freopen("nightingale.in","r",stdin);
-//		freopen("nightingale.out","w",stdout);
-//	#endif
+
 	scanf("%lld",&n);
 	rep(a,n-27,n-9){
 		rep(b,n-24-a,n-8-a){

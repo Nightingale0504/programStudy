@@ -84,10 +84,7 @@ double toFloatOf(f in){
 f n1,n2;
 char a[1005],b[1005];
 signed main(){
-//	#ifndef ONLINE_JUDGE
-//		freopen("nightingale.in","r",stdin);
-//		freopen("nightingale.out","w",stdout);
-//	#endif
+
     scanf("%s%s",a,b);
     n1=toFractionOf(a);
     n2=toFractionOf(b);

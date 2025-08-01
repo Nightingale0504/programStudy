@@ -18,10 +18,7 @@ int findans(int n,int m){
 	return findans(n-1,m)-findans(n,m-1)+findans(n-1,m-1);
 }
 int main(){
-//	#ifndef ONLINE_JUDGE
-//		freopen("nightingale.in","r",stdin);
-//		freopen("nightingale.out","w",stdout);
-//	#endif
+
 	memset(f,0,sizeof(f));
 	int n,m;
 	double st,et,ct,st2,et2,ct2;

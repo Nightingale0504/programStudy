@@ -4,10 +4,7 @@ using namespace std;
 const int maxN=105;
 int n,m,t,tmp,sum[maxN][maxN];
 signed main(){
-//	#ifndef ONLINE_JUDGE
-//		freopen("nightingale.in","r",stdin);
-//		freopen("nightingale.out","w",stdout);
-//	#endif
+
 	scanf("%lld%lld",&n,&m);
 	for (int i=1;i<=n;i++){
 		for (int j=1;j<=m;j++){

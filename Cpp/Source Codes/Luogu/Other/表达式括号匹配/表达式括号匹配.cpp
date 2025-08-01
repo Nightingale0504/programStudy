@@ -4,10 +4,7 @@ using namespace std;
 int ok;
 char a;
 signed main(){
-//	#ifndef ONLINE_JUDGE
-//		freopen("nightingale.in","r",stdin);
-//		freopen("nightingale.out","w",stdout);
-//	#endif
+
 	for (int i=0;;i++){
 		a=getchar();
 		if (i==0 && a==')'){

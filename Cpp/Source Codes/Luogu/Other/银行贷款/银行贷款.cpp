@@ -27,10 +27,7 @@ void solve(double l,double r){
 	}
 }
 signed main(){
-//	#ifndef ONLINE_JUDGE
-//		freopen("nightingale.in","r",stdin);
-//		freopen("nightingale.out","w",stdout);
-//	#endif
+
 	scanf("%lf%lf%lld",&m,&y,&t);
 	solve(0,5);
 	return 0;

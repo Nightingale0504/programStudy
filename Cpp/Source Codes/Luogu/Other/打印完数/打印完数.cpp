@@ -4,10 +4,7 @@ using namespace std;
 int n,m;
 int a[10005];
 signed main(){
-//	#ifndef ONLINE_JUDGE
-//		freopen("nightingale.in","r",stdin);
-//		freopen("nightingale.out","w",stdout);
-//	#endif
+
 	scanf("%lld%lld",&n,&m);
 	for (int i=n;i<=m;i++){
 		int sum=0;

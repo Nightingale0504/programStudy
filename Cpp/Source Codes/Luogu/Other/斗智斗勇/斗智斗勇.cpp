@@ -29,10 +29,7 @@ void dfs(int x,int y,int step,int equipment){
 	}
 }
 int main(){
-//	#ifndef ONLINE_JUDGE
-//		freopen("nightingale.in","r",stdin);
-//		freopen("nightingale.out","w",stdout);
-//	#endif
+
 	scanf("%d%d%d",&m,&n,&t);
 	scanf("%d%d%d%d",&sx,&sy,&ex,&ey);
 	for (int i=1;i<=m;i++){

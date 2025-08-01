@@ -63,10 +63,7 @@ Matrix quickPower(Matrix a,ll b){
     return ret;
 }
 int main(){
-    // #ifndef ONLINE_JUDGE
-    //     freopen("enforcer.in","r",stdin);
-    //     freopen("enforcer.out","w",stdout);
-    // #endif
+
     scanf("%lld%lld%lld",&n,&k,&P);
     if (n==1 || n==2){
         printf("1\n");

@@ -50,16 +50,16 @@ signed main(){
             que.push(t);
             m[ss]=1;
         }
-        // C 17248635
+        // C 17245368
         ss="";
         ss+=s[0];
         ss+=s[6];
         ss+=s[1];
         ss+=s[3];
-        ss+=s[7];
-        ss+=s[5];
-        ss+=s[2];
         ss+=s[4];
+        ss+=s[2];
+        ss+=s[5];
+        ss+=s[7];
         if (m[ss]==0){
             t={ss,p+"C",step+1};
             que.push(t);

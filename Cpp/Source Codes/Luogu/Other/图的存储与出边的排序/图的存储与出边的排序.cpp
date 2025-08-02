@@ -9,9 +9,7 @@ signed main(){
     scanf("%lld",&T);
     while (T--){
         scanf("%lld%lld",&n,&m);
-        for (int i=1;i<=n;i++){
-            v[i].clear();
-        }
+        v.clear();
         while (m--){
             scanf("%lld%lld",&x,&y);
             v[x].push_back(y);

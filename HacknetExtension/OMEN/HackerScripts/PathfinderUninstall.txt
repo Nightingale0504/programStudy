@@ -1,0 +1,10 @@
+config [TARGET_COMP] [SOURCE_COMP] 0 $#%#$
+delay 0.5 $#%#$
+clearTerminal $#%#$
+delay 0.5 $#%#$
+writel Pathfinder 未正确安装 $#%#$
+delay 0.5 $#%#$
+writel 请退出游戏后重新安装 $#%#$
+delay 0.5 $#%#$
+writel 谢谢 $#%#$
+flash $#%#$

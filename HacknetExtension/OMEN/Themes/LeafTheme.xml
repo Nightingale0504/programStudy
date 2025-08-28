@@ -1,0 +1,69 @@
+<CustomTheme>
+
+  <themeLayoutName>colamaeleon</themeLayoutName>
+  <backgroundImagePath>Themes/Backgrounds/LeafTheme.jpg</backgroundImagePath>
+
+  <!-- Main Colors - these will define the main feel of the theme -->
+  <!-- Color of nodes on the netmap, and many other derived colors. -->
+  <defaultHighlightColor>6,148,136</defaultHighlightColor><!--done-->
+  <defaultTopBarColor>0,104,95,100</defaultTopBarColor><!--done-->
+  
+  <!-- This is used for the outlines of the module windows -->
+	<moduleColorSolidDefault>255,91,81</moduleColorSolidDefault><!--done-->
+	<moduleColorStrong>81,26,24,50</moduleColorStrong><!--done-->
+	<moduleColorBacking>6,2,4,10</moduleColorBacking><!--done-->
+	
+	<!-- "USED RAM box"-->
+	<indentBackgroundColor>14,14,14</indentBackgroundColor><!--done-->
+  
+  <!-- "it's used, as far as I can tell exactly once, in the /el message boards" -->	
+	<lightGray>150,150,150</lightGray>	
+
+  <!-- text colors -->
+	<terminalTextColor>187,251,241</terminalTextColor><!--done-->
+  
+  	<semiTransText>120,120,120,0</semiTransText><!--done-->
+	<subtleTextColor>90,90,90</subtleTextColor><!--done-->
+    
+  <!-- probe screen colors -->
+  	<lockedColor>64,17,16,200</lockedColor><!--done-->
+	<brightLockedColor>160,0,0</brightLockedColor><!--done-->
+	<brightUnlockedColor>0,160,0</brightUnlockedColor><!--done-->
+	<unlockedColor>10,45,40</unlockedColor><!--done-->
+	<!-- better to leave this as is, it makes the probe screen look like shit... -->
+	<superLightWhite>2,2,2,0</superLightWhite><!--done-->
+  
+  <!-- exe module colors (PortHack, SSHCrack etc.)-->
+  	<exeModuleTopBar>3,17,15,80</exeModuleTopBar><!--done-->
+	<exeModuleTitleText>230,230,230,0</exeModuleTitleText><!--done-->
+	<outlineColor>255,255,255</outlineColor><!--done-->
+	<darkBackgroundColor>10,10,10</darkBackgroundColor><!--done-->
+  
+  <!-- top bar colors-->
+	<topBarTextColor>126,126,126,100</topBarTextColor><!--done-->
+	<topBarIconsColor>215,215,215</topBarIconsColor><!--done-->
+  
+  <!-- netmap colors -->
+  	<thisComputerNode>12,202,101</thisComputerNode><!--done-->
+  
+  	<connectedNodeHighlight>255,91,81,195</connectedNodeHighlight><!--done-->
+
+	<netmapToolTipColor>213,245,255,0</netmapToolTipColor><!--done-->
+	<netmapToolTipBackground>2,2,2,70</netmapToolTipBackground><!--done-->
+  
+    <shellColor>43,255,153</shellColor>43,255,153
+	<shellButtonColor>43,255,153</shellButtonColor><!--done-->
+  
+  <!-- effect colors-->
+	<warningColor>245,0,0</warningColor><!--done-->
+	<scanlinesColor>255,255,255,15</scanlinesColor><!--done-->
+  
+  <!-- AlienFX Colors used for Alienware (and other) hardware 
+	with variable LED lights that Hacknet can set dynamically -->
+	<AFX_KeyboardMiddle>0,120,255</AFX_KeyboardMiddle>
+	<AFX_KeyboardOuter>255,150,0</AFX_KeyboardOuter>
+	<AFX_WordLogo>0,120,255</AFX_WordLogo>
+	<AFX_Other>0,100,255</AFX_Other>
+  
+  
+</CustomTheme>

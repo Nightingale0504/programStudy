@@ -1,0 +1,2304 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<HacknetEditorHint>
+    <!-- HacknetExtension -->
+    <Node name="HacknetExtension" enable="true" multi="false" desc="定义Hacknet扩展相关信息" fileTriggerPattern="ExtensionInfo.xml">
+        <Content />
+    </Node>
+
+    <!-- 
+        English : en-us
+        German : de-de
+        French : fr-be
+        Russian : ru-ru
+        Spanish : es-ar
+        Korean : ko-kr
+        Japanese : ja-jp
+        Chinese, simplified : zh-cn
+        <Language>en-us</Language>
+    -->
+    <Node name="HacknetExtension.Language" enable="true" multi="false" desc="当前扩展的首选语言">
+        <Content desc="语言类型" default="zh-cn" hint="enum">
+            <Enums>
+                <Enum desc="英文">en-us</Enum>
+                <Enum desc="德语">de-de</Enum>
+                <Enum desc="法语">fr-be</Enum>
+                <Enum desc="俄语">ru-ru</Enum>
+                <Enum desc="西班牙语">es-ar</Enum>
+                <Enum desc="韩语">ko-kr</Enum>
+                <Enum desc="日语">ja-jp</Enum>
+                <Enum desc="中文简体">zh-cn</Enum>
+            </Enums>
+        </Content>
+    </Node>
+
+    <!-- <Name>Intro Extension</Name> -->
+    <Node name="HacknetExtension.Name" enable="true" multi="false" desc="设置扩展名称">
+        <Content desc="扩展名称" default="Intro Extension" hint="enum" />
+    </Node>
+
+    <!-- <AllowSaves>true</AllowSaves> -->
+    <Node name="HacknetExtension.AllowSaves" enable="true" multi="false" desc="设置是否允许用户手动保存游戏">
+        <Content desc="扩展名称" default="true" hint="enum">
+            <Enums>
+                <Enum>true</Enum>
+                <Enum>false</Enum>
+            </Enums>
+        </Content>
+    </Node>
+
+    <!-- <StartingVisibleNodes>advExamplePC</StartingVisibleNodes> -->
+    <Node name="HacknetExtension.StartingVisibleNodes" enable="true" multi="false" desc="设置游戏最开始显示的电脑ID">
+        <Content desc="游戏最开始显示的电脑ID" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
+    </Node>
+
+    <!-- <StartingMission>Missions/Intro/IntroMission1.xml</StartingMission> -->
+    <Node name="HacknetExtension.StartingMission" enable="true" multi="false" desc="设置游戏的第一个任务">
+        <Content desc="任务文件路径" default="missionPath" hint="MisisonFile" linkBy="path" />
+    </Node>
+
+    <!-- <StartingActions>Actions/StartingActions.xml</StartingActions> -->
+    <Node name="HacknetExtension.StartingActions" enable="true" multi="false" desc="设置进游戏触发的Action">
+        <Content desc="Action文件路径" default="actionPath" hint="ActionFile" linkBy="path" />
+    </Node>
+
+    <!-- <Description>描述</Description> -->
+    <Node name="HacknetExtension.Description" enable="true" multi="false" desc="本扩展的描述信息">
+        <Content desc="扩展的描述信息" default="描述扩展" hint="enum" />
+    </Node>
+
+    <!-- <Faction>Factions/ExampleFaction.xml</Faction> -->
+    <Node name="HacknetExtension.Faction" enable="true" multi="true" desc="定义自定义组织(派系)">
+        <Content desc="自定义组织(派系)文件路径" default="factionPath" hint="FactionFile" linkBy="path" />
+    </Node>
+
+    <!-- <StartsWithTutorial>False</StartsWithTutorial> -->
+    <Node name="HacknetExtension.StartsWithTutorial" enable="true" multi="false" desc="设置是否需要开启引导教程">
+        <Content desc="是否需要开启引导教程" default="False" hint="enum">
+            <Enums>
+                <Enum>False</Enum>
+                <Enum>True</Enum>
+            </Enums>
+        </Content>
+    </Node>
+
+    <!-- <HasIntroStartup>false</HasIntroStartup> -->
+    <Node name="HacknetExtension.HasIntroStartup" enable="true" multi="false" desc="设置第一次进游戏是否显示引导文本, 引导文本为根目录下的intro.txt">
+        <Content desc="是否显示引导文本" default="false" hint="enum">
+            <Enums>
+                <Enum>true</Enum>
+                <Enum>false</Enum>
+            </Enums>
+        </Content>
+    </Node>
+
+    <!-- <StartingTheme>Themes/ExampleTheme.xml</StartingTheme> -->
+    <Node name="HacknetExtension.StartingTheme" enable="true" multi="false" desc="设置第一次进游戏时的主题">
+        <Content desc="主题文件路径" default="themePath" hint="ThemeFile" linkBy="path" />
+    </Node>
+
+    <!-- <IntroStartupSong>The_Quickening</IntroStartupSong> -->
+    <Node name="HacknetExtension.IntroStartupSong" enable="true" multi="false" desc="设置第一次进游戏时播放的歌曲">
+        <Content desc="歌曲文件路径(必须是.ogg格式)" default="musicPath" hint="path" linkBy="path">**/*.ogg</Content>
+    </Node>
+
+    <!-- <SequencerTargetID>advExamplePC</SequencerTargetID> -->
+    <Node name="HacknetExtension.SequencerTargetID" enable="true" multi="false" desc="设置ESequencer.exe关联的计算机ID">
+        <Content desc="计算机ID" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
+    </Node>
+
+    <!-- <SequencerSpinUpTime>10.5</SequencerSpinUpTime> -->
+    <Node name="HacknetExtension.SequencerSpinUpTime" enable="true" multi="false" desc="设置ESequencer.exe启动时间">
+        <Content desc="启动时间" default="10.5" hint="enum" />
+    </Node>
+
+    <!-- <SequencerFlagRequiredForStart>testFlag</SequencerFlagRequiredForStart> -->
+    <Node name="HacknetExtension.SequencerFlagRequiredForStart" enable="true" multi="false" desc="设置ESequencer.exe启动所需要的Flag">
+        <Content desc="flag信息" default="testFlag" hint="enum" />
+    </Node>
+
+    <!-- <ActionsToRunOnSequencerStart>Actions/ThemeSwapActions.xml</ActionsToRunOnSequencerStart> -->
+    <Node name="HacknetExtension.ActionsToRunOnSequencerStart" enable="true" multi="false" desc="设置ESequencer.exe启动后运行的Action文件">
+        <Content desc="Action文件路径" default="actionPath" hint="ActionFile" linkBy="path" />
+    </Node>
+
+    <!-- <WorkshopDescription>asdad</WorkshopDescription> -->
+    <Node name="HacknetExtension.WorkshopDescription" enable="true" multi="false" desc="设置本扩展在创意工坊中的描述信息">
+        <Content desc="在创意工坊中的描述信息" default="描述信息" hint="enum" />
+    </Node>
+
+    <!-- <WorkshopLanguage>English</WorkshopLanguage> -->
+    <Node name="HacknetExtension.WorkshopLanguage" enable="true" multi="false" desc="设置本扩展在创意工坊中语言信息">
+        <Content desc="经查看代码, 这个属性没什么鸟用" default="Chinese" hint="enum" />
+    </Node>
+
+    <!-- <WorkshopVisibility>2</WorkshopVisibility> -->
+    <Node name="HacknetExtension.WorkshopVisibility" enable="true" multi="false" desc="设置本扩展在创意工坊中可见性">
+        <Content desc="可见性类型" default="2" hint="enum">
+            <Enums>
+                <Enum desc="所有人可见">0</Enum>
+                <Enum desc="仅好友可见">1</Enum>
+                <Enum desc="仅自己可见">2</Enum>
+            </Enums>
+        </Content>
+    </Node>
+
+    <!-- <WorkshopTags>Extension</WorkshopTags> -->
+    <Node name="HacknetExtension.WorkshopTags" enable="true" multi="false" desc="设置本扩展在创意工坊中标签">
+        <Content desc="本扩展在创意工坊中标签" default="Extension" hint="enum" />
+    </Node>
+
+    <!-- <WorkshopPreviewImagePath>WorkshopLogo.png</WorkshopPreviewImagePath> -->
+    <Node name="HacknetExtension.WorkshopPreviewImagePath" enable="true" multi="false" desc="设置本扩展在创意工坊中的预览图">
+        <Content desc="预览图路径( 必须在根目录: .jpg|.png|.gif )" default="imgPath" hint="path" linkBy="path">*.{jpg,png,gif}</Content>
+    </Node>
+
+    <!-- <WorkshopPublishID>NONE</WorkshopPublishID> -->
+    <Node name="HacknetExtension.WorkshopPublishID" enable="true" multi="false" desc="设置本扩展在创意工坊中的上传ID(在游戏里生成, 不要自己填)">
+        <Content desc="本扩展在创意工坊中的上传ID(在游戏里生成, 不要自己填)" default="NONE" />
+    </Node>
+
+
+    <!-- 计算机定义开始 -->
+    <Node name="Computer" enable="true" multi="false" desc="定义一台计算机" fileTriggerPattern="Nodes/**/*.xml">
+        <Content />
+        <Attribute name="id" required="true" desc="电脑的ID" />
+        <Attribute name="name" required="true" desc="电脑的名称" />
+        <Attribute name="ip" required="false" desc="电脑的ip,不指定则由游戏自动生成" hint="js">
+            (function(node, hacknetNodeHolder){
+                let ipArr = [];
+                // 获取当前工作空间定义的所有计算机节点信息, 与之类似的还有: 
+                // GetMissions(), GetActions(), GetThemes(), GetFactions()
+                // 在获取的节点中您可以通过调用GetFullPath()方法获取节点所在文件的绝对路径,  GetRelativePath()获取相对路径
+                const computers = hacknetNodeHolder.GetComputers();
+                while(ipArr.length &lt; 5) {
+                    const part1 = Math.floor(Math.random() * 256);
+                    const part2 = Math.floor(Math.random() * 256);
+                    const part3 = Math.floor(Math.random() * 256);
+                    const part4 = Math.floor(Math.random() * 256);
+                    
+                    // 排除一些保留IP地址
+                    if(part1 === 10) {continue;} // 10.0.0.0/8
+                    if(part1 === 172 &amp;&amp; (part2 &gt;= 16 &amp;&amp; part2 &lt;= 31)) {continue;} // 172.16.0.0/12
+                    if(part1 === 192 &amp;&amp; part2 === 168) {continue;} // 192.168.0.0/16
+                    if(part1 === 127) {continue;} // 127.0.0.0/8
+                    if(part1 === 169 &amp;&amp; part2 === 254) {continue;} // 169.254.0.0/16
+                    if(part1 === 100 &amp;&amp; (part2 &gt;= 64 &amp;&amp; part2 &lt;= 127)) {continue;} // 100.64.0.0/10
+                    // 排除已经定义过的ip
+                    const ip = `${part1}.${part2}.${part3}.${part4}`;
+                    if (computers.some(comp =&gt; comp.ip === ip)) { continue; }
+                    
+                    ipArr.push({value: ip, desc: '随机生成的ip'});
+                }
+
+                return ipArr;
+            })
+        </Attribute>
+        <Attribute name="security" required="true" desc="电脑的安全等级" hint="enum">
+            <Enums>
+                <Enum desc="图标样式为旧台式电脑">0</Enum>
+                <Enum desc="图标样式为一体机样式">1</Enum>
+                <Enum desc="图标样式为办公电脑样式">2</Enum>
+                <Enum desc="图标样式为服务器样式">3</Enum>
+                <Enum desc="图标样式为更高级的服务器样式">4</Enum>
+            </Enums>
+        </Attribute>
+        <Attribute name="allowsDefaultBootModule" default="true" required="false" desc="是否在导航到该电脑时显示定义的最后一个后台进程(daemo)" hint="enum" />
+        <Attribute name="icon" required="false" desc="电脑图标" hint="enum">
+            <Enums>
+                <Enum desc="笔记本图标">laptop</Enum>
+                <Enum desc="芯片图标">chip</Enum>
+                <Enum desc="齿轮样式">kellis</Enum>
+                <Enum desc="平板">tablet</Enum>
+                <Enum desc="手机">ePhone</Enum>
+                <Enum desc="手机">ePhone2</Enum>
+                <Enum desc="Psylance(DLC添加)">Psylance</Enum>
+                <Enum desc="PacificAir(DLC添加)">PacificAir</Enum>
+                <Enum desc="一棵树(DLC添加)">Alchemist</Enum>
+                <Enum desc="DLCLaptop(DLC添加)">DLCLaptop</Enum>
+                <Enum desc="主机样式(DLC添加)">DLCPC1</Enum>
+                <Enum desc="主机样式(DLC添加)">DLCPC2</Enum>
+                <Enum desc="服务器样式(DLC添加)">DLCServer</Enum>
+            </Enums>
+        </Attribute>
+        <Attribute name="type" default="empty" required="true" desc="电脑的类型" hint="enum">
+            <Enums>
+                <Enum desc="corporate(组织)">1</Enum>
+                <Enum desc="Home(家)">2</Enum>
+                <Enum desc="server(服务器)">3</Enum>
+                <Enum desc="empty(空, 不会生成垃圾文件)">4</Enum>
+                <Enum desc="empty(空, 不会生成垃圾文件)">empty</Enum>
+            </Enums>
+        </Attribute>
+    </Node>
+
+    <!-- <adminPass pass="password" /> -->
+    <Node name="Computer.adminPass" enable="true" multi="false" desc="设置计算机的admin密码">
+        <Attribute name="pass" required="true" desc="电脑admin密码" />
+    </Node>
+
+    <!-- <account username="Matt" password="testpass" type="ALL" /> -->
+     <Node name="Computer.account" enable="true" multi="true" desc="添加计算机的账户">
+        <Attribute name="username" required="true" desc="账户名" />
+        <Attribute name="password" required="true" desc="密码" />
+        <Attribute name="type" required="true" default="ALL" desc="账户类型" hint="enum">
+            <Enums>
+                <Enum desc="管理员">ADMIN</Enum>
+                <Enum desc="可删文件">ALL</Enum>
+                <Enum desc="邮件账户">MAIL</Enum>
+                <Enum desc="任务监听服务的账户(mission listing server)">MISSIONLIST</Enum>
+            </Enums>
+        </Attribute>
+    </Node>
+
+    <!-- <ports>21, 22, 25, 80, 1433, 104, 6881, 443, 192, 554</ports> -->
+    <Node name="Computer.ports" enable="true" multi="false" desc="计算机的所有端口,当前可用的有21, 22, 25, 80, 1433, 104, 6881, 443, 192, 554">
+        <Content default="21, 22, 25" desc="计算机的所有端口,多个用逗号隔开" />
+    </Node>
+
+    <Node name="Computer.proxy" enable="true" multi="false" desc="设置计算机的代理">
+        <Attribute name="time" required="true" default="-1" desc="代理所需的破解时间,实际时间等于用该值x30秒">
+            <Enums>
+                <Enum desc="无代理">-1</Enum>
+                <Enum desc="30s">1</Enum>
+                <Enum desc="60s">2</Enum>
+            </Enums>
+        </Attribute>
+    </Node>
+
+    <!-- <portsForCrack val="0" /> -->
+    <Node name="Computer.portsForCrack" enable="true" multi="false" desc="设置破解该计算机所需的端口数">
+        <Attribute name="val" required="true" desc="破解所需的端口数" default="0" hint="enum" />
+    </Node>
+
+    <!-- <firewall level="6" solution="Scypio" additionalTime="1.0"/> -->
+    <Node name="Computer.firewall" enable="true" multi="false" desc="设置该计算机的防火墙信息">
+        <Attribute name="level" required="true" desc="防火墙等级, 越高破解需要的时间越长, -1则取消防火墙" default="-1" hint="enum" />
+        <Attribute name="solution" required="true" desc="防火墙密码" default="pass" hint="enum" />
+        <Attribute name="additionalTime" required="true" desc="附加额外的破解时间" default="1.0" hint="enum" />
+    </Node>
+
+    <!-- <trace time="5678" /> -->
+    <Node name="Computer.trace"  enable="true" multi="false" desc="设置计算机trace时间">
+        <Attribute name="time" required="true" desc="trace的时间, -1则表示取消trace" default="-1" hint="enum"/>
+    </Node>
+
+    <!-- <admin type="fast" resetPassword="false" isSuper="false"/>  -->
+    <Node name="Computer.admin" enable="true" multi="false" desc="自动管理员加法器,当玩家断开连接时, 会重置端口和内容.">
+        <Attribute name="type" required="true" desc="类型" default="fast" hint="enum">
+            <Enums>
+                <Enum desc="大概在15s后重置密码, 端口, 防火墙等信息">basic</Enum>
+                <Enum desc="在玩家非管理员时重置">progress</Enum>
+                <Enum desc="配合isSuper在断开时可以立即重置密码">fast</Enum>
+            </Enums>
+        </Attribute>
+        <Attribute name="resetPassword" required="true" desc="是否重置admin密码" default="false" hint="enum">
+            <Enums>
+                <Enum>true</Enum>
+                <Enum>false</Enum>
+            </Enums>
+        </Attribute>
+        <Attribute name="isSuper" required="true" desc="是否时超级管理员, 为true时配合type=fast可以在断开时立即重置密码" default="false" hint="enum">
+            <Enums>
+                <Enum>true</Enum>
+                <Enum>false</Enum>
+            </Enums>
+        </Attribute>
+    </Node>
+
+    <!-- <portRemap>web=1234,22=2</portRemap> -->
+    <Node name="Computer.portRemap" enable="true" multi="false" desc="重新映射端口, 当前可用的协议有: ssh, ftp, web, torrent, medical, smtp, sql">
+        <Content default="web=1234,22=2" desc="重新映射的端口" />
+    </Node>
+
+    <!-- <tracker /> -->
+    <Node name="Computer.tracker" enable="true" multi="false" desc="在玩家断开与本机的连接后, 如果已经留下了下载日志或者删除文件日志, 则会被自动生成的AI黑科攻击, 并将尝试重置他们"/>
+
+    <!-- <dlink target="advExamplePC2" /> -->
+    <Node name="Computer.dlink" enable="true" multi="true" desc="设置本计算机可scan到的其他计算机">
+        <!-- 
+            linkBy 表示根据指定的属性跳转到目标文件
+            例: Computer.id表示查找当前工作目录下所有计算机的id属性, 如果与实际属性相等则跳转到具有该属性的目标文件, 使用*可以匹配当前层级的任何属性名
+                使用|表示或运算, 例如: "Computer.id|Computer.eosDevice.id" 表示这两个属性存在一个匹配成功则整体匹配成功, 但是第一层必须一样
+            当前可用的有 Computer.* Mission.*  Action.*  Theme.* Faction.*  path(直接路径跳转)
+        -->
+        <Attribute name="dlink" required="true" desc="计算机ID" default="id" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
+    </Node>
+
+    <!-- <positionNear target="advExamplePC2" position="1" total="3" extraDistance="0.1" force="false"/> -->
+    <Node name="Computer.positionNear" enable="true" multi="true" desc="设置本计算机在目标计算机附近">
+        <Attribute name="target" required="true" desc="计算机ID" default="id" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="position" required="true" desc="径向围绕目标计算机的位置" default="1" hint="enum" />
+        <Attribute name="total" required="true" desc="具有的径向周围节点的数量" default="3" hint="enum" />
+        <Attribute name="extraDistance" required="true" desc="额外距离" default="0.1" hint="enum" />
+        <Attribute name="force" required="true" desc="是否强制进行该操作" default="false" hint="enum" />
+    </Node>
+
+    <!-- <file path="home" name="Test_File.txt">This is a test file in the home directory</file> -->
+    <Node name="Computer.file" enable="true" multi="true" desc="在计算机生成一个文件">
+        <Content default="文件内容" desc="文件内容" hint="enumWithCommonString" />
+        <Attribute name="path" required="true" desc="文件目录" default="filepath" hint="enum">
+            <Enums kind="value">
+                <Enum desc="home目录">home</Enum>
+                <Enum desc="exe文件存放目录">bin</Enum>
+                <Enum desc="日志目录">log</Enum>
+                <Enum desc="系统文件目录">sys</Enum>
+            </Enums>
+        </Attribute>
+        <Attribute name="name" required="true" desc="文件名" default="filename" hint="enumWithCommonString" />
+    </Node>
+
+    <!-- <customthemefile path="sys" name="Custom_x-server.sys" themePath="Themes/SecondaryTheme.xml"/> -->
+     <Node name="Computer.customthemefile" enable="true" multi="true" desc="在计算机生成一个主题对应的sys文件">
+        <Attribute name="path" required="true" desc="文件目录" default="sys" hint="enum">
+            <Enums kind="value">
+                <Enum desc="系统文件目录">sys</Enum>
+                <Enum desc="home目录">home</Enum>
+                <Enum desc="exe文件存放目录">bin</Enum>
+                <Enum desc="日志目录">log</Enum>
+            </Enums>
+        </Attribute>
+        <Attribute name="name" required="true" desc="文件名" default="Custom_x-server.sys" hint="enum" />
+        <Attribute name="themePath" required="true" desc="主题文件所在的路径" hint="ThemeFile" linkBy="path" />
+    </Node>
+
+    <!-- <encryptedFile path="home" name="encrypted_File.dec" extension=".txt" ip="192.168.1.1" header="This is the header" pass="decryptionPassword">ss</encryptedFile> -->
+    <Node name="Computer.encryptedFile" enable="true" multi="true" desc="在计算机生成一个加密文件">
+        <Content default="文件内容" desc="文件内容" hint="enumWithCommonString" />
+        <Attribute name="path" required="true" desc="文件目录" default="home" hint="enum">
+            <Enums>
+                <Enum desc="home目录">home</Enum>
+                <Enum desc="exe文件存放目录">bin</Enum>
+                <Enum desc="日志目录">log</Enum>
+                <Enum desc="系统文件目录">sys</Enum>
+            </Enums>
+        </Attribute>
+        <Attribute name="name" required="true" desc="文件名" default="xxx.dec" hint="enumWithCommonString" />
+        <Attribute name="extension" required="true" desc="解密后的文件扩展名" default=".txt"/>
+        <Attribute name="ip" required="true" desc="加密所在计算机的IP" default="ip" hint="js" linkBy="Computer.ip">
+            (function(node, hacknetNodeHolder){
+                return hacknetNodeHolder.GetComputers()
+                    .filter(comp =&gt; comp.ip)
+                    .map(comp =&gt; {
+                    return {value: comp.ip, desc: comp.name, filterText: comp.id, kind: "reference"};
+                });
+            })
+        </Attribute>
+        <Attribute name="header" required="true" desc="DecHead允许后显示的header信息"/>
+        <Attribute name="pass" required="false" desc="解密后的密码"/>
+    </Node>
+
+    <!-- <eosDevice name="Deliliah's ePhone 4S" id="eosIntroPhone" icon="ePhone2" empty="true" passOverride="notAlpine"></eosDevice> -->
+    <Node name="Computer.eosDevice" enable="true" multi="true" desc="生成一个与该电脑连接的eos设备">
+        <Content />
+        <Attribute name="id" required="true" desc="设置ID"  hint="enum" />
+        <Attribute name="name" required="true" desc="设置名称"  hint="enum" />
+        <Attribute name="icon" required="true" desc="图标" default="ePhone2" hint="enum">
+            <Enums>
+                <Enum desc="手机">ePhone</Enum>
+                <Enum desc="手机">ePhone2</Enum>
+                <Enum desc="平板">tablet</Enum>
+                <Enum desc="笔记本图标">laptop</Enum>
+                <Enum desc="芯片图标">chip</Enum>
+                <Enum desc="齿轮样式">kellis</Enum>
+                <Enum desc="Psylance(DLC添加)">Psylance</Enum>
+                <Enum desc="PacificAir(DLC添加)">PacificAir</Enum>
+                <Enum desc="一棵树(DLC添加)">Alchemist</Enum>
+                <Enum desc="DLCLaptop(DLC添加)">DLCLaptop</Enum>
+                <Enum desc="主机样式(DLC添加)">DLCPC1</Enum>
+                <Enum desc="主机样式(DLC添加)">DLCPC2</Enum>
+                <Enum desc="服务器样式(DLC添加)">DLCServer</Enum>
+            </Enums>
+        </Attribute>
+        <Attribute name="empty" required="true" desc="是否保持设备文件干净( 不生成垃圾文件 )" default="true"  hint="enum">
+            <Enums>
+                <Enum>true</Enum>
+                <Enum>false</Enum>
+            </Enums>
+        </Attribute>
+        <Attribute name="passOverride" required="true" desc="设置密码" default="alpine"  hint="enum" />
+    </Node>
+
+    <!-- <note>TestNote</note> -->
+    <Node name="Computer.eosDevice.note" enable="true" multi="true" desc="生成一个笔记">
+        <Content default="笔记内容" desc="笔记内容" hint="enumWithCommonString" />
+    </Node>
+
+    <!-- <mail username="test@jmail.com" pass="thisIstheaccountpass" /> -->
+    <Node name="Computer.eosDevice.mail" enable="true" multi="true" desc="生成一个邮箱账密">
+        <Attribute name="username" required="true" desc="邮箱账号" default="test@jmail.com" hint="enum" />
+        <Attribute name="thisIstheaccountpass" required="true" desc="邮箱密码" default="pass" hint="enum" />
+    </Node>
+
+    <Node name="Computer.eosDevice.file" enable="true" multi="true" desc="在eos设置里生成一个文件">
+        <Content default="文件内容" desc="文件内容" hint="enumWithCommonString" />
+        <Attribute name="path" required="true" desc="文件目录" default="filepath" hint="enum" />
+        <Attribute name="name" required="true" desc="文件名" default="filename" hint="enumWithCommonString" />
+    </Node>
+
+    <!-- <mailServer name="Example Mail Server" color="50,237,212" generateJunk="true"/> -->
+    <Node name="Computer.mailServer" enable="true" multi="true" desc="定义一个邮件守护进程(daemon)">
+        <Content />
+        <Attribute name="name" required="true" desc="服务名称" default="jmail" hint="enum" />
+        <Attribute name="color" required="true" desc="主题颜色" default="50,237,212" hint="color" />
+        <Attribute name="generateJunk" required="true" desc="是否生成垃圾邮件" default="true" hint="enum">
+            <Enums>
+                <Enum>true</Enum>
+                <Enum>false</Enum>
+            </Enums>
+        </Attribute>
+    </Node>
+
+    <!-- <email recipient="Matt" sender="Spam" subject="amazing features">xxx</email> -->
+    <Node name="Computer.mailServer.email" enable="true" multi="true" desc="生成一封邮件">
+        <Content default="邮件内容" desc="邮件内容" hint="enumWithCommonString"  />
+        <Attribute name="recipient" required="true" desc="收件人(需要定义mail类型的account账号)" default="收件人账号" hint="enum" />
+        <Attribute name="sender" required="true" desc="发件人" hint="enum" />
+        <Attribute name="subject" required="true" desc="邮件主题" hint="enum" />
+    </Node>
+
+    <!-- <uploadServerDaemon name="Upload Dropbox" folder="Drop" needsAuth="false" color="204,116,212"/> -->
+    <Node name="Computer.uploadServerDaemon" enable="true" multi="true" desc="定义一个文件上传服务守护进程(daemon)">
+        <Attribute name="name" required="true" desc="服务名称" default="Upload Dropbox" hint="enum" />
+        <Attribute name="folder" required="true" desc="默认上传路径" hint="enum" />
+        <Attribute name="needsAuth" required="true" desc="是否需要认证" default="false" hint="enum">
+            <Enums>
+                <Enum>true</Enum>
+                <Enum>false</Enum>
+            </Enums>
+        </Attribute>
+        <Attribute name="color" required="true" desc="主题颜色" default="204,116,212" hint="color" />
+    </Node>
+
+    <!-- <addWebServer name="Website Server" url="Web/ExampleWebsite/ExampleWebsite.html" /> -->
+    <Node name="Computer.addWebServer" enable="true" multi="true" desc="定义一个网页后台服务(daemon)">
+        <Attribute name="name" required="true" desc="服务名称" default="Website Server" hint="enum" />
+        <Attribute name="url" required="true" desc="html文件地址" hint="path" linkBy="path">**/*.html</Attribute>
+    </Node>
+
+    <!-- <deathRowDatabase /> -->
+    <Node name="Computer.deathRowDatabase" enable="true" multi="true" desc="游戏内的死亡数据库(daemon)" />
+
+    <!-- <academicDatabase /> -->
+    <Node name="Computer.academicDatabase" enable="true" multi="true" desc="游戏内的学术数据库(daemon)" />
+
+    <!-- <ispSystem /> -->
+    <Node name="Computer.ispSystem" enable="true" multi="true" desc="游戏内的更改ip服务在trace耗尽后触发的那个(daemon)" />
+
+    <!-- 
+        <messageBoard name="Custom Board Name!">
+            <thread>Docs/MessageBoardThreads/ExampleThread1.txt</thread>
+        </messageBoard>
+    -->
+    <Node name="Computer.messageBoard" enable="true" multi="true" desc="定义一个消息面板服务(daemon)">
+       <Content />
+       <Attribute name="name" required="true" desc="服务名称" default="Custom Board Name" hint="enum" />
+    </Node>
+    <Node name="Computer.messageBoard.thread" enable="true" multi="true" desc="定义一条消息面板的消息">
+       <Content required="true" desc="消息文件路径" default="Docs/msg.txt" hint="path" linkBy="path">Docs/**/*.txt</Content>
+    </Node>
+
+    <!-- <MedicalDatabase /> -->
+    <Node name="Computer.MedicalDatabase" enable="true" multi="true" desc="通用医疗数据库(daemon)" />
+
+    <!-- <HeartMonitor patient="J_Stalvern"/> -->
+    <Node name="Computer.HeartMonitor" enable="true" multi="true" desc="心脏起搏器服务(daemon)">
+       <Attribute name="patient" required="true" desc="病人名" default="patient" hint="enum" />
+    </Node>
+
+    <!-- <PointClicker /> -->
+    <Node name="Computer.PointClicker" enable="true" multi="true" desc="点击增加分数的一个游戏服务(daemon)" />
+
+    <!-- <SongChangerDaemon />  -->
+    <Node name="Computer.SongChangerDaemon" enable="true" multi="true" desc="切换歌曲服务(daemon)" />
+
+    <!-- 
+    <variableMissionListingServer name="example listing server" iconPath="Logo.png" 
+        articleFolderPath="Docs/ListingServerArticles" color="120,200,2" 
+        assigner="false" public="false" title="This is the rendered title of the server"/> 
+    -->
+    <Node name="Computer.variableMissionListingServer" enable="true" multi="true" desc="新闻/任务列表服务(daemon)">
+       <Attribute name="name" required="true" desc="服务名" default="example listing server" hint="enum" />
+       <Attribute name="title" required="true" desc="文章标题" default="标题" hint="enum" />
+       <Attribute name="iconPath" required="true" desc="图标路径" hint="path" linkBy="path">**/*.{png,jpg,jpeg,bmp,ico}</Attribute>
+       <Attribute name="articleFolderPath" required="true" desc="目标文件夹路径" hint="folder" linkBy="path">**/*.xml</Attribute>
+       <Attribute name="color" required="true" desc="主题颜色" default="120,200,2" hint="color" />
+       <Attribute name="assigner" required="true" desc="指定任务接受人" default="false" hint="enum">
+            <Enums>
+                <Enum>true</Enum>
+                <Enum>false</Enum>
+            </Enums>
+       </Attribute>
+       <Attribute name="public" required="true" desc="是否无需管理员权限访问" default="true" hint="enum">
+            <Enums>
+                <Enum>true</Enum>
+                <Enum>false</Enum>
+            </Enums>
+       </Attribute>
+    </Node>
+
+    <!-- 
+        <missionHubServer groupName="ExTech" serviceName="Example Tech Contract Hub" 
+            missionFolderPath="Missions/Misc" themeColor="200,10,10" lineColor="255,80,80" 
+            backgroundColor="20,20,20" allowAbandon="false"/>
+    -->
+    <Node name="Computer.missionHubServer" enable="true" multi="true" desc="csec样式的任务中心服务(daemon)">
+       <Attribute name="groupName" required="true" desc="组织名" default="CSEC" hint="enum" />
+       <Attribute name="serviceName" required="true" desc="服务名称" default="Example Tech Contract Hub" hint="enum" />
+       <Attribute name="missionFolderPath" required="true" desc="任务所在的文件夹路径" hint="folder" linkBy="path">Missions/**/*.xml</Attribute>
+       <Attribute name="themeColor" required="true" desc="主题颜色" default="200,10,10" hint="color" />
+       <Attribute name="lineColor" required="true" desc="线条颜色" default="255,80,80" hint="color" />
+       <Attribute name="backgroundColor" required="true" desc="背景颜色" default="20,20,20" hint="color" />
+       <Attribute name="allowAbandon" required="true" desc="是否允许放弃任务" default="false" hint="enum">
+            <Enums>
+                <Enum>true</Enum>
+                <Enum>false</Enum>
+            </Enums>
+       </Attribute>
+    </Node>
+
+    <!-- 
+        <CreditsDaemon Title="intro Extension Ending Credits" ButtonText="Complete" ConditionalActionSetToRunOnButtonPressPath="Actions/CreditsRunActions.xml"/>
+    -->
+    <Node name="Computer.CreditsDaemon" enable="true" multi="true" desc="感谢人员名单后台服务(daemon)">
+       <Attribute name="Title" required="true" desc="标题" default="title" hint="enum" />
+       <Attribute name="ButtonText" required="true" desc="中间按钮的显示文本" default="Complete" hint="enum" />
+       <Attribute name="ConditionalActionSetToRunOnButtonPressPath" required="true" desc="按钮点击后触发的Action文件路径" hint="ActionFile" linkBy="path" />
+    </Node>
+
+    <!-- <FastActionHost /> -->
+    <Node name="Computer.FastActionHost" enable="true" multi="true" desc="创建一个可延迟的后台服务(daemon), 供action的delayHost引用" />
+
+    <!-- 
+        <memoryDumpFile name="testDump.md" path="home">
+            <Memory>
+                <Data>
+                    <Block>test string one</Block>
+                </Data>
+                <Commands>
+                    <Command>connect 123.123.123.123</Command>
+                </Commands>
+                <Data>
+                    <Block>1234432</Block>
+                </Data>
+                <Images>
+                    <Image>DLC/Sprites/Misc/DraculaTank</Image>
+                </Images>
+            </Memory>
+        </memoryDumpFile>
+    -->
+    <Node name="Computer.memoryDumpFile" enable="true" multi="true" desc="创建一个可被MemForensics.exe解析的内存dump文件(daemon)">
+        <Content />
+        <Attribute name="name" required="true" desc="文件名" default="xxx.md" hint="enum" />
+        <Attribute name="path" required="true" desc="文件路径" default="home" hint="enum">
+            <Enums kind="value">
+                <Enum desc="home目录">home</Enum>
+                <Enum desc="exe文件存放目录">bin</Enum>
+                <Enum desc="日志目录">log</Enum>
+                <Enum desc="系统文件目录">sys</Enum>
+            </Enums>
+        </Attribute>
+    </Node>
+    <Node name="Computer.memoryDumpFile.Memory" enable="true" multi="false" desc="内部可定义一些数据块, 命令, 图像等">
+        <Content />
+    </Node>
+    <Node name="Computer.memoryDumpFile.Memory.Data" enable="true" multi="true" desc="内部可定义一些数据块">
+        <Content />
+    </Node>
+    <Node name="Computer.memoryDumpFile.Memory.Data.Block" enable="true" multi="true" desc="定义一个数据块">
+        <Content desc="数据" default="数据块内容" />
+    </Node>
+    <Node name="Computer.memoryDumpFile.Memory.Commands" enable="true" multi="true" desc="内部可定义一些命令">
+        <Content />
+    </Node>
+    <Node name="Computer.memoryDumpFile.Memory.Commands.Command" enable="true" multi="true" desc="定义一条命令">
+        <Content desc="命令信息" default="cd home" />
+    </Node>
+    <Node name="Computer.memoryDumpFile.Memory.Images" enable="true" multi="true" desc="内部可定义一些图像">
+        <Content />
+    </Node>
+    <Node name="Computer.memoryDumpFile.Memory.Images.Image" enable="true" multi="true" desc="图像路径">
+        <Content desc="图像路径" default="path" hint="path" linkBy="path">**/*.{png,jpg,jpeg,bmp,ico}</Content>
+    </Node>
+
+    <!-- memory -->
+    <Node name="Computer.Memory" enable="true" multi="false" desc="定义一个可以被MemDumpGenerator.exe扫描出来的内存块">
+        <Content />
+    </Node>
+    <Node name="Computer.Memory.Data" enable="true" multi="true" desc="内部可定义一些数据块">
+        <Content />
+    </Node>
+    <Node name="Computer.Memory.Data.Block" enable="true" multi="true" desc="定义一个数据块">
+        <Content desc="数据" default="数据块内容" />
+    </Node>
+    <Node name="Computer.Memory.Commands" enable="true" multi="true" desc="内部可定义一些命令">
+        <Content />
+    </Node>
+    <Node name="Computer.Memory.Commands.Command" enable="true" multi="true" desc="定义一条命令">
+        <Content desc="命令信息" default="cd home" />
+    </Node>
+    <Node name="Computer.Memory.Images" enable="true" multi="true" desc="内部可定义一些图像">
+        <Content />
+    </Node>
+    <Node name="Computer.Memory.Images.Image" enable="true" multi="true" desc="图像路径">
+        <Content desc="图像路径" default="path" hint="path" linkBy="path">**/*.{png,jpg,jpeg,bmp,ico}</Content>
+    </Node>
+
+    <!-- <CustomConnectDisplayDaemon /> -->
+    <Node name="Computer.CustomConnectDisplayDaemon" enable="true" multi="true" desc="将默认的连接样式改为River (daemon)" />
+
+    <!-- 
+        <LogoDaemon Name="Logo Display Test" ShowsTitle="true" TextColor="47, 212, 163, 200" LogoImagePath="Logo1.png">
+            Lines
+            Here
+            Appear under
+            The Logo
+        </LogoDaemon>
+    -->
+    <Node name="Computer.LogoDaemon" enable="true" multi="true" desc="创建一个官网图标样式的后台服务 (daemon)">
+        <Content default="显示内容" />
+        <Attribute name="Name" required="true" desc="服务名" default="Logo Display" hint="enum" />
+        <Attribute name="ShowsTitle" required="true" desc="是否显示标题" default="true" hint="enum">
+            <Enums>
+                <Enum>true</Enum>
+                <Enum>false</Enum>
+            </Enums>
+        </Attribute>
+        <Attribute name="TextColor" required="true" desc="文本颜色" default="47,212,163,200" hint="color" />
+        <Attribute name="LogoImagePath" required="true" desc="图标路径" default="imgPath" hint="path" linkBy="path">**/*.{png,jpg,jpeg,bmp,ico}</Attribute>
+    </Node>
+
+    <!-- 
+        <LogoCustomConnectDisplayDaemon logo="Logo.png" title="Logo.png" overdrawLogo="true" buttonAlignment="left" />
+    -->
+    <Node name="Computer.LogoCustomConnectDisplayDaemon" enable="true" multi="true" desc="自定义连接计算机显示图标 (daemon)">
+        <Attribute name="logo" required="true" desc="logo图标路径" default="path" hint="path" linkBy="path">**/*.{png,jpg,jpeg,bmp,ico}</Attribute>
+        <Attribute name="title" required="true" desc="标题图标路径" default="path" hint="path" linkBy="path">**/*.{png,jpg,jpeg,bmp,ico}</Attribute>
+        <Attribute name="overdrawLogo" required="true" desc="是否裁剪logo" default="true" hint="enum">
+            <Enums>
+                <Enum>true</Enum>
+                <Enum>false</Enum>
+            </Enums>
+        </Attribute>
+        <Attribute name="buttonAlignment" required="true" desc="按钮位置" default="left" hint="enum">
+            <Enums>
+                <Enum desc="左侧">left</Enum>
+                <Enum desc="居中">middle</Enum>
+                <Enum desc="右侧">right</Enum>
+            </Enums>
+        </Attribute>
+    </Node>
+
+    <!-- <WhitelistAuthenticatorDaemon Remote="RemoteServerID" SelfAuthenticating="false" /> -->
+    <Node name="Computer.WhitelistAuthenticatorDaemon" enable="true" multi="true" desc="白名单校验服务 (daemon)">
+    <Attribute name="Remote" required="true" desc="远程计算机ID(指定该计算机为当前计算机的白名单校验服务)" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
+    <Attribute name="SelfAuthenticating" required="true" desc="是否校验自身" default="false" hint="enum">
+        <Enums>
+            <Enum>true</Enum>
+            <Enum>false</Enum>
+        </Enums>
+    </Attribute>
+    </Node>
+
+    <!-- 
+        <IRCDaemon themeColor="67,204,148" name="Misc IRC Channel" needsLogin="false">
+            <user name="Vegas" color="0,209,232"/>
+            <post user="Vegas">That's so cool!</post>
+        </IRCDaemon>
+    -->
+    <Node name="Computer.IRCDaemon" enable="true" multi="true" desc="消息对话面板服务 (daemon)">
+        <Content />
+        <Attribute name="name" required="true" desc="服务名称" default="Misc IRC Channel" hint="enum" />
+        <Attribute name="themeColor" required="true" desc="主题颜色" default="67,204,148" hint="color" />
+        <Attribute name="needsLogin" required="true" desc="是否需要登录才能查看" default="false" hint="enum">
+            <Enums>
+                <Enum>true</Enum>
+                <Enum>false</Enum>
+            </Enums>
+        </Attribute>
+    </Node>
+    <Node name="Computer.IRCDaemon.user" enable="true" multi="true" desc="定义一个消息面板内的用户信息">
+        <Attribute name="name" required="true" desc="用户名称" default="fengxu" hint="enum" />
+        <Attribute name="color" required="true" desc="用户信息的字体颜色" default="0,209,232" hint="color" />
+    </Node>
+    <Node name="Computer.IRCDaemon.post" enable="true" multi="true" desc="定义一条消息面板内的信息">
+        <Content default="消息内容" desc="消息内容" />
+        <Attribute name="user" required="true" desc="消息发送者" default="fengxu" hint="enum" />
+    </Node>
+
+    <!-- 
+        <DHSDaemon groupName="NewFaction Hub" addsFactionPointOnMissionComplete="true" autoClearMissionsOnPlayerComplete="true" themeColor="255, 255, 161" allowContractAbbandon="false">
+            <agent name="Tyson" pass="rockemsockem" color="209,74,48"/>
+        </DHSDaemon>
+    -->
+    <Node name="Computer.DHSDaemon" enable="true" multi="true" desc="DLC样式的任务中心服务 (daemon)">
+        <Content />
+        <Attribute name="groupName" required="true" desc="组织名" default="NewFaction Hub" hint="enum" />
+        <Attribute name="addsFactionPointOnMissionComplete" required="true" desc="在任务完成后自动增加玩家的组织等级" default="true" hint="enum">
+            <Enums>
+                <Enum>true</Enum>
+                <Enum>false</Enum>
+            </Enums>
+        </Attribute>
+        <Attribute name="autoClearMissionsOnPlayerComplete" required="true" desc="在任务完成后清理任务面板" default="true" hint="enum">
+            <Enums>
+                <Enum>true</Enum>
+                <Enum>false</Enum>
+            </Enums>
+        </Attribute>
+        <Attribute name="themeColor" required="true" desc="主题颜色" default="255,255,161" hint="color" />
+        <Attribute name="allowContractAbbandon" required="true" desc="是否允许放弃任务" default="false" hint="enum">
+            <Enums>
+                <Enum>true</Enum>
+                <Enum>false</Enum>
+            </Enums>
+        </Attribute>
+    </Node>
+    <Node name="Computer.DHSDaemon.agent" enable="true" multi="true" desc="定义任务中心的一个用户">
+        <Attribute name="name" required="true" desc="用户名" default="fengxu" hint="enum" />
+        <Attribute name="pass" required="true" desc="密码" default="pass" hint="enum" />
+        <Attribute name="color" required="true" desc="该用户的消息字体颜色" default="209,74,48" hint="color" />
+    </Node>
+
+    <!-- 
+        <MarkovTextDaemon Name="Test this one yourself" SourceFilesContentFolder="Notes/ListingServerArticles" />
+    -->
+    <Node name="Computer.MarkovTextDaemon" enable="true" multi="true" desc="基于马尔科夫链的文本生成服务 (daemon)">
+        <Attribute name="Name" required="true" desc="服务名称" default="服务名称" hint="enum" />
+        <Attribute name="SourceFilesContentFolder" required="true" desc="文本文件所处的文件夹路径" default="folder" hint="folder" linkBy="path">**/*.txt</Attribute>
+    </Node>
+
+    <!-- 
+        <DatabaseDaemon Permissions="private" DataType="GitCommitEntry" Foldername="database" 
+            Color="85,0,150" AdminEmailAccount="Matt@TestExtensionMail.com" 
+            AdminEmailHostID="advExamplePC" Name="Test database" />
+    -->
+    <Node name="Computer.DatabaseDaemon" enable="true" multi="true" desc="数据库服务 (daemon)">
+        <Content />
+        <Attribute name="Name" required="true" desc="服务名称" default="服务名称" hint="enum" />
+        <Attribute name="Permissions" required="true" desc="权限类型" default="private" hint="enum">
+            <Enums>
+                <Enum desc="需要管理员权限才可使用">private</Enum>
+                <Enum desc="无需管理员权限即可操作">public</Enum>
+            </Enums>
+        </Attribute>
+        <Attribute name="DataType" required="true" desc="数据类型" default="GitCommitEntry" hint="enum">
+            <Enums>
+                <Enum desc="Git提交记录">GitCommitEntry</Enum>
+                <Enum desc="文本记录">TextRecord</Enum>
+                <Enum desc="在线用户">OnlineAccount</Enum>
+                <Enum desc="不晓得">CAROData</Enum>
+                <Enum desc="账户">Account</Enum>
+                <Enum desc="配置文件">SurveillanceProfile</Enum>
+                <Enum desc="代理用户">AgentDetails</Enum>
+            </Enums>
+        </Attribute>
+        <Attribute name="Foldername" required="true" desc="数据存储在计算机上的目录" default="database" hint="enum" />
+        <Attribute name="Color" required="true" desc="主题颜色" default="85,0,150" hint="color" />
+        <Attribute name="AdminEmailAccount" required="false" desc="admin用户的邮箱账号" default="Matt@TestExtensionMail.com" hint="enum" />
+        <Attribute name="AdminEmailHostID" required="false" desc="admin邮箱账号所在的邮件服务器ID" default="computer" hint="js" linkBy="Computer.id|Computer.eosDevice.id">
+            (function(node, hacknetNodeHolder){
+                return hacknetNodeHolder.GetComputers()
+                    .filter(comp =&gt; comp.mailServer)
+                    .map(comp =&gt; {
+                    return {value: comp.id, desc: comp.name, filterText: comp.id, kind: "reference"};
+                });
+            })
+        </Attribute>
+    </Node>
+
+    <!-- 
+        <GitCommitEntry>
+            <EntryNumber>8613</EntryNumber>
+            <ChangedFiles>
+                <String>Neopals.php</String>
+            </ChangedFiles>
+            <Message>Reverted Minor updates because it broke everything</Message>
+            <UserName>T.Champer</UserName>
+            <SourceIP>192.168.1.1 (Localhost)</SourceIP>
+        </GitCommitEntry>
+    -->
+    <Node name="Computer.DatabaseDaemon.GitCommitEntry" enable="true" multi="true" desc="git提交记录类型">
+        <Content />
+    </Node>
+    <Node name="Computer.DatabaseDaemon.GitCommitEntry.EntryNumber" enable="true" multi="false" desc="入口编号">
+        <Content desc="入口编号" default="9527" />
+    </Node>
+    <Node name="Computer.DatabaseDaemon.GitCommitEntry.ChangedFiles" enable="true" multi="false" desc="定义一些文件变动信息">
+        <Content />
+    </Node>
+    <Node name="Computer.DatabaseDaemon.GitCommitEntry.ChangedFiles.String" enable="true" multi="true" desc="变动的文件名称">
+        <Content desc="变动的文件名称" default="Neopals.php" />
+    </Node>
+    <Node name="Computer.DatabaseDaemon.GitCommitEntry.Message" enable="true" multi="false" desc="提交的消息">
+        <Content desc="提交的消息" default="本次改动了xxx" />
+    </Node>
+    <Node name="Computer.DatabaseDaemon.GitCommitEntry.UserName" enable="true" multi="false" desc="用户名">
+        <Content desc="用户名" default="fengxu" />
+    </Node>
+    <Node name="Computer.DatabaseDaemon.GitCommitEntry.SourceIP" enable="true" multi="false" desc="原IP">
+        <Content desc="原IP" default="fengxu" hint="js" linkBy="Computer.ip">
+            (function(node, hacknetNodeHolder){
+                return hacknetNodeHolder.GetComputers()
+                    .filter(comp =&gt; comp.ip)
+                    .map(comp =&gt; {
+                    return {value: comp.ip, desc: comp.name, filterText: comp.id, kind: "reference"};
+                });
+            })
+        </Content>
+    </Node>
+
+    <!-- 
+        <TextRecord>
+            <Title>Record Title</Title>
+            <Data>Body Data</Data>
+        </TextRecord>
+    -->
+    <Node name="Computer.DatabaseDaemon.TextRecord" enable="true" multi="true" desc="文本记录类型">
+        <Content />
+    </Node>
+    <Node name="Computer.DatabaseDaemon.TextRecord.Title" enable="true" multi="false" desc="标题">
+        <Content desc="标题" default="标题" />
+    </Node>
+    <Node name="Computer.DatabaseDaemon.TextRecord.Data" enable="true" multi="false" desc="标题">
+        <Content desc="数据" default="数据" />
+    </Node>
+
+    <!-- 
+        <OnlineAccount>
+            <ID>1234</ID>
+            <Username>asdf</Username>
+            <BanStatus>very yes</BanStatus>
+            <Notes>notes here</Notes>
+        </OnlineAccount>
+    -->
+    <Node name="Computer.DatabaseDaemon.OnlineAccount" enable="true" multi="true" desc="在线账户类型">
+        <Content />
+    </Node>
+    <Node name="Computer.DatabaseDaemon.OnlineAccount.ID" enable="true" multi="false" desc="ID">
+        <Content desc="ID" default="ID" />
+    </Node>
+    <Node name="Computer.DatabaseDaemon.OnlineAccount.Username" enable="true" multi="false" desc="用户名">
+        <Content desc="用户名" default="用户名" />
+    </Node>
+    <Node name="Computer.DatabaseDaemon.OnlineAccount.BanStatus" enable="true" multi="false" desc="禁用状态">
+        <Content desc="禁用状态" default="no/yes" />
+    </Node>
+    <Node name="Computer.DatabaseDaemon.OnlineAccount.Notes" enable="true" multi="false" desc="笔记信息">
+        <Content desc="笔记信息" default="notes here" hint="enumWithCommonString" />
+    </Node>
+
+    <!-- 
+    "CAROData"
+        UserID
+        Headshots
+        Kills
+        Rank
+        Crowbars
+        InventoryID
+        BanStatus
+    -->
+    <Node name="Computer.DatabaseDaemon.CAROData" enable="true" multi="true" desc="CAROData类型">
+        <Content />
+    </Node>
+    <Node name="Computer.DatabaseDaemon.CAROData.UserID" enable="true" multi="false" desc="用户ID">
+        <Content desc="用户ID" default="用户ID" />
+    </Node> 
+    <Node name="Computer.DatabaseDaemon.CAROData.Headshots" enable="true" multi="false" desc="Headshots">
+        <Content desc="Headshots" default="Headshots" />
+    </Node>
+    <Node name="Computer.DatabaseDaemon.CAROData.Kills" enable="true" multi="false" desc="Kills">
+        <Content desc="Kills" default="Kills" />
+    </Node>
+    <Node name="Computer.DatabaseDaemon.CAROData.Rank" enable="true" multi="false" desc="Rank">
+        <Content desc="Rank" default="Rank" />
+    </Node>
+    <Node name="Computer.DatabaseDaemon.CAROData.Crowbars" enable="true" multi="false" desc="Crowbars">
+        <Content desc="Crowbars" default="Crowbars" />
+    </Node>
+    <Node name="Computer.DatabaseDaemon.CAROData.InventoryID" enable="true" multi="false" desc="InventoryID">
+        <Content desc="InventoryID" default="InventoryID" />
+    </Node>
+    <Node name="Computer.DatabaseDaemon.CAROData.BanStatus" enable="true" multi="false" desc="BanStatus">
+        <Content desc="BanStatus" default="BanStatus" />
+    </Node>
+
+    <!-- 
+     "Account"
+        string ID;
+        string Cash;
+        string Bank;
+        string Apartments;
+        string Vehicles;
+        string PegasusVehicles;
+        string Rank;
+        string RP;
+        string Kills;
+    -->
+    <Node name="Computer.DatabaseDaemon.Account" enable="true" multi="true" desc="账户类型">
+        <Content />
+    </Node>
+    <Node name="Computer.DatabaseDaemon.Account.ID" enable="true" multi="false" desc="ID">
+        <Content desc="ID" default="ID" />
+    </Node>
+    <Node name="Computer.DatabaseDaemon.Account.Cash" enable="true" multi="false" desc="Cash">
+        <Content desc="Cash" default="Cash" />
+    </Node> 
+    <Node name="Computer.DatabaseDaemon.Account.Bank" enable="true" multi="false" desc="Bank">
+        <Content desc="Bank" default="Bank" />
+    </Node> 
+    <Node name="Computer.DatabaseDaemon.Account.Apartments" enable="true" multi="false" desc="Apartments">
+        <Content desc="Apartments" default="Apartments" />
+    </Node> 
+    <Node name="Computer.DatabaseDaemon.Account.Vehicles" enable="true" multi="false" desc="Vehicles">
+        <Content desc="Vehicles" default="Vehicles" />
+    </Node> 
+    <Node name="Computer.DatabaseDaemon.Account.PegasusVehicles" enable="true" multi="false" desc="PegasusVehicles">
+        <Content desc="PegasusVehicles" default="PegasusVehicles" />
+    </Node> 
+    <Node name="Computer.DatabaseDaemon.Account.Rank" enable="true" multi="false" desc="Rank">
+        <Content desc="Rank" default="Rank" />
+    </Node> 
+    <Node name="Computer.DatabaseDaemon.Account.RP" enable="true" multi="false" desc="RP">
+        <Content desc="RP" default="RP" />
+    </Node> 
+    <Node name="Computer.DatabaseDaemon.Account.Kills" enable="true" multi="false" desc="Kills">
+        <Content desc="Kills" default="Kills" />
+    </Node>
+
+    <!-- 
+        "SurveillanceProfile"
+            string Name;
+            string Age;
+            string HomeCity;
+            string Notes;
+            string CriminalRecord;
+    -->
+    <Node name="Computer.DatabaseDaemon.SurveillanceProfile" enable="true" multi="true" desc="监控配置文件类型">
+        <Content />
+    </Node>
+    <Node name="Computer.DatabaseDaemon.SurveillanceProfile.Name" enable="true" multi="false" desc="Name">
+        <Content desc="Name" default="Name" />
+    </Node>
+    <Node name="Computer.DatabaseDaemon.SurveillanceProfile.Age" enable="true" multi="false" desc="Age">
+        <Content desc="Age" default="Age" />
+    </Node>
+    <Node name="Computer.DatabaseDaemon.SurveillanceProfile.HomeCity" enable="true" multi="false" desc="HomeCity">
+        <Content desc="HomeCity" default="HomeCity" />
+    </Node>
+    <Node name="Computer.DatabaseDaemon.SurveillanceProfile.Notes" enable="true" multi="false" desc="Notes">
+        <Content desc="Notes" default="Notes" />
+    </Node>
+    <Node name="Computer.DatabaseDaemon.SurveillanceProfile.CriminalRecord" enable="true" multi="false" desc="CriminalRecord">
+        <Content desc="CriminalRecord" default="CriminalRecord" />
+    </Node>
+
+    <!-- 
+        "AgentDetails"
+            string Codename;
+            string RealName;
+            string IP;
+            string SpecialNotes;
+    -->
+    <Node name="Computer.DatabaseDaemon.AgentDetails" enable="true" multi="true" desc="代理用户类型">
+        <Content />
+    </Node>
+    <Node name="Computer.DatabaseDaemon.AgentDetails.Codename" enable="true" multi="false" desc="网络假名">
+        <Content desc="网络假名" default="Name" />
+    </Node>
+    <Node name="Computer.DatabaseDaemon.AgentDetails.RealName" enable="true" multi="false" desc="真实姓名">
+        <Content desc="真实姓名" default="Name" />
+    </Node>
+    <Node name="Computer.DatabaseDaemon.AgentDetails.IP" enable="true" multi="false" desc="IP地址">
+        <Content desc="IP地址" default="ip" hint="js" linkBy="Computer.ip">
+            (function(node, hacknetNodeHolder){
+                return hacknetNodeHolder.GetComputers()
+                    .filter(comp =&gt; comp.ip)
+                    .map(comp =&gt; {
+                    return {value: comp.ip, desc: comp.name, filterText: comp.id, kind: "reference"};
+                });
+            })
+        </Content>
+    </Node>
+    <Node name="Computer.DatabaseDaemon.AgentDetails.SpecialNotes" enable="true" multi="false" desc="个性签名">
+        <Content desc="个性签名" default="个性签名" />
+    </Node>
+
+    <!-- Action定义开始 -->
+    <Node name="ConditionalActions" enable="true" multi="false" desc="定义一组条件动作集">
+        <Content />
+    </Node>
+
+    <Node name="ConditionalActions.Instantly" enable="true" multi="true" desc="立即触发的条件">
+        <Content />
+        <Attribute name="needsMissionComplete" required="false" desc="是否需要任务完成才触发" default="true" hint="enum">
+            <Enums>
+                <Enum>true</Enum>
+                <Enum>false</Enum>
+            </Enums>
+        </Attribute>
+    </Node>
+
+    <Node name="ConditionalActions.OnConnect" enable="true" multi="true" desc="当前玩家连接到某台电脑时触发">
+        <Content />
+        <Attribute name="target" required="true" desc="电脑ID" default="computer" hint="ComputerOrEos" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="needsMissionComplete" required="false" desc="是否需要任务完成才触发" default="true" hint="enum">
+            <Enums>
+                <Enum>true</Enum>
+                <Enum>false</Enum>
+            </Enums>
+        </Attribute>
+        <Attribute name="requiredFlags" required="false" desc="存在flags才触发" default="flag1,flag2" hint="enum"/>
+    </Node>
+
+    <Node name="ConditionalActions.OnDisconnect" enable="true" multi="true" desc="当前玩家断开与某台电脑的连接时触发">
+        <Content />
+        <Attribute name="target" required="false" desc="电脑ID" default="computer" hint="ComputerOrEos" linkBy="Computer.id|Computer.eosDevice.id" />
+    </Node>
+    
+    <Node name="ConditionalActions.OnAdminGained " enable="true" multi="true" desc="当玩家获取到某台电脑的管理员权限后触发">
+        <Content />
+        <Attribute name="target" required="true" desc="电脑ID,为NONE或删除该属性表示断开任何连接时触发" default="computer" hint="ComputerOrEos" linkBy="Computer.id|Computer.eosDevice.id" />
+    </Node>
+
+    <Node name="ConditionalActions.HasFlags" enable="true" multi="true" desc="存在flags才触发">
+        <Content />
+        <Attribute name="requiredFlags" required="true" desc="存在flags才触发" default="flag1,flag2" hint="enum"/>
+    </Node>
+    
+    <Node name="ConditionalActions.DoesNotHaveFlags" enable="true" multi="true" desc="不存在flags才触发">
+        <Content />
+        <Attribute name="Flags" required="true" desc="不存在flags才触发" default="flag1,flag2" hint="enum"/>
+    </Node>
+
+    <!-- 派系开始 -->
+    <!-- <CustomFaction name="IntroFac" id="introfac" playerVal="0"> -->
+    <Node name="CustomFaction" enable="true" multi="false" desc="定义一个自定义组织(派系)">
+        <Content />
+        <Attribute name="name" required="true" desc="自定义的组织名称,如CESC" default="IntroFac" hint="enum" />
+        <Attribute name="id" required="true" desc="自定义的组织ID" default="introfac" hint="enum" />
+        <Attribute name="playerVal" required="true" desc="玩家在该组织的初始等级" default="0" hint="enum" />
+    </Node>
+
+    <!-- <Action ValueRequired="5" Flags="decypher"> -->
+    <Node name="CustomFaction.Action" enable="true" multi="false" desc="定义一个满足条件后触发的Action动作集合">
+        <Content />
+        <Attribute name="ValueRequired" required="true" desc="当玩家在该组织的等级满足后触发" default="0" hint="enum" />
+        <Attribute name="Flags" required="false" desc="当前存在flag后触发,多个用逗号隔开" default="decypher" hint="enum" />
+    </Node>
+
+    <!-- <LoadMission MissionName="Missions/ExampleMission.xml" /> -->
+    <Node name="ConditionalActions.*.LoadMission|CustomFaction.Action.LoadMission" enable="true" multi="true" desc="立即加载一个任务并取代当前任务">
+        <Attribute name="MissionName" required="true" desc="任务文件路径" default="true" hint="MisisonFile" linkBy="path" />
+    </Node>
+
+    <!-- 
+        <AddAsset FileName="MemForensics.exe" FileContents="#MEM_FORENSICS_EXE#" TargetComp="advExamplePC" TargetFolderpath="bin" />
+    -->
+    <Node name="ConditionalActions.*.AddAsset|CustomFaction.Action.AddAsset" enable="true" multi="true" desc="添加一个文件到目标计算机上">
+        <Attribute name="FileName" required="true" desc="文件名"  hint="enumWithCommonString" />
+        <Attribute name="FileContents" required="true" desc="文件内容" hint="enumWithCommonString" />
+        <Attribute name="TargetComp" required="true" desc="目标计算机" default="computer" hint="ComputerOrEos" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="TargetFolderpath" required="true" desc="文件夹(必须存在)" hint="enum">
+            <Enums kind="value">
+                <Enum desc="home目录">home</Enum>
+                <Enum desc="exe文件存放目录">bin</Enum>
+                <Enum desc="日志目录">log</Enum>
+                <Enum desc="系统文件目录">sys</Enum>
+            </Enums>
+        </Attribute>
+    </Node>
+
+    <!-- CopyAsset DestFilePath="linkNode1" DestComp="advExamplePC" SourceComp="advExamplePC" SourceFileName="Test_File.txt" SourceFilePath="home" />  -->
+     <Node name="ConditionalActions.*.CopyAsset|CustomFaction.Action.CopyAsset" enable="true" multi="true" desc="复制一个文件到目标计算机上">
+        <Attribute name="SourceComp" required="true" desc="源计算机ID" default="computer" hint="ComputerOrEos" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="SourceFileName" required="true" desc="源文件名" hint="enumWithCommonString" />
+        <Attribute name="SourceFilePath" required="true" desc="源文件路径" hint="enum">
+            <Enums kind="value">
+                <Enum desc="home目录">home</Enum>
+                <Enum desc="exe文件存放目录">bin</Enum>
+                <Enum desc="日志目录">log</Enum>
+                <Enum desc="系统文件目录">sys</Enum>
+            </Enums>
+        </Attribute>
+
+        <Attribute name="DestComp" required="true" desc="目标计算机ID" default="computer" hint="ComputerOrEos" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="DestFilePath" required="true" desc="要复制到的目标路径" hint="enum">
+            <Enums kind="value">
+                <Enum desc="home目录">home</Enum>
+                <Enum desc="exe文件存放目录">bin</Enum>
+                <Enum desc="日志目录">log</Enum>
+                <Enum desc="系统文件目录">sys</Enum>
+            </Enums>
+        </Attribute>
+    </Node>
+
+    <!-- <AddMissionToHubServer MissionFilepath="Missions/TestExtensionMission1.xml" TargetComp="advExamplePC" AssignmentTag="HA0"/> -->
+     <Node name="ConditionalActions.*.AddMissionToHubServer|CustomFaction.Action.AddMissionToHubServer" enable="true" multi="true" desc="添加一个任务到任务中心">
+        <Attribute name="MissionFilepath" required="true" desc="任务文件路径" hint="MisisonFile" linkBy="path" />
+        <Attribute name="TargetComp" required="true" desc="具有任务中心服务的计算机ID" default="computer" hint="js" linkBy="Computer.id|Computer.eosDevice.id">
+            (function(node, hacknetNodeHolder){
+                return hacknetNodeHolder.GetComputers()
+                    .filter(comp =&gt; comp.variableMissionListingServer || comp.missionHubServer || comp.DHSDaemon)
+                    .map(comp =&gt; {
+                    return {value: comp.id, desc: comp.name, filterText: comp.id, kind: "reference"};
+                });
+            })
+        </Attribute>
+        <Attribute name="AssignmentTag" required="true" desc="加载任务的位置" default="tail" hint="enum">
+            <Enums kind="value">
+                <Enum desc="加载任务到最上方">top</Enum>
+                <Enum desc="加载任务到最下方">tail</Enum>
+            </Enums>
+        </Attribute>
+    </Node>
+
+    <!-- <RemoveMissionFromHubServer MissionFilepath="Missions/TestExtensionMission1.xml" TargetComp="advExamplePC" /> -->
+     <Node name="ConditionalActions.*.RemoveMissionFromHubServer|CustomFaction.Action.RemoveMissionFromHubServer" enable="true" multi="true" desc="从任务中心移除一个任务">
+        <Attribute name="MissionFilepath" required="true" desc="任务文件路径" hint="MisisonFile" linkBy="path" />
+        <Attribute name="TargetComp" required="true" desc="具有任务中心服务的计算机ID" default="computer" hint="js" linkBy="Computer.id|Computer.eosDevice.id">
+            (function(node, hacknetNodeHolder){
+                return hacknetNodeHolder.GetComputers()
+                    .filter(comp =&gt; comp.variableMissionListingServer || comp.missionHubServer || comp.DHSDaemon)
+                    .map(comp =&gt; {
+                    return {value: comp.id, desc: comp.name, filterText: comp.id, kind: "reference"};
+                });
+            })
+        </Attribute>
+    </Node>
+
+    <!-- <AddThreadToMissionBoard ThreadFilepath="Nodes/MessageBoardThreads/ExampleThread1.txt" TargetComp="advExamplePC" /> -->
+    <Node name="ConditionalActions.*.AddThreadToMissionBoard|CustomFaction.Action.AddThreadToMissionBoard" enable="true" multi="true" desc="添加信息到留言板上">
+        <Attribute name="ThreadFilepath" required="true" desc="留言文件路径" hint="path" linkBy="path">**/*.txt</Attribute>
+        <Attribute name="TargetComp" required="true" desc="具有留言板服务的计算机ID" default="computer" hint="js" linkBy="Computer.id|Computer.eosDevice.id">
+            (function(node, hacknetNodeHolder){
+                return hacknetNodeHolder.GetComputers()
+                    .filter(comp =&gt; comp.messageBoard)
+                    .map(comp =&gt; {
+                    return {value: comp.id, desc: comp.name, filterText: comp.id, kind: "reference"};
+                });
+            })
+        </Attribute>
+    </Node>
+
+    <!-- <AddIRCMessage Author="HA0" TargetComp="advExamplePC" Delay="3.0">Hey @#PLAYERNAME# -xxx </AddIRCMessage> -->
+     <Node name="ConditionalActions.*.AddIRCMessage|CustomFaction.Action.AddIRCMessage" enable="true" multi="true" desc="添加一条消息到IRC聊天服务面板上">
+        <Attribute name="TargetComp" required="true" desc="具有IRC聊天服务的计算机ID" default="computer" hint="js" linkBy="Computer.id|Computer.eosDevice.id">
+            (function(node, hacknetNodeHolder){
+                return hacknetNodeHolder.GetComputers()
+                    .filter(comp =&gt; comp.IRCDaemon || comp.DHSDaemon)
+                    .map(comp =&gt; {
+                    return {value: comp.id, desc: comp.name, filterText: comp.id, kind: "reference"};
+                });
+            })
+        </Attribute>
+        <Attribute name="Author" required="true" desc="消息发送者" hint="js">
+            (function(actNode, hacknetNodeHolder){
+                if (!actNode.node.attribute.has('TargetComp')) {
+                    return;
+                }
+                const targetCompId = actNode.node.attribute.get('TargetComp');
+                const comp = hacknetNodeHolder.GetComputers().find(comp =&gt; comp.id === targetCompId);
+                if (!comp) {
+                    return;
+                }
+
+                if (comp.IRCDaemon &amp;&amp; comp.IRCDaemon.user) {
+                    return Array.isArray(comp.IRCDaemon.user) ? 
+                        comp.IRCDaemon.user.map(item =&gt; {
+                            return {value: item.name, kind: 'value'};
+                        }): 
+                        {value: comp.IRCDaemon.user.name, kind: 'value'};
+                }
+
+                if (comp.DHSDaemon &amp;&amp; comp.DHSDaemon.agent) {
+                    return Array.isArray(comp.DHSDaemon.agent) ? 
+                        comp.DHSDaemon.agent.map(item =&gt; {
+                            return {value: item.name, kind: 'value'};
+                        }): 
+                        {value: comp.DHSDaemon.agent.name, kind: 'value'};
+                }
+            });
+        </Attribute>
+        <Attribute name="Delay" required="false" desc="延迟触发(秒)" default="0.0" hint="enum"/>
+    </Node>
+
+    <!-- <CrashComputer TargetComp="linkNode1" CrashSource="advExamplePC" DelayHost="advExamplePC" Delay="5.5" /> -->
+    <Node name="ConditionalActions.*.CrashComputer|CustomFaction.Action.CrashComputer" enable="true" multi="true" desc="崩溃一台计算机, 会从netmap中移除大概15s">
+        <Attribute name="TargetComp" required="true" desc="待崩溃的计算机" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="CrashSource" required="true" desc="引发崩溃的计算机(会在TargetComp上留下日志)" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID,否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="Delay" required="false" desc="延迟触发(秒)" default="0.0" hint="enum"/>
+    </Node>
+
+    <!-- <DeleteFile TargetComp="advExamplePC" FilePath="bin" FileName="Binary_File" DelayHost="advExamplePC" Delay="5.5"/> -->
+    <Node name="ConditionalActions.*.DeleteFile|CustomFaction.Action.DeleteFile" enable="true" multi="true" desc="删除一台计算机上的文件">
+        <Attribute name="TargetComp" required="true" desc="待删文件的计算机ID" default="computer" hint="ComputerOrEos" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="FilePath" required="true" desc="待删文件所在路径" hint="enum">
+            <Enums kind="value">
+                <Enum desc="home目录">home</Enum>
+                <Enum desc="exe文件存放目录">bin</Enum>
+                <Enum desc="日志目录">log</Enum>
+                <Enum desc="系统文件目录">sys</Enum>
+            </Enums>
+        </Attribute>
+        <Attribute name="FileName" required="true" desc="待删文件名" hint="enumWithCommonString" />
+        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID,否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="Delay" required="false" desc="延迟触发(秒)" default="0.0" hint="enum"/>
+    </Node>
+
+    <!-- <AddConditionalActions Filepath="ExampleConditionalActionSet.xml" DelayHost="advExamplePC" Delay="5.5"/> -->
+    <Node name="ConditionalActions.*.AddConditionalActions|CustomFaction.Action.AddConditionalActions" enable="true" multi="true" desc="从文件加载一组新的条件操作">
+        <Attribute name="Filepath" required="true" desc="Action文件路径" hint="ActionFile" linkBy="path" />
+        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID,否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="Delay" required="false" desc="延迟触发(秒)" default="0.0" hint="enum"/>
+    </Node>
+
+    <!-- <SaveGame DelayHost="advExamplePC" Delay="20.5"/> -->
+    <Node name="ConditionalActions.*.SaveGame|CustomFaction.Action.SaveGame" enable="true" multi="true" desc="存档游戏">
+        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID,否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="Delay" required="false" desc="延迟触发(秒)" default="0.0" hint="enum"/>
+    </Node>
+
+    <!-- 
+        <LaunchHackScript Filepath="HackerScripts/ExampleHack.txt" 
+        DelayHost="advExamplePC" Delay="5.5" 
+        SourceComp="advExamplePC" TargetComp="playerComp" RequireLogsOnSource="false" RequireSourceIntact="true"/>
+    -->
+    <Node name="ConditionalActions.*.LaunchHackScript|CustomFaction.Action.LaunchHackScript" enable="true" multi="true" desc="执行一个hack脚本">
+        <Attribute name="Filepath" required="true" desc="黑客脚本文件路径" hint="path" linkBy="path">HackerScripts/**/*.txt</Attribute>
+        <Attribute name="SourceComp" required="true" desc="发起攻击的计算机ID" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="TargetComp" required="true" desc="被攻击的计算机ID" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="RequireLogsOnSource" required="true" desc="当被攻击电脑日志中存在删除, 移动或者复制文件日志才会触发" default="false">
+            <Enums>
+                <Enum>true</Enum>
+                <Enum>false</Enum>
+            </Enums>
+        </Attribute>
+        <Attribute name="RequireSourceIntact" required="true" desc="当被攻击电脑缺失sys/netcfgx.dll文件时不触发该脚本" default="true">
+            <Enums>
+                <Enum>true</Enum>
+                <Enum>false</Enum>
+            </Enums>
+        </Attribute>
+        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID,否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="Delay" required="false" desc="延迟触发(秒)" default="0.0" hint="enum"/>
+    </Node>
+
+    <!-- <SwitchToTheme ThemePathOrName="Themes/ExampleTheme.xml" FlickerInDuration="3.0" DelayHost="advExamplePC" Delay="15.5" /> -->
+    <Node name="ConditionalActions.*.SwitchToTheme|CustomFaction.Action.SwitchToTheme" enable="true" multi="true" desc="切换主题">
+        <Attribute name="ThemePathOrName" required="true" desc="内置主题或主题文件路径" hint="js" linkBy="path">
+            (function(actNode, hacknetNodeHolder){
+                const internalThemes = [
+                    'TerminalOnlyBlack', 'HacknetBlue', 'HacknetTeal', 'HacknetYellow', 'HacknetWhite', 'HacknetPurple', 'HacknetMint', 'HackerGreen'
+                ]
+                const res = internalThemes.map(theme =&gt; {
+                    return {value: theme, desc: '内置主题', kind: 'enum'};
+                });
+                hacknetNodeHolder.GetThemes().forEach(themeNode =&gt; {
+                    res.push({value: themeNode.GetRelativePath(), desc: '主题路径' ,kind: "file"});
+                });
+
+                return res;
+            })
+        </Attribute>
+        <Attribute name="FlickerInDuration" required="false" desc="闪烁时间(秒)" default="0.0" hint="enum"/>
+        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID,否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="Delay" required="false" desc="延迟触发(秒)" default="0.0" hint="enum"/>
+    </Node>
+
+    <!-- 
+    <StartScreenBleedEffect AlertTitle="Title" CompleteAction="Actions/HackerScriptActions.xml" TotalDurationSeconds="12.5" DelayHost="advExamplePC" Delay="3.5">Line one
+    Line two
+    Line Three!</StartScreenBleedEffect>
+    -->
+    <Node name="ConditionalActions.*.StartScreenBleedEffect|CustomFaction.Action.StartScreenBleedEffect" enable="true" multi="true" desc="开始屏幕流血效果">
+        <Content desc="最多显示三行描述文本" default="Line one" />
+        <Attribute name="AlertTitle" required="true" desc="左下角警告标题" hint="enumWithCommonString" />
+        <Attribute name="TotalDurationSeconds" required="true" desc="效果持续时间(秒)" default="12.5" hint="enum"/>
+        <Attribute name="CompleteAction" required="false" desc="效果完成后触发的Action文件路径" hint="ActionFile" linkBy="path" />
+        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID,否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="Delay" required="false" desc="延迟触发(秒)" default="0.0" hint="enum"/>
+    </Node>
+
+    <!-- <CancelScreenBleedEffect DelayHost="advExamplePC" Delay="9.5" /> -->
+    <Node name="ConditionalActions.*.CancelScreenBleedEffect|CustomFaction.Action.CancelScreenBleedEffect" enable="true" multi="true" desc="取消屏幕流血效果">
+        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID,否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="Delay" required="false" desc="延迟触发(秒)" default="0.0" hint="enum"/>
+    </Node>
+
+    <!-- 
+        <AppendToFile DelayHost="advExamplePC" Delay="12.5" TargetComp="advExamplePC" TargetFolderpath="Whitelist" TargetFilename="list.txt">#PLAYER_IP#</AppendToFile>
+    -->
+    <Node name="ConditionalActions.*.AppendToFile|CustomFaction.Action.AppendToFile" enable="true" multi="true" desc="追加内容到文件中">
+        <Content desc="要追加的文本内容" default="追加的内容" enum="enumWithCommonString" />
+        <Attribute name="TargetComp" required="true" desc="要追加内容的计算机ID" default="computer" hint="ComputerOrEos" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="TargetFolderpath" required="true" desc="要追加的文件所处的路径" hint="enum">
+            <Enums kind="value">
+                <Enum desc="home目录">home</Enum>
+                <Enum desc="exe文件存放目录">bin</Enum>
+                <Enum desc="日志目录">log</Enum>
+                <Enum desc="系统文件目录">sys</Enum>
+            </Enums>
+        </Attribute>
+        <Attribute name="TargetFilename" required="true" desc="要追加内容的文件名" default="list.txt" hint="enum" />
+
+        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID,否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="Delay" required="false" desc="延迟触发(秒)" default="0.0" hint="enum"/>
+    </Node>
+
+    <!-- <KillExe DelayHost="advExamplePC" Delay="15.5" ExeName="ssh" /> -->
+    <Node name="ConditionalActions.*.KillExe|CustomFaction.Action.KillExe" enable="true" multi="true" desc="kill掉一个exe进程">
+        <Attribute name="ExeName" required="true" desc="exe文件名含有的部分字符串" default="ssh" hint="enumWithCommonString"  />
+        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID,否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="Delay" required="false" desc="延迟触发(秒)" default="0.0" hint="enum"/>
+    </Node>
+
+    <!-- <HideNode DelayHost="advExamplePC" Delay="15.5" TargetComp="advExamplePC" /> -->
+    <Node name="ConditionalActions.*.HideNode|CustomFaction.Action.HideNode" enable="true" multi="true" desc="在netmap中隐藏一个节点">
+        <Attribute name="TargetComp" required="true" desc="待隐藏的目标计算机ID" default="computer" hint="ComputerOrEos" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID,否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="Delay" required="false" desc="延迟触发(秒)" default="0.0" hint="enum"/>
+    </Node>
+
+    <!-- <HideAllNodes DelayHost="advExamplePC" Delay="21.5"/> -->
+    <Node name="ConditionalActions.*.HideAllNodes|CustomFaction.Action.HideAllNodes" enable="true" multi="true" desc="从netmap中隐藏所有可见节点">
+        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID,否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="Delay" required="false" desc="延迟触发(秒)" default="0.0" hint="enum"/>
+    </Node>
+
+    <!-- <ShowNode DelayHost="advExamplePC" Delay="21.5" Target="advExamplePC" /> -->
+    <Node name="ConditionalActions.*.ShowNode|CustomFaction.Action.ShowNode" enable="true" multi="true" desc="在netmap中显示一个节点">
+        <Attribute name="Target" required="true" desc="待显示的目标计算机ID" default="computer" hint="ComputerOrEos" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID,否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="Delay" required="false" desc="延迟触发(秒)" default="0.0" hint="enum"/>
+    </Node>
+
+    <!-- <GivePlayerUserAccount DelayHost="advExamplePC" Delay="15.5" TargetComp="advExamplePC" Username="mailGuy" /> -->
+    <Node name="ConditionalActions.*.GivePlayerUserAccount|CustomFaction.Action.GivePlayerUserAccount" enable="true" multi="true" desc="给指定电脑提供一个账户, 用户可在登录界面点击该账户登录">
+        <Attribute name="TargetComp" required="true" desc="要提供账户的计算机ID" default="computer" hint="ComputerOrEos" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="Username" required="true" desc="账户名" default="" hint="js">
+            (function(actNode, hacknetNodeHolder){
+                if (!actNode.node.attribute.has('TargetComp')) {
+                    return;
+                }
+                const targetCompId = actNode.node.attribute.get('TargetComp');
+                const comp = hacknetNodeHolder.GetComputers().find(comp =&gt; comp.id === targetCompId);
+                if (!comp) {
+                    return;
+                }
+
+                if (comp.account) {
+                    const res = [
+                        {value: 'admin', desc: '管理员账户', kind: 'value'}
+                    ];
+                    if (Array.isArray(comp.account)) {
+                        comp.account.forEach(item =&gt; {
+                            res.push({value: item.username, desc: '用户自定义账户', kind: 'value'});
+                        })
+                    } else {
+                        res.push({value: comp.account.username, kind: 'value'});
+                    }
+                    
+                    return res;
+                }
+            });
+        </Attribute>
+        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID,否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="Delay" required="false" desc="延迟触发(秒)" default="0.0" hint="enum"/>
+    </Node>
+
+    <!-- <ChangeIP DelayHost="advExamplePC" Delay="15.5" TargetComp="advExamplePC" NewIP="111.111.123.124" /> -->
+    <Node name="ConditionalActions.*.ChangeIP|CustomFaction.Action.ChangeIP" enable="true" multi="true" desc="更改一台电脑的IP">
+        <Attribute name="TargetComp" required="true" desc="要更改IP的计算机ID" default="computer" hint="ComputerOrEos" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="NewIP" required="true" desc="指定新的IP" default="ip" hint="js">
+            (function(node, hacknetNodeHolder){
+                let ipArr = [];
+                const computers = hacknetNodeHolder.GetComputers();
+                while(ipArr.length &lt; 5) {
+                    const part1 = Math.floor(Math.random() * 256);
+                    const part2 = Math.floor(Math.random() * 256);
+                    const part3 = Math.floor(Math.random() * 256);
+                    const part4 = Math.floor(Math.random() * 256);
+                    
+                    // 排除一些保留IP地址
+                    if(part1 === 10) {continue;} // 10.0.0.0/8
+                    if(part1 === 172 &amp;&amp; (part2 &gt;= 16 &amp;&amp; part2 &lt;= 31)) {continue;} // 172.16.0.0/12
+                    if(part1 === 192 &amp;&amp; part2 === 168) {continue;} // 192.168.0.0/16
+                    if(part1 === 127) {continue;} // 127.0.0.0/8
+                    if(part1 === 169 &amp;&amp; part2 === 254) {continue;} // 169.254.0.0/16
+                    if(part1 === 100 &amp;&amp; (part2 &gt;= 64 &amp;&amp; part2 &lt;= 127)) {continue;} // 100.64.0.0/10
+                    // 排除已经定义过的ip
+                    const ip = `${part1}.${part2}.${part3}.${part4}`;
+                    if (computers.some(comp =&gt; comp.ip === ip)) { continue; }
+                    
+                    ipArr.push({value: ip, desc: '随机生成的ip'});
+                }
+
+                return ipArr;
+            })
+        </Attribute>
+        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID,否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="Delay" required="false" desc="延迟触发(秒)" default="0.0" hint="enum"/>
+    </Node>
+
+    <!-- <ChangeAlertIcon Target="advExamplePC" Type="irc" DelayHost="advExamplePC" Delay="9.5"/> -->
+    <Node name="ConditionalActions.*.ChangeAlertIcon|CustomFaction.Action.ChangeAlertIcon" enable="true" multi="true" desc="更改邮件位置图标">
+        <Attribute name="Target" required="true" desc="点击图标后关联的目标计算机ID" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="Type" required="true" desc="要更改的目标图标类型" hint="enum">
+            <Enums kind="value">
+                <Enum desc="邮件图标">mail</Enum>
+                <Enum desc="IRC服务器样式">irc</Enum>
+                <Enum desc="DLChub样式图标">irchub</Enum>
+                <Enum desc="留言板">board</Enum>
+            </Enums>
+        </Attribute>
+        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID,否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="Delay" required="false" desc="延迟触发(秒)" default="0.0" hint="enum"/>
+    </Node>
+
+    <!-- <SetLock Module="ram" IsLocked="true" IsHidden="false" DelayHost="advExamplePC" Delay="9.5" /> -->
+    <Node name="ConditionalActions.*.SetLock|CustomFaction.Action.SetLock" enable="true" multi="true" desc="加锁或隐藏系统模块">
+        <Attribute name="Module" required="true" desc="模块名称" default="ram" hint="enum">
+            <Enums>
+                <Enum desc="终端模块">terminal</Enum>
+                <Enum desc="网路节点图模块">netmap</Enum>
+                <Enum desc="内存模块">ram</Enum>
+                <Enum desc="显示模块">display</Enum>
+            </Enums>
+        </Attribute>
+        <Attribute name="IsLocked" required="true" desc="加锁后该模块将不处理鼠标/键盘输入" default="true" hint="enum">
+            <Enums>
+                <Enum>true</Enum>
+                <Enum>false</Enum>
+            </Enums>
+        </Attribute>
+        <Attribute name="IsHidden" required="true" desc="是否隐藏该模块" default="false" hint="enum">
+            <Enums>
+                <Enum>true</Enum>
+                <Enum>false</Enum>
+            </Enums>
+        </Attribute>
+        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID,否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="Delay" required="false" desc="延迟触发(秒)" default="0.0" hint="enum"/>
+    </Node>
+
+    <!-- <ChangeNetmapSortMethod Method="scatter" DelayHost="advExamplePC" Delay="9.5" /> -->
+    <Node name="ConditionalActions.*.ChangeNetmapSortMethod|CustomFaction.Action.ChangeNetmapSortMethod" enable="true" multi="true" desc="更改网络图节点排序方式">
+        <Attribute name="Method" required="true" desc="排序方式" default="scatter" hint="enum">
+            <Enums>
+                <Enum desc="散点图">scatter</Enum>
+                <Enum desc="网格图">grid</Enum>
+                <Enum desc="扫描序列">scangrid</Enum>
+                <Enum desc="混乱效果">chaos</Enum>
+            </Enums>
+        </Attribute>
+        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID,否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="Delay" required="false" desc="延迟触发(秒)" default="0.0" hint="enum"/>
+    </Node>
+
+
+    <!-- <RunFunction FunctionName="changeSong" FunctionValue="6" /> -->
+     <Node name="ConditionalActions.*.RunFunction|CustomFaction.Action.RunFunction" enable="true" multi="true" desc="执行内置方法">
+        <Attribute name="FunctionName" required="true" desc="方法名" default="" hint="step">
+            <LinkByCollection>
+                <Item linkBy="Faction.id" linkByValuePattern="setFaction:(.*)" />
+                <Item linkBy="path" linkByValuePattern="loadConditionalActions:(.*)" />
+                <Item linkBy="Computer.id|Computer.eosDevice.id" linkByValuePattern="setHubServer:(.*)" />
+                <Item linkBy="Computer.id|Computer.eosDevice.id" linkByValuePattern="setAssetServer:(.*)" />
+                <Item linkBy="path" linkByValuePattern="playCustomSong:(.*)" />
+                <Item linkBy="path" linkByValuePattern="playCustomSongImmediatley:(.*)" />
+            </LinkByCollection>
+            <Step value="addRank" desc="增加玩家在当前组织的等级并发送邮件通知" kind="function" />
+            <Step value="addRankSilent" desc="增加玩家在当前组织的等级不发送邮件通知" kind="function" />
+            <Step value="addRankFaction:" desc="增加玩家在指定组织的等级" kind="function">
+                <Next hint="js">
+                    (function(actNode, hacknetNodeHolder){
+                        return hacknetNodeHolder.GetFactions().map(node =&gt; {
+                            return {value: node.id, kind: "enum"};
+                        });
+                    })
+                </Next>
+            </Step>
+            <Step value="addFlags:flag1" desc="添加一个flag,多个用逗号隔开" kind="function" />
+            <Step value="removeFlags:flag1" desc="移除一个flag,多个用逗号隔开" kind="function" />
+            <Step value="setFaction:" desc="设置玩家当前的组织ID" kind="function">
+                <Next hint="js">
+                    (function(actNode, hacknetNodeHolder){
+                        return hacknetNodeHolder.GetFactions().map(node =&gt; {
+                            return {value: node.id, kind: "enum"};
+                        });
+                    })
+                </Next>
+            </Step>
+            <Step value="loadConditionalActions:" desc="加载一个action文件" kind="function">
+                <Next hint="ActionFile" />
+            </Step>
+            <Step value="changeSong" desc="切换歌曲" kind="function" />
+            <Step value="changeSongDLC" desc="切换DLC歌曲" kind="function" />
+            <Step value="setHubServer:" desc="设置一个计算机为hubServer(在netmap有特殊标识)" kind="function">
+                <Next hint="computer" />
+            </Step>
+            <Step value="setAssetServer:" desc="设置一个计算机为资源服务器(在netmap有特殊标识)" kind="function">
+                <Next hint="computer" />
+            </Step>
+            <Step value="playCustomSong:" desc="播放自定义歌曲, 有淡入淡出效果(后缀必须为.ogg)" kind="function">
+                <Next hint="path">**/*.ogg</Next>
+            </Step>
+            <Step value="playCustomSongImmediatley:" desc="立即播放自定义歌曲, 无淡入淡出效果(后缀必须为.ogg)" kind="function">
+                <Next hint="path">**/*.ogg</Next>
+            </Step>
+        </Attribute>
+
+        <Attribute name="FunctionValue" required="true" desc="方法参数" hint="js">
+            (function(actNode, hacknetNodeHolder){
+                if (!actNode.node.attribute.has('FunctionName')) {
+                    return;
+                }
+                const notValueFuncNames = ['addFlags', 'removeFlags', 'setFaction', 'loadConditionalActions', 'setHubServer', 'setAssetServer', 'playCustomSong', 'playCustomSongImmediatley'];
+                const funcName = actNode.node.attribute.get('FunctionName');
+                if (notValueFuncNames.some(item =&gt; funcName.startsWith(item))) {
+                    return {value: 'NONE', desc: `当前方法无需设置Value`, kind: 'value'};
+                }
+
+                const factionRankFuncNames = ['addRank', 'addRankSilent', 'addRankFaction'];
+                if (factionRankFuncNames.some(name =&gt; funcName.startsWith(name))) {
+                    return {value: '1', desc: `要增加的组织等级`, kind: 'value'};
+                }
+
+                const songNames = ['Revolve', 'The_Quickening', 'TheAlgorithm', 'Ryan3', 'Bit(Ending)', 'Rico_Puestel-Roja_Drifts_By', 'out_run_the_wolves', 'Irritations', 'Broken_Boy', 'Ryan10', 'tetrameth'];
+                if (funcName === 'changeSong') {
+                    return songNames.map((desc, idx) =&gt; {
+                        return {value: idx + 1, desc, kind: 'value'};
+                    });
+                }
+
+                const dlcSongNames = ['Remi2', 'snidelyWhiplash', 'Slow_Motion', 'World_Chase', 'HOME_Resonance', 'Remi_Finale', 'RemiDrone', 'DreamHead', 'Userspacelike', 'CrashTrack'];
+                if (funcName === 'changeSongDLC') {
+                    return dlcSongNames.map((desc, idx) =&gt; {
+                        return {value: idx + 1, desc, kind: 'value'};
+                    });
+                }
+            });
+        </Attribute>
+        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID,否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="Delay" required="false" desc="延迟触发(秒)" default="0.0" hint="enum"/>
+    </Node>
+
+
+    <!-- 任务开始 -->
+    <!-- <mission id="testMission0" activeCheck="false" shouldIgnoreSenderVerification="false"></mission> -->
+    <Node name="mission" enable="true" multi="false" desc="定义一个任务信息">
+        <Content />
+        <Attribute name="id" required="true" desc="任务ID" default="mission1" hint="enum"/>
+        <Attribute name="activeCheck" required="true" desc="是否实时检测任务完成状态" default="false" hint="enum">
+            <Enums>
+                <Enum desc="实时检测任务完成状态">true</Enum>
+                <Enum desc="只在回复邮件时检测">false</Enum>
+            </Enums>
+        </Attribute>
+        <Attribute name="shouldIgnoreSenderVerification" required="true" desc="是否忽略邮件发送者校验" default="false" hint="enum">
+            <Enums>
+                <Enum>true</Enum>
+                <Enum>false</Enum>
+            </Enums>
+        </Attribute>
+    </Node>
+    <Node name="mission.goals" enable="true" multi="false" desc="定义一组任务需要完成的目标">
+        <Content />
+    </Node>
+    <Node name="mission.goals.goal" enable="true" multi="true" desc="定义一个任务需要完成的目标">
+        <Attribute name="type" required="true" desc="任务类型" default="" hint="enum">
+            <Enums>
+                <Enum desc="删除文件">filedeletion</Enum>
+                <Enum desc="清空文件夹">clearfolder</Enum>
+                <Enum desc="下载文件">filedownload</Enum>
+                <Enum desc="更改文件内容">filechange</Enum>
+                <Enum desc="获取某台电脑管理员权限">getadmin</Enum>
+                <Enum desc="邮件回复一个字符串">getstring</Enum>
+                <Enum desc="任务延迟">delay</Enum>
+                <Enum desc="存在flag">hasflag</Enum>
+                <Enum desc="文件上传">fileupload</Enum>
+                <Enum desc="在学院数据库添加信息(使用前请确保您的机器里存在id为academic的计算机且存在academicDatabase服务)">AddDegree</Enum>
+                <Enum desc="在学术数据库移除信息(使用前请确保您的机器里存在id为academic的计算机且存在academicDatabase服务)">wipedegrees</Enum>
+                <Enum desc="发送邮件(医疗数据库)">sendemail</Enum>
+                <Enum desc="邮件发送指定机器的管理员密码(DLC)">getadminpasswordstring</Enum>
+            </Enums>
+        </Attribute>
+        <ConditionAttributes attr="type" match="^filedeletion$">
+            <Attribute name="target" required="true" desc="待删文件所处的计算机ID" default="" hint="ComputerOrEos" linkBy="Computer.id|Computer.eosDevice.id" />
+            <Attribute name="file" required="true" desc="文件名" default="file.txt" hint="enum" />
+            <Attribute name="path" required="true" desc="文件所在路径" default="home" hint="enum">
+                <Enums kind="value">
+                    <Enum desc="home目录">home</Enum>
+                    <Enum desc="exe文件存放目录">bin</Enum>
+                    <Enum desc="日志目录">log</Enum>
+                    <Enum desc="系统文件目录">sys</Enum>
+                </Enums>
+            </Attribute>
+        </ConditionAttributes>
+        <ConditionAttributes attr="type" match="^clearfolder$">
+            <Attribute name="target" required="true" desc="目标计算机ID" default="" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
+            <Attribute name="path" required="true" desc="待清空路径" default="home" hint="enum">
+                <Enums kind="value">
+                    <Enum desc="home目录">home</Enum>
+                    <Enum desc="exe文件存放目录">bin</Enum>
+                    <Enum desc="日志目录">log</Enum>
+                    <Enum desc="系统文件目录">sys</Enum>
+                </Enums>
+            </Attribute>
+        </ConditionAttributes>
+        <ConditionAttributes attr="type" match="^filedownload$">
+            <Attribute name="target" required="true" desc="待下载文件所处的计算机ID" default="" hint="ComputerOrEos" linkBy="Computer.id|Computer.eosDevice.id" />
+            <Attribute name="file" required="true" desc="文件名" default="file.txt" hint="enum" />
+            <Attribute name="path" required="true" desc="文件所在路径" default="home" hint="enum">
+                <Enums kind="value">
+                    <Enum desc="home目录">home</Enum>
+                    <Enum desc="exe文件存放目录">bin</Enum>
+                    <Enum desc="日志目录">log</Enum>
+                    <Enum desc="系统文件目录">sys</Enum>
+                </Enums>
+            </Attribute>
+        </ConditionAttributes>
+        <ConditionAttributes attr="type" match="^filechange$">
+            <Attribute name="target" required="true" desc="待更改文件所处的计算机ID" default="" hint="ComputerOrEos" linkBy="Computer.id|Computer.eosDevice.id" />
+            <Attribute name="file" required="true" desc="文件名" default="file.txt" hint="enum" />
+            <Attribute name="path" required="true" desc="文件所在路径" default="home" hint="enum">
+                <Enums kind="value">
+                    <Enum desc="home目录">home</Enum>
+                    <Enum desc="exe文件存放目录">bin</Enum>
+                    <Enum desc="日志目录">log</Enum>
+                    <Enum desc="系统文件目录">sys</Enum>
+                </Enums>
+            </Attribute>
+            <Attribute name="keyword" required="true" desc="关键字(存在该关键字则检测成功)" default="keyword" hint="enum" />
+            <Attribute name="removal" required="true" desc="为true则表示关键字不存在则检测成功" default="false" hint="enum">
+                <Enums>
+                    <Enum>true</Enum>
+                    <Enum>false</Enum>
+                </Enums>
+            </Attribute>
+            <Attribute name="caseSensitive" required="true" desc="是否对关键字大小写敏感" default="true" hint="enum">
+                <Enums>
+                    <Enum>true</Enum>
+                    <Enum>false</Enum>
+                </Enums>
+            </Attribute>
+        </ConditionAttributes>
+        <ConditionAttributes attr="type" match="^getadmin$">
+            <Attribute name="target" required="true" desc="目标计算机ID" default="" hint="ComputerOrEos" linkBy="Computer.id|Computer.eosDevice.id" />
+        </ConditionAttributes>
+        <ConditionAttributes attr="type" match="^getstring$">
+            <Attribute name="target" required="true" desc="待回复的字符串" default="mail response" hint="enum" />
+        </ConditionAttributes>
+        <ConditionAttributes attr="type" match="^delay$">
+            <Attribute name="time" required="true" desc="延时的时间" default="10.0" hint="enum" />
+        </ConditionAttributes>
+        <ConditionAttributes attr="type" match="^hasflag$">
+            <Attribute name="target" required="true" desc="flag值, 不支持多个" default="flag1" hint="enum" />
+        </ConditionAttributes>
+        <ConditionAttributes attr="type" match="^fileupload$">
+            <Attribute name="target" required="true" desc="待上传文件所处的计算机ID" default="" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
+            <Attribute name="file" required="true" desc="待上传文件名" default="file.txt" hint="enum" />
+            <Attribute name="path" required="true" desc="待上传文件所在路径" default="home" hint="enum">
+                <Enums kind="value">
+                    <Enum desc="home目录">home</Enum>
+                    <Enum desc="exe文件存放目录">bin</Enum>
+                    <Enum desc="日志目录">log</Enum>
+                    <Enum desc="系统文件目录">sys</Enum>
+                </Enums>
+            </Attribute>
+            <Attribute name="destTarget" required="true" desc="文件上传到的目标的计算机ID" default="" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
+            <Attribute name="destPath" required="true" desc="文件上传到的目录" default="home" hint="enum">
+                <Enums kind="value">
+                    <Enum desc="home目录">home</Enum>
+                    <Enum desc="exe文件存放目录">bin</Enum>
+                    <Enum desc="日志目录">log</Enum>
+                    <Enum desc="系统文件目录">sys</Enum>
+                </Enums>
+            </Attribute>
+            <Attribute name="decrypt" required="false" desc="是否上传的是加密文件" default="false" hint="enum">
+                <Enums>
+                    <Enum>true</Enum>
+                    <Enum>false</Enum>
+                </Enums>
+            </Attribute>
+            <Attribute name="decryptPass" required="false" desc="加密文件的密码" default="pass" hint="enum" />
+        </ConditionAttributes>
+        <ConditionAttributes attr="type" match="^AddDegree$">
+            <Attribute name="owner" required="true" desc="学生姓名" default="John Stalvern" hint="enum" />
+            <Attribute name="degree" required="true" desc="学位" default="Masters in Digital Security" hint="enum" />
+            <Attribute name="uni" required="true" desc="大学" default="Manchester University" hint="enum" />
+            <Attribute name="gpa" required="true" desc="绩点" default="3.0" hint="enum" />
+        </ConditionAttributes>
+        <ConditionAttributes attr="type" match="^wipedegrees$">
+            <Attribute name="owner" required="true" desc="待删信息的学生姓名" default="John Stalvern" hint="enum" />
+        </ConditionAttributes>
+        <ConditionAttributes attr="type" match="^sendemail$">
+            <Attribute name="mailServer" required="true" desc="存在邮件服务的计算机ID" default="" hint="js" linkBy="Computer.id|Computer.eosDevice.id" >
+                (function(node, hacknetNodeHolder){
+                    return hacknetNodeHolder.GetComputers()
+                        .filter(comp =&gt; comp.mailServer)
+                        .map(comp =&gt; {
+                        return {value: comp.id, desc: comp.name, filterText: comp.id, kind: "reference"};
+                    });
+                })
+            </Attribute>
+            <Attribute name="recipient" required="true" desc="收件人" default="" hint="js" >
+                (function(actNode, hacknetNodeHolder){
+                    if (!actNode.node.attribute.has('mailServer')) {
+                        return;
+                    }
+                    const targetCompId = actNode.node.attribute.get('mailServer');
+                    const comp = hacknetNodeHolder.GetComputers().find(comp =&gt; comp.id === targetCompId);
+                    if (!comp) {
+                        return;
+                    }
+
+                    if (comp.account) {
+                        if (Array.isArray(comp.account)) {
+                            return comp.account.filter(account =&gt; {
+                                return account.type.toString() === '2' || account.type.toString().toLocaleLowerCase() === 'mail';
+                            }).map(account =&gt; {
+                                return {value: account.username, desc: '定义的邮件账户', kind: 'value'};
+                            });
+                        } else if (comp.account.type.toString() === '2' || comp.account.type.toString().toLocaleLowerCase() === 'mail') {
+                            return {value: comp.account.username, desc: '定义的邮件账户', kind: 'value'};
+                        }
+                    }
+                });
+            </Attribute>
+            <Attribute name="subject" required="true" desc="邮件主题" default="Email Subject" hint="enum" />
+        </ConditionAttributes>
+        <ConditionAttributes attr="type" match="^getadminpasswordstring$">
+            <Attribute name="target" required="true" desc="目标计算机ID" default="" hint="ComputerOrEos" linkBy="Computer.id|Computer.eosDevice.id" />
+        </ConditionAttributes>
+    </Node>
+    <Node name="mission.missionStart" enable="true" multi="false" desc="定义任务开始执行的方法,同action的RunFunction用法">
+        <Content desc="方法名同action的RunFunction的FunctionName" default="loadConditionalActions:" hint="step">
+            <LinkByCollection>
+                <Item linkBy="Faction.id" linkByValuePattern="setFaction:(.*)" />
+                <Item linkBy="path" linkByValuePattern="loadConditionalActions:(.*)" />
+                <Item linkBy="Computer.id|Computer.eosDevice.id" linkByValuePattern="setHubServer:(.*)" />
+                <Item linkBy="Computer.id|Computer.eosDevice.id" linkByValuePattern="setAssetServer:(.*)" />
+                <Item linkBy="path" linkByValuePattern="playCustomSong:(.*)" />
+                <Item linkBy="path" linkByValuePattern="playCustomSongImmediatley:(.*)" />
+            </LinkByCollection>
+            <Step value="addRank" desc="增加玩家在当前组织的等级并发送邮件通知" kind="function" />
+            <Step value="addRankSilent" desc="增加玩家在当前组织的等级不发送邮件通知" kind="function" />
+            <Step value="addRankFaction:" desc="增加玩家在指定组织的等级" kind="function">
+                <Next hint="js">
+                    (function(actNode, hacknetNodeHolder){
+                        return hacknetNodeHolder.GetFactions().map(node =&gt; {
+                            return {value: node.id, kind: "enum"};
+                        });
+                    })
+                </Next>
+            </Step>
+            <Step value="addFlags:flag1" desc="添加一个flag,多个用逗号隔开" kind="function" />
+            <Step value="removeFlags:flag1" desc="移除一个flag,多个用逗号隔开" kind="function" />
+            <Step value="setFaction:" desc="设置玩家当前的组织ID" kind="function">
+                <Next hint="js">
+                    (function(actNode, hacknetNodeHolder){
+                        return hacknetNodeHolder.GetFactions().map(node =&gt; {
+                            return {value: node.id, kind: "enum"};
+                        });
+                    })
+                </Next>
+            </Step>
+            <Step value="loadConditionalActions:" desc="加载一个action文件" kind="function">
+                <Next hint="ActionFile" />
+            </Step>
+            <Step value="changeSong" desc="切换歌曲" kind="function" />
+            <Step value="changeSongDLC" desc="切换DLC歌曲" kind="function" />
+            <Step value="setHubServer:" desc="设置一个计算机为hubServer(在netmap有特殊标识)" kind="function">
+                <Next hint="computer" />
+            </Step>
+            <Step value="setAssetServer:" desc="设置一个计算机为资源服务器(在netmap有特殊标识)" kind="function">
+                <Next hint="computer" />
+            </Step>
+            <Step value="playCustomSong:" desc="播放自定义歌曲, 有淡入淡出效果(后缀必须为.ogg)" kind="function">
+                <Next hint="path">**/*.ogg</Next>
+            </Step>
+            <Step value="playCustomSongImmediatley:" desc="立即播放自定义歌曲, 无淡入淡出效果(后缀必须为.ogg)" kind="function">
+                <Next hint="path">**/*.ogg</Next>
+            </Step>
+        </Content>
+        <Attribute name="suppress" required="false" desc="为true时通过loadMission加载的任务的missionStart不会立即执行, 只有通过nextMission加载的任务的missionStart才会执行,false时可能会多次执行( 存读档 )" 
+            default="true" hint="enum">
+            <Enums>
+                <Enum>true</Enum>
+                <Enum>false</Enum>
+            </Enums>
+        </Attribute>
+        <Attribute name="val" required="true" desc="执行方法的参数, 同action的RunFunction的FunctionValue属性" default="0" hint="enum"/>
+    </Node>
+    <Node name="mission.missionEnd" enable="true" multi="false" desc="定义任务完成后执行的方法,同action的RunFunction用法">
+        <Content desc="方法名同action的RunFunction的FunctionName" default="loadConditionalActions:" hint="step">
+            <LinkByCollection>
+                <Item linkBy="Faction.id" linkByValuePattern="setFaction:(.*)" />
+                <Item linkBy="path" linkByValuePattern="loadConditionalActions:(.*)" />
+                <Item linkBy="Computer.id|Computer.eosDevice.id" linkByValuePattern="setHubServer:(.*)" />
+                <Item linkBy="Computer.id|Computer.eosDevice.id" linkByValuePattern="setAssetServer:(.*)" />
+                <Item linkBy="path" linkByValuePattern="playCustomSong:(.*)" />
+                <Item linkBy="path" linkByValuePattern="playCustomSongImmediatley:(.*)" />
+            </LinkByCollection>
+            <Step value="addRank" desc="增加玩家在当前组织的等级并发送邮件通知" kind="function" />
+            <Step value="addRankSilent" desc="增加玩家在当前组织的等级不发送邮件通知" kind="function" />
+            <Step value="addRankFaction:" desc="增加玩家在指定组织的等级" kind="function">
+                <Next hint="js">
+                    (function(actNode, hacknetNodeHolder){
+                        return hacknetNodeHolder.GetFactions().map(node =&gt; {
+                            return {value: node.id, kind: "enum"};
+                        });
+                    })
+                </Next>
+            </Step>
+            <Step value="addFlags:flag1" desc="添加一个flag,多个用逗号隔开" kind="function" />
+            <Step value="removeFlags:flag1" desc="移除一个flag,多个用逗号隔开" kind="function" />
+            <Step value="setFaction:" desc="设置玩家当前的组织ID" kind="function">
+                <Next hint="js">
+                    (function(actNode, hacknetNodeHolder){
+                        return hacknetNodeHolder.GetFactions().map(node =&gt; {
+                            return {value: node.id, kind: "enum"};
+                        });
+                    })
+                </Next>
+            </Step>
+            <Step value="loadConditionalActions:" desc="加载一个action文件" kind="function">
+                <Next hint="ActionFile" />
+            </Step>
+            <Step value="changeSong" desc="切换歌曲" kind="function" />
+            <Step value="changeSongDLC" desc="切换DLC歌曲" kind="function" />
+            <Step value="setHubServer:" desc="设置一个计算机为hubServer(在netmap有特殊标识)" kind="function">
+                <Next hint="computer" />
+            </Step>
+            <Step value="setAssetServer:" desc="设置一个计算机为资源服务器(在netmap有特殊标识)" kind="function">
+                <Next hint="computer" />
+            </Step>
+            <Step value="playCustomSong:" desc="播放自定义歌曲, 有淡入淡出效果(后缀必须为.ogg)" kind="function">
+                <Next hint="path">**/*.ogg</Next>
+            </Step>
+            <Step value="playCustomSongImmediatley:" desc="立即播放自定义歌曲, 无淡入淡出效果(后缀必须为.ogg)" kind="function">
+                <Next hint="path">**/*.ogg</Next>
+            </Step>
+        </Content>
+        <Attribute name="val" required="true" desc="执行方法的参数, 同action的RunFunction的FunctionValue属性" default="0" hint="enum"/>
+    </Node>
+    <Node name="mission.nextMission" enable="true" multi="false" desc="定义任务完成后加载的下一个任务">
+        <Content desc="任务文件路径" default="NONE" hint="MisisonFile" linkBy="path" />
+        <Attribute name="IsSilent" required="true" desc="是否静默加载【当前】任务即不发送邮件" default="false" hint="enum">
+            <Enums>
+                <Enum desc="静默加载任务">true</Enum>
+                <Enum desc="加载任务并发送邮件">false</Enum>
+            </Enums>
+        </Attribute>
+    </Node>
+    <Node name="mission.branchMissions" enable="true" multi="false" desc="定义一组分支任务, 分支任务的条件也会随主任务一起检查">
+        <Content />
+    </Node>
+    <Node name="mission.branchMissions.branch" enable="true" multi="true" desc="加载一个分支任务">
+        <Content desc="任务文件路径" default="branchMission" hint="MisisonFile" linkBy="path" />
+    </Node>
+    <Node name="mission.posting" enable="true" multi="false" desc="定义任务在任务中心显示的内容">
+        <Content desc="任务内容描述" default="任务内容描述" hint="enumWithCommonString"  />
+        <Attribute name="title" required="true" desc="任务标题" default="任务标题" hint="enum"/>
+        <Attribute name="reqs" required="false" desc="任务允许被接受的条件(flag是否存在,可以多个flag逗号隔开)" default="someCustomFlag" hint="enum"/>
+        <Attribute name="requiredRank" required="false" desc="任务允许被接受的条件(玩家在组织的等级达到目标)" default="1" hint="enum"/>
+    </Node>
+    <Node name="mission.email" enable="true" multi="false" desc="定义加载任务时发送的邮件信息">
+        <Content />
+    </Node>
+    <Node name="mission.email.sender" enable="true" multi="false" desc="定义邮件的发送者">
+        <Content desc="邮件发送者" default="fengxu" />
+    </Node>
+    <Node name="mission.email.subject" enable="true" multi="false" desc="定义邮件的主题">
+        <Content desc="邮件主题" default="邮件主题" />
+    </Node>
+    <Node name="mission.email.body" enable="true" multi="false" desc="定义邮件的内容">
+        <Content desc="邮件内容" default="邮件内容" />
+    </Node>
+    <Node name="mission.email.attachments" enable="true" multi="false" desc="定义邮件的附件信息">
+        <Content />
+    </Node>
+    <Node name="mission.email.attachments.note" enable="true" multi="true" desc="定义邮件的笔记信息">
+        <Content desc="笔记内容" default="笔记内容" />
+        <Attribute name="title" required="true" desc="笔记标题" default="任务细节" hint="enum"/>
+    </Node>
+    <Node name="mission.email.attachments.link" enable="true" multi="true" desc="定义邮件附加可点击后显示的计算机">
+        <Attribute name="comp" required="true" desc="计算机ID" default="" hint="ComputerOrEos" linkBy="Computer.id|Computer.eosDevice.id" />
+    </Node>
+    <Node name="mission.email.attachments.account" enable="true" multi="true" desc="定义邮件附加点击计算机后登录界面显示的账户信息">
+        <Attribute name="comp" required="true" desc="计算机ID" default="" hint="computer" linkBy="Computer.id" />
+        <Attribute name="user" required="true" desc="账户名" default="" hint="js">
+            (function(actNode, hacknetNodeHolder){
+                if (!actNode.node.attribute.has('comp')) {
+                    return;
+                }
+                const targetCompId = actNode.node.attribute.get('comp');
+                const comp = hacknetNodeHolder.GetComputers().find(comp =&gt; comp.id === targetCompId);
+                if (!comp) {
+                    return;
+                }
+
+                const res = [];
+                if (comp.adminPass) {
+                    res.push({value: 'admin', desc: '定义的账户', kind: 'value'})
+                }
+
+                if (comp.account) {
+                    if (Array.isArray(comp.account)) {
+                        comp.account.forEach(account =&gt; {
+                            res.push({value: account.username, desc: '定义的账户', kind: 'value'});
+                        });
+                    } else  {
+                        res.push({value: comp.account.username, desc: '定义的账户', kind: 'value'});
+                    }
+                }
+
+                return res;
+            })
+        </Attribute>
+        <Attribute name="pass" required="true" desc="账户名对应的密码" default="" hint="js">
+            (function(actNode, hacknetNodeHolder){
+                if (!actNode.node.attribute.has('comp')) {
+                    return;
+                }
+                const targetCompId = actNode.node.attribute.get('comp');
+                const comp = hacknetNodeHolder.GetComputers().find(comp =&gt; comp.id === targetCompId);
+                if (!comp) {
+                    return;
+                }
+
+                const user = actNode.node.attribute.get('user');
+                if (!user) {
+                    return;
+                }
+
+                if (user === 'admin' &amp;&amp; comp.adminPass) {
+                    return {value: comp.adminPass.pass, desc: `定义的[${user}]账户密码`, kind: 'value'};
+                }
+
+                if (comp.account) {
+                    if (Array.isArray(comp.account)) {
+                        const account = comp.account.find(account =&gt; account.username === user);
+                        if (!account) {
+                            return;
+                        }
+                        return {value: account.password, desc: `定义的[${user}]账户密码`, kind: 'value'};
+                    } else if (comp.account.username === user) {
+                        return {value: comp.account.password, desc: `定义的[${user}]账户密码`, kind: 'value'};
+                    }
+                }
+            });
+        </Attribute>
+    </Node>
+
+    <!-- 主题开始 -->
+    <Node name="CustomTheme" enable="true" multi="false" desc="定义一个自定义主题">
+       <Content />
+    </Node>
+    <Node name="CustomTheme.themeLayoutName" enable="true" multi="false" desc="主题的布局类型">
+       <Content desc="布局类型" default="mint" hint="enum">
+            <Enums>
+                <Enum desc="布局样式: ram|display,netmap|terminal">blue</Enum>
+                <Enum desc="布局样式: display,netmap|terminal|ram">green</Enum>
+                <Enum desc="布局样式: ram|display|terminal,netmap">white</Enum>
+                <Enum desc="布局样式: ram|terminal,netmap|display">mint</Enum>
+                <Enum desc="布局样式: display,netmap|terminal|ram">greencompact</Enum>
+                <Enum desc="布局样式: netmap,display|terminal|ram">riptide</Enum>
+                <Enum desc="布局样式: display,netmap|terminal|ram">riptide2</Enum>
+                <Enum desc="布局样式: netmap,display|terminal|ram">colamaeleon</Enum>
+                <Enum desc="布局样式: ram|display,netmap|terminal">purple</Enum>
+            </Enums>
+       </Content>
+    </Node>
+    <Node name="CustomTheme.backgroundImagePath" enable="true" multi="false" desc="背景图路径">
+       <Content desc="背景图路径分辨率最好不低于1920x1080" default="" hint="path" linkBy="path" >**/*.{jpg,png}</Content>
+    </Node>
+    <Node name="CustomTheme.UseAspectPreserveBackgroundScaling" enable="true" multi="false" desc="是否拉伸背景图已适应屏幕">
+       <Content desc="是否拉伸背景图已适应屏幕" default="false" hint="enum">
+            <Enums>
+                <Enum desc="否">false</Enum>
+                <Enum desc="是">true</Enum>
+            </Enums>
+       </Content>
+    </Node>
+    <Node name="CustomTheme.BackgroundImageFillColor" enable="true" multi="false" desc="未拉伸背景图时其余部分的填充色">
+       <Content desc="" default="0,0,0" hint="color"/>
+    </Node>
+    <Node name="CustomTheme.defaultHighlightColor" enable="true" multi="false" desc="高亮图标颜色, 同时也会显示在netmap内的节点上“您是本系统管理员”标志, 按钮侧面等的颜色">
+       <Content desc="" default="255,41,63" hint="color"/>
+    </Node>
+    <Node name="CustomTheme.defaultTopBarColor" enable="true" multi="false" desc="顶部栏背景色">
+       <Content desc="" default="74,7,14,255" hint="color"/>
+    </Node>
+    <Node name="CustomTheme.moduleColorSolidDefault" enable="true" multi="false" desc="窗口边框的颜色">
+       <Content desc="" default="0,204,132" hint="color"/>
+    </Node>
+    <Node name="CustomTheme.moduleColorStrong" enable="true" multi="false" desc="窗口顶部的颜色">
+       <Content desc="" default="14,40,25,80" hint="color"/>
+    </Node>
+    <Node name="CustomTheme.moduleColorBacking" enable="true" multi="false" desc="moduleColorBacking">
+       <Content desc="" default="5,7,6,10" hint="color"/>
+    </Node>
+    <Node name="CustomTheme.exeModuleTopBar" enable="true" multi="false" desc="exe bar背景色">
+       <Content desc="" default="130,65,27,80" hint="color"/>
+    </Node>
+    <Node name="CustomTheme.exeModuleTitleText" enable="true" multi="false" desc="exe bar文字色">
+       <Content desc="" default="155,85,37,0" hint="color"/>
+    </Node>
+    <Node name="CustomTheme.warningColor" enable="true" multi="false" desc="在跟踪和“红线”事件( 例如CCC )期间通过某些元素闪烁的颜色.">
+       <Content desc="" default="255,0,0" hint="color"/>
+    </Node>
+    <Node name="CustomTheme.subtleTextColor" enable="true" multi="false" desc="登录按钮主题色, 如果存在daemo则是后面三个按钮的颜色">
+       <Content desc="" default="90,90,90" hint="color"/>
+    </Node>
+    <Node name="CustomTheme.darkBackgroundColor" enable="true" multi="false" desc="搜索框背景/邮件按钮等颜色">
+       <Content desc="" default="8,8,8" hint="color"/>
+    </Node>
+    <Node name="CustomTheme.indentBackgroundColor" enable="true" multi="false" desc="use ram / 登录 模块背景色">
+       <Content desc="" default="12,12,12" hint="color"/>
+    </Node>
+    <Node name="CustomTheme.outlineColor" enable="true" multi="false" desc="节点之间连接线的颜色">
+       <Content desc="" default="68,68,68" hint="color"/>
+    </Node>
+    <Node name="CustomTheme.lockedColor" enable="true" multi="false" desc="断开/取消 按钮颜色, 端口被锁住的颜色">
+       <Content desc="" default="65,16,16,200" hint="color"/>
+    </Node>
+    <Node name="CustomTheme.brightLockedColor" enable="true" multi="false" desc="显示端口不可破解的背景色">
+       <Content desc="" default="160,0,0" hint="color"/>
+    </Node>
+    <Node name="CustomTheme.brightUnlockedColor" enable="true" multi="false" desc="sshcrack.exe小方格过度颜色, 成功登录后成功两个字颜色等">
+       <Content desc="" default="0,160,0" hint="color"/>
+    </Node>
+    <Node name="CustomTheme.unlockedColor" enable="true" multi="false" desc="端口解锁后的颜色">
+       <Content desc="" default="39,65,36" hint="color"/>
+    </Node>
+    <Node name="CustomTheme.lightGray" enable="true" multi="false" desc="MessageBoard使用">
+       <Content desc="" default="180,180,180" hint="color"/>
+    </Node>
+    <Node name="CustomTheme.shellColor" enable="true" multi="false" desc="过载节点颜色[指RAM上的] 运行Shell时节点的颜色, 以及您在[probe或nmap]看到的[检测到代理]和[检测到防火墙]的颜色">
+       <Content desc="" default="222,201,24" hint="color"/>
+    </Node>
+    <Node name="CustomTheme.shellButtonColor" enable="true" multi="false" desc="shell过载按钮侧边颜色(经测试, 按钮不够宽显示不出来侧边)">
+       <Content desc="" default="105,167,188" hint="color"/>
+    </Node>
+    <Node name="CustomTheme.semiTransText" enable="true" multi="false" desc="模块bar文字色">
+       <Content desc="" default="120,120,120,0" hint="color"/>
+    </Node>
+    <Node name="CustomTheme.terminalTextColor" enable="true" multi="false" desc="终端文本颜色">
+       <Content desc="" default="213,245,255" hint="color"/>
+    </Node>
+    <Node name="CustomTheme.topBarTextColor" enable="true" multi="false" desc="顶部栏下的文字颜色">
+       <Content desc="" default="126,126,126,100" hint="color"/>
+    </Node>
+    <Node name="CustomTheme.superLightWhite" enable="true" multi="false" desc="破解端口界面斜条纹颜色">
+       <Content desc="" default="2,2,2,30" hint="color"/>
+    </Node>
+    <Node name="CustomTheme.connectedNodeHighlight" enable="true" multi="false" desc="当前连接的节点颜色">
+       <Content desc="" default="222,0,0,195" hint="color"/>
+    </Node>
+    <Node name="CustomTheme.netmapToolTipColor" enable="true" multi="false" desc="鼠标放到netmap节点上后显示右侧文字的颜色">
+       <Content desc="" default="213,245,255,0" hint="color"/>
+    </Node>
+    <Node name="CustomTheme.netmapToolTipBackground" enable="true" multi="false" desc="鼠标放到netmap节点上后显示右侧文字的背景">
+       <Content desc="" default="0,0,0,70" hint="color"/>
+    </Node>
+    <Node name="CustomTheme.topBarIconsColor" enable="true" multi="false" desc="顶部栏icon颜色">
+       <Content desc="" default="255,255,255" hint="color"/>
+    </Node>
+    <Node name="CustomTheme.thisComputerNode" enable="true" multi="false" desc="控制玩家计算机节点的颜色">
+       <Content desc="" default="95,220,83" hint="color"/>
+    </Node>
+    <Node name="CustomTheme.scanlinesColor" enable="true" multi="false" desc="搜索线的颜色">
+       <Content desc="" default="255,255,255,15" hint="color"/>
+    </Node>
+    <Node name="CustomTheme.AFX_KeyboardMiddle" enable="true" multi="false" desc="外星人键盘RGB设置[应该是键位灯光]">
+       <Content desc="" default="0,120,255" hint="color"/>
+    </Node>
+    <Node name="CustomTheme.AFX_KeyboardOuter" enable="true" multi="false" desc="外星人键盘RGB设置[应该是外部灯光]">
+       <Content desc="" default="255,150,0" hint="color"/>
+    </Node>
+    <Node name="CustomTheme.AFX_WordLogo" enable="true" multi="false" desc="外星人文字, 图标RGB灯光设置">
+       <Content desc="" default="0,120,255" hint="color"/>
+    </Node>
+    <Node name="CustomTheme.AFX_Other" enable="true" multi="false" desc="其余选项RGB灯光设置">
+       <Content desc="" default="0,100,255" hint="color"/>
+    </Node>
+
+    <!-- People开始 -->
+    <Node name="Person" enable="true" multi="false" desc="定义一个人的信息, 他将被用于学位数据库/医疗数据库等" fileTriggerPattern="People/**/*.xml">
+        <Content />
+        <Attribute name="id" required="true" desc="id" default="personID" hint="enum"/>
+        <Attribute name="handle" required="true" desc="此人在PointClicker和neopals等项目上的帐户名" default="tester" hint="enum"/>
+        <Attribute name="firstName" required="true" desc="此人在名字" default="Joe" hint="enum"/>
+        <Attribute name="lastName" required="true" desc="此人在姓氏" default="Citizen" hint="enum"/>
+        <Attribute name="isMale" required="true" desc="是否男性" default="true" hint="enum">
+            <Enums>
+                <Enum desc="男性">false</Enum>
+                <Enum desc="女性">true</Enum>
+            </Enums>
+        </Attribute>
+        <Attribute name="forceHasNeopals" required="true" desc="生成一个新账户, 否则随机" default="true" hint="enum">
+            <Enums>
+                <Enum desc="生成新账户">false</Enum>
+                <Enum desc="随机生成">true</Enum>
+            </Enums>
+        </Attribute>
+    </Node>
+    <Node name="Person.Birthplace" enable="true" multi="false" desc="设置出生地">
+        <Attribute name="name" required="true" desc="出生地" default="Califonia" hint="enum"/>
+    </Node>
+    <Node name="Person.Degrees" enable="true" multi="false" desc="设置学位信息">
+        <Content />
+    </Node>
+    <Node name="Person.Degrees.Degree" enable="true" multi="true" desc="设置一个学位信息">
+        <Content desc="学位" default="Bachelor of Software Engineering" />
+        <Attribute name="uni" required="true" desc="学校名称" default="University of California" hint="enum"/>
+        <Attribute name="gpa" required="true" desc="绩点" default="3.2" hint="enum"/>
+    </Node>
+    <Node name="Person.Medical" enable="true" multi="false" desc="设置当前people在医疗数据库中的数据">
+        <Content />
+    </Node>
+    <Node name="Person.Medical.Blood" enable="true" multi="false" desc="设置血型">
+        <Content desc="血型" default="AA" />
+    </Node>
+    <Node name="Person.Medical.Height" enable="true" multi="false" desc="设置身高">
+        <Content desc="身高" default="178" />
+    </Node>
+    <Node name="Person.Medical.Allergies" enable="true" multi="false" desc="设置过敏物">
+        <Content desc="过敏物" default="过敏物" />
+    </Node>
+    <Node name="Person.Medical.Perscription" enable="true" multi="true" desc="设置处方">
+        <Content desc="处方" default="处方: 一个小时吃一次阿莫西林" />
+    </Node>
+    <Node name="Person.Medical.Notes" enable="true" multi="false" desc="病例中的笔记">
+        <Content desc="笔记信息" default="笔记信息" />
+    </Node>
+    <Node name="Person.DOB" enable="true" multi="false" desc="出生时间">
+        <Content desc="出生时间" default="17/02/1990 09:00:00" />
+    </Node>
+    <Node name="Person.Notes" enable="true" multi="false" desc="给自己看的, 不在游戏中使用">
+        <Content desc="给自己看的, 不在游戏中使用" default="给自己看的, 不在游戏中使用" />
+    </Node>
+
+    <!-- 只有在输入#时触发提示 -->
+    <ReplaceTextHint>
+        <Text value="#BINARY#" desc="随机生成由[0,1]组成的较长文本"/>
+        <Text value="#BINARYSMALL#" desc="随机生成由[0,1]组成的较短文本"/>
+        <Text value="#PLAYERNAME#" desc="玩家名称"/>
+        <Text value="#PLAYER_IP#" desc="玩家电脑IP"/>
+        <Text value="#PLAYER_ACCOUNT_PASSWORD#" desc="玩家账户密码"/>
+        <Text value="#RANDOM_IP#" desc="随机生成一个IP"/>
+        <Text value="#SSH_CRACK#" desc="SSHCrack.exe内容"/>
+        <Text value="#FTP_CRACK#" desc="FTPBounce.exe内容"/>
+        <Text value="#WEB_CRACK#" desc="WebServerWorm.exe内容"/>
+        <Text value="#DECYPHER_PROGRAM#" desc="Decypher.exe内容"/>
+        <Text value="#DECHEAD_PROGRAM#" desc="DECHead.exe内容"/>
+        <Text value="#CLOCK_PROGRAM#" desc="Clock.exe内容"/>
+        <Text value="#MEDICAL_PROGRAM#" desc="KBTPortTest.exe内容"/>
+        <Text value="#SMTP_CRACK#" desc="SMTPOverflow.exe内容"/>
+        <Text value="#SQL_CRACK#" desc="SQLBufferOverflow.exe内容"/>
+        <Text value="#SECURITYTRACER_PROGRAM#" desc="SecurityTracer.exe内容"/>
+        <Text value="#HACKNET_EXE#" desc=""/>
+        <Text value="#HEXCLOCK_EXE#" desc="HexClock.exe内容"/>
+        <Text value="#SEQUENCER_EXE#" desc="Sequence.exe内容"/>
+        <Text value="#THEMECHANGER_EXE#" desc="ThemeChanger.exe内容"/>
+        <Text value="#EOS_SCANNER_EXE#" desc="eosDeviceScan.exe内容"/>
+        <Text value="#TRACEKILL_EXE#" desc="Tracekill.exe内容"/>
+        <Text value="#GREEN_THEME#" desc="主题之一"/>
+        <Text value="#WHITE_THEME#" desc="主题之一"/>
+        <Text value="#YELLOW_THEME#" desc="主题之一"/>
+        <Text value="#TEAL_THEME#" desc="主题之一"/>
+        <Text value="#BASE_THEME#" desc="主题之一"/>
+        <Text value="#PURPLE_THEME#" desc="主题之一"/>
+        <Text value="#MINT_THEME#" desc="主题之一"/>
+        <Text value="#PACEMAKER_FW_WORKING#" desc="KBT_Firmware_v1.2.dll与LiveFirmware.dll内容"/>
+        <Text value="#PACEMAKER_FW_DANGER#" desc="PacemakerFirmware_Cycle_Test.dll内容"/>
+        <Text value="#RTSP_EXE#" desc="RTSPCrack.exe内容"/>
+        <Text value="#EXT_SEQUENCER_EXE#" desc="ESequencer.exe内容"/>
+        <Text value="#SHELL_OPENER_EXE#" desc="OpShell.exe内容"/>
+        <Text value="#FTP_FAST_EXE#" desc="FTPSprint.exe内容"/>
+        <Text value="#EXTENSION_FOLDER_PATH#" desc="当前激活的扩展目录"/>
+        <Text value="#TORRENT_EXE#" desc="TorrentStreamInjector.exe内容(DLC添加)"/>
+        <Text value="#SSL_EXE#" desc="SSLTrojan.exe内容(DLC添加)"/>
+        <Text value="#KAGUYA_EXE#" desc="DLC扩展用的exe"/>
+        <Text value="#SIGNAL_SCRAMBLER_EXE#" desc="SignalScramble.exe内容(DLC添加)"/>
+        <Text value="#MEM_FORENSICS_EXE#" desc="MemForensics.exe内容(DLC添加)"/>
+        <Text value="#MEM_DUMP_GENERATOR#" desc="MemDumpGenerator.exe内容(DLC添加)"/>
+        <Text value="#PACIFIC_EXE#" desc="PacificPortcrusher.exe内容(DLC添加)"/>
+        <Text value="#NETMAP_ORGANIZER_EXE#" desc="NetmapOrganizer.exe内容(DLC添加)"/>
+        <Text value="#SHELL_CONTROLLER_EXE#" desc="ComShell.exe内容(DLC添加)"/>
+        <Text value="#NOTES_DUMPER_EXE#" desc="DNotes.exe内容(DLC添加)"/>
+        <Text value="#CLOCK_V2_EXE#" desc="Clockv2.exe内容(DLC添加)"/>
+        <Text value="#DLC_MUSIC_EXE#" desc="Tuneswap.exe内容(DLC添加)"/>
+    </ReplaceTextHint>
+
+    <!-- 通用文本提示在hint="enumWithCommonString"时触发 -->
+    <CommonTextHint>
+        <Text value="SSHCrack.exe" />
+        <Text value="FTPBounce.exe" />
+        <Text value="WebServerWorm.exe" />
+        <Text value="Decypher.exe" />
+        <Text value="Clock.exe" />
+        <Text value="KBTPortTest.exe" />
+        <Text value="SMTPOverflow.exe" />
+        <Text value="SQLBufferOverflow.exe" />
+        <Text value="SecurityTracer.exe" />
+        <Text value="HexClock.exe" />
+        <Text value="Sequence.exe" />
+        <Text value="ThemeChanger.exe" />
+        <Text value="eosDeviceScan.exe" />
+        <Text value="Tracekill.exe" />
+        <Text value="RTSPCrack.exe" />
+        <Text value="ESequencer.exe" />
+        <Text value="OpShell.exe" />
+        <Text value="FTPSprint.exe" />
+        <Text value="TorrentStreamInjector.exe" />
+        <Text value="SSLTrojan.exe" />
+        <Text value="SignalScramble.exe" />
+        <Text value="MemForensics.exe" />
+        <Text value="MemDumpGenerator.exe" />
+        <Text value="PacificPortcrusher.exe" />
+        <Text value="NetmapOrganizer.exe" />
+        <Text value="ComShell.exe" />
+        <Text value="DNotes.exe" />
+        <Text value="Clockv2.exe" />
+        <Text value="Tuneswap.exe" />
+    </CommonTextHint>
+
+    <!-- HackerScripts提示 -->
+    <HackerScriptsHint fileTriggerPattern="HackerScripts/**/*.txt">
+        <Text label="config" value="config ${1:TARGET_COMP} ${2:SOURCE_COMP} 0.2 $#%#$" desc="配置脚本属性" doc="config [目标计算机] [来源计算机] 每行与每行的延迟时间( 0.2s ) $#%#$( 不要动 )" />
+        <Text label="connect" value="connect $#%#$" desc="从源头连接到目标计算机" />
+        <Text label="delay" value="delay ${1:2} $#%#$" desc="延时一会" />
+        <Text label="openPort" value="openPort ${1:21} $#%#$" desc="打开目标端口" />
+        <Text label="stopMusic" value="stopMusic $#%#$" desc="如果玩家是目标, 则停止音乐" />
+        <Text label="startMusic" value="startMusic $#%#$" desc="如果玩家是目标, 则播放音乐" />
+        <Text label="clearTerminal" value="clearTerminal $#%#$" desc="如果玩家是目标, 清除玩家的终端" />
+        <Text label="write" value="write ${1:文本内容(不换行)} $#%#$" desc="写到终端到同一行" />
+        <Text label="write_silent" value="write_silent ${1:写的东西不会有声音与闪烁} $#%#$" desc="让你写东西不会产生声音和闪烁" />
+        <Text label="writel" value="writel ${1:文本内容} $#%#$" desc="输出文本后终端换行" />
+        <Text label="writel_silent" value="writel ${1:写的东西不会有声音与闪烁} $#%#$" desc="输出文本后终端换行且不会产生声音与闪烁效果" />
+        <Text label="hideNetMap" value="hideNetMap $#%#$" desc="隐藏netmap模块" />
+        <Text label="hideRam" value="hideRam $#%#$" desc="隐藏ram模块" />
+        <Text label="hideDisplay" value="hideDisplay $#%#$" desc="隐藏display模块" />
+        <Text label="hideTerminal" value="hideTerminal $#%#$" desc="隐藏terminal模块" />
+        <Text label="showNetMap" value="showNetMap $#%#$" desc="显示netmap模块" />
+        <Text label="showRam" value="showRam $#%#$" desc="显示ram模块" />
+        <Text label="showDisplay" value="showDisplay $#%#$" desc="显示display模块" />
+        <Text label="showTerminal" value="showTerminal $#%#$" desc="显示rerminal模块" />
+        <Text label="trackseq" value="trackseq $#%#$" desc="如果玩家在CSEC中, 将会收到一个forkbomb" />
+        <Text label="instanttrace" value="instanttrace $#%#$" desc="为玩家立即启动ETAS" />
+        <Text label="forkbomb" value="forkbomb $#%#$" desc="在目标上发射DDOS, 如果不是玩家, 计算机立即崩溃" />
+        <Text label="flash" value="flash $#%#$" desc="如果以玩家为目标, 则以戏剧性的方式闪烁用户界面一下" />
+        <Text label="delete" value="delete ${1:/sys} ${2:x-server.sys} $#%#$" desc="删除文件.您可以删除文件夹或文件, 或者该文件夹中的所有文件.”*”" />
+        <Text label="setAdminPass" value="setAdminPass ${1:newpass} $#%#$" desc="将此计算机的管理员密码设置为newpass或者您想要的." />
+        <Text label="makeFile" value="makeFile ${1:home} ${2:Filename.txt} ${3:文件内容可以包含#xxx#} $#%#$" desc="在第一个参数中命名的文件夹中创建一个新文件, 名称为Filename.txt, 并且加上内容" />
+        <Text label="openCDTray" value="openCDTray $#%#$" desc="打开CD托盘" />
+        <Text label="closeCDTray" value="closeCDTray $#%#$" desc="关闭CD托盘" />
+        <Text label="disconnect" value="closeCDTray $#%#$" desc="断开连接" />
+        <Text label="reboot" value="reboot $#%#$" desc="重启计算机" />
+    </HackerScriptsHint>
+
+</HacknetEditorHint>

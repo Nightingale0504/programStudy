@@ -1,0 +1,64 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<mission id="news01">
+  <goals>
+  </goals>
+  <nextMission>NONE</nextMission>
+  <posting title="各个工具的使用方法">
+============================
+一般的工具使用方法是 : 指令 [端口号]
+然后有一点要注意的是, 指令可以按 tab 键来自动补全.
+============================
+1.SSHCrack.exe 工具用于破解 SSH 端口, SSH 默认端口是 22;
+-
+2.FTPBounce.exe 工具用于破解 FTP 端口, FTP 默认端口是 21;
+-
+3.FTPSprint.exe 工具用于破解 FTP 端口, 这个工具比上面工具快;
+-
+4.WebServerWorm.exe 工具用于破解 HTTP 端口, HTTP 默认端口是 80;
+-
+5.SMTPOverflow.exe 工具用于破解邮件服务器端口, 邮件服务器默认端口是 25;
+-
+6.SQLBufferOverflow.exe 工具用于破解 SQL 数据库端口, SQL 数据库默认端口是 1433;
+-
+7.Decypher.exe 工具用于解码加密文件, 用法是 Decypher [文件] [密码];
+-
+8.DECHead.exe 工具用于解析加密文件的 "头部" (类似 HTTP 头部), 这个 "头部" 会隐藏这个文件的加密地点, 用法 DECHead [文件];
+-
+9.KBTPortTest.exe 工具用于破解 KBT 医疗部门的专用端口, 默认端口号104;
+-
+10.ThemeChanger.exe 工具用于更改主题;
+-
+11.eosDeviceScan.exe 工具用于扫描当前连接的电脑是否有嵌入式设备 (eos设备), eos设备默认 admin 登录密码是 alpine;
+-
+12.RTSPCrack.exe 用于破解 RTSP 端口, RTSP 默认端口是 554;
+-
+13.TorrentStreamInjector.exe 用于破解种子端口, 默认端口是 6881;
+-
+14.SSLTrojan.exe 工具用于破解 SSL 端口, SSL 默认端口是 443, SSLTrojan [SSL的端口号] -[s 为SSH f 为FTP w 为Web r 为 RTSP] [另一个符合条件的端口号];
+-
+15.PacificPortcrusher.exe 用于破解太平洋航空专用端口, 它的默认端口是 192;
+-
+16.MemDumpGenerator.exe 工具用于扫描当前连接电脑的内存, 并把结果存到自己的电脑上;
+-
+17.MemForensics.exe 工具用于解析你扫描到的内存结果;
+-
+18.ComShell.exe 是批量管理 shell 工具;
+-
+19.OpShell.exe 工具用于自动打开 shell, 关于 shell, 可以避免你的电脑被入侵 (陷阱功能), 以及爆破别人电脑的代理服务器;
+-
+20.DNotes.exe 工具就是不耗内存的笔记本.
+-
+此文本来源于MXYLR 感谢 
+--- by BI3TKL
+from ZQG
+=======
+
+  </posting>
+  <email>
+    <sender>NONE</sender>
+    <subject>NONE</subject>
+    <body>NONE</body>
+    <attachments>
+    </attachments>
+  </email>
+</mission>

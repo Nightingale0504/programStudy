@@ -1,0 +1,26 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<mission id="startingMission" activeCheck="true" >
+  <goals>
+    <goal type="delay" time="0.3" >
+  </goals>
+  <!-- 
+  Add your mission start and end items here
+  missionStart val="0">loadConditionalActions:Actions/TestActions.xml</missionStart>
+  missionEnd val="1">addRank</missionEnd> 
+  -->
+  <nextMission>NONE</nextMission>
+  <!-- 
+  <posting title="startingMission">This would be the post on a message board if it was on them.</posting>
+  -->
+  <email>
+    <sender>0wn3r</sender>
+    <subject>#PLAYERNAME#, 回来, 我们需要你</subject>
+    <body>
+    #PLAYERNAME#, 回来, 我们需要你
+    </body>
+    <attachments>
+      <link comp="omenDHS"/>
+      <link comp="omenShare"/>
+    </attachments>
+  </email>
+</mission>

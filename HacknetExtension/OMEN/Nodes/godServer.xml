@@ -1,0 +1,53 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<Computer id="godServer" name="?? 服务器" type="empty" security="4" allowsDefaultBootModule="false" icon="Psylance" ip="1337.1337.1337.1337">
+  <portsForCrack val="0" />
+  <ports>22</ports>
+  <trace time="-1" />
+  <proxy time="-1"/>
+  <adminPass pass="BI3TKL" />
+  <file path="bin" name="SSHCrack.exe">#SSH_CRACK#</file>
+  <file path="bin" name="FTPBounce.exe">#FTP_CRACK#</file>
+  <file path="bin" name="WebServerWorm.exe">#WEB_CRACK#</file>
+  <file path="bin" name="SMTPOverflow.exe">#SMTP_CRACK#</file>
+  <file path="bin" name="SQLBufferOverflow.exe">#SQL_CRACK#</file>
+  <file path="bin" name="HexClock.exe">#HEXCLOCK_EXE#</file>
+  <file path="bin" name="Clock.exe">#CLOCK_PROGRAM#</file>
+  <file path="bin" name="Decypher.exe">#DECYPHER_PROGRAM#</file>
+  <file path="bin" name="DECHead.exe">#DECHEAD_PROGRAM#</file>
+  <file path="bin" name="KBTPortTest.exe">#MEDICAL_PROGRAM#</file>
+  <file path="bin" name="ThemeChanger.exe">#THEMECHANGER_EXE#</file>
+  <file path="bin" name="eosDeviceScan.exe">#EOS_SCANNER_EXE#</file>
+  <file path="bin" name="SecurityTracer.exe">#SECURITYTRACER_PROGRAM#</file>
+  <file path="bin" name="Tracekill.exe">#TRACEKILL_EXE#</file>
+  <file path="bin" name="RTSPCrack.exe">#RTSP_EXE#</file>
+  <file path="bin" name="ESequencer.exe">#EXT_SEQUENCER_EXE#</file>
+  <file path="bin" name="OpShell.exe">#SHELL_OPENER_EXE#</file>
+  <file path="bin" name="TorrentStreamInjector.exe">#TORRENT_EXE#</file>
+  <file path="bin" name="SSLTrojan.exe">#SSL_EXE#</file>
+  <file path="bin" name="FTPSprint.exe">#FTP_FAST_EXE#</file>
+  <file path="bin" name="SignalScramble.exe">#SIGNAL_SCRAMBLER_EXE#</file>
+  <file path="bin" name="MemForensics.exe">#MEM_FORENSICS_EXE#</file>
+  <file path="bin" name="MemDumpGenerator.exe">#MEM_DUMP_GENERATOR#</file>
+  <file path="bin" name="PacificPortcrusher.exe">#PACIFIC_EXE#</file>
+  <file path="bin" name="NetmapOrganizer.exe">#NETMAP_ORGANIZER_EXE#</file>
+  <file path="bin" name="ComShell.exe">#SHELL_CONTROLLER_EXE#</file>
+  <file path="bin" name="DNotes.exe">#NOTES_DUMPER_EXE#</file>
+  <file path="bin" name="Tuneswap.exe">#DLC_MUSIC_EXE#</file>
+  <file path="bin" name="Clockv2.exe">#CLOCK_V2_EXE#</file>
+
+  <file path="bin/ZeroDayToolKit" name="SSHSwift.exe">#SSH_SWIFT#</file>
+  <file path="bin/ZeroDayToolKit" name="TeleSmooth.exe">#TELE_SMOOTH#</file>
+  <file path="bin/ZeroDayToolKit" name="PacketHeaderInjection.exe">#PACKET_HEADER_INJECTION#</file>
+  <file path="bin/ZeroDayToolKit" name="GitTunnel.exe">#GIT_TUNNEL#</file>
+  <file path="bin/ZeroDayToolKit" name="Backport.exe">#PORT_BACKDOOR#</file>
+  <file path="bin/ZeroDayToolKit" name="SQLastResort.exe">#SQL_TX_CRASHER#</file>
+  <file path="bin/Stuxnet" name="WireShark.exe">#WIRESHARK_EXE#</file>
+  <file path="bin/Stuxnet" name="RadioV3.exe">#RADIO_V3#</file>
+  
+  <file path="bin/TempestGadgets" name="VPNBypass.exe">#VPN_BYPASS#</file>
+  <file path="bin/TempestGadgets" name="SignalFilter.exe">#SIGNAL_FILTER#</file>
+  <file path="bin/TempestGadgets" name="NetSpoof.exe">#NET_SPOOF#</file>
+  <file path="bin/SRPortToolkit" name="RedisBreaker.exe">#REDIS_EXE#</file>
+  <file path="bin/SRPortToolkit" name="AutoCreakFirewall.exe">#FIREWALL_AUTO_SOLVER#</file>
+
+</Computer>

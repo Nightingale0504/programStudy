@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// 任意精度正整数，大端在后，基 10^9
+// 任意精度正整数, 大端在后, 基 10^9
 struct BigInteger {
     static const uint32_t BASE = 1000000000;
     vector<uint32_t> d;  // little‐endian: d[0] 最低位块
@@ -71,7 +71,7 @@ BigInteger permutation(unsigned long long n, unsigned long long r) {
 
 int main() {
     ios::sync_with_stdio(false);
-    // 恢复 cin 与 cout 的绑定，保证读输入前会刷新输出
+    // 恢复 cin 与 cout 的绑定, 保证读输入前会刷新输出
     cin.tie(&cout);
 
     string line;

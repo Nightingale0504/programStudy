@@ -1,0 +1,44 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<mission id="news02">
+  <goals>
+  </goals>
+  <nextMission>NONE</nextMission>
+  <posting title="成熟黑客不得不做的四件事">
+=======
+
+当你成功入侵了一台主机之后, 一定要做这四件事 :
+1. scan
+2. eosDeviceScan
+3. MemDumpGenerator
+4. Wireshark
+
+这里特别介绍Wireshark.exe
+功能1 读取pcap文件
+功能2 类似于MemDumpGenerator, 抓包方法 Wireshark --capture
+这样你就不会漏掉任何信息.
+
+=======
+
+清除完日志之后, 使用 forkbomb 来断开连接, 而不是 disconnect.
+
+=======
+
+eOS 设备默认账号密码是 : admin; alpine
+
+=======
+
+心脏起搏器类设备二级账号密码是 : EAdmin; tens86
+
+=======
+
+--- by BI3TKL
+from ZQG
+  </posting>
+  <email>
+    <sender>NONE</sender>
+    <subject>NONE</subject>
+    <body>NONE</body>
+    <attachments>
+    </attachments>
+  </email>
+</mission>

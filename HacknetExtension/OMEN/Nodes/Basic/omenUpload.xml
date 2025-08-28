@@ -1,0 +1,27 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<Computer id="omenShare"
+          name="OMEN 共享服务器"
+          ip="12.562.321.2"
+          security="6"
+          allowsDefaultBootModule="true"
+          icon="DLCServer"
+          type="1" >
+
+    <portsForCrack val="0" />
+    <ports>21, 9418, 3724, 3659</ports>
+    <trace time="-1" />
+
+    <adminPass pass="​OffsiteMilitaryExecutiveNucleus-ShareSystem-0021" />
+    <account username="omenAdmin" password="​OffsiteMilitaryExecutiveNucleus-ShareSystem-0021" type="ADMIN"/>
+
+<uploadServerDaemon name="OMEN 共享服务器" folder="Drop"
+                    needsAuth="false" color="135,206,250" hasReturnViewButton="true"/>
+  
+    <file path="bin" name="ThemeChanger.exe">#THEMECHANGER_EXE#</file>
+    <file path="bin" name="Opshell.exe">#SHELL_OPENER_EXE#</file>
+    <file path="bin" name="ComShell.exe">#SHELL_CONTROLLER_EXE#</file>
+    <file path="bin" name="SQLBufferOverflow.exe">#SQL_CRACK#</file>
+    <file path="bin" name="KBTPortTest.exe">#MEDICAL_PROGRAM#</file>
+    <file path="bin" name="Tracekill.exe">#TRACEKILL_EXE#</file>
+    <file path="bin" name="SSLTrojan.exe">#SSL_EXE#</file>
+</Computer>

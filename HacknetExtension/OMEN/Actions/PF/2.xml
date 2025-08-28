@@ -1,0 +1,14 @@
+<ConditionalActions>
+  <HasFlags requiredFlags="Pathfinder">
+    <RunFunction FunctionName="addFlags:PathfinderUninstall"/>
+    <RunFunction FunctionName="removeFlags:Pathfinder"/>
+    <LaunchHackScript Filepath="HackerScripts/PathfinderUninstall.txt" 
+                      DelayHost="testNode" 
+                      Delay="1" 
+                      SourceComp="OLDHS" 
+                      TargetComp="playerComp" 
+                      RequireLogsOnSource="false" 
+                      RequireSourceIntact="false"/>
+  </HasFlags>
+
+</ConditionalActions>

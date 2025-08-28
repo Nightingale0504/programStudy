@@ -1,0 +1,19 @@
+<ConditionalActions>
+
+  <DoesNotHaveFlags Flags="PathfinderInstalled">
+    <RunFunction FunctionName="addFlags:PathfinderInstalled"/>
+    <RunFunction FunctionName="removeFlags:Pathfinder"/>
+    <WriteToTerminal Quietly="false" DelayHost="OLDHS" Delay="0.1"></WriteToTerminal> 
+    <WriteToTerminal Quietly="false" DelayHost="OLDHS" Delay="0.2"></WriteToTerminal> 
+    <WriteToTerminal Quietly="false" DelayHost="OLDHS" Delay="0.3"></WriteToTerminal> 
+    <WriteToTerminal Quietly="false" DelayHost="OLDHS" Delay="0.4"></WriteToTerminal> 
+    <WriteToTerminal Quietly="false" DelayHost="OLDHS" Delay="1">Pathfinder 正确安装</WriteToTerminal> 
+    <WriteToTerminal Quietly="false" DelayHost="OLDHS" Delay="1.1">OMEN</WriteToTerminal> 
+    <WriteToTerminal Quietly="false" DelayHost="OLDHS" Delay="1.2">欢迎游玩</WriteToTerminal> 
+  </DoesNotHaveFlags>
+
+  <Instantly>
+    <AddConditionalActions Filepath="Actions/PF/2.xml" DelayHost="omenDHS" Delay="2"/>
+  </Instantly>
+  
+</ConditionalActions>

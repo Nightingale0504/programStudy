@@ -1,0 +1,167 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<Computer id="playerComp" 
+  name="#PLAYERNAME#'s Workstation" 
+  type="1" 
+  security="4" 
+  ip="0.0.0.0" 
+  allowsDefaultBootModule="false" 
+  icon="Alchemist" >
+
+  <adminPass pass="youradminpasswordis*******" />
+  <account type="ADMIN" username="#PLAYERNAME#" password="*******" />
+  <account type="ALL" username="OMEN_07_0941" password="Xk2nozu6PsveXftLvgoq" />
+
+  <ports>22, 21, 25, 80, 443, 104, 6379, 3724, 123, 1433, 6881, 554, 192</ports>
+
+  <proxy time="800" />
+  <portsForCrack val="1145" />
+  <trace time="3" />
+  <firewall level="7" solution="​​OffsiteMilitaryExecutiveNucleus-Firewall-0941​" additionalTime="10" />
+
+  <dlink dlink="playerProxyCore" />
+
+  <file path="home/Backport" name="readme.txt">
+  ###该工具只能在受支持的设备上运行###
+  此工具可以激活设备中的保留端口(0), 默认不显示在设备中.
+  该端口通常不使用, 但可以形成有效的 Internet 数据包, 在缺乏端口时可作为备用端口使用.
+  理论上, 支持 TCP/IP 网络连接的设备均支持运行该工具.
+  ###该工具只能在受支持的设备上运行###
+  </file>
+  <file path="home/VPNBypass" name="VPNBypass.exe">#VPN_BYPASS#</file>
+  <file path="home/VPNBypass" name="Readme.txt">
+  破解123 (Network Time Protocol)端口
+  此exe需要443 (HTTPS)端口开启以运行
+  在123端口开启后, 443端口会被关闭, VPNBypass会保持运行直至被手动kill结束进程
+  此exe被kill后, 会关闭已开启的443端口, 
+  你需要在VPNBypass保持运行时开启443端口才能同时开启两个端口
+  </file>
+  <file path="home/AutoCrackFirewall" name="AutoCrackFirewall.exe">#FIREWALL_CRACK#</file>
+  <file path="home/AutoCrackFirewall" name="readme.txt">
+  破解任意节点的防火墙, 我想你会喜欢的
+  </file>
+  <file path="home/Backport" name="Backport.exe">#PORT_BACKDOOR#</file>
+  <file path="bin" name="SSHCrack.exe">#SSH_CRACK#</file>
+  <file path="bin" name="FTPSprint.exe">#FTP_FAST_EXE#</file>
+  <file path="bin" name="WebServerWorm.exe">#WEB_CRACK#</file>
+  <file path="bin" name="SMTPOverflow.exe">#SMTP_CRACK#</file>
+  <file path="bin" name="SQLBufferOverflow.exe">#SQL_CRACK#</file>
+  <file path="bin" name="Decypher.exe">#DECYPHER_PROGRAM#</file>
+  <file path="bin" name="DECHead.exe">#DECHEAD_PROGRAM#</file>
+  <file path="bin" name="KBTPortTest.exe">#MEDICAL_PROGRAM#</file>
+  <file path="bin" name="ThemeChanger.exe">#THEMECHANGER_EXE#</file>
+  <file path="bin" name="eosDeviceScan.exe">#EOS_SCANNER_EXE#</file>
+  <file path="bin" name="SecurityTracer.exe">#SECURITYTRACER_PROGRAM#</file>
+  <file path="bin" name="Tracekill.exe">#TRACEKILL_EXE#</file>
+  <file path="bin" name="RTSPCrack.exe">#RTSP_EXE#</file>
+  <file path="bin" name="OpShell.exe">#SHELL_OPENER_EXE#</file>
+  <file path="bin" name="TorrentStreamInjector.exe">#TORRENT_EXE#</file>
+  <file path="bin" name="SSLTrojan.exe">#SSL_EXE#</file>
+  <file path="bin" name="SignalScramble.exe">#SIGNAL_SCRAMBLER_EXE#</file>
+  <file path="bin" name="MemForensics.exe">#MEM_FORENSICS_EXE#</file>
+  <file path="bin" name="MemDumpGenerator.exe">#MEM_DUMP_GENERATOR#</file>
+  <file path="bin" name="PacificPortcrusher.exe">#PACIFIC_EXE#</file>
+  <file path="bin" name="NetmapOrganizer.exe">#NETMAP_ORGANIZER_EXE#</file>
+  <file path="bin" name="ComShell.exe">#SHELL_CONTROLLER_EXE#</file>
+  <file path="bin" name="GitTunnel.exe">#GIT_TUNNEL#</file>
+  <file path="bin" name="Backport.exe">#PORT_BACKDOOR#</file>
+  <file path="bin" name="WireShark.exe">#WIRESHARK_EXE#</file>
+  <file path="bin" name="NetSpoof.exe">#NET_SPOOF#</file>
+  <file path="bin" name="TeleSmooth.exe">#TELE_SMOOTH#</file>
+  <file path="bin" name="AutoCrackFirewall.exe">#FIREWALL_CRACK#</file>  
+  <file path="bin" name="VPNBypass.exe">#VPN_BYPASS#</file>
+  <file path="bin" name="RedisBreaker.exe">#REDIS_EXE#</file>
+  <file path="bin" name="SignalFilter.exe">#SIGNAL_FILTER#</file>
+  <file path="bin" name="SecurityTracer.exe">#SECURITYTRACER_PROGRAM#</file>  
+
+  <file path="backup" name="SSHCrack.exe">#SSH_CRACK#</file>
+  <file path="backup" name="FTPSprint.exe">#FTP_FAST_EXE#</file>
+  <file path="backup" name="WebServerWorm.exe">#WEB_CRACK#</file>
+  <file path="backup" name="SMTPOverflow.exe">#SMTP_CRACK#</file>
+  <file path="backup" name="SQLBufferOverflow.exe">#SQL_CRACK#</file>
+  <file path="backup" name="Decypher.exe">#DECYPHER_PROGRAM#</file>
+  <file path="backup" name="DECHead.exe">#DECHEAD_PROGRAM#</file>
+  <file path="backup" name="KBTPortTest.exe">#MEDICAL_PROGRAM#</file>
+  <file path="backup" name="ThemeChanger.exe">#THEMECHANGER_EXE#</file>
+  <file path="backup" name="eosDeviceScan.exe">#EOS_SCANNER_EXE#</file>
+  <file path="backup" name="Tracekill.exe">#TRACEKILL_EXE#</file>
+  <file path="backup" name="RTSPCrack.exe">#RTSP_EXE#</file>
+  <file path="backup" name="OpShell.exe">#SHELL_OPENER_EXE#</file>
+  <file path="backup" name="TorrentStreamInjector.exe">#TORRENT_EXE#</file>
+  <file path="backup" name="SSLTrojan.exe">#SSL_EXE#</file>
+  <file path="backup" name="SignalScramble.exe">#SIGNAL_SCRAMBLER_EXE#</file>
+  <file path="backup" name="MemForensics.exe">#MEM_FORENSICS_EXE#</file>
+  <file path="backup" name="MemDumpGenerator.exe">#MEM_DUMP_GENERATOR#</file>
+  <file path="backup" name="PacificPortcrusher.exe">#PACIFIC_EXE#</file>
+  <file path="backup" name="NetmapOrganizer.exe">#NETMAP_ORGANIZER_EXE#</file>
+  <file path="backup" name="ComShell.exe">#SHELL_CONTROLLER_EXE#</file>
+  <file path="backup" name="GitTunnel.exe">#GIT_TUNNEL#</file>
+  <file path="backup" name="Backport.exe">#PORT_BACKDOOR#</file>
+  <file path="backup" name="WireShark.exe">#WIRESHARK_EXE#</file>
+  <file path="backup" name="NetSpoof.exe">#NET_SPOOF#</file>
+  <file path="backup" name="TeleSmooth.exe">#TELE_SMOOTH#</file>
+  <file path="backup" name="AutoCrackFirewall.exe">#FIREWALL_CRACK#</file>  
+  <file path="backup" name="VPNBypass.exe">#VPN_BYPASS#</file>
+  <file path="backup" name="RedisBreaker.exe">#REDIS_EXE#</file>
+  <file path="backup" name="SignalFilter.exe">#SIGNAL_FILTER#</file>
+  <file path="backup" name="SecurityTracer.exe">#SECURITYTRACER_PROGRAM#</file>
+
+  
+  <file path="home/secure" name="!EMERGENCY ACCOUNT!" >
+  #PLAYERNAME#, 听好了, 这个账户和密码请手写下来并删除此文件防止被别有用心之人窃取, 关键时刻可用于链接你自己的电脑!!!
+  username: OMEN_07_0941
+  password: Xk2nozu6PsveXftLvgoq
+  </file>
+  <file path="home" name="!IMPORTANT!" >
+  本电脑隶属于 OMEN 特别行动小组成员, 其上具备 OMEN 组织特设追踪程序, 请勿随意连接
+  </file>  
+  <file path="home" name="BackupAuth.dll">#BINARY#</file>  
+
+  <file path="omenTracer" name="otCore.dll">#BINARY##BINARY##BINARY#</file>
+  <file path="omenTracer" name="otToolkit-scanner.dll">#BINARY##BINARY##BINARY##BINARY#</file>
+  <file path="omenTracer" name="otToolkit-denfender.dll">#BINARY##BINARY##BINARY##BINARY#</file>
+  <file path="omenTracer" name="otToolkit-attacker.dll">#BINARY##BINARY##BINARY##BINARY#</file>
+  <file path="omenTracer" name="otToolkit-tracer.dll">#BINARY##BINARY##BINARY##BINARY#</file>
+  <file path="omenTracer" name="otToolkit-forkbomb.dll">#BINARY##BINARY##BINARY##BINARY#</file>
+  <file path="omenTracer" name="otToolkit-forkbomb.core.dll">#BINARY##BINARY##BINARY##BINARY#</file>
+  <file path="omenTracer" name="otToolkit.dll">#BINARY##BINARY##BINARY##BINARY#</file>
+  <file path="omenTracer" name="otLoader.dll">#BINARY##BINARY##BINARY##BINARY#</file>
+  <file path="omenTracer" name="ot.exe">#BINARY##BINARY##BINARY##BINARY#</file>
+  <file path="omenTracer" name="source.dll">#BINARY#</file>
+  <file path="omenTracer" name="target.dll">#BINARY#</file>
+  <file path="omenTracer" name="README">OMEN 特设追踪程序, 分布式集成于所有组织成员电子产品内</file>
+
+  <file path="omenTracerbackup" name="otCore.dll">#BINARY##BINARY##BINARY#</file>
+  <file path="omenTracerbackup" name="otToolkit-scanner.dll">#BINARY##BINARY##BINARY##BINARY#</file>
+  <file path="omenTracerbackup" name="otToolkit-denfender.dll">#BINARY##BINARY##BINARY##BINARY#</file>
+  <file path="omenTracerbackup" name="otToolkit-attacker.dll">#BINARY##BINARY##BINARY##BINARY#</file>
+  <file path="omenTracerbackup" name="otToolkit-tracer.dll">#BINARY##BINARY##BINARY##BINARY#</file>
+  <file path="omenTracerbackup" name="otToolkit-forkbomb.dll">#BINARY##BINARY##BINARY##BINARY#</file>
+  <file path="omenTracerbackup" name="otToolkit-forkbomb.core.dll">#BINARY##BINARY##BINARY##BINARY#</file>
+  <file path="omenTracerbackup" name="otToolkit.dll">#BINARY##BINARY##BINARY##BINARY#</file>
+  <file path="omenTracerbackup" name="otLoader.dll">#BINARY##BINARY##BINARY##BINARY#</file>
+  <file path="omenTracerbackup" name="ot.exe">#BINARY##BINARY##BINARY##BINARY#</file>
+  <file path="omenTracerbackup" name="source.dll">#BINARY#</file>
+  <file path="omenTracerbackup" name="target.dll">#BINARY#</file>
+  <file path="omenTracerbackup" name="README">OMEN 特设追踪程序, 分布式集成于所有组织成员电子产品内</file>
+
+  <eosDevice name="#PLAYERNAME# 的Endroid" id="playerEOS" icon="tablet" empty="false">
+    <file path="eos/Notes" name="1.txt">
+    0941, 这是为你配备的Endroid, 喜欢吗?
+      —— 0wn3r
+    </file>
+
+    <file path="omenTracer" name="otCore.dll">#BINARY##BINARY##BINARY#</file>
+    <file path="omenTracer" name="otToolkit-scanner.dll">#BINARY##BINARY##BINARY##BINARY#</file>
+    <file path="omenTracer" name="otToolkit-denfender.dll">#BINARY##BINARY##BINARY##BINARY#</file>
+    <file path="omenTracer" name="otToolkit-attacker.dll">#BINARY##BINARY##BINARY##BINARY#</file>
+    <file path="omenTracer" name="otToolkit-tracer.dll">#BINARY##BINARY##BINARY##BINARY#</file>
+    <file path="omenTracer" name="otToolkit-forkbomb.dll">#BINARY##BINARY##BINARY##BINARY#</file>
+    <file path="omenTracer" name="otToolkit-forkbomb.core.dll">#BINARY##BINARY##BINARY##BINARY#</file>
+    <file path="omenTracer" name="otToolkit.dll">#BINARY##BINARY##BINARY##BINARY#</file>
+    <file path="omenTracer" name="otLoader.dll">#BINARY##BINARY##BINARY##BINARY#</file>
+    <file path="omenTracer" name="ot.exe">#BINARY##BINARY##BINARY##BINARY#</file>
+    <file path="omenTracer" name="source.dll">#BINARY#</file>
+    <file path="omenTracer" name="target.dll">#BINARY#</file>
+    <file path="omenTracer" name="README">OMEN 特设追踪程序, 分布式集成于所有组织成员电子产品内</file>
+  </eosDevice>
+</Computer>

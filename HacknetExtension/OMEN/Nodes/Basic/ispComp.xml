@@ -1,0 +1,15 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<Computer id="ispComp" 
+name="ISP通用服务商管理系统" 
+type="empty" 
+icon="chip" 
+ip="ispSystem"
+allowsDefaultBootModule="true">
+
+  <portsForCrack val="6" />
+  <ports>22,80,21,25,1433,9418,443,23</ports>
+  <trace time="-1" />
+  <firewall level="4"/>
+<ispSystem />
+
+</Computer>

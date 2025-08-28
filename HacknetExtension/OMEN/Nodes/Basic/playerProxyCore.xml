@@ -1,0 +1,23 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<Computer id="playerProxyCore" 
+    name="#PLAYERNAME# 的代理跳板服务器"
+    allowsDefaultBootModule="true" 
+    icon="chip"
+    security="0" 
+    type="3">
+
+    <adminPass pass="*******" />
+
+    <portsForCrack val="0" />
+    <ports>22, 21, 25, 80, 443</ports>
+
+    <trace time="-1" />
+
+    <account username="#PLAYERNAME#" password="*******" type="ADMIN" />
+
+    <dlink dlink="playerProxy1" />
+    <dlink dlink="playerProxy2" />
+    <dlink dlink="playerProxy3" />
+    <dlink dlink="playerProxy4" />
+    <dlink dlink="playerProxy5" />
+</Computer>

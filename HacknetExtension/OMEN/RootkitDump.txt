@@ -1,0 +1,27 @@
+████ EOS PORT 3659 BREACH PROGRESS ████
+[►] TARGET:      -eos-securegateway.internal
+[►] PROTOCOL:    SASL/SCRAM-OVER-TLSv1.3  
+[►] VULNERABILITY:  EOS-CVE-2025-3659 (Handshake Desync)
+[►] EOS SECURITY LAYER BYPASS:
+[success] TLS Session Hijacked  (BEAST exploit variant)
+[success] SASL Nonce Collision Detected  
+[] EOS Quantum Key Validation...
+[!] INJECTING MALICIOUS SASL MECHANISM:
+apple-eos-auth > ACCEPT MECHANISM= "X-ANOMALY-BYPASS"
+! WARNING: TRIGGERED EOS INTRUSION FIREWALL !
+>>> OVERRIDE WITH ROOT CERT: D34DB33F-3659 <<<  
+           ▼ ▼ ▼ ▼ ▼ 
+[SUCCESS] ACCESSING EOS KEY VAULT    
+root@gh0st:# ./eos_exploit --port 3659 --protocol sasl-scram
+ > Loading quantum entropy generator... OK!
+ > Spoofing EOS certificate: CN=Apple Security Layer 3659
+ > Bypassing 256-bit entropy check... [WARNING: 3s LEFT]
+ > ! DETECTED EOS HONEYPOT TRAP !
+ > Deploying fractal decoy... SUCCESS!
+ > Injecting SASL mech "ANOMALY_BYPASS": 
+ >> ACCEPTED BY EOS AUTH DAEMON!
+ > CRITICAL: EOS SECURITY LAYER COMPROMISED
+ > ——————————————————
+ > EOS PORT 3659 OPENED          
+ > ——————————————————
+ > 

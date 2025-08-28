@@ -1,0 +1,17 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<Computer id="playerProxy1" 
+    name="#PLAYERNAME# 的代理服务器1"
+    allowsDefaultBootModule="true" 
+    icon="chip"
+    security="0" 
+    type="3">
+
+    <adminPass pass="*******" />
+
+    <portsForCrack val="0" />
+    <ports>22, 21, 25, 80, 443</ports>
+
+    <trace time="-1" />
+
+    <account username="#PLAYERNAME#" password="*******" type="ALL" />
+</Computer>

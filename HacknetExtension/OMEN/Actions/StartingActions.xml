@@ -1,0 +1,43 @@
+<ConditionalActions>
+  
+  <Instantly>
+    <ChangeAlertIcon Target="omenMailInside" Type="mail" DelayHost="" Delay=""/> 
+  </Instantly>
+  
+  <OnConnect target="omenMailInside">
+    <WriteToTerminal Quietly="false" DelayHost="omenDHS" Delay="1"></WriteToTerminal> 
+    <SwitchToTheme ThemePathOrName="Themes/riptide.xml" FlickerInDuration="2.0" DelayHost="omenDHS" Delay="1.2"/>
+    <WriteToTerminal Quietly="false" DelayHost="omenDHS" Delay="1.3"></WriteToTerminal> 
+    <WriteToTerminal Quietly="false" DelayHost="omenDHS" Delay="1.4"></WriteToTerminal> 
+    <WriteToTerminal Quietly="false" DelayHost="omenDHS" Delay="1.5"></WriteToTerminal> 
+    <SwitchToTheme ThemePathOrName="Themes/ZQGTheme.xml" FlickerInDuration="2.0" DelayHost="omenDHS" Delay="1.5"/>
+    <WriteToTerminal Quietly="false" DelayHost="omenDHS" Delay="1.5"></WriteToTerminal> 
+    <WriteToTerminal Quietly="false" DelayHost="omenDHS" Delay="1.6"></WriteToTerminal> 
+    <WriteToTerminal Quietly="false" DelayHost="omenDHS" Delay="1.7"></WriteToTerminal> 
+    <WriteToTerminal Quietly="false" DelayHost="omenDHS" Delay="1.8"></WriteToTerminal> 
+    <WriteToTerminal Quietly="false" DelayHost="omenDHS" Delay="1.9"></WriteToTerminal> 
+    <WriteToTerminal Quietly="false" DelayHost="omenDHS" Delay="5"></WriteToTerminal> 
+    <ShowChapterTitle ChapterTitle="LOADING COMPONENT" ChapterSubTitle="加载组件" HideTopBar="false" BackingOpacity="25" Delay="1" DelayHost="omenDHS"/>
+    <WriteToTerminal Quietly="false" DelayHost="omenDHS" Delay="5"></WriteToTerminal> 
+    <ShowChapterTitle ChapterTitle="LOADING COMPONENT" ChapterSubTitle="加载中." HideTopBar="false" BackingOpacity="25" Delay="6" DelayHost="omenDHS"/>
+    <WriteToTerminal Quietly="false" DelayHost="omenDHS" Delay="6"></WriteToTerminal> 
+    <ShowChapterTitle ChapterTitle="LOADING COMPONENT" ChapterSubTitle="加载中.." HideTopBar="false" BackingOpacity="25" Delay="7" DelayHost="omenDHS"/>
+    <WriteToTerminal Quietly="false" DelayHost="omenDHS" Delay="7"></WriteToTerminal> 
+    <ShowChapterTitle ChapterTitle="LOADING COMPONENT" ChapterSubTitle="加载中..." HideTopBar="false" BackingOpacity="25" Delay="8" DelayHost="omenDHS"/>
+    <WriteToTerminal Quietly="false" DelayHost="omenDHS" Delay="8"></WriteToTerminal> 
+    <ShowChapterTitle ChapterTitle="LOADING COMPONENT" ChapterSubTitle="加载中...." HideTopBar="false" BackingOpacity="25" Delay="9" DelayHost="omenDHS"/>
+    <WriteToTerminal Quietly="false" DelayHost="omenDHS" Delay="9"></WriteToTerminal> 
+    <ShowChapterTitle ChapterTitle="LOADING COMPONENT" ChapterSubTitle="加载中....." HideTopBar="false" BackingOpacity="25" Delay="10" DelayHost="omenDHS"/>
+    <WriteToTerminal Quietly="false" DelayHost="omenDHS" Delay="10"></WriteToTerminal> 
+    <ShowChapterTitle ChapterTitle="LOADING COMPLETE" ChapterSubTitle="完成" HideTopBar="false" BackingOpacity="25" Delay="11" DelayHost="omenDHS"/>
+    <WriteToTerminal Quietly="false" DelayHost="omenDHS" Delay="11"></WriteToTerminal> 
+    <SetRAM ram="4096"/>
+    <HideChapterTitle Delay="15" DelayHost="omenDHS"/>
+  </OnConnect>
+
+  <OnConnect target="omenDHS">
+    <AddIRCMessage TargetComp="omenDHS" Author="Channel" Delay="-1" >!ANNOUCEMENT! @Channel #PLAYERNAME# 加入了服务器</AddIRCMessage>
+    <AddIRCMessage TargetComp="omenDHS" Author="0wn3r"  Delay="1"></AddIRCMessage>
+  </OnConnect>
+
+</ConditionalActions>

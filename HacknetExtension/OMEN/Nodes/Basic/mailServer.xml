@@ -1,0 +1,23 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<Computer id="omenMailInside" 
+ name="OMEN 内部邮件服务器" 
+ allowsDefaultBootModule="true"
+ ip="www.omenMail.inside.com"
+ security="3"
+ type="1" > 
+  
+  <ports>80,22,21,25,1433</ports>
+  
+  <proxy time="3" />
+  <portsForCrack val="3" />
+  <trace time="200" />
+  <firewall level="7" solution="​​OffsiteMilitaryExecutiveNucleus-Firewall-0941​" additionalTime="10" />
+  
+  <account username="#PLAYERNAME#" password="​********" type="mail" />
+  <account username="admin" password="​OffsiteMilitaryExecutiveNucleus-MailSystem-0017" type="ADMIN" />   
+  
+  <mailServer name="OMEN 内部邮件服务器" color="50,237,212">
+
+  </mailServer>  
+  
+</Computer>

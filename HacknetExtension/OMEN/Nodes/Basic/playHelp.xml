@@ -1,0 +1,13 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<Computer id="playHelp" 
+        name="游玩须知" 
+        type="6" 
+        icon="DLCServer" 
+        security="4" 
+        ip="https://omen.help.net" 
+        allowsDefaultBootModule="true">
+   <portsForCrack val="101" />
+  
+<variableMissionListingServer name="YouShouldKnowThem" iconPath="Images/OMEN.png" articleFolderPath="Docs/" color="83,29,211" assigner="false" public="true" title="须知"/>
+
+</Computer>

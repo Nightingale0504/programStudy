@@ -1,0 +1,30 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<Computer id="omenDHS"
+          name="OMEN 聊天室"
+          security="4"
+          allowsDefaultBootModule="true"
+          type="1"
+		  ip="#RANDOM_IP#">
+
+<adminPass pass="​OffsiteMilitaryExecutiveNucleus-DHS-0058"/>
+
+<ports>22, 21, 25, 80, 1433, 554, 6881, 443, 192, 104</ports>
+<portsForCrack val="101"/>
+
+<proxy time="2"/>
+<firewall level="6" solution="​OffsiteMilitaryExecutiveNucleus-Firewall-0941" additionalTime="10" />
+<trace time="95"/>
+
+
+
+<DHSDaemon groupName="OL DHS" addsFactionPointOnMissionComplete="false" autoClearMissionsOnPlayerComplete="false" themeColor="67,204,148" allowContractAbbandon="false">
+  	<agent name="0wn3r" color="19,248,253"/>
+  	<agent name="ZQG" color="255,255,255"/>
+	<agent name="Raven" color="0,255,0"/>
+	<agent name="#PLAYERNAME#" color="92,92,92"/>
+	<agent name="John" color="254,140,1"/>
+	<agent name="Kaguya" color="255,0,0"/>
+	<agent name="3rr0r" color="255,0,0"/>
+	<agent name="Da2k51d3" color="201,60,255"/>
+</DHSDaemon>
+</Computer>

@@ -1,0 +1,147 @@
+<HacknetExtension>
+  <!-- Max name length is 128 characters -->
+	<Name>OMEN</Name>
+	<AllowSaves>true</AllowSaves>
+  
+  <!-- a coma separated list of notes that start out as being visible-->
+	<StartingVisibleNodes>playHelp, ispComp, softwareTEST</StartingVisibleNodes>
+  
+  <!-- the mission (if any) that loads in as soon as the player starts -->
+  <StartingMission>Missions/StartingMission.xml</StartingMission>
+
+  <!-- Conditional action set that is loaded in as soon as a new session is created
+  This is useful to do setup stuff, like giving the player programs, assigning them a faction etc.
+  If you don't need this, set it to "NONE", or just delete the tag.-->
+  <StartingActions>Actions/StartingActions.xml</StartingActions>
+
+  <!-- Description that appears within Hacknet -->
+  <Description>
+  OMEN Version DEMO 0.1
+  快回来, 我们需要你!
+                     ———— by 0wn3r of OMEN
+  </Description>
+  
+  <!-- Factions involved in this extension! You can define as many or as few as you like -->
+  <Faction>Factions/StartingFaction.xml</Faction>
+  
+  <StartsWithTutorial>False</StartsWithTutorial>
+  
+  <!-- this makes the extension start with the standard restart bootup sequence -->
+  <HasIntroStartup>true</HasIntroStartup>
+  
+  <StartingTheme>Themes/Windows11 Theme.xml</StartingTheme>
+  <!-- 
+  Base Themes are named:
+  TerminalOnlyBlack, HacknetBlue, HacknetTeal, HacknetYellow, HackerGreen, HacknetWhite, HacknetPurple, HacknetMint
+  -->
+  
+  <!-- You can reference songs from the original game here, or your own .ogg files by path.
+  To reference original songs, use their name in the files! You don't need the path, just the filename. This works for any songs in these folders:
+  Content/Music
+  Content/DLC/Music
+  
+  To Play your own songs, use the path to that song in your extension.
+  For example, try changing the song name below to "Music/Chemical_Burns.ogg" - it'll start with that instead for new saves! -->
+  <IntroStartupSong>Music/Fontainebleau - Minds Journey.ogg</IntroStartupSong>
+
+  <!-- Sequencer stuff. You won't need this till later.-->
+  <!--
+  <SequencerTargetID>advExamplePC</SequencerTargetID>
+  <SequencerSpinUpTime>10.5</SequencerSpinUpTime>
+  <SequencerFlagRequiredForStart>testFlag</SequencerFlagRequiredForStart>
+  <ActionsToRunOnSequencerStart>Actions/ThemeSwapActions.xml</ActionsToRunOnSequencerStart>
+  -->
+  
+  <!-- Steam workshop fields -->
+  <!-- 
+  public string WorkshopDescription;
+        public string WorkshopLanguage;
+        public byte WorhsopVisibility = 2;
+        public string WorkshopTags;
+        public string WorkshopPreviewImagePath;
+  -->
+  <WorkshopDescription>
+  ------- OMEN DEMO Ver. 0.1 -------
+  快回来, 我们需要你!
+                     ———— by 0wn3r
+
+  本扩展需要安装Pathfinder才可正常使用
+  [b]!!![url=https://github.com/Arkhist/Hacknet-Pathfinder]Hacknet Pathfinder[/url]点击此处下载!!![/b]
+  ---------------------------------------------------------------------------------------------------
+  不要随意跳过红屏, 不然可能会无法正常进行游戏
+  建议仅安装Pathfinder, 这样加载的mod就是扩展内自带的
+  免责声明:
+  本作为虚构作品.昵称, 人物、企业、地方、事件、地点都是作者想象的产物.
+  如有与真实事件有雷同之处, 纯属于巧合.
+  ---------------------------------------------------------------------------------------------------
+  本扩展使用的MOD有Stuxnet ZeroDayToolKit TempestGadgets
+  如若有问题, 请联系QQ Group 940056115 或者发邮件给我
+  ----------------------------------------------------------------------------------------------------
+  使用的MOD具体版本 
+  ZeroDayToolKit 1.0.3 Stuxnet 1.4.0
+  TempestGadgets 0.2.0 SRPortToolkit 0.2.0
+  HacknetChineseSupport 1.0.2
+  ---------------------------------------------------------------------------------------------------
+  如果您遇到了不会使用的破解器
+  请查看游玩须知节点或对应的Readme文件
+  Backport.exe是一个通用破解器
+  用于破解端口0(这个端口默认隐藏)
+  直接打出Backport即可破解
+  该破解器占用大 耗时长 请耐心等待
+  ---------------------------------------------------------------------------------------------------
+  特别提醒 部分节点
+  其防火墙密码是固定的
+  断开过久防火墙会重置(高安全等级)
+  如果出现这种情况
+  请退出重进(在断开之后没手动保存)
+  若你已经在断开后手动保存
+  查询存档来获取新的防火墙密码
+  ---------------------------------------------------------------------------------------------------
+  Identification system ID number
+  OMEN ID=OMEN_07_0941
+  ACCESS GRANTED
+  Welcome to the internal version of ON.OS
+  Version control and management are OMEN
+  Loading graphical operating system
+  Booting......
+  ---------------------------------------------------------------------------------------------------
+  特别感谢:(排名不分先后)
+  WnCry 修复了很多bug 制作本扩展使用的mod
+  ZQG 带我进 Hacknet Extensions
+  Fengxu 提供了中文支持mod
+  ---------------------------------------------------------------------------------------------------
+  作者:BI3TKL
+  如果有什么游玩方面的问题或者想交流一下, 请添加  [spoiler] 940056115 [/spoiler]  群聊
+  希望您玩得开心!
+  </WorkshopDescription>
+
+  <!-- Language that this is set to. -->
+  <WorkshopLanguage>Chinese</WorkshopLanguage>
+
+  <!-- Sets the visibility of this item on the workshop.
+  0 = public
+  1 = friends only
+  2 = private (self only)-->
+  <WorkshopVisibility>0</WorkshopVisibility>
+
+  <!-- Comma separated list of tags that this should be listed under in the workshop. This is not currently used, as the only category
+  of workshop item in Hacknet is "Extension", so leave this as-is for now.-->
+  <WorkshopTags>Extension</WorkshopTags>
+
+  <!-- Path to the preview image used on the steam workshop for your extension.
+  This must be within your mod folder, be 16x9 aspect ratio and less than 1MB in size. 
+  I recommend the highest resolution you can provide that fits that criteria, 
+  though steam will likely use a version less than 512x512 in size, and will auto resize it for you.
+  
+  This can be different to the provided Logo.png if you want, as this will not be transparently backed on steam.
+  Supported formats are .png, .jpg and .gif
+  -->
+  <WorkshopPreviewImagePath>Logo.png</WorkshopPreviewImagePath>
+
+  <!-- This is the workshop publish ID. The first time your extension is published to Steam, this will be automatically populated with the ID that steam assigns it.
+  When this happens, make sure that you keep that version of the file and store the ID somewhere - without it, you wont be able to push out updates to your extension,
+  and if it's removed, publishing to the workshop will submit it as a new entry, and you'll lose all of your subscribers. Be careful!
+  Do not manually modify this unless you already know your Publish ID from a previous submission. A new ID will only be generated if this says "NONE"-->
+  <WorkshopPublishID>NONE</WorkshopPublishID>
+  
+</HacknetExtension>

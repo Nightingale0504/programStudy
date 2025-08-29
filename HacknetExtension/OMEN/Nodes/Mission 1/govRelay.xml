@@ -9,7 +9,7 @@
 
     <adminPass pass="badapple" />
 
-    <proxy time="30" />
+    <proxy time="0.5" />
     <portsForCrack val="3" />
     <ports>22, 21, 25, 80</ports>
     <trace time="100" />

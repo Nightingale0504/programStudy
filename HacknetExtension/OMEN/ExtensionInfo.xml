@@ -4,7 +4,7 @@
 	<AllowSaves>true</AllowSaves>
   
   <!-- a coma separated list of notes that start out as being visible-->
-	<StartingVisibleNodes>playHelp, ispComp, softwareTEST</StartingVisibleNodes>
+	<StartingVisibleNodes>playHelp, ispComp</StartingVisibleNodes>
   
   <!-- the mission (if any) that loads in as soon as the player starts -->
   <StartingMission>Missions/StartingMission.xml</StartingMission>
@@ -29,7 +29,7 @@
   <StartsWithTutorial>False</StartsWithTutorial>
   
   <!-- this makes the extension start with the standard restart bootup sequence -->
-  <HasIntroStartup>true</HasIntroStartup>
+  <HasIntroStartup>false</HasIntroStartup>
   
   <StartingTheme>Themes/StandardTheme.xml</StartingTheme>
   <!-- 

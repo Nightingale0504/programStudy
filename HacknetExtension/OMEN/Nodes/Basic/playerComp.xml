@@ -19,8 +19,7 @@
   <firewall level="7" solution="OffsiteMilitaryExecutiveNucleus-Firewall-0941" additionalTime="10" />
 
   <dlink target="playerProxyCore" />
-  <dlink target="playerWhitelist" />
-  <dlink target="playertHeart" />
+  <dlink target="softwareTEST" />
 
   <file path="home/Backport" name="readme.txt">
   ###该工具只能在受支持的设备上运行###
@@ -109,7 +108,9 @@
 
   
   <file path="home/secure" name="!EMERGENCY ACCOUNT!" >
-  #PLAYERNAME#, 听好了, 这个账户和密码请手写下来并删除此文件防止被别有用心之人窃取, 关键时刻可用于链接你自己的电脑!!!
+  #PLAYERNAME#, 听好了, 
+  这个账户和密码请手写下来并删除此文件防止被别有用心之人窃取, 
+  关键时刻可用于链接你自己的电脑!!!
   username: OMEN_07_0941
   password: Xk2nozu6PsveXftLvgoq
   </file>
@@ -166,8 +167,8 @@
       —— 0wn3r
     </note>
 
-    <mail username="#PLAYERNAME#@omenMail.inside.com" thisIstheaccountpass="********" />
-  </eosDevice>
+    <mail username="#PLAYERNAME#@jmail.com" pass="********" />
 
-  <WhitelistAuthenticatorDaemon Remote="playerWhitelist" SelfAuthenticating="false" />
+    <mail username="test@jmail.com" thisIstheaccountpass="pass" />
+  </eosDevice>
 </Computer>

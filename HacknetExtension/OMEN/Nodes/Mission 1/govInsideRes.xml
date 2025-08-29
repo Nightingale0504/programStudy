@@ -14,9 +14,10 @@
     <tracker />
     <trace time="3" />
     <firewall level="10" solution="UnityQuickGoverment-Firewall-0104" additionalTime="10" />
+    <proxy time="10" />
 
     <encryptedFile path="res" name="nmk3.dec" extension=".dll" ip="LOCALHOST" header="Nisei MK III 备份" pass="UnityQuickGoverment-EncryptedFile-0703" >
-    #BINARY##BINARY##BINARY##BINARY##BINARY##BINARY##BINARY##BINARY##BINARY##BINARY##BINARY##BINARY##BINARY#
+    #BINARY##BINARY##BINARY#
     </encryptedFile>
 
     <file path="res" name="nmk3.txt">

@@ -7,7 +7,7 @@ HacknetChineseSupport 1.0.2
 .
 .
 OMEN, a secret org
-​​Off-Site Military Executive Nucleus​
+Off-Site Military Executive Nucleus
 .
 .
 Identification system ID number

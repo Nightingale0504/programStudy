@@ -5,7 +5,7 @@
     <LaunchHackScript Filepath="HackerScripts/PathfinderUninstall.txt" 
                       DelayHost="testNode" 
                       Delay="1" 
-                      SourceComp="OLDHS" 
+                      SourceComp="omenDHS" 
                       TargetComp="playerComp" 
                       RequireLogsOnSource="false" 
                       RequireSourceIntact="false"/>

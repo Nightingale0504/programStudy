@@ -1,6 +1,6 @@
 <?xml version = "1.0" encoding = "UTF-8" ?>
 <!-- 
-    该文件必须放在项目根目录的People文件夹下，否则游戏无法识别
+    该文件必须放在项目根目录的People文件夹下, 否则游戏无法识别
     handle: PointClicker账户等
     forceHasNeopals: 是否生成新账户
 -->
@@ -29,6 +29,6 @@
     </Medical>
     <!-- 出生时间 -->
     <DOB>17/02/1990 09:00:00</DOB>
-    <!-- 游戏不会使用该值，给自己看的 -->
+    <!-- 游戏不会使用该值, 给自己看的 -->
     <Notes>These notes are never used in-game, but can be handy to keep track of stuff for your own purposes.</Notes>
 </Person>

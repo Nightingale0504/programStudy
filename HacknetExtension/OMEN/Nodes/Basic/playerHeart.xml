@@ -4,17 +4,18 @@
     allowsDefaultBootModule="true" 
     icon="chip"
     security="10" 
-    type="2">
+    type="2"
+    ip="ph">
 
-    <adminPass pass="​OffsiteMilitaryExecutiveNucleus-HeartMonitor-0104" />
+    <adminPass pass="OffsiteMilitaryExecutiveNucleus-HeartMonitor-0104" />
 
     <portsForCrack val="3" />
     <ports>22, 104</ports>
 
     <trace time="100" />
-    <firewall level="10" solution="​OffsiteMilitaryExecutiveNucleus-HeartMonitor-0104" additionalTime="10" />
+    <firewall level="10" solution="OffsiteMilitaryExecutiveNucleus-HeartMonitor-0104" additionalTime="10" />
 
-    <account username="#PLAYERNAME#" password="​OffsiteMilitaryExecutiveNucleus-HeartMonitor-0104" type="ADMIN" />
+    <account username="#PLAYERNAME#" password="OffsiteMilitaryExecutiveNucleus-HeartMonitor-0104" type="ADMIN" />
     
     <CustomConnectDisplayDaemon />
 

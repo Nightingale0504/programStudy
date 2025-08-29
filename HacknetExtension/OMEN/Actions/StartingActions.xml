@@ -1,7 +1,7 @@
 <ConditionalActions>
   
   <Instantly needsMissionComplete="false" >
-    <ChangeAlertIcon Target="omenMailInside" Type="mail" DelayHost="" Delay=""/> 
+    <ChangeAlertIcon Target="omenMailInside" Type="mail" DelayHost="testNode" Delay="1"/> 
 
     <DeleteFile TargetComp="ispComp" FilePath="home" FileName="ISP_About_Message.txt" DelayHost="testNode" Delay="0"/>
     <AddAsset FileName="ISP_About_Message.txt" FileContents="该服务器为ISP通用服务商管理系统" TargetComp="ispComp" TargetFolderpath="home"/>
@@ -15,9 +15,9 @@
     请与相关技术人员取得联系.
     </AppendToFile>
 
-    <DeleteFile FilePath="Drop" FileName="Server_Message.txt" TargetComp="OLUP" DelayHost="testNode" Delay="0"/>
-    <AddAsset TargetFolderpath="Drop" FileName="Server_Message.txt" TargetComp="OLUP" FileContents="你已被授权允许上传文件到本服务器" />
-    <AppendToFile TargetFolderpath="Drop" TargetFilename="Server_Message.txt" TargetComp="OLUP" DelayHost="testNode" Delay="0.1" >
+    <DeleteFile FilePath="Drop" FileName="Server_Message.txt" TargetComp="omenShare" DelayHost="testNode" Delay="0"/>
+    <AddAsset TargetFolderpath="Drop" FileName="Server_Message.txt" TargetComp="omenShare" FileContents="你已被授权允许上传文件到本服务器" />
+    <AppendToFile TargetFolderpath="Drop" TargetFilename="Server_Message.txt" TargetComp="omenShare" DelayHost="testNode" Delay="0.1" >
     这里是 OMEN 共享服务器. 
     你可以在这里上传任何形式的文件,但是不能上传病毒文件,否则你将被我们追踪.
     如果合同内容与文件有关, 请将它上传至这里的Drop/Uploads,
@@ -71,14 +71,14 @@
     <ChangeAlertIcon Target="omenDHS" Type="irchub" DelayHost="omenDHS" Delay="0" />
     <AddIRCMessage TargetComp="omenDHS" Author="Channel" Delay="-1" >!ANNOUNCEMENT! @Channel #PLAYERNAME# 加入了服务器</AddIRCMessage>
     <AddIRCMessage TargetComp="omenDHS" Author="0wn3r"  Delay="1">! 看看这是谁 #PLAYERNAME#! 服务器都差点以为你跑路了</AddIRCMessage>
-    <AddIRCMessage TargetComp="omenDHS" Author="3rr0r"  Delay="3">快检查一下，是不是盗号的 AI</AddIRCMessage>
+    <AddIRCMessage TargetComp="omenDHS" Author="3rr0r"  Delay="3">快检查一下, 是不是盗号的 AI</AddIRCMessage>
     <AddIRCMessage TargetComp="omenDHS" Author="ZQG"  Delay="5">诶, 别瞎说, AI 没这位牛逼</AddIRCMessage>
     <AddIRCMessage TargetComp="omenDHS" Author="Raven"  Delay="7">呦, 这那阵风把您刮回来了</AddIRCMessage>
     <AddIRCMessage TargetComp="omenDHS" Author="John"  Delay="9">太好了, 终于有个干实事的了</AddIRCMessage>
     <AddIRCMessage TargetComp="omenDHS" Author="0wn3r"  Delay="11">诶你什么意思, 小心我向 Labyrinth 计划提出申请, 把你冒了</AddIRCMessage>
     <AddIRCMessage TargetComp="omenDHS" Author="John"  Delay="13">诶别别, 哥, 不敢了哥</AddIRCMessage>
     <AddIRCMessage TargetComp="omenDHS" Author="Kaguya"  Delay="15">回来当吉祥物吧~</AddIRCMessage>
-    <AddIRCMessage TargetComp="omenDHS" Author="Da2k51d3"  Delay="17">行了别装了，就是想我了对吧</AddIRCMessage>
+    <AddIRCMessage TargetComp="omenDHS" Author="Da2k51d3"  Delay="17">行了别装了, 就是想我了对吧</AddIRCMessage>
     <AddIRCMessage TargetComp="omenDHS" Author="0wn3r"  Delay="19">总之, 欢迎回归!</AddIRCMessage>
     <AddIRCMessage TargetComp="omenDHS" Author="3rr0r"  Delay="19">总之, 欢迎回归!</AddIRCMessage>
     <AddIRCMessage TargetComp="omenDHS" Author="ZQG"  Delay="19">总之, 欢迎回归!</AddIRCMessage>

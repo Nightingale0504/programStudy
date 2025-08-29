@@ -16,6 +16,7 @@
     <firewall level="10" solution="UnityQuickGoverment-Firewall-0017" additionalTime="10" />
 
     <account username="Jason" password="govermentpwdis*******" type="ADMIN" />
+    <account username="???" password="12345678" type="ALL" />
 
     <mailServer name="UQ 政府邮箱" color="50,237,212" generateJunk="true">
     <email recipient="???" sender="Jason" subject="内部资料库密码">妈的, 我又忘了内部资料库密码了, 给我下</email>

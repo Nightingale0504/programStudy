@@ -4,7 +4,8 @@
     allowsDefaultBootModule="true" 
     icon="chip"
     security="0" 
-    type="3">
+    type="3"
+    ip="pp4">
 
     <adminPass pass="*******" />
 

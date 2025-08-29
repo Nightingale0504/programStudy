@@ -1,5 +1,5 @@
 <?xml version = "1.0" encoding = "UTF-8" ?>
-<Computer id="softwareTEST" name="软件测试服务器" type="4" icon="laptop" security="2" allowsDefaultBootModule="true">
+<Computer id="softwareTEST" name="软件测试服务器" type="4" icon="laptop" security="2" allowsDefaultBootModule="true" ip="stt">
     
     <file path="bin" name="Wireshark.exe">#WIRESHARK_EXE#</file>
 

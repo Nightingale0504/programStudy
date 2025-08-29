@@ -4,14 +4,15 @@
           security="4"
           allowsDefaultBootModule="true"
           icon="chip" 
-          type="empty" > 
+          type="empty" 
+          ip="pwl"> 
 
-  <adminPass pass="​OffsiteMilitaryExecutiveNucleus-Whitelist-0972" />
+  <adminPass pass="OffsiteMilitaryExecutiveNucleus-Whitelist-0972" />
   <portsForCrack val="0" />
   <ports>443, 554, 23, 211, 25 ,80, 1433, 9418</ports>
-  <firewall level="7" solution="​​OffsiteMilitaryExecutiveNucleus-Firewall-0941​" additionalTime="10" />
+  <firewall level="7" solution="OffsiteMilitaryExecutiveNucleus-Firewall-0941" additionalTime="10" />
 
-  <account username="#PLAYERNAME#" password="​OffsiteMilitaryExecutiveNucleus-Whitelist-0972" type="ADMIN" />
+  <account username="#PLAYERNAME#" password="OffsiteMilitaryExecutiveNucleus-Whitelist-0972" type="ADMIN" />
   
 
   <CustomConnectDisplayDaemon />

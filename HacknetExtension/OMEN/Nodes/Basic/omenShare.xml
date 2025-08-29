@@ -1,7 +1,7 @@
 <?xml version = "1.0" encoding = "UTF-8" ?>
 <Computer id="omenShare"
           name="OMEN 共享服务器"
-          ip="12.562.321.2"
+          ip="omen.share.app"
           security="6"
           allowsDefaultBootModule="true"
           icon="DLCServer"
@@ -11,7 +11,7 @@
     <ports>21, 9418, 3724, 3659</ports>
     <trace time="-1" />
 
-    <adminPass pass="​OffsiteMilitaryExecutiveNucleus-ShareSystem-0021" />
+    <adminPass pass="OffsiteMilitaryExecutiveNucleus-ShareSystem-0021" />
 
     <uploadServerDaemon name="OMEN 共享服务器" folder="Drop" needsAuth="false" color="135,206,250" hasReturnViewButton="true"/>
     <file path="bin" name="ThemeChanger.exe">#THEMECHANGER_EXE#</file>

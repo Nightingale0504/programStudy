@@ -4,7 +4,8 @@
     allowsDefaultBootModule="true" 
     icon="DLCPC1"
     security="7" 
-    type="3">
+    type="3"
+    ip="www.uqrelay.gov">
 
     <adminPass pass="badapple" />
 

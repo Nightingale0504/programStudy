@@ -17,7 +17,7 @@
   <proxy time="800" />
   <portsForCrack val="1145" />
   <trace time="3" />
-  <firewall level="7" solution="​​OffsiteMilitaryExecutiveNucleus-Firewall-0941​" additionalTime="10" />
+  <firewall level="7" solution="OffsiteMilitaryExecutiveNucleus-Firewall-0941" additionalTime="10" />
 
   <dlink dlink="playerProxyCore" />
   <dlink dlink="playerWhitelist" />
@@ -167,7 +167,7 @@
       —— 0wn3r
     </note>
 
-    <mail username="#PLAYERNAME#@omenMail.inside.com" thisIstheaccountpass="​********" />
+    <mail username="#PLAYERNAME#@omenMail.inside.com" thisIstheaccountpass="********" />
   </eosDevice>
 
   <WhitelistAuthenticatorDaemon Remote="playerWhitelist" SelfAuthenticating="false" />

@@ -7,7 +7,7 @@
     type="3"
     ip="omen.balancer.app" >
 
-    <adminPass pass="​OffsiteMilitaryExecutiveNucleus-LoadBalance-0022" />
+    <adminPass pass="OffsiteMilitaryExecutiveNucleus-LoadBalance-0022" />
 
     <portsForCrack val="3" />
     <ports>22, 21, 25</ports>
@@ -16,7 +16,7 @@
 
     <account username="#PLAYERNAME#" password="OMEN_LB0022" type="ADMIN" />
     
-    <firewall level="10" solution="​OffsiteMilitaryExecutiveNucleus-Firewall-0941" additionalTime="10" />
+    <firewall level="10" solution="OffsiteMilitaryExecutiveNucleus-Firewall-0941" additionalTime="10" />
 
     <file path="load" name="decrypter..dll">#BINARY##BINARY##BINARY#</file>
     <file path="load" name=".net8.0.dll">#BINARY##BINARY##BINARY#</file>

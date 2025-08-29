@@ -2,17 +2,17 @@
 <mission id="Mission1" activeCheck="true" shouldIgnoreSenderVerification="false">
     <!-- 定义一个或多个任务需要完成的目标 -->
     <goals>
-       <goal type="fileupload" target="govInsideRes" file="nmk3.txt" path="res" destTarget="omenShare" destPath="Drop/Uploads" decrypt="false" />
-       <goal type="fileupload" target="govInsideRes" file="nmk3.dec" path="res" destTarget="omenBalance" destPath="load" decrypt="true" decryptPass="UnityQuickGoverment-EncryptedFile-0703" />
+       <goal type="fileupload" target="govInsideRes" file="nmk3.txt" path="res" destTarget="omenShare" destPath="Drop/Uploads" />
+       <goal type="fileupload" target="govInsideRes" file="nmk3.dec" path="res" destTarget="omenBalance" destPath="load" />
     </goals>
 
-    <!-- 任务开始时触发的方法，用法同Action的RunFunction -->
+    <!-- 任务开始时触发的方法, 用法同Action的RunFunction -->
     <missionStart val="0">loadConditionalActions:Actions/Mission 1/2.xml</missionStart>
 
     <!-- 任务结束时切换到下一个任务的文件路径 -->
     <nextMission>NONE</nextMission>
 
-    <!-- 任务结束时触发的方法，用法同Action的RunFunction -->
+    <!-- 任务结束时触发的方法, 用法同Action的RunFunction -->
     <missionEnd val="0">loadConditionalActions:Actions/Mission 1/3.xml</missionEnd>
 
     <!-- 定义任务开始时发送的邮件信息 -->
@@ -24,7 +24,7 @@
         我们需要你获取一份被加密的 dec 文件, 我自己在负载均衡服务器配置了一份暴力解密程序, 可以用破解这个文件, 
         但由于我们没有政府资源服务器的权限, 因此需要你去获取这份文件
         </body>
-        <!-- 附件可填加任务细节，计算机链接、账户等 -->
+        <!-- 附件可填加任务细节, 计算机链接、账户等 -->
         <attachments>
             <note title="任务细节">
             找到政府的内部资源服务器, 下载 nmk3.dec 文件, 上传到负载均衡服务器 load 文件夹下

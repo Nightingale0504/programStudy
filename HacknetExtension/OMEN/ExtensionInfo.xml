@@ -14,6 +14,8 @@
   If you don't need this, set it to "NONE", or just delete the tag.-->
   <StartingActions>Actions/StartingActions.xml</StartingActions>
 
+  <Language>zh-cn</Language>
+  
   <!-- Description that appears within Hacknet -->
   <Description>
   OMEN Version DEMO 0.1
@@ -29,7 +31,7 @@
   <!-- this makes the extension start with the standard restart bootup sequence -->
   <HasIntroStartup>true</HasIntroStartup>
   
-  <StartingTheme>Themes/Windows11 Theme.xml</StartingTheme>
+  <StartingTheme>Themes/StandardTheme.xml</StartingTheme>
   <!-- 
   Base Themes are named:
   TerminalOnlyBlack, HacknetBlue, HacknetTeal, HacknetYellow, HackerGreen, HacknetWhite, HacknetPurple, HacknetMint
@@ -74,7 +76,7 @@
   本作为虚构作品.昵称, 人物、企业、地方、事件、地点都是作者想象的产物.
   如有与真实事件有雷同之处, 纯属于巧合.
   ---------------------------------------------------------------------------------------------------
-  本扩展使用的MOD有Stuxnet ZeroDayToolKit TempestGadgets
+  本扩展使用的MOD有Stuxnet ZeroDayToolKit TempestGadgets HacknetChineseSupport 等
   如若有问题, 请联系QQ Group 940056115 或者发邮件给我
   ----------------------------------------------------------------------------------------------------
   使用的MOD具体版本 

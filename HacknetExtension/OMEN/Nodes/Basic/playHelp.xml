@@ -4,7 +4,7 @@
         type="6" 
         icon="DLCServer" 
         security="4" 
-        ip="https://omen.help.net" 
+        ip="omen.help.app" 
         allowsDefaultBootModule="true">
    <portsForCrack val="101" />
   

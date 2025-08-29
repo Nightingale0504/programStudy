@@ -15,11 +15,15 @@
     <missionEnd val="0">loadConditionalActions:Actions/Mission 2/3.xml</missionEnd>
 
     <!-- 定义任务开始时发送的邮件信息 -->
-    <posting title="任务标题">任务内容描述</posting>
+    <posting title="[私活] 解决一个麻烦">
+我们受人委托要求让"元老级"成员解决这个问题,思来想去也只有你符合条件了
+    </posting>
     <email>
-        <sender>发送者</sender>
-        <subject>主题</subject>
-        <body>邮件内容</body>
+        <sender>0wn3r</sender>
+        <subject>麻烦</subject>
+        <body>
+
+        </body>
         <!-- 附件可填加任务细节, 计算机链接、账户等 -->
         <attachments>
 

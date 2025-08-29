@@ -6,8 +6,8 @@
         <!--Actions here-->
         <ShowChapterTitle ChapterTitle="MISSION COMPLETE" ChapterSubTitle="任务完成" HideTopBar="false" BackingOpacity="25" Delay="0.1" DelayHost="omenDHS"/>
         <HideChapterTitle Delay="6.5" DelayHost="OLDHS"/>
-        <AddIRCMessage TargetComp="omenDHS" Author="Channel" Delay="2" >!ANNOUNCEMENT! @#PLAYERNAME# 完成任务 Nisei MK III</AddIRCMessage>
-        <AddIRCMessage TargetComp="omenDHS" Author="0wn3r" Delay="6" >不愧是你, 这么快?</AddIRCMessage>
+        <AddIRCMessage TargetComp="omenDHS" Author="Channel" Delay="7" >!ANNOUNCEMENT! @#PLAYERNAME# 完成任务 Nisei MK III</AddIRCMessage>
+        <AddIRCMessage TargetComp="omenDHS" Author="0wn3r" Delay="7.5" >不愧是你, 这么快?</AddIRCMessage>
         <AddIRCMessage TargetComp="omenDHS" Author="0wn3r" Delay="8" >我要看看这个 dec 文件里是些什么</AddIRCMessage>
         <AddIRCMessage TargetComp="omenDHS" Author="0wn3r" Delay="12" >@balanceBOT decypt nmk3.dec dict.dic</AddIRCMessage>
         <AddIRCMessage TargetComp="omenDHS" Author="balanceBOT" Delay="13" >decypting.</AddIRCMessage>

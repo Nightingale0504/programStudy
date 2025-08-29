@@ -4,13 +4,13 @@
     <!-- Instantly下的action将被立即触发 -->
     <Instantly>
         <!--Actions here-->
-        <AddIRCMessage TargetComp="omenDHS" Author="Channel" >!ANNOUNCEMENT! @Cl0v3r 加入了服务器 </AddIRCMessage>
-        <AddIRCMessage TargetComp="omenDHS" Author="0wn3r" >挖, 是新人, 服务器鉴权做一下 @Da2k51d3</AddIRCMessage>
-        <AddIRCMessage TargetComp="omenDHS" Author="Da2k51d3" >啧, 麻烦, 每次这活都是我干怎么, 让刚回归的 @#PLAYERNAME# 干不行? 就得着我不松了?</AddIRCMessage>
-        <AddIRCMessage TargetComp="omenDHS" Author="0wn3r" >emm, 这还真不行, #PLAYERNAME# 有我安排的任务233</AddIRCMessage>
-        <AddIRCMessage TargetComp="omenDHS" Author="#PLAYERNAME#" >:XD</AddIRCMessage>
-        <AddIRCMessage TargetComp="omenDHS" Author="Da2k51d3" >麻烦, 啧, 彳亍口巴, @Cl0v3r, 走, 跟我去走一下鉴权流程</AddIRCMessage>
-        <AddIRCMessage TargetComp="omenDHS" Author="Cl0v3r" >来了来了</AddIRCMessage>
+        <AddIRCMessage TargetComp="omenDHS" Author="Channel" Delay="3" >!ANNOUNCEMENT! @Cl0v3r 加入了服务器 </AddIRCMessage>
+        <AddIRCMessage TargetComp="omenDHS" Author="0wn3r" Delay="5" >挖, 是新人, 服务器鉴权做一下 @Da2k51d3</AddIRCMessage>
+        <AddIRCMessage TargetComp="omenDHS" Author="Da2k51d3" Delay="7" >啧, 麻烦, 每次这活都是我干怎么, 让刚回归的 @#PLAYERNAME# 干不行? 就得着我不松了?</AddIRCMessage>
+        <AddIRCMessage TargetComp="omenDHS" Author="0wn3r" Delay="10" >emm, 这还真不行, #PLAYERNAME# 有我安排的任务233</AddIRCMessage>
+        <AddIRCMessage TargetComp="omenDHS" Author="#PLAYERNAME#" Delay="13" >:XD</AddIRCMessage>
+        <AddIRCMessage TargetComp="omenDHS" Author="Da2k51d3" Delay="15" >麻烦, 啧, 彳亍口巴, @Cl0v3r, 走, 跟我去走一下鉴权流程</AddIRCMessage>
+        <AddIRCMessage TargetComp="omenDHS" Author="Cl0v3r" Delay="17" >来了来了</AddIRCMessage>
 
     </Instantly>
 

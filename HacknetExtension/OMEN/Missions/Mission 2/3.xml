@@ -5,10 +5,11 @@
     </goals>
 
     <!-- 定义任务开始时发送的邮件信息 -->
+    <posting title="调查 UQ 政府">NONE</posting>
     <email>
-        <sender>发送者</sender>
-        <subject>主题</subject>
-        <body>邮件内容</body>
+        <sender>NONE</sender>
+        <subject>NONE</subject>
+        <body>NONE</body>
         <!-- 附件可填加任务细节, 计算机链接、账户等 -->
         <attachments>
 

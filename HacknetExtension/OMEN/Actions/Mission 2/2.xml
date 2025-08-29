@@ -4,6 +4,7 @@
     <!-- Instantly下的action将被立即触发 -->
     <Instantly>
         <!--Actions here-->
+        <AddIRCMessage TargetComp="omenDHS" Author="Cl0v3r" Delay="3" />
     </Instantly>
 
 </ConditionalActions>

@@ -4,32 +4,54 @@
     <!-- Instantly下的action将被立即触发 -->
     <Instantly>
         <!--Actions here-->
+        <ShowChapterTitle ChapterTitle="MISSION COMPLETE" ChapterSubTitle="任务完成" HideTopBar="false" BackingOpacity="25" Delay="0.1" DelayHost="omenDHS"/>
+        <HideChapterTitle Delay="6.5" DelayHost="OLDHS"/>
         <AddIRCMessage TargetComp="omenDHS" Author="Channel" Delay="2" >!ANNOUNCEMENT! @#PLAYERNAME# 完成任务 Nisei MK III</AddIRCMessage>
-        <AddIRCMessage TargetComp="omenDHS" Author="0wn3r" Delay="4" >不愧是你, 这么快?</AddIRCMessage>
-        <AddIRCMessage TargetComp="omenDHS" Author="#PLAYERNAME#" Delay="6" >别闹, 这东西和 @Kaguya 有关...</AddIRCMessage>
-        <AddIRCMessage TargetComp="omenDHS" Author="0wn3r" Delay="8" >先别说这个, 我要看看这个 dec 文件里是些什么</AddIRCMessage>
+        <AddIRCMessage TargetComp="omenDHS" Author="0wn3r" Delay="6" >不愧是你, 这么快?</AddIRCMessage>
+        <AddIRCMessage TargetComp="omenDHS" Author="0wn3r" Delay="8" >我要看看这个 dec 文件里是些什么</AddIRCMessage>
         <AddIRCMessage TargetComp="omenDHS" Author="0wn3r" Delay="12" >@balanceBOT decypt nmk3.dec dict.dic</AddIRCMessage>
         <AddIRCMessage TargetComp="omenDHS" Author="balanceBOT" Delay="13" >decypting.</AddIRCMessage>
         <AddIRCMessage TargetComp="omenDHS" Author="balanceBOT" Delay="14" >decypting..</AddIRCMessage>
         <AddIRCMessage TargetComp="omenDHS" Author="balanceBOT" Delay="15" >decypting...</AddIRCMessage>
         <AddIRCMessage TargetComp="omenDHS" Author="balanceBOT" Delay="16" >decypting....</AddIRCMessage>
         <AddIRCMessage TargetComp="omenDHS" Author="balanceBOT" Delay="17" >decypted!</AddIRCMessage>
-        <AddAsset FileName="nmk3.dll" FileContents="#BINARY##BINARY##BINARY##BINARY##BINARY##BINARY##BINARY##BINARY##BINARY##BINARY##BINARY##BINARY##BINARY#" TargetComp="omenBalance" TargetFolderpath="load" />
+        <AddAsset FileName="nmk3.dll" FileContents="#BINARY#" TargetComp="omenBalance" TargetFolderpath="load" />
         <AddIRCMessage TargetComp="omenDHS" Author="0wn3r" Delay="20" >啊! 好了, 让我看看....</AddIRCMessage>
         <AddIRCMessage TargetComp="omenDHS" Author="0wn3r" Delay="21" >一个... dll 文件?</AddIRCMessage>
         <AddIRCMessage TargetComp="omenDHS" Author="0wn3r" Delay="22" >@balanceBOT .net nmk3.dll</AddIRCMessage>
         <AddIRCMessage TargetComp="omenDHS" Author="balanceBOT"  Delay="25" >Nisei MK III: ERROR: 未指定攻击目标, 授权不足:1/3</AddIRCMessage>
+        <AddIRCMessage TargetComp="omenDHS" Author="0wn3r" Delay="25" >这是...</AddIRCMessage>
         <AddIRCMessage TargetComp="omenDHS" Author="Channel" Delay="26" >!ANNOUNCEMENT! @3rr0r 完成了任务 Nisei MK III</AddIRCMessage>
         <AddIRCMessage TargetComp="omenDHS" Author="Channel" Delay="27" >!ANNOUNCEMENT! @Raven 完成了任务 Nisei MK III</AddIRCMessage>
         <AddIRCMessage TargetComp="omenDHS" Author="0wn3r" Delay="28" >啊! 你们回来了</AddIRCMessage>
         <AddIRCMessage TargetComp="omenDHS" Author="Raven" Delay="30" >啧, @#PLAYERNAME# 那家伙怎么做的比我们都快?</AddIRCMessage>
-        <AddIRCMessage TargetComp="omenDHS" Author="3rr0r" Delay="32" >喂, 你这家伙这么抢我台词</AddIRCMessage>
+        <AddIRCMessage TargetComp="omenDHS" Author="3rr0r" Delay="32" >喂, 你这家伙抢我台词!    </AddIRCMessage>
         <AddIRCMessage TargetComp="omenDHS" Author="0wn3r" Delay="35" >好了好了别斗嘴, 元老级成员实力在你们之上不是很正常吗</AddIRCMessage>
         <AddIRCMessage TargetComp="omenDHS" Author="Channel" Delay="37" >!ANNOUNCEMENT! @Kaguya 加入了服务器</AddIRCMessage>
         <AddIRCMessage TargetComp="omenDHS" Author="Kaguya" Delay="40" >刚睡醒, 你们在干什么... Nisei MK III?</AddIRCMessage>
         <AddIRCMessage TargetComp="omenDHS" Author="Kaguya" Delay="42" >这玩意不是已经在 Labyrinth 计划中被我和@#PLAYERNAME# 处理了? 怎么会出现在这里</AddIRCMessage>
-        <AddIRCMessage TargetComp="omenDHS" Author="0wn3r" Delay="45" >简单来说, 这玩意被政府盯上了, 0022 号航班上的是原价, 但是在政府的内部服务器有一份备份, @#PLAYERNAME# 去了一趟拿了回来</AddIRCMessage>
+        <AddIRCMessage TargetComp="omenDHS" Author="0wn3r" Delay="45" >简单来说, 这玩意被政府盯上了, 0022 号航班上的是原件, 但是在政府的内部服务器有一份备份, @#PLAYERNAME# 去"抢"了一份</AddIRCMessage>
         <AddIRCMessage TargetComp="omenDHS" Author="Kaguya" Delay="47" >开玩笑... Nisei MK III 我怎么可能有权限...</AddIRCMessage>
+        <AddIRCMessage TargetComp="omenDHS" Author="#PLAYERNAME#" Delay="49" >我也有权限, 这怎么回事</AddIRCMessage>
+        <AddIRCMessage TargetComp="omenDHS" Author="0wn3r" Delay="52" >@#PLAYERNAME# Bit... 是谁? 你怎么是他的遗嘱执行人?</AddIRCMessage>
+        <AddIRCMessage TargetComp="omenDHS" Author="Kaguya" Delay="53" >Bit... 是一位老前辈了, TA 是一位擅长漏洞工具开发的黑客, 他为 EnTech 公司开发了强大的入侵工具, 但出于道德考量试图终止该项目, 却因沟通失误被雇凶误杀</AddIRCMessage>
+        <AddIRCMessage TargetComp="omenDHS" Author="Da2k51d3" Delay="55" >可惜了...</AddIRCMessage>
+        <AddIRCMessage TargetComp="omenDHS" Author="Kaguya" Delay="57" >而 Bit 留给 @#PLAYERNAME# 的遗嘱是: 删除 Hacknet 系统, 也就是我们手上正在使用的系统</AddIRCMessage>
+        <AddIRCMessage TargetComp="omenDHS" Author="ZQG" Delay="58" >阿哲</AddIRCMessage>
+        <ShowChapterTitle ChapterTitle="SECRET FILE" ChapterSubTitle="Nisei MK III" HideTopBar="true" BackingOpacity="25" DelayHost="omenDHS" Delay="60" />
+        <HideChapterTitle DelayHost="omenDHS" Delay="65" />
+        <AddIRCMessage TargetComp="omenDHS" Author="0wn3r" Delay="67" >刚刚那是什么?</AddIRCMessage>
+        <AddIRCMessage TargetComp="omenDHS" Author="0wn3r" Delay="69" >翻译后是说.. Nisei MK III 是一个秘密文件, 看来我们捡到宝了</AddIRCMessage>
+        <AddIRCMessage TargetComp="omenDHS" Author="ZQG" Delay="70" >是啊是啊(赞扬)</AddIRCMessage>
+        <AddIRCMessage TargetComp="omenDHS" Author="Raven" Delay="70" >是啊是啊(赞扬)</AddIRCMessage>
+        <AddIRCMessage TargetComp="omenDHS" Author="#PLAYERNAME#" Delay="70" >是啊是啊(赞扬)</AddIRCMessage>
+        <AddIRCMessage TargetComp="omenDHS" Author="John" Delay="70" >是啊是啊(赞扬)</AddIRCMessage>
+        <AddIRCMessage TargetComp="omenDHS" Author="3rr0r" Delay="70" >是啊是啊(赞扬)</AddIRCMessage>
+        <AddIRCMessage TargetComp="omenDHS" Author="Kaguya" Delay="70" >是啊是啊(赞扬)</AddIRCMessage>
+        <AddIRCMessage TargetComp="omenDHS" Author="Da2k51d3" Delay="70" >是啊是啊(赞扬)</AddIRCMessage>
+        <AddIRCMessage TargetComp="omenDHS" Author="Cl0v3r" Delay="71" >前辈... 我能 +1 吗...</AddIRCMessage>
+        <AddIRCMessage TargetComp="omenDHS" Author="0wn3r" Delay="72" >好了好了, 该干活了 @Channel</AddIRCMessage>
+        <AddConditionalActions Filepath="Actions/Mission 2/1.xml" DelayHost="testNode" Delay="72.5" />
     </Instantly>
 
 

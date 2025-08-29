@@ -8,7 +8,7 @@
 你好 #PLAYERNAME# , 欢迎游玩 OMEN 拓展.请阅读下列内容
 1.拓展模式下新增RTSP端口, 默认端口号为554. 类型为可破解, 破解器默认名称为RTSPCrack.exe 破解器类型与TorrentStreamInjector.exe即破解6881端口的类型一致, 快速破解 但是会有后续的内存占用 可以用kill这一方法减少内存占用
 2.RTSPCrack TorrentStreamInjector SQLBufferOverflow这三个破解器可以无视代理进行破解
-3.如有锁屏、红屏等为剧情所需, 无须惊慌, 不要随意跳过红屏, 不然可能会无法正常进行游戏
+3.如有锁屏, 红屏等为剧情所需, 无须惊慌, 不要随意跳过红屏, 不然可能会无法正常进行游戏
 4.如有任务完成后无法接受下一个任务或者无任务, 请退出重进(无需保存)
 5.Wireshark.exe
 功能1 读取pcap文件

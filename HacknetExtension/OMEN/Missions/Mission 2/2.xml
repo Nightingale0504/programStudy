@@ -1,0 +1,17 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<mission id="Mission2" activeCheck="false" shouldIgnoreSenderVerification="false">
+    <!-- 定义一个或多个任务需要完成的目标 -->
+    <goals>
+    </goals>
+
+    <!-- 定义任务开始时发送的邮件信息 -->
+    <email>
+        <sender>发送者</sender>
+        <subject>主题</subject>
+        <body>邮件内容</body>
+        <!-- 附件可填加任务细节, 计算机链接、账户等 -->
+        <attachments>
+
+        </attachments>
+    </email>
+</mission>

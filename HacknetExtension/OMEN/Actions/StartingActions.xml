@@ -41,10 +41,11 @@
     <WriteToTerminal Quietly="false" DelayHost="omenDHS" Delay="1.3"></WriteToTerminal> 
     <WriteToTerminal Quietly="false" DelayHost="omenDHS" Delay="1.4"></WriteToTerminal> 
     <WriteToTerminal Quietly="false" DelayHost="omenDHS" Delay="1.5"></WriteToTerminal> 
-    <SwitchToTheme ThemePathOrName="Themes/ZQGTheme.xml" FlickerInDuration="2.0" DelayHost="omenDHS" Delay="1.5"/>
+    <SwitchToTheme ThemePathOrName="Themes/vice.xml" FlickerInDuration="2.0" DelayHost="omenDHS" Delay="1.5"/>
     <WriteToTerminal Quietly="false" DelayHost="omenDHS" Delay="1.5"></WriteToTerminal> 
     <WriteToTerminal Quietly="false" DelayHost="omenDHS" Delay="1.6"></WriteToTerminal> 
     <WriteToTerminal Quietly="false" DelayHost="omenDHS" Delay="1.7"></WriteToTerminal> 
+    <SwitchToTheme ThemePathOrName="Themes/StandardTheme.xml" FlickerInDuration="2.0" DelayHost="omenDHS" Delay="1.7"/>
     <WriteToTerminal Quietly="false" DelayHost="omenDHS" Delay="1.8"></WriteToTerminal> 
     <WriteToTerminal Quietly="false" DelayHost="omenDHS" Delay="1.9"></WriteToTerminal> 
     <WriteToTerminal Quietly="false" DelayHost="omenDHS" Delay="5"></WriteToTerminal> 
@@ -86,6 +87,8 @@
     <AddIRCMessage TargetComp="omenDHS" Author="Kaguya"  Delay="19">总之, 欢迎回归!</AddIRCMessage>
     <AddIRCMessage TargetComp="omenDHS" Author="Da2k51d3"  Delay="19">总之, 欢迎回归!</AddIRCMessage>
     <AddIRCMessage TargetComp="omenDHS" Author="John"  Delay="19">总之, 欢迎回归!</AddIRCMessage>
+    <AddIRCMessage TargetComp="omenDHS" Author="0wn3r" Delay="21" >@#PLAYERNAME# 咳咳, 该干活了</AddIRCMessage>
+    <AddIRCMessage TargetComp="omenDHS" Author="#PLAYERNAME#" Delay="23" >咱这个小组还有没有点人情味... :XD</AddIRCMessage>
     <RunFunction FunctionName="playCustomSong:Music/amazing.ogg" FunctionValue="NONE" />
     <ChangeNetmapSortMethod Method="scangrid" />
     <RunFunction FunctionName="addFlags:CSEC_Member" FunctionValue="NONE" />

@@ -1,0 +1,43 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<Computer id="easteregg1" 
+    name="testComp"
+    allowsDefaultBootModule="true" 
+    icon="laptop"
+    security="0" 
+    type="empty">
+
+    <adminPass pass="12345" />
+
+    <portsForCrack val="3" />
+    <ports>22, 21, 25</ports>
+
+    <trace time="100" />
+
+    <account username="Matt" password="testpass" type="ALL" />
+
+    <file path="home" name="example.txt">This is a file!</file>
+    <file path="bin" name="SSHCrack.exe">#SSH_CRACK#</file>
+
+    <encryptedFile path="home" name="encrypted_File.dec" extension=".txt" ip="192.168.1.1" header="This is the header" pass="decryptionPassword">
+      This generates an encrypted file that can be decrypted using the password above. It decrypts to have the extension .txt
+    </encryptedFile>
+
+    <eosDevice name="Deliliah's ePhone 4S" id="eosIntroPhone" icon="ePhone2" empty="true" passOverride="notAlpine">
+      <note>TestNote</note>
+      <mail username="test@jmail.com" pass="thisIstheaccountpass" />
+      <file path="eos/test" name="crackedFile.txt">This is mostly useful for jailbroken phones</file>
+    </eosDevice>
+
+    <Memory>
+      <Commands>
+        <Command>cd /log</Command>
+      </Commands>
+      <Data>
+        <Block>This appears in the "files" section</Block>
+      </Data>
+      <Images>
+        <Image>imgPath</Image>
+      </Images>
+    </Memory>
+
+</Computer>

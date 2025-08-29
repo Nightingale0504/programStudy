@@ -1,0 +1,12 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<ConditionalActions>
+  
+    <!-- Instantly下的action将被立即触发 -->
+    <Instantly>
+        <!--Actions here-->
+    <AddMissionToHubServer MissionFilepath="Missions/Mission 2/1.xml" TargetComp="omenDHS" />
+    <AddMissionToHubServer MissionFilepath="Missions/Mission 2/2.xml" TargetComp="omenDHS" AssignmentTag="Cl0v3r" />
+    <AddMissionToHubServer MissionFilepath="Missions/Mission 2/3.xml" TargetComp="omenDHS" AssignmentTag="ZQG" />
+    </Instantly>
+
+</ConditionalActions>

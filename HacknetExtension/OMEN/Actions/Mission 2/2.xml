@@ -1,0 +1,9 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<ConditionalActions>
+  
+    <!-- Instantly下的action将被立即触发 -->
+    <Instantly>
+        <!--Actions here-->
+    </Instantly>
+
+</ConditionalActions>

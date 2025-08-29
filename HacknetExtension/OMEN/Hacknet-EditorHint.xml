@@ -1144,11 +1144,33 @@
                 });
             })
         </Attribute>
-        <Attribute name="AssignmentTag" required="true" desc="加载任务的位置" default="tail" hint="enum">
-            <Enums kind="value">
-                <Enum desc="加载任务到最上方">top</Enum>
-                <Enum desc="加载任务到最下方">tail</Enum>
-            </Enums>
+        <Attribute name="AssignmentTag" required="false" desc="任务领取者" hint="js">
+            (function(actNode, hacknetNodeHolder){
+                if (!actNode.node.attribute.has('TargetComp')) {
+                    return;
+                }
+                const targetCompId = actNode.node.attribute.get('TargetComp');
+                const comp = hacknetNodeHolder.GetComputers().find(comp =&gt; comp.id === targetCompId);
+                if (!comp) {
+                    return;
+                }
+
+                if (comp.IRCDaemon &amp;&amp; comp.IRCDaemon.user) {
+                    return Array.isArray(comp.IRCDaemon.user) ? 
+                        comp.IRCDaemon.user.map(item =&gt; {
+                            return {value: item.name, kind: 'value'};
+                        }): 
+                        {value: comp.IRCDaemon.user.name, kind: 'value'};
+                }
+
+                if (comp.DHSDaemon &amp;&amp; comp.DHSDaemon.agent) {
+                    return Array.isArray(comp.DHSDaemon.agent) ? 
+                        comp.DHSDaemon.agent.map(item =&gt; {
+                            return {value: item.name, kind: 'value'};
+                        }): 
+                        {value: comp.DHSDaemon.agent.name, kind: 'value'};
+                }
+            });
         </Attribute>
     </Node>
 
@@ -1226,7 +1248,7 @@
     <Node name="ConditionalActions.*.CrashComputer|CustomFaction.Action.CrashComputer" enable="true" multi="true" desc="崩溃一台计算机, 会从netmap中移除大概15s">
         <Attribute name="TargetComp" required="true" desc="待崩溃的计算机" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
         <Attribute name="CrashSource" required="true" desc="引发崩溃的计算机(会在TargetComp上留下日志)" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
-        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID,否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID, 否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
         <Attribute name="Delay" required="false" desc="延迟触发(秒)" default="0.0" hint="enum"/>
     </Node>
 
@@ -1242,20 +1264,20 @@
             </Enums>
         </Attribute>
         <Attribute name="FileName" required="true" desc="待删文件名" hint="enumWithCommonString" />
-        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID,否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID, 否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
         <Attribute name="Delay" required="false" desc="延迟触发(秒)" default="0.0" hint="enum"/>
     </Node>
 
     <!-- <AddConditionalActions Filepath="ExampleConditionalActionSet.xml" DelayHost="advExamplePC" Delay="5.5"/> -->
     <Node name="ConditionalActions.*.AddConditionalActions|CustomFaction.Action.AddConditionalActions" enable="true" multi="true" desc="从文件加载一组新的条件操作">
         <Attribute name="Filepath" required="true" desc="Action文件路径" hint="ActionFile" linkBy="path" />
-        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID,否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID, 否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
         <Attribute name="Delay" required="false" desc="延迟触发(秒)" default="0.0" hint="enum"/>
     </Node>
 
     <!-- <SaveGame DelayHost="advExamplePC" Delay="20.5"/> -->
     <Node name="ConditionalActions.*.SaveGame|CustomFaction.Action.SaveGame" enable="true" multi="true" desc="存档游戏">
-        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID,否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID, 否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
         <Attribute name="Delay" required="false" desc="延迟触发(秒)" default="0.0" hint="enum"/>
     </Node>
 
@@ -1280,7 +1302,7 @@
                 <Enum>false</Enum>
             </Enums>
         </Attribute>
-        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID,否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID, 否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
         <Attribute name="Delay" required="false" desc="延迟触发(秒)" default="0.0" hint="enum"/>
     </Node>
 
@@ -1302,7 +1324,7 @@
             })
         </Attribute>
         <Attribute name="FlickerInDuration" required="false" desc="闪烁时间(秒)" default="0.0" hint="enum"/>
-        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID,否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID, 否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
         <Attribute name="Delay" required="false" desc="延迟触发(秒)" default="0.0" hint="enum"/>
     </Node>
 
@@ -1316,13 +1338,13 @@
         <Attribute name="AlertTitle" required="true" desc="左下角警告标题" hint="enumWithCommonString" />
         <Attribute name="TotalDurationSeconds" required="true" desc="效果持续时间(秒)" default="12.5" hint="enum"/>
         <Attribute name="CompleteAction" required="false" desc="效果完成后触发的Action文件路径" hint="ActionFile" linkBy="path" />
-        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID,否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID, 否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
         <Attribute name="Delay" required="false" desc="延迟触发(秒)" default="0.0" hint="enum"/>
     </Node>
 
     <!-- <CancelScreenBleedEffect DelayHost="advExamplePC" Delay="9.5" /> -->
     <Node name="ConditionalActions.*.CancelScreenBleedEffect|CustomFaction.Action.CancelScreenBleedEffect" enable="true" multi="true" desc="取消屏幕流血效果">
-        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID,否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID, 否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
         <Attribute name="Delay" required="false" desc="延迟触发(秒)" default="0.0" hint="enum"/>
     </Node>
 
@@ -1342,34 +1364,34 @@
         </Attribute>
         <Attribute name="TargetFilename" required="true" desc="要追加内容的文件名" default="list.txt" hint="enum" />
 
-        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID,否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID, 否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
         <Attribute name="Delay" required="false" desc="延迟触发(秒)" default="0.0" hint="enum"/>
     </Node>
 
     <!-- <KillExe DelayHost="advExamplePC" Delay="15.5" ExeName="ssh" /> -->
     <Node name="ConditionalActions.*.KillExe|CustomFaction.Action.KillExe" enable="true" multi="true" desc="kill掉一个exe进程">
         <Attribute name="ExeName" required="true" desc="exe文件名含有的部分字符串" default="ssh" hint="enumWithCommonString"  />
-        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID,否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID, 否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
         <Attribute name="Delay" required="false" desc="延迟触发(秒)" default="0.0" hint="enum"/>
     </Node>
 
     <!-- <HideNode DelayHost="advExamplePC" Delay="15.5" TargetComp="advExamplePC" /> -->
     <Node name="ConditionalActions.*.HideNode|CustomFaction.Action.HideNode" enable="true" multi="true" desc="在netmap中隐藏一个节点">
         <Attribute name="TargetComp" required="true" desc="待隐藏的目标计算机ID" default="computer" hint="ComputerOrEos" linkBy="Computer.id|Computer.eosDevice.id" />
-        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID,否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID, 否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
         <Attribute name="Delay" required="false" desc="延迟触发(秒)" default="0.0" hint="enum"/>
     </Node>
 
     <!-- <HideAllNodes DelayHost="advExamplePC" Delay="21.5"/> -->
     <Node name="ConditionalActions.*.HideAllNodes|CustomFaction.Action.HideAllNodes" enable="true" multi="true" desc="从netmap中隐藏所有可见节点">
-        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID,否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID, 否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
         <Attribute name="Delay" required="false" desc="延迟触发(秒)" default="0.0" hint="enum"/>
     </Node>
 
     <!-- <ShowNode DelayHost="advExamplePC" Delay="21.5" Target="advExamplePC" /> -->
     <Node name="ConditionalActions.*.ShowNode|CustomFaction.Action.ShowNode" enable="true" multi="true" desc="在netmap中显示一个节点">
         <Attribute name="Target" required="true" desc="待显示的目标计算机ID" default="computer" hint="ComputerOrEos" linkBy="Computer.id|Computer.eosDevice.id" />
-        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID,否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID, 否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
         <Attribute name="Delay" required="false" desc="延迟触发(秒)" default="0.0" hint="enum"/>
     </Node>
 
@@ -1403,7 +1425,7 @@
                 }
             });
         </Attribute>
-        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID,否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID, 否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
         <Attribute name="Delay" required="false" desc="延迟触发(秒)" default="0.0" hint="enum"/>
     </Node>
 
@@ -1437,7 +1459,7 @@
                 return ipArr;
             })
         </Attribute>
-        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID,否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID, 否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
         <Attribute name="Delay" required="false" desc="延迟触发(秒)" default="0.0" hint="enum"/>
     </Node>
 
@@ -1452,7 +1474,7 @@
                 <Enum desc="留言板">board</Enum>
             </Enums>
         </Attribute>
-        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID,否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID, 否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
         <Attribute name="Delay" required="false" desc="延迟触发(秒)" default="0.0" hint="enum"/>
     </Node>
 
@@ -1478,7 +1500,7 @@
                 <Enum>false</Enum>
             </Enums>
         </Attribute>
-        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID,否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID, 否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
         <Attribute name="Delay" required="false" desc="延迟触发(秒)" default="0.0" hint="enum"/>
     </Node>
 
@@ -1492,7 +1514,7 @@
                 <Enum desc="混乱效果">chaos</Enum>
             </Enums>
         </Attribute>
-        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID,否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID, 否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
         <Attribute name="Delay" required="false" desc="延迟触发(秒)" default="0.0" hint="enum"/>
     </Node>
 
@@ -1580,7 +1602,7 @@
                 }
             });
         </Attribute>
-        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID,否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID, 否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
         <Attribute name="Delay" required="false" desc="延迟触发(秒)" default="0.0" hint="enum"/>
     </Node>
 
@@ -2232,6 +2254,8 @@
         <Text value="#NOTES_DUMPER_EXE#" desc="DNotes.exe内容(DLC添加)"/>
         <Text value="#CLOCK_V2_EXE#" desc="Clockv2.exe内容(DLC添加)"/>
         <Text value="#DLC_MUSIC_EXE#" desc="Tuneswap.exe内容(DLC添加)"/>
+        <Text value="#PORT_BACKDOOR#" desc="Backport.exe内容(ZeroDayToolKit添加)" />
+        <Text value="#GIT_TUNNEL#" desc="GitTunnel.exe内容(ZeroDayToolKit添加)" />
     </ReplaceTextHint>
 
     <!-- 通用文本提示在hint="enumWithCommonString"时触发 -->
@@ -2300,5 +2324,34 @@
         <Text label="disconnect" value="closeCDTray $#%#$" desc="断开连接" />
         <Text label="reboot" value="reboot $#%#$" desc="重启计算机" />
     </HackerScriptsHint>
+
+    <Node name="ConditionalActions.*.ShowChapterTitle|CustomFaction.Action.ShowChapterTitle" enable="true" multi="true" desc="显示章节标题">        
+        <Attribute name="ChapterTitle" required="true" desc="章节标题" default="Chapter 1" />
+        <Attribute name="ChapterSubTitle" required="true" desc="章节子标题" default="第一章" />
+        <Attribute name="HideTopBar" required="false" desc="是否隐藏顶部栏" default="true" hint="bool" />
+        <Attribute name="BackingOpacity" required="false" desc="调暗背景的不透明度" default="0" />
+        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID, 否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="Delay" required="false" desc="延迟触发(秒)" default="0.0" hint="enum"/>
+    </Node>
+
+    <Node name="ConditionalActions.*.HideChapterTitle|CustomFaction.Action.HideChapterTitle" enable="true" multi="true" desc="隐藏章节标题">
+        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID, 否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="Delay" required="false" desc="延迟触发(秒)" default="0.0" hint="enum"/>
+    </Node>
+
+    <Node name="ConditionalActions.*.SetRAM|CustomFaction.Action.SetRAM" enable="true" multi="true" desc="设置玩家的内存量">        
+        <Attribute name="ram" required="true" desc="内存量" default="768" />
+    </Node>
+
+    <Node name="ConditionalActions.*.WriteToTerminal|CustomFaction.Action.WriteToTerminal" enable="true" multi="true" desc="向终端写入一条类似于 writel 的消息">        
+        <Attribute name="Quietly" required="true" hint="enum" >
+            <Enums>
+                <Enum desc="消息发送时不使屏幕闪烁" >true</Enum>
+                <Enum desc="消息发送时使屏幕闪烁" >false</Enum>
+            </Enums>
+        </Attribute>
+        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID, 否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="Delay" required="false" desc="延迟触发(秒)" default="0.0" hint="enum" />
+    </Node>
 
 </HacknetEditorHint>

@@ -1,0 +1,28 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<mission id="Mission2" activeCheck="false" shouldIgnoreSenderVerification="false">
+    <!-- 定义一个或多个任务需要完成的目标 -->
+    <goals>
+       <goal type="getstring" target="DependableSkeleton" />
+    </goals>
+
+    <!-- 任务开始时触发的方法, 用法同Action的RunFunction -->
+    <missionStart val="0">loadConditionalActions:Actions/Mission 2/2.xml</missionStart>
+
+    <!-- 任务结束时切换到下一个任务的文件路径 -->
+    <nextMission>NONE</nextMission>
+
+    <!-- 任务结束时触发的方法, 用法同Action的RunFunction -->
+    <missionEnd val="0">loadConditionalActions:Actions/Mission 2/3.xml</missionEnd>
+
+    <!-- 定义任务开始时发送的邮件信息 -->
+    <posting title="任务标题">任务内容描述</posting>
+    <email>
+        <sender>发送者</sender>
+        <subject>主题</subject>
+        <body>邮件内容</body>
+        <!-- 附件可填加任务细节, 计算机链接、账户等 -->
+        <attachments>
+
+        </attachments>
+    </email>
+</mission>

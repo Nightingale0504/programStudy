@@ -31,7 +31,7 @@ UQ 政府部分服务器 IP
 基本资料库 govBasicRes
 内部资料库 govInsideRes
     </note>
-    <mail username="Jason@mail.gov" thisIstheaccountpass="govermentpwdis*******" />
+    <mail username="Jason@mail.gov" pass="govermentpwdis*******" />
     </eosDevice>
 
     <CustomConnectDisplayDaemon />

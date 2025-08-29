@@ -12,16 +12,15 @@
   <account type="ALL" username="OMEN_07_0941" password="Xk2nozu6PsveXftLvgoq" />
 
   <ports>22, 21, 25, 80, 443, 104, 6379, 3724, 123, 1433, 6881, 554, 192</ports>
-
-  <tracker />
+  
   <proxy time="800" />
   <portsForCrack val="1145" />
   <trace time="3" />
   <firewall level="7" solution="OffsiteMilitaryExecutiveNucleus-Firewall-0941" additionalTime="10" />
 
-  <dlink dlink="playerProxyCore" />
-  <dlink dlink="playerWhitelist" />
-  <dlink dlink="playertHeart" />
+  <dlink target="playerProxyCore" />
+  <dlink target="playerWhitelist" />
+  <dlink target="playertHeart" />
 
   <file path="home/Backport" name="readme.txt">
   ###该工具只能在受支持的设备上运行###

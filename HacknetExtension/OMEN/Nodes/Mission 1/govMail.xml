@@ -13,6 +13,7 @@
     <ports>22, 21, 25</ports>
 
     <trace time="100" />
+    <proxy time="30" />
     <firewall level="10" solution="UnityQuickGoverment-Firewall-0017" additionalTime="10" />
 
     <account username="Jason" password="govermentpwdis*******" type="ADMIN" />
@@ -25,6 +26,6 @@
 
     <CustomConnectDisplayDaemon />
     
-    <WhitelistAuthenticatorDaemon Remote="govWhitelist" SelfAuthenticating="false" />
+    <WhitelistAuthenticatorDaemon Remote="govWhitelist" />
 
 </Computer>

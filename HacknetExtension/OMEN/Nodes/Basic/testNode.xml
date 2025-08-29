@@ -5,7 +5,7 @@
     <ports>22, 21, 25</ports>
     <trace time="-1" />
 
-   <file path="bin" name="RadioV3.exe">#RADIO_V3#</file>
+    <file path="bin" name="RadioV3.exe">#RADIO_V3#</file>
     <file path="home/RadioV3" name="RadioV3_readme.txt">
     全新的适配全平台的音频播放器!
     允许你随时随地更改背景音乐!

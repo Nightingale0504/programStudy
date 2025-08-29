@@ -1,0 +1,24 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<Computer id="jmail" 
+ name="JMail 邮件服务器" 
+ allowsDefaultBootModule="true"
+ ip="www.jmail.com"
+ security="3"
+ type="1" > 
+  
+  <ports>80,22,21,25,1433</ports>
+  
+  <adminPass pass="OffsiteMilitaryExecutiveNucleus-MailSystem-0017" />
+  
+  <proxy time="3" />
+  <portsForCrack val="3" />
+  <trace time="200" />
+  <firewall level="7" solution="OffsiteMilitaryExecutiveNucleus-Firewall-0941" additionalTime="10" />
+  
+  <account username="#PLAYERNAME#" password="********" type="mail" />  
+  
+  <mailServer name="JMail 邮件服务器" color="50,237,212" generateJunk="true" >
+
+  </mailServer>  
+  
+</Computer>

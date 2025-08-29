@@ -9,14 +9,14 @@
 
     <adminPass pass="badapple" />
 
+    <proxy time="30" />
     <portsForCrack val="3" />
     <ports>22, 21, 25, 80</ports>
-    <trace time="80" />
+    <trace time="100" />
     <firewall level="10" solution="gov" additionalTime="0" />
 
-    <WhitelistAuthenticatorDaemon Remote="govWhitelist" SelfAuthenticating="false" />
+    <WhitelistAuthenticatorDaemon Remote="govWhitelist" />
 
-    <dlink dlink="govBasicRes" />
-    <dlink dlink="playerComp" />
+    <dlink target="govBasicRes" />
 
 </Computer>

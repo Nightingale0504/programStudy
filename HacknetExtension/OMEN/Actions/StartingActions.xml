@@ -1,8 +1,7 @@
 <ConditionalActions>
   
   <Instantly needsMissionComplete="false" >
-    <ChangeAlertIcon Target="omenMailInside" Type="mail" DelayHost="testNode" Delay="1"/> 
-
+    <SetRAM ram="4096"/>
     <DeleteFile TargetComp="ispComp" FilePath="home" FileName="ISP_About_Message.txt" DelayHost="testNode" Delay="0"/>
     <AddAsset FileName="ISP_About_Message.txt" FileContents="该服务器为ISP通用服务商管理系统" TargetComp="ispComp" TargetFolderpath="home"/>
     <AppendToFile DelayHost="testNode" Delay="0.1" TargetComp="ispComp" TargetFolderpath="home" TargetFilename="ISP_About_Message.txt">
@@ -36,7 +35,7 @@
     </AppendToFile>
   </Instantly>
   
-  <OnConnect target="omenMailInside">
+  <OnConnect target="jmail">
     <WriteToTerminal Quietly="false" DelayHost="omenDHS" Delay="1"></WriteToTerminal> 
     <SwitchToTheme ThemePathOrName="Themes/riptide.xml" FlickerInDuration="2.0" DelayHost="omenDHS" Delay="1.2"/>
     <WriteToTerminal Quietly="false" DelayHost="omenDHS" Delay="1.3"></WriteToTerminal> 
@@ -62,8 +61,10 @@
     <ShowChapterTitle ChapterTitle="LOADING COMPONENT" ChapterSubTitle="加载中....." HideTopBar="false" BackingOpacity="25" Delay="10" DelayHost="omenDHS"/>
     <WriteToTerminal Quietly="false" DelayHost="omenDHS" Delay="10"></WriteToTerminal> 
     <ShowChapterTitle ChapterTitle="LOADING COMPLETE" ChapterSubTitle="完成" HideTopBar="false" BackingOpacity="25" Delay="11" DelayHost="omenDHS"/>
-    <WriteToTerminal Quietly="false" DelayHost="omenDHS" Delay="11"></WriteToTerminal> 
-    <SetRAM ram="4096"/>
+    <WriteToTerminal Quietly="false" DelayHost="omenDHS" Delay="11"></WriteToTerminal>
+    <RunCommand command="dc" DelayHost="testNode" Delay="1"/>
+    <RunCommand command="clear" DelayHost="testNode" Delay="11.5"/>
+    <RunCommand command="rm log/*" DelayHost="testNode" Delay="3"/>
     <HideChapterTitle Delay="15" DelayHost="omenDHS"/>
   </OnConnect>
 
@@ -92,9 +93,7 @@
   </OnConnect>
 
   <OnConnect target="playerComp">
-    <GivePlayerUserAccount DelayHost="testNode" Delay="0" TargetComp="omenMailInside" Username="#PLAYERNAME#" />
-    <GivePlayerUserAccount TargetComp="playertHeart" Username="#PLAYERNAME#" DelayHost="testNode" Delay="0" />
-    <GivePlayerUserAccount TargetComp="playerWhitelist" Username="#PLAYERNAME#" DelayHost="testNode" Delay="0" />
+    <GivePlayerUserAccount TargetComp="jmail" Username="#PLAYERNAME#" DelayHost="testNode" Delay="0" />
     <RunFunction FunctionName="addFlags:Pathfinder"/>
     <AddConditionalActions Filepath="Actions/PF/1.xml"/>
   </OnConnect>

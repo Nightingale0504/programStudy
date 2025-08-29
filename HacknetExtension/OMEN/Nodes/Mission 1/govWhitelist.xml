@@ -11,6 +11,8 @@
 
     <portsForCrack val="3" />
     <ports>22, 21, 25, 80</ports>
+    <proxy time="30" />
+    <firewall level="10" solution="f123wa11" additionalTime="0.1" />
 
     <trace time="100" />
 

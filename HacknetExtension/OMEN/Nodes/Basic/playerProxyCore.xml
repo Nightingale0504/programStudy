@@ -16,9 +16,9 @@
 
     <account username="#PLAYERNAME#" password="*******" type="ADMIN" />
 
-    <dlink dlink="playerProxy1" />
-    <dlink dlink="playerProxy2" />
-    <dlink dlink="playerProxy3" />
-    <dlink dlink="playerProxy4" />
-    <dlink dlink="playerProxy5" />
+    <dlink target="playerProxy1" />
+    <dlink target="playerProxy2" />
+    <dlink target="playerProxy3" />
+    <dlink target="playerProxy4" />
+    <dlink target="playerProxy5" />
 </Computer>

@@ -11,13 +11,14 @@
     <portsForCrack val="3" />
     <ports>21, 80, 25, 22, 443</ports>
 
-    <trace time="10" />
-    <firewall level="10" solution="goverment" additionalTime="0" />
+    <trace time="100" />
+    <proxy time="30" />
+    <firewall level="10" solution="goverment" additionalTime="0.1" />
 
     <account username="admin" password="*******" type="ADMIN" />
 
-    <dlink dlink="govWhitelist" />
-    <dlink dlink="govRelay" />
-    <dlink dlink="govMail" />
+    <dlink target="govWhitelist" />
+    <dlink target="govRelay" />
+    <dlink target="govMail" />
 
 </Computer>

@@ -26,11 +26,15 @@
     编撰日期: 2017.08
     编撰单位: ???
 
-    Nisei MK III 为基因靶向生化武器, 需要三把生物密钥才能启动, 每把钥匙都是独一无二的生物特征识别, 无法复制, 三把钥匙分别由三个独立保管人持有
+    Nisei MK III 为基因靶向生化武器, 
+    需要三把生物密钥才能启动, 
+    每把钥匙都是独一无二的生物特征识别, 
+    无法复制, 
+    三把钥匙分别由三个独立保管人持有
     第一把钥匙确认其所有者为: Labyrinth Kaguya
     </file>
 
-    <WhitelistAuthenticatorDaemon Remote="govWhitelist" SelfAuthenticating="false" />
+    <WhitelistAuthenticatorDaemon Remote="govWhitelist" />
 
 
 </Computer>

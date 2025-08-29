@@ -1,0 +1,29 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<Computer id="govMail" 
+    name="UQ 政府邮箱服务器"
+    allowsDefaultBootModule="true" 
+    icon="kellis"
+    security="5" 
+    type="3"
+    ip="www.mail.gov" >
+
+    <adminPass pass="UnityQuickGoverment-MailSystem-0079" />
+
+    <portsForCrack val="99" />
+    <ports>22, 21, 25</ports>
+
+    <trace time="100" />
+    <firewall level="10" solution="UnityQuickGoverment-Firewall-0017" additionalTime="10" />
+
+    <account username="Jason" password="govermentpwdis*******" type="ADMIN" />
+
+    <mailServer name="UQ 政府邮箱" color="50,237,212" generateJunk="true">
+    <email recipient="???" sender="Jason" subject="内部资料库密码">妈的, 我又忘了内部资料库密码了, 给我下</email>
+    <email recipient="Jason" sender="???" subject="RE: 内部资料库密码">你真是个不省油的灯, 去吧, UnityQuickGoverment-InsideResource-0078, 别外泄</email>
+    </mailServer>
+
+    <CustomConnectDisplayDaemon />
+    
+    <WhitelistAuthenticatorDaemon Remote="govWhitelist" SelfAuthenticating="false" />
+
+</Computer>

@@ -16,7 +16,7 @@
   <account username="#PLAYERNAME#" password="​********" type="mail" />
   <account username="admin" password="​OffsiteMilitaryExecutiveNucleus-MailSystem-0017" type="ADMIN" />   
   
-  <mailServer name="OMEN 内部邮件服务器" color="50,237,212">
+  <mailServer name="OMEN 内部邮件服务器" color="50,237,212" generateJunk="true" >
 
   </mailServer>  
   

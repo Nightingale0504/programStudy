@@ -4,7 +4,7 @@
           security="4"
           allowsDefaultBootModule="true"
           type="1"
-		  ip="#RANDOM_IP#">
+		  ip="omen.dhs.app">
 
 <adminPass pass="​OffsiteMilitaryExecutiveNucleus-DHS-0058"/>
 
@@ -19,12 +19,15 @@
 
 <DHSDaemon groupName="OL DHS" addsFactionPointOnMissionComplete="false" autoClearMissionsOnPlayerComplete="false" themeColor="67,204,148" allowContractAbbandon="false">
   	<agent name="0wn3r" color="19,248,253"/>
-  	<agent name="ZQG" color="255,255,255"/>
+  	<agent name="ZQG" color="0,0,255"/>
 	<agent name="Raven" color="0,255,0"/>
-	<agent name="#PLAYERNAME#" color="92,92,92"/>
+	<agent name="#PLAYERNAME#" color="92,92,92" pass="OMEN_DHS0941" />
 	<agent name="John" color="254,140,1"/>
 	<agent name="Kaguya" color="255,0,0"/>
 	<agent name="3rr0r" color="255,0,0"/>
 	<agent name="Da2k51d3" color="201,60,255"/>
+	<agent name="Cl0v3r" color="255,204,87" />
+	<agent name="Channel" color="255,255,255" />
+	<agent name="balanceBOT" color="150,200,100" />
 </DHSDaemon>
 </Computer>

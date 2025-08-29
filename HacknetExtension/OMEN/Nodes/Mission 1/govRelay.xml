@@ -1,0 +1,21 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<Computer id="govRelay" 
+    name="UQ 政府中继服务器"
+    allowsDefaultBootModule="true" 
+    icon="DLCPC1"
+    security="7" 
+    type="3">
+
+    <adminPass pass="badapple" />
+
+    <portsForCrack val="3" />
+    <ports>22, 21, 25, 80</ports>
+    <trace time="80" />
+    <firewall level="10" solution="gov" additionalTime="0" />
+
+    <WhitelistAuthenticatorDaemon Remote="govWhitelist" SelfAuthenticating="false" />
+
+    <dlink dlink="govBasicRes" />
+    <dlink dlink="playerComp" />
+
+</Computer>

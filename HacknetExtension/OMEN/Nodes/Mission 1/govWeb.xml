@@ -1,0 +1,23 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<Computer id="govWeb" 
+    name="UQ 政府网站"
+    allowsDefaultBootModule="true" 
+    icon="laptop"
+    security="0" 
+    type="empty"
+    ip="www.UQ.gov" >
+
+
+    <portsForCrack val="3" />
+    <ports>21, 80, 25, 22, 443</ports>
+
+    <trace time="10" />
+    <firewall level="10" solution="goverment" additionalTime="0" />
+
+    <account username="admin" password="*******" type="ADMIN" />
+
+    <dlink dlink="govWhitelist" />
+    <dlink dlink="govRelay" />
+    <dlink dlink="govMail" />
+
+</Computer>

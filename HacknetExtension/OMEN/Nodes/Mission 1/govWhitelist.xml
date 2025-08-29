@@ -1,0 +1,20 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<Computer id="govWhitelist" 
+    name="UQ 政府白名单"
+    allowsDefaultBootModule="true" 
+    icon="chip"
+    security="4" 
+    type="3">
+
+    <adminPass pass="broken" />
+
+    <portsForCrack val="3" />
+    <ports>22, 21, 25, 80</ports>
+
+    <trace time="100" />
+
+    <CustomConnectDisplayDaemon />
+    
+    <WhitelistAuthenticatorDaemon SelfAuthenticating="false" />
+
+</Computer>

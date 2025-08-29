@@ -1,0 +1,24 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<mission id="Mission1" activeCheck="false" shouldIgnoreSenderVerification="false">
+    <!-- 定义一个或多个任务需要完成的目标 -->
+    <goals>
+    </goals>
+
+    <!-- 任务开始时触发的方法，用法同Action的RunFunction -->
+
+    <!-- 任务结束时切换到下一个任务的文件路径 -->
+
+    <!-- 任务结束时触发的方法，用法同Action的RunFunction -->
+
+    <!-- 定义任务开始时发送的邮件信息 -->
+    <posting title="Nisei MK III">???</posting>
+    <email>
+        <sender>NONE</sender>
+        <subject>NONE</subject>
+        <body>NONE</body>
+        <!-- 附件可填加任务细节，计算机链接、账户等 -->
+        <attachments>
+
+        </attachments>
+    </email>
+</mission>

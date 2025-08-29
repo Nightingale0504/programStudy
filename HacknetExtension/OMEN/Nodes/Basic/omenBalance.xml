@@ -1,0 +1,26 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<Computer id="omenBalance" 
+    name="OMEN 负载均衡服务器"
+    allowsDefaultBootModule="true" 
+    icon="DLCPC1"
+    security="7" 
+    type="3"
+    ip="omen.balancer.app" >
+
+    <adminPass pass="​OffsiteMilitaryExecutiveNucleus-LoadBalance-0022" />
+
+    <portsForCrack val="3" />
+    <ports>22, 21, 25</ports>
+
+    <trace time="100" />
+
+    <account username="#PLAYERNAME#" password="OMEN_LB0022" type="ADMIN" />
+    
+    <firewall level="10" solution="​OffsiteMilitaryExecutiveNucleus-Firewall-0941" additionalTime="10" />
+
+    <file path="load" name="decrypter..dll">#BINARY##BINARY##BINARY#</file>
+    <file path="load" name=".net8.0.dll">#BINARY##BINARY##BINARY#</file>
+    <file path="load" name="ddos.dll">#BINARY##BINARY##BINARY##BINARY#</file>
+    <file path="load" name="dict.dic">#BINARY##BINARY#</file>
+
+</Computer>

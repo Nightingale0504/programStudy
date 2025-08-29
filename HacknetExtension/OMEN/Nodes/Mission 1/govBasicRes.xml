@@ -1,0 +1,39 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<Computer id="govBasicRes" 
+    name="UQ 政府基本资料库"
+    allowsDefaultBootModule="true" 
+    icon="kellis"
+    security="4" 
+    type="3"
+    ip="govBasicRes">
+
+    <adminPass pass="envelope" />
+
+    <portsForCrack val="3" />
+    <ports>22, 21, 25, 80</ports>
+
+    <trace time="100" />
+
+    <file path="home" name="IMPORTANT">
+    Tips: 我们认为我们的 eOS 设备密码过于简单, 所以我们将其设置为了UnityQuickGoverment-eOS-0000
+      --- UQ Goverment
+    </file>
+    <file path="res" name="1.res">#BINARY##BINARY#</file>
+    <file path="res" name="2.res">#BINARY##BINARY#</file>
+    <file path="res" name="3.res">#BINARY##BINARY#</file>
+
+
+    <eosDevice id="jep" name="Jason's ePhone114" icon="ePhone2" empty="false" passOverride="UnityQuickGoverment-eOS-0000">
+    <note>
+    UQ 政府部分服务器 IP:
+    基本资料库 govBasicRes
+    内部资料库 govInsideRes
+    </note>
+    <mail username="Jason@mail.gov" thisIstheaccountpass="govermentpwdis*******" />
+    </eosDevice>
+
+    <CustomConnectDisplayDaemon />
+
+    <WhitelistAuthenticatorDaemon Remote="govWhitelist" SelfAuthenticating="false" />
+
+</Computer>

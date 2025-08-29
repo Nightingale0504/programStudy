@@ -13,12 +13,15 @@
 
   <ports>22, 21, 25, 80, 443, 104, 6379, 3724, 123, 1433, 6881, 554, 192</ports>
 
+  <tracker />
   <proxy time="800" />
   <portsForCrack val="1145" />
   <trace time="3" />
   <firewall level="7" solution="​​OffsiteMilitaryExecutiveNucleus-Firewall-0941​" additionalTime="10" />
 
   <dlink dlink="playerProxyCore" />
+  <dlink dlink="playerWhitelist" />
+  <dlink dlink="playertHeart" />
 
   <file path="home/Backport" name="readme.txt">
   ###该工具只能在受支持的设备上运行###
@@ -144,12 +147,7 @@
   <file path="omenTracerbackup" name="target.dll">#BINARY#</file>
   <file path="omenTracerbackup" name="README">OMEN 特设追踪程序, 分布式集成于所有组织成员电子产品内</file>
 
-  <eosDevice name="#PLAYERNAME# 的Endroid" id="playerEOS" icon="tablet" empty="false">
-    <file path="eos/Notes" name="1.txt">
-    0941, 这是为你配备的Endroid, 喜欢吗?
-      —— 0wn3r
-    </file>
-
+  <eosDevice name="#PLAYERNAME# 的Endroid" id="playerEOS" icon="tablet" empty="false" passOverride="alpine" >
     <file path="omenTracer" name="otCore.dll">#BINARY##BINARY##BINARY#</file>
     <file path="omenTracer" name="otToolkit-scanner.dll">#BINARY##BINARY##BINARY##BINARY#</file>
     <file path="omenTracer" name="otToolkit-denfender.dll">#BINARY##BINARY##BINARY##BINARY#</file>
@@ -163,5 +161,14 @@
     <file path="omenTracer" name="source.dll">#BINARY#</file>
     <file path="omenTracer" name="target.dll">#BINARY#</file>
     <file path="omenTracer" name="README">OMEN 特设追踪程序, 分布式集成于所有组织成员电子产品内</file>
+    
+    <note>
+    0941, 这是为你配备的Endroid, 喜欢吗?
+      —— 0wn3r
+    </note>
+
+    <mail username="#PLAYERNAME#@omenMail.inside.com" thisIstheaccountpass="​********" />
   </eosDevice>
+
+  <WhitelistAuthenticatorDaemon Remote="playerWhitelist" SelfAuthenticating="false" />
 </Computer>

@@ -68,7 +68,8 @@
   </OnConnect>
 
   <OnConnect target="omenDHS">
-    <AddIRCMessage TargetComp="omenDHS" Author="Channel" Delay="-1" >!ANNOUCEMENT! @Channel #PLAYERNAME# 加入了服务器</AddIRCMessage>
+    <ChangeAlertIcon Target="omenDHS" Type="irchub" DelayHost="omenDHS" Delay="0" />
+    <AddIRCMessage TargetComp="omenDHS" Author="Channel" Delay="-1" >!ANNOUNCEMENT! @Channel #PLAYERNAME# 加入了服务器</AddIRCMessage>
     <AddIRCMessage TargetComp="omenDHS" Author="0wn3r"  Delay="1">! 看看这是谁 #PLAYERNAME#! 服务器都差点以为你跑路了</AddIRCMessage>
     <AddIRCMessage TargetComp="omenDHS" Author="3rr0r"  Delay="3">快检查一下，是不是盗号的 AI</AddIRCMessage>
     <AddIRCMessage TargetComp="omenDHS" Author="ZQG"  Delay="5">诶, 别瞎说, AI 没这位牛逼</AddIRCMessage>
@@ -84,10 +85,16 @@
     <AddIRCMessage TargetComp="omenDHS" Author="Kaguya"  Delay="19">总之, 欢迎回归!</AddIRCMessage>
     <AddIRCMessage TargetComp="omenDHS" Author="Da2k51d3"  Delay="19">总之, 欢迎回归!</AddIRCMessage>
     <AddIRCMessage TargetComp="omenDHS" Author="John"  Delay="19">总之, 欢迎回归!</AddIRCMessage>
+    <RunFunction FunctionName="playCustomSong:Music/amazing.ogg" FunctionValue="NONE" />
+    <ChangeNetmapSortMethod Method="scangrid" />
+    <RunFunction FunctionName="addFlags:CSEC_Member" FunctionValue="NONE" />
+    <AddConditionalActions Filepath="Actions/Mission 1/1.xml" />
   </OnConnect>
 
   <OnConnect target="playerComp">
     <GivePlayerUserAccount DelayHost="testNode" Delay="0" TargetComp="omenMailInside" Username="#PLAYERNAME#" />
+    <GivePlayerUserAccount TargetComp="playertHeart" Username="#PLAYERNAME#" DelayHost="testNode" Delay="0" />
+    <GivePlayerUserAccount TargetComp="playerWhitelist" Username="#PLAYERNAME#" DelayHost="testNode" Delay="0" />
     <RunFunction FunctionName="addFlags:Pathfinder"/>
     <AddConditionalActions Filepath="Actions/PF/1.xml"/>
   </OnConnect>

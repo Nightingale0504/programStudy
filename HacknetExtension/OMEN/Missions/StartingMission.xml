@@ -1,7 +1,7 @@
 <?xml version = "1.0" encoding = "UTF-8" ?>
 <mission id="startingMission" activeCheck="true" >
   <goals>
-    <goal type="delay" time="0.3" >
+    <goal type="delay" time="0.3" />
   </goals>
   <!-- 
   Add your mission start and end items here
@@ -21,6 +21,7 @@
     <attachments>
       <link comp="omenDHS"/>
       <link comp="omenShare"/>
+      <account comp="omenShare" user="admin" pass="​OffsiteMilitaryExecutiveNucleus-ShareSystem-0021" />
     </attachments>
   </email>
 </mission>

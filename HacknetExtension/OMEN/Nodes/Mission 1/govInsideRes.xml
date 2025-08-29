@@ -1,0 +1,36 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<Computer id="govInsideRes" 
+    name="UQ 政府内部资料库"
+    allowsDefaultBootModule="true" 
+    icon="kellis"
+    security="10" 
+    type="3"
+    ip="govInsideRes" >
+
+    <adminPass pass="UnityQuickGoverment-InsideResource-0078" />
+
+    <portsForCrack val="1000" />
+    <ports>22, 21, 25, 443, 554, 211, 6881</ports>
+    <tracker />
+    <trace time="3" />
+    <firewall level="10" solution="UnityQuickGoverment-Firewall-0104" additionalTime="10" />
+
+    <encryptedFile path="res" name="nmk3.dec" extension=".dll" ip="LOCALHOST" header="Nisei MK III 备份" pass="UnityQuickGoverment-EncryptedFile-0703" >
+    #BINARY##BINARY##BINARY##BINARY##BINARY##BINARY##BINARY##BINARY##BINARY##BINARY##BINARY##BINARY##BINARY#
+    </encryptedFile>
+
+    <file path="res" name="nmk3.txt">
+    ------- Nisei MK III -------
+    机密等级: ALPHE
+    文档编号: SECRET-2017-08
+    编撰日期: 2017.08
+    编撰单位: ???
+
+    Nisei MK III 为基因靶向生化武器, 需要三把生物密钥才能启动, 每把钥匙都是独一无二的生物特征识别, 无法复制, 三把钥匙分别由三个独立保管人持有
+    第一把钥匙确认其所有者为: Labyrinth Kaguya
+    </file>
+
+    <WhitelistAuthenticatorDaemon Remote="govWhitelist" SelfAuthenticating="false" />
+
+
+</Computer>

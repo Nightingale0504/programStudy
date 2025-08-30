@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HacknetEditorHint>
+
+    <Node name="ConditionalActions.*.ShowChapterTitle|CustomFaction.Action.ShowChapterTitle" enable="true" multi="true" desc="显示章节标题">        
+        <Attribute name="ChapterTitle" required="true" desc="章节标题" default="Chapter 1" />
+        <Attribute name="ChapterSubTitle" required="true" desc="章节子标题" default="第一章" />
+        <Attribute name="HideTopBar" required="false" desc="是否隐藏顶部栏" default="true" hint="bool" />
+        <Attribute name="BackingOpacity" required="false" desc="调暗背景的不透明度" default="0" />
+        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID, 否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="Delay" required="false" desc="延迟触发(秒)" default="0.0" hint="enum"/>
+    </Node>
+
+    <Node name="ConditionalActions.*.HideChapterTitle|CustomFaction.Action.HideChapterTitle" enable="true" multi="true" desc="隐藏章节标题">
+        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID, 否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="Delay" required="false" desc="延迟触发(秒)" default="0.0" hint="enum"/>
+    </Node>
+
+    <Node name="ConditionalActions.*.SetRAM|CustomFaction.Action.SetRAM" enable="true" multi="true" desc="设置玩家的内存量">        
+        <Attribute name="ram" required="true" desc="内存量" default="768" />
+    </Node>
+
+    <Node name="ConditionalActions.*.WriteToTerminal|CustomFaction.Action.WriteToTerminal" enable="true" multi="true" desc="向终端写入一条类似于 writel 的消息">        
+        <Attribute name="Quietly" required="true" hint="enum" >
+            <Enums>
+                <Enum desc="消息发送时不使屏幕闪烁" >true</Enum>
+                <Enum desc="消息发送时使屏幕闪烁" >false</Enum>
+            </Enums>
+        </Attribute>
+        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID, 否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="Delay" required="false" desc="延迟触发(秒)" default="0.0" hint="enum" />
+    </Node>
+
+    <Node name="Computer.wiresharkCapture" enable="true" multi="false" desc="向电脑内写入可见文件形式的 wireshark 握手包" >
+        <Attribute name="path" required="true" desc="文件所在路径" default="home" />
+        <Attribute name="name" required="true" desc="文件名称" default="file.pcap" />
+    </Node>
+    
+    <Node name="Computer.WiresharkEntries" enable="true" multi="false" desc="向电脑内写入可被 WireShark.exe 扫描出来的 wireshark 握手包" />
+
+    <Node name="Computer.WiresharkEntries.pcap|Computer.wiresharkCapture.pcap" enable="true" multi="true" desc="一个 wireshark 握手包" >
+        <Attribute name="id" required="true" desc="握手包 id" default="1" />
+        <Attribute name="from" required="true" desc="握手包源头" />
+        <Attribute name="to" required="true" desc="握手包目标" />
+        <Attribute name="method" required="true" desc="握手包类型" hint="enum" default="POST" >
+            <Enums>
+                <Enum>POST</Enum>
+                <Enum>PUT</Enum>
+                <Enum>GET</Enum>
+            </Enums>
+        </Attribute>
+        <Attribute name="protocol" required="true" desc="握手包协议" hint="enum" default="TCP" >
+            <Enums>
+                <Enum>TCP</Enum>
+                <Enum>UDP</Enum>
+            </Enums>
+        </Attribute>
+        <Attribute name="secure" required="true" desc="是否为安全数据包, 如是则需要必须拥有文件来源电脑的管理员权限, 并且文件必须位于同一台电脑上, 才能查看数据" hint="enum" default="false" >
+            <Enums>
+                <Enum desc="是">true</Enum>
+                <Enum desc="否">false</Enum>
+            </Enums>
+        </Attribute>
+    </Node>
+
+    <Node name="Computer.VaultDaemon" enable="true" multi="false" desc="保险库守护进程" >
+        <Attribute name="Name" required="true" desc="保险库名称" />
+        <Attribute name="KeyName" required="true" desc="用于追踪的键名称" />
+        <Attribute name="MaximumKeys" required="false" desc="用户必须收集的钥匙数量" default="5" />
+        <Attribute name="Message" required="false" desc="屏幕底部显示的提示信息" />
+    </Node>
+
+    <Node name="Computer.CodeRedemptionDaemon" enable="true" multi="false" desc="代码赎回守护进程">
+        <Attribute name="CodePrefix" required="false" desc="用户输入后添加的前缀" />
+        <Attribute name="Message" required="false" desc="服务器消息" default="Enter your code here..." />
+    </Node>
+
+    <Node name="ConditionalActions.*.AddVaultKey|CustomFaction.Action.AddVaultKey" enable="true" multi="true" desc="为保险库添加密钥">
+        <Attribute name="KeyName" required="true" desc="用于追踪的键名称" hint="js" >
+            (function(node, hacknetNodeHolder){
+
+            })
+        </Attribute>
+        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID, 否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="Delay" required="false" desc="延迟触发(秒)" default="0.0" hint="enum" />
+    </Node>
+
+    <Node name="ConditionalActions.*.RemoveVaultKey|CustomFaction.Action.RemoveVaultKey" enable="true" multi="true" desc="为保险库移除密钥">
+        <Attribute name="KeyName" required="true" desc="用于追踪的键名称" />
+        <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID, 否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
+        <Attribute name="Delay" required="false" desc="延迟触发(秒)" default="0.0" hint="enum" />
+    </Node>
+
+</HacknetEditorHint>

@@ -15,6 +15,7 @@
         <AddIRCMessage TargetComp="omenDHS" Author="balanceBOT" Delay="15" >decypting...</AddIRCMessage>
         <AddIRCMessage TargetComp="omenDHS" Author="balanceBOT" Delay="16" >decypting....</AddIRCMessage>
         <AddIRCMessage TargetComp="omenDHS" Author="balanceBOT" Delay="17" >decypted!</AddIRCMessage>
+        <AddIRCMessage TargetComp="omenDHS" Author="balanceBOT" Delay="18" >密码: UnityQuickGoverment-EncryptedFile-0703</AddIRCMessage>
         <AddAsset FileName="nmk3.dll" FileContents="#BINARY#" TargetComp="omenBalance" TargetFolderpath="load" />
         <AddIRCMessage TargetComp="omenDHS" Author="0wn3r" Delay="20" >啊! 好了, 让我看看....</AddIRCMessage>
         <AddIRCMessage TargetComp="omenDHS" Author="0wn3r" Delay="21" >一个... dll 文件?</AddIRCMessage>

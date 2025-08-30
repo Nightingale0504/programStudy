@@ -1,0 +1,23 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<Computer id="easteregg1" 
+    name="IcaRus's Secret Station"
+    allowsDefaultBootModule="true" 
+    icon="laptop"
+    security="0" 
+    type="empty"
+    ip="59p7w5higrw0lqh" >
+
+    <adminPass pass="12345" />
+
+    <portsForCrack val="3" />
+    <ports>22, 21, 25</ports>
+
+    <trace time="100" />
+
+    <Memory>
+      <Commands>
+        <Command>Easteregg 1</Command>
+      </Commands>
+    </Memory>
+
+</Computer>

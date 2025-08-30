@@ -4,7 +4,25 @@
     <!-- Instantly下的action将被立即触发 -->
     <Instantly>
         <!--Actions here-->
-        <AddIRCMessage TargetComp="omenDHS" Author="Cl0v3r" Delay="3" />
+        <AddIRCMessage TargetComp="omenDHS" Author="Cl0v3r" Delay="3" >@#PLAYERNAME#, 诶? 凭什么你是私活, 我们要去调查这个该死的政府?</AddIRCMessage>
+        <AddIRCMessage TargetComp="omenDHS" Author="ZQG" Delay="5" >就是说啊, @0wn3r 评评理!</AddIRCMessage>
+        <AddIRCMessage TargetComp="omenDHS" Author="0wn3r" Delay="7" >这... 我没办法, 虽然是个简单的活, 但人家给的太多了, 点名要求让元老人物去干</AddIRCMessage>
+        <AddIRCMessage TargetComp="omenDHS" Author="ZQG" Delay="9" >怎么滴</AddIRCMessage>
+        <AddIRCMessage TargetComp="omenDHS" Author="Cl0v3r" Delay="11" >这.. 确实没办法, 行吧, @ZQG 走, 干活去</AddIRCMessage>
+        <AddIRCMessage TargetComp="omenDHS" Author="#PLAYERNAME#" Delay="13" >:XDDDD</AddIRCMessage>
     </Instantly>
+
+    <OnConnect target="IcaRusIRC" >
+        <AddIRCMessage TargetComp="IcaRusIRC" Author="Channel" Delay="0">!ANNOUNCEMENT! @#PLAYERNAME# 加入了服务器</AddIRCMessage>
+        <AddIRCMessage TargetComp="IcaRusIRC" Author="IcaRus" Delay="3" >哎, 你来了 快坐快坐</AddIRCMessage>
+        <AddIRCMessage TargetComp="IcaRusIRC" Author="#PLAYERNAME#" Delay="5" >您这次找我有什么事?</AddIRCMessage>
+        <AddIRCMessage TargetComp="computer" Author="" />
+
+    </OnConnect>
+
+    <OnConnect target="easteregg1">
+        <WriteToTerminal Quietly="false" DelayHost="IcaRusIRC" Delay="3" >获取密钥 1</WriteToTerminal>
+        <AddVaultKey KeyName="egc" DelayHost="IcaRusIRC" Delay="5" />
+    </OnConnect>
 
 </ConditionalActions>

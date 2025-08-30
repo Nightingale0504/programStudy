@@ -22,11 +22,13 @@
         <sender>0wn3r</sender>
         <subject>麻烦</subject>
         <body>
-
+IcaRus, 我们公司的一个大客户, 这次指名要你去跟他交流
+细节会在他的 IRC 里跟你说清楚
         </body>
         <!-- 附件可填加任务细节, 计算机链接、账户等 -->
         <attachments>
-
+            <link comp="IcaRusIRC" />
+            <note title="任务细节">无()</note>
         </attachments>
     </email>
 </mission>

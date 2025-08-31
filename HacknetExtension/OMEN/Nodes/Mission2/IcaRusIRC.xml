@@ -23,6 +23,9 @@
     </IRCDaemon>
     
     <WiresharkEntries>
-        <pcap id="1" from="irirc" to="59p7w5higrw0lqh" method="POST" protocol="TCP" secure="false" >#BINARYSMALL#</pcap>
+        <pcap id="1" from="irirc" to="59p7w5higrw0lqh" method="POST" protocol="TCP" secure="false" >
+        EASTEREGG 1
+        #BINARYSMALL#
+        </pcap>
     </WiresharkEntries>
 </Computer>

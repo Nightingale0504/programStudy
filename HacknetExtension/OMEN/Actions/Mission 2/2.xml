@@ -21,7 +21,7 @@
     </OnConnect>
 
     <OnConnect target="easteregg1">
-        <WriteToTerminal Quietly="false" DelayHost="IcaRusIRC" Delay="3" >获取密钥 1</WriteToTerminal>
+        <WriteToTerminal Quietly="false" DelayHost="IcaRusIRC" Delay="3" >获取 Easteregg 密钥 1</WriteToTerminal>
         <AddVaultKey KeyName="egc" DelayHost="IcaRusIRC" Delay="5" />
     </OnConnect>
 

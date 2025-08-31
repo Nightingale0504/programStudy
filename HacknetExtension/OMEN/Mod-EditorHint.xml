@@ -77,7 +77,11 @@
     <Node name="ConditionalActions.*.AddVaultKey|CustomFaction.Action.AddVaultKey" enable="true" multi="true" desc="为保险库添加密钥">
         <Attribute name="KeyName" required="true" desc="用于追踪的键名称" hint="js" >
             (function(node, hacknetNodeHolder){
-
+                return hacknetNodeHolder.GetComputers()
+                    .filter(comp =&gt; comp.VaultDaemon)
+                    .map(comp =&gt; {
+                    return {value: comp.VaultDaemon.KeyName, desc:comp.VaultDaemon.Name , filterText: comp.VaultDaemon.KeyName, kind: "reference"};
+                });
             })
         </Attribute>
         <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID, 否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
@@ -85,7 +89,15 @@
     </Node>
 
     <Node name="ConditionalActions.*.RemoveVaultKey|CustomFaction.Action.RemoveVaultKey" enable="true" multi="true" desc="为保险库移除密钥">
-        <Attribute name="KeyName" required="true" desc="用于追踪的键名称" />
+        <Attribute name="KeyName" required="true" desc="用于追踪的键名称" hint="js" >
+            (function(node, hacknetNodeHolder){
+                return hacknetNodeHolder.GetComputers()
+                    .filter(comp =&gt; comp.VaultDaemon)
+                    .map(comp =&gt; {
+                    return {value: comp.VaultDaemon.KeyName, desc:comp.VaultDaemon.Name , filterText: comp.VaultDaemon.KeyName, kind: "reference"};
+                });
+            })
+        </Attribute>
         <Attribute name="DelayHost" required="false" desc="具有daemon服务的计算机ID, 否则无法触发延时效果" default="computer" hint="computer" linkBy="Computer.id|Computer.eosDevice.id" />
         <Attribute name="Delay" required="false" desc="延迟触发(秒)" default="0.0" hint="enum" />
     </Node>

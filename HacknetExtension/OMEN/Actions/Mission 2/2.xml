@@ -1,4 +1,4 @@
-<?xml version = "1.0" encoding = "UTF-8" ?>
+﻿<?xml version = "1.0" encoding = "UTF-8" ?>
 <ConditionalActions>
   
     <!-- Instantly下的action将被立即触发 -->
@@ -16,7 +16,6 @@
         <AddIRCMessage TargetComp="IcaRusIRC" Author="Channel" Delay="0">!ANNOUNCEMENT! @#PLAYERNAME# 加入了服务器</AddIRCMessage>
         <AddIRCMessage TargetComp="IcaRusIRC" Author="IcaRus" Delay="3" >哎, 你来了 快坐快坐</AddIRCMessage>
         <AddIRCMessage TargetComp="IcaRusIRC" Author="#PLAYERNAME#" Delay="5" >您这次找我有什么事?</AddIRCMessage>
-        <AddIRCMessage TargetComp="computer" Author="" />
 
     </OnConnect>
 

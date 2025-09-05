@@ -4,7 +4,8 @@
     allowsDefaultBootModule="true" 
     icon="laptop"
     security="0" 
-    type="empty">
+    type="empty"
+    ip="core.easteregg">
 
     <adminPass pass="12345" />
 

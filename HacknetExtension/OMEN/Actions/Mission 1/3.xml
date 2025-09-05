@@ -1,11 +1,11 @@
-<?xml version = "1.0" encoding = "UTF-8" ?>
+﻿<?xml version = "1.0" encoding = "UTF-8" ?>
 <ConditionalActions>
   
     <!-- Instantly下的action将被立即触发 -->
     <Instantly>
         <!--Actions here-->
-        <ShowChapterTitle ChapterTitle="MISSION COMPLETE" ChapterSubTitle="任务完成" HideTopBar="false" BackingOpacity="25" Delay="0.1" DelayHost="omenDHS"/>
-        <HideChapterTitle Delay="6.5" DelayHost="OLDHS"/>
+        <ShowChapterTitle ChapterTitle="MISSION COMPLETE" ChapterSubTitle="任务完成" HideTopBar="false" BackingOpacity="25" Delay="0.1" DelayHost="testNode"/>
+        <HideChapterTitle Delay="6.5" DelayHost="testNode"/>
         <AddIRCMessage TargetComp="omenDHS" Author="Channel" Delay="7" >!ANNOUNCEMENT! @#PLAYERNAME# 完成任务 Nisei MK III</AddIRCMessage>
         <AddIRCMessage TargetComp="omenDHS" Author="0wn3r" Delay="7.5" >不愧是你, 这么快?</AddIRCMessage>
         <AddIRCMessage TargetComp="omenDHS" Author="0wn3r" Delay="8" >我要看看这个 dec 文件里是些什么</AddIRCMessage>
@@ -39,8 +39,8 @@
         <AddIRCMessage TargetComp="omenDHS" Author="Da2k51d3" Delay="55" >可惜了...</AddIRCMessage>
         <AddIRCMessage TargetComp="omenDHS" Author="Kaguya" Delay="57" >而 Bit 留给 @#PLAYERNAME# 的遗嘱是: 删除 Hacknet 系统, 也就是我们手上正在使用的系统</AddIRCMessage>
         <AddIRCMessage TargetComp="omenDHS" Author="ZQG" Delay="58" >阿哲</AddIRCMessage>
-        <ShowChapterTitle ChapterTitle="SECRET FILE" ChapterSubTitle="Nisei MK III" HideTopBar="true" BackingOpacity="25" DelayHost="omenDHS" Delay="60" />
-        <HideChapterTitle DelayHost="omenDHS" Delay="65" />
+        <ShowChapterTitle ChapterTitle="SECRET FILE" ChapterSubTitle="Nisei MK III" HideTopBar="true" BackingOpacity="25" DelayHost="testNode" Delay="60" />
+        <HideChapterTitle DelayHost="testNode" Delay="65" />
         <AddIRCMessage TargetComp="omenDHS" Author="0wn3r" Delay="67" >刚刚那是什么?</AddIRCMessage>
         <AddIRCMessage TargetComp="omenDHS" Author="0wn3r" Delay="69" >翻译后是说.. Nisei MK III 是一个秘密文件, 看来我们捡到宝了</AddIRCMessage>
         <AddIRCMessage TargetComp="omenDHS" Author="ZQG" Delay="70" >是啊是啊(赞扬)</AddIRCMessage>

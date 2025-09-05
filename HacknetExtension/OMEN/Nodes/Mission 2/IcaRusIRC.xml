@@ -1,0 +1,31 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<Computer id="IcaRusIRC" 
+    name="IcaRus 私人 IRC"
+    allowsDefaultBootModule="true" 
+    icon="PacificAir"
+    security="4" 
+    type="3"
+    ip="irirc" >
+
+    <adminPass pass="IcaRus-privateIRCsystem-0043" />
+
+    <portsForCrack val="3" />
+    <ports>22, 21, 25, 80, 443</ports>
+    <proxy time="1" />
+    <firewall level="6" solution="icarus" additionalTime="0.2" />
+
+    <trace time="100" />
+    
+    <IRCDaemon name="IcaRus IRC Channel" themeColor="0,57,243" needsLogin="false">
+        <user name="Channel" color="255,255,255" />
+        <user name="IcaRus" color="0,209,232" />
+        <user name="#PLAYERNAME#" color="53,161,95" />
+    </IRCDaemon>
+    
+    <WiresharkEntries>
+        <pcap id="1" from="irirc" to="59p7w5higrw0lqh" method="POST" protocol="TCP" secure="false" >
+        EASTEREGG 1
+        #BINARYSMALL#
+        </pcap>
+    </WiresharkEntries>
+</Computer>

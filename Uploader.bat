@@ -5,16 +5,16 @@ setlocal EnableDelayedExpansion
 set "WORKDIR=C:\MyDocuments\programStudy"
 set "LOGDIR=C:\MyDocuments\programStudyLogs"
 
-:: 创建日志目录（如果不存在）
+:: 创建日志目录( 如果不存在 )
 if not exist "%LOGDIR%" (
     mkdir "%LOGDIR%"
 )
 
-:: 获取当前日期和时间（格式:  YYYYMMDD-HHmmss）
+:: 获取当前日期和时间( 格式:  YYYYMMDD-HHmmss )
 for /f %%I in ('PowerShell -NoProfile -Command "Get-Date -Format yyyyMMdd-HHmmss"') do set "LOGDATETIME=%%I"
 set "LOGFILE=%LOGDIR%\%LOGDATETIME%.log"
 
-:: 获取当前时间（格式:  HH:mm:ss）用于日志内容
+:: 获取当前时间( 格式:  HH:mm:ss )用于日志内容
 for /f %%I in ('PowerShell -NoProfile -Command "Get-Date -Format HH:mm:ss"') do set "LOGTIME=%%I"
 
 :: 显示开始提示

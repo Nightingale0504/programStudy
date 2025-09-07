@@ -5,7 +5,7 @@ signed main(){
     /*
         vector
         1. define
-            (1) vector<int> v; -> 定义空向量（动态数组）
+            (1) vector<int> v; -> 定义空向量( 动态数组 )
             (2) vector<int> v2(5); -> 定义一个初始大小为 5 的动态数组
             (3) vector<int> v3(5,1); -> 定义一个初始大小为 5 , 初值为1的动态数组
 

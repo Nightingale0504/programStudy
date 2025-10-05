@@ -3,10 +3,10 @@ using namespace std;
 #define int long long
 const int maxN=2e5+5,maxM=1e5+5;
 int n,m,f[maxN];
-struct data{
+struct node{
 	int p,q,r;
 }d[maxM];
-inline bool cmp(data a,data b){
+inline bool cmp(node a,node b){
 	return a.r>b.r;
 }
 inline int find(int x){

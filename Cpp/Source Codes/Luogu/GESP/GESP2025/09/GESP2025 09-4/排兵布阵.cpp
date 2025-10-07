@@ -3,7 +3,8 @@
 using namespace std;
 const int maxN=15;
 int n,m,a[maxN][maxN];
-int cnt;
+int mmax=INT_MIN;
+bool tmp;
 signed main(){
     scanf("%lld%lld",&n,&m);
     for (int i=1;i<=n;i++){
@@ -15,11 +16,26 @@ signed main(){
         for (int j=1;j<=m;j++){
             for (int k=1;k<=n;k++){
                 for (int l=1;l<=n;l++){
-                    
+                    tmp=true;
+                    for (int x=i;x<=k;x++){
+                        for (int y=j;y<=l;y++){
+                            if (a[x][y]==0){
+                                tmp=false;
+                                break;
+                            }
+                        }
+                        if (!tmp){
+                            break;
+                        }
+                    }
+                    if (tmp){
+                        int s=(k-i+1)*(l-j+1);
+                        mmax=max(mmax,s);
+                    }
                 }
             }
         }
     }
-    printf("%lld",cnt);
+    printf("%lld",mmax);
     return 0;
 }

@@ -1,15 +1,14 @@
 #include<bits/stdc++.h>
 #define int long long
 using namespace std;
-int n,t,k;
+const int maxN=15;
+int n,a[maxN];
+int length;
 signed main(){
     scanf("%lld",&n);
     for (int i=1;i<=n;i++){
-        scanf("%lld",&t);
-        if (t==0){
-            k++;
-        }
+            scanf("%lld",&a[i]);
     }
-    printf("%lld",k);
+    printf("%lld",length);
     return 0;
 }

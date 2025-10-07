@@ -3,7 +3,7 @@
 using namespace std;
 const int maxN=15;
 int n,m,a[maxN][maxN];
-int mmax=INT_MIN;
+int mmax=0;
 bool tmp;
 signed main(){
     scanf("%lld%lld",&n,&m);
@@ -14,8 +14,8 @@ signed main(){
     }
     for (int i=1;i<=n;i++){
         for (int j=1;j<=m;j++){
-            for (int k=1;k<=n;k++){
-                for (int l=1;l<=n;l++){
+            for (int k=i;k<=n;k++){
+                for (int l=j;l<=m;l++){
                     tmp=true;
                     for (int x=i;x<=k;x++){
                         for (int y=j;y<=l;y++){

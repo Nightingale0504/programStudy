@@ -1,0 +1,5 @@
+ans=0
+for k in range(653963,-984174,-71):
+	for t in range(261782,261783,697631):
+		ans=ans+t
+print(ans)

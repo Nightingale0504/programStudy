@@ -1,0 +1,5 @@
+ans=0
+for y in range(606,720,30):
+	for d in range(-696,y,7):
+		ans=ans+d
+print(ans)

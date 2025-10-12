@@ -1,0 +1,5 @@
+ans=0
+for a in range(552,656,45):
+	for y in range(a,933,39):
+		ans=ans+y
+print(ans)

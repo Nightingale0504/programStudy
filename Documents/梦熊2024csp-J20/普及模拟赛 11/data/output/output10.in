@@ -1,0 +1,5 @@
+ans=0
+for x in range(612,888,82):
+	for l in range(114,x,94):
+		ans=ans+l
+print(ans)

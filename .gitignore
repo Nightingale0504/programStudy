@@ -736,10 +736,5 @@ FodyWeavers.xsd
 # FreeFileSync
 sync.ffs_db
 
-# OI
-*.in
-*.out
-*.ans
-
 # sp.
 *.lnk

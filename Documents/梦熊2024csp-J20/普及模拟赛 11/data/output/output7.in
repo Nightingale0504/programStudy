@@ -1,0 +1,5 @@
+ans=0
+for u in range(157,301,73):
+	for f in range(428,979,16):
+		ans=ans+f
+print(ans)

@@ -1,0 +1,5 @@
+ans=0
+for d in range(-919394,45622,91):
+	for c in range(d,863737,98):
+		ans=ans+c
+print(ans)

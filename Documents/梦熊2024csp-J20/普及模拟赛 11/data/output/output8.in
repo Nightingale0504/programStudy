@@ -1,0 +1,5 @@
+ans=0
+for q in range(760,839,6):
+	for x in range(577,774,95):
+		ans=ans+x
+print(ans)

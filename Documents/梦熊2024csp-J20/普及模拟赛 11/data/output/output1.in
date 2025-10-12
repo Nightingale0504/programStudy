@@ -1,0 +1,5 @@
+ans=0
+for r in range(632857,632858,264644):
+	for a in range(997212,997213,372948):
+		ans=ans+a
+print(ans)

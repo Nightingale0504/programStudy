@@ -1,0 +1,5 @@
+ans=0
+for m in range(270527,385348,81):
+	for e in range(847791,941018,24):
+		ans=ans+e
+print(ans)

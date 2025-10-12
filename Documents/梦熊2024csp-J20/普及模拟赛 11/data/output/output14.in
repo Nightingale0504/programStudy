@@ -1,0 +1,5 @@
+ans=0
+for v in range(156795,258704,47):
+	for f in range(175977,460658,21):
+		ans=ans+f
+print(ans)

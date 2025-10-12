@@ -1,0 +1,5 @@
+ans=0
+for m in range(431094,757655,18):
+	for j in range(-174227,m,52):
+		ans=ans+j
+print(ans)

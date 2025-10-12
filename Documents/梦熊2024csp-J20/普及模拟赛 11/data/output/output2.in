@@ -1,0 +1,5 @@
+ans=0
+for d in range(701151,701152,151963):
+	for s in range(982057,982058,93655):
+		ans=ans+s
+print(ans)

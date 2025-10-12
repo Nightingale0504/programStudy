@@ -1,0 +1,5 @@
+ans=0
+for u in range(518604,612931,7):
+	for p in range(-859141,u,17):
+		ans=ans+p
+print(ans)

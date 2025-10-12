@@ -1,0 +1,5 @@
+ans=0
+for t in range(880,-101,-38):
+	for b in range(378,t,73):
+		ans=ans+b
+print(ans)

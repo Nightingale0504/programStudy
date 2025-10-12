@@ -1,0 +1,5 @@
+ans=0
+for j in range(-505,952,12):
+	for r in range(-52,j,99):
+		ans=ans+r
+print(ans)

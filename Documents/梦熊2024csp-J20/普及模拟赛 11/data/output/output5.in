@@ -1,0 +1,5 @@
+ans=0
+for g in range(28705,-356193,-52):
+	for v in range(321151,321152,4841):
+		ans=ans+v
+print(ans)

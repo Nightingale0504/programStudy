@@ -1,0 +1,5 @@
+ans=0
+for i in range(-29869,800711,95):
+	for s in range(-635279,i,41):
+		ans=ans+s
+print(ans)

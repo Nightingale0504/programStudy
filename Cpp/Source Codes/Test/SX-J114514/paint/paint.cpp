@@ -6,12 +6,7 @@ signed main(){
     freopen("paint.in","r",stdin);
     freopen("paint.out","w",stdout);
     scanf("%lld%lld%lld%lld",&l1,&r1,&l2,&r2);
-    if (l2>=l1 && l2<=r1 && r2>l1){
-        cnt=r1-l2;
-    }
-    if (l2>=r1){
-        cnt=0;
-    }
+    cnt=max((int)0,min(r1,r2)-max(l1,l2));
     printf("%lld",cnt);
     return 0;
 }

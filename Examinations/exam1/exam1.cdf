@@ -1,0 +1,1 @@
+{"contestTitle":"examination1","contestants":[],"tasks":[],"version":"1.0"}

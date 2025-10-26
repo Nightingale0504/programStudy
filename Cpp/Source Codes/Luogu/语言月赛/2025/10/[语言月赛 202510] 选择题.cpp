@@ -13,6 +13,14 @@ signed main(){
             printf("B");
         }else if (c==d){
             printf("C");
+        }else{
+            if ((a<b)^(a<c)){
+                printf("A");
+            }else if ((b<a)^(b<c)){
+                printf("B");
+            }else if ((c<a)^(c<b)){
+                printf("C");
+            }
         }
     }
     return 0;

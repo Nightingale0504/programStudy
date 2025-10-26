@@ -734,6 +734,7 @@ FodyWeavers.xsd
 
 # FreeFileSync
 sync.ffs_db
+*.ffs_gui
 
 # sp.
 *.lnk

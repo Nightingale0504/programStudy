@@ -1,7 +1,9 @@
 #include<bits/stdc++.h>
-#define int long long
 using namespace std;
+#define int long long
 signed main(){
-    
+    /* KMP - Knuth-Morris-Pratt
+
+    */
     return 0;
 }

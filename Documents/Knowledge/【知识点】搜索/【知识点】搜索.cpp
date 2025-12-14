@@ -29,7 +29,7 @@ signed main(){
     算法: 递推
 
     2st. 广度优先搜索 BFS -> Breadth-First Search
-    适用范围: 最短步长问题
+        适用范围: 最短步长问题
 
         模板(book 标记):
         (1) 起点入队

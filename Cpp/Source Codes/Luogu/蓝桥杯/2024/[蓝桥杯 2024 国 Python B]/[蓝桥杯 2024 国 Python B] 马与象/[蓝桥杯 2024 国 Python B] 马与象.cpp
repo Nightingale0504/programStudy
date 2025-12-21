@@ -26,10 +26,34 @@ signed main(){
         for (int i=0;i<8;i++){
             int newX=x+dxh[i];
             int newY=y+dyh[i];
-            if (newX>=0 && newX<n && newY>=0 && newY<n&&a[newX][newY]==-1){
+            if (newX>=0 && newX<n && newY>=0 && newY<n && a[newX][newY]==-1){
                 a[newX][newY]=a[x][y]+1;
                 node d={newX,newY};
                 q.push(d);
+            }
+        }
+    }
+    node c={xe,ye};
+    q.push(c);
+    b[xe][ye]=0;
+    while(!q.empty()){
+        int x=q.front().x;
+        int y=q.front().y;
+        q.pop();
+        for (int i=0;i<8;i++){
+            int newX=x+dxh[i];
+            int newY=y+dyh[i];
+            if (newX>=0 && newX<n && newY>=0 && newY<n && b[newX][newY]==-1){
+                b[newX][newY]=b[x][y]+1;
+                node d={newX,newY};
+                q.push(d);
+            }
+        }
+    }
+    for (int i=0;i<n;i++){
+        for (int j=0;j<n;j++){
+            if (a[i][j]!=-1 && b[i][j]!=-1){
+                ans=min(ans,a[i][j]+b[i][j]);
             }
         }
     }

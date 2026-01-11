@@ -33,16 +33,16 @@ signed main(){
             }
         }
     }
-    node c={xe,ye};
+    c={xe,ye};
     q.push(c);
     b[xe][ye]=0;
     while(!q.empty()){
         int x=q.front().x;
         int y=q.front().y;
         q.pop();
-        for (int i=0;i<8;i++){
-            int newX=x+dxh[i];
-            int newY=y+dyh[i];
+        for (int i=0;i<4;i++){
+            int newX=x+dxe[i];
+            int newY=y+dye[i];
             if (newX>=0 && newX<n && newY>=0 && newY<n && b[newX][newY]==-1){
                 b[newX][newY]=b[x][y]+1;
                 node d={newX,newY};

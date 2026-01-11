@@ -19,7 +19,7 @@ int guess(int index, int x)
 void submit(const std::vector<int> &result)
 {
     std::cout << "submit ";
-    for (std::vector<int>::const_iterator iter = result.begin(); iter != result.end(); iter++)
+    for (std::vector<int>::const_iterator iter=result.begin(); iter != result.end(); iter++)
     {
         std::cout << *iter << " ";
     }

@@ -29,7 +29,7 @@ void reclean(int i){
     }
 } 
 void dfs(int cen, int tot){
-    maxx = max(maxx, tot);
+    maxx=max(maxx, tot);
     for (int i=0;i<cnt[cen];i++){
         if (!bol[b[cen][i]]){
             int num=clean(b[cen][i]);

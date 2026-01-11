@@ -44,7 +44,7 @@ int main() {
         for (int i=0;i<n;++i) {
             if (!marked[i]) {
                 cout<<S[i];
-                is_empty = false;
+                is_empty=false;
             }
         }
         if (is_empty){

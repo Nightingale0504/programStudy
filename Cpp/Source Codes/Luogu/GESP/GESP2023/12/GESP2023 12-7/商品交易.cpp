@@ -2,43 +2,29 @@
 using namespace std;
 #define int long long
 const int maxN=1e5+5,maxM=2e5+5;
-int n,m,a,b,v[maxN],x[maxM],y[maxM],ans,ans2;
-queue<int> q;
+int n,m,a,b,v[maxN],book[maxN],ans,cnt;
+struct node{
+    int to,w;
+}e[maxM];
+inline void add(int x,int y,int w){
+    e[++cnt].to=y;
+    e[cnt].w=w;
+}
 signed main(){
     scanf("%lld%lld%lld%lld",&n,&m,&a,&b);
     for (int i=1;i<=n;i++){
         scanf("%lld",&v[i]);
-        v[i]++;
     }
     for (int i=1;i<=m;i++){
-        scanf("%lld%lld",&x[i],&y[i]);
-        x[i]++;
-        y[i]++;
-    }
-    q.push(a);
-    while (!q.empty()){
-        ans=0;
-        int u=q.front();
-        q.pop();
-        for (int i=1;i<=m;i++){
-            if (x[i]==u){
-                if (v[u]>v[y[i]]){
-                    ans-=v[u]-v[y[i]]-1;
-                }else{
-                    ans+=v[y[i]]-v[u]+1;
-                }
-                u=y[i];
-                q.push(u);
-            }
+        int x,y,w;
+        scanf("%lld%lld",&x,&y);
+        if (v[x]>v[y]){
+            w=v[x]-v[y]-1;
+        }else{
+            w=-(v[y]-v[x]+1);
         }
-        if (u==b){
-            ans2=min(ans2,ans);
-        }
+        add(x,y,w);
     }
-    if (ans2==INT_MAX){
-        printf("No solution\n");
-    }else{
-        printf("%lld\n",ans2);
-    }
+
     return 0;
 }

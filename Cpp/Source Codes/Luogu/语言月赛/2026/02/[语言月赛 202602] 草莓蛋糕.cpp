@@ -10,13 +10,13 @@ signed main(){
             scanf("%lld",&a[i][j]);
         }
     }
-    for (int j=1;j<=m;j++){
-        if (j%2==1){
-            for (int i=1;i<=n;i++){
+    for (int i=1;i<=n;i++){
+        if (i%2==1){
+            for (int j=1;j<=m;j++){
                 b[++cnt]=a[i][j];
             }
         }else{
-            for (int i=n;i>=1;i--){
+            for (int j=m;j>=1;j--){
                 b[++cnt]=a[i][j];
             }
         }
@@ -26,7 +26,12 @@ signed main(){
         if (b[i]==1){
             ccnt++;
         }
-        
+        if (t==d){
+            if (i==cnt || b[i+1]==0){
+                break;
+            }
+            t=0;
+        }
     }
     printf("%lld",ccnt);
     return 0;

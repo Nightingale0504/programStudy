@@ -1,4 +1,4 @@
-#include<bits/stdc++.h> 
+#include<bits/stdc++.h>
 using namespace std;
 #define int long long
 const int maxN=8000010; 
@@ -167,4 +167,3 @@ signed main(){
 	solve(4);
 	return 0;
 }
-

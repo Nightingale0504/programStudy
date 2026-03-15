@@ -9,14 +9,19 @@ signed main(){
     for (int i=1;i<=n;i++){
         scanf("%lld",&a[i]);
     }
-    for (int i=1;i<=n;i++){
-        for (int j=i+1;j<=n;j++){
-            for (int k=1;k<=n;k++){
-                if (a[i]<a[j] && a[j]<a[k]){
-                    cnt++;
-                }
+    for (int i=2;i<=n;i++){
+        int cnt1=0,cnt2=0;
+        for (int j=1;j<i;j++){
+            if (a[j]<a[i]){
+                cnt1++;
             }
         }
+        for (int j=i+1;j<=n;j++){
+            if (a[j]>a[i]){
+                cnt2++;
+            }
+        }
+        cnt+=cnt1*cnt2;
     }
     printf("%lld\n",cnt);
     return 0;

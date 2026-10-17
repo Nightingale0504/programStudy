@@ -2,10 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76cd55fe-28b5-462f-9595-3b680999e919" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Practice4.java" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Cpp/Source Codes/A312/Practice/20261016/1.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Cpp/Source Codes/A312/Practice/20261016/10.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Cpp/Source Codes/A312/Practice/20261016/11.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Cpp/Source Codes/A312/Practice/20261016/12.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Cpp/Source Codes/A312/Practice/20261016/2.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Cpp/Source Codes/A312/Practice/20261016/3.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Cpp/Source Codes/A312/Practice/20261016/4.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Cpp/Source Codes/A312/Practice/20261016/5.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Cpp/Source Codes/A312/Practice/20261016/6.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Cpp/Source Codes/A312/Practice/20261016/7.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Cpp/Source Codes/A312/Practice/20261016/8.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Cpp/Source Codes/A312/Practice/20261016/9.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,10 +23,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4,
-  "fromUser": false
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4,
+  &quot;fromUser&quot;: false
+}</component>
   <component name="ProjectId" id="3KfoxsEN4pBJzpfkD6U1KzNg0Nt" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -28,6 +36,7 @@
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "git-widget-placeholder": "main",

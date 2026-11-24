@@ -8,8 +8,8 @@ rooms=[]
 # define hotel system functions
 def enter_room():
     room_id=""
-    flag=0
     while not (room_id.isdigit() and flag==0):
+        flag=0
         room_id=input("请输入房号: ").strip()
         if not room_id.isdigit():
             print("房号必须是数字, 请重新输入! ")
@@ -31,10 +31,10 @@ def enter_room():
         if not room_price.isdigit():
             print("房价必须是数字, 请重新输入! ")
     room_price_int=int(room_price)
-    room_state=-1
-    while not (room_state==0 or room_state==1):
+    room_state="-1"
+    while not room_state in ["0", "1"]:
         room_state=int(input("请输入状态 ( 0. Idle[空闲] / 1. Checked in[已入住] ):").strip())
-        if not (room_state==0 or room_state==1):
+        if not room_state in ["0", "1"]:
             print("状态只能是 0. Idle[空闲] / 1. Checked in[已入住], 请重新输入! ")
     room=(room_id_int, room_type, room_price_int, room_state)
     rooms.append(room)
@@ -85,10 +85,10 @@ def modify_room():
         if not room_price.isdigit():
             print("房价必须是数字, 请重新输入! ")
     room_price_int=int(room_price)
-    room_state=-1
-    while not (room_state==0 or room_state==1):
+    room_state="-1"
+    while not room_state in ["0", "1"]:
         room_state=int(input("请输入新状态 ( 0. Idle[空闲] / 1. Checked in[已入住] ):").strip())
-        if not (room_state==0 or room_state==1):
+        if not room_state in ["0", "1"]:
             print("状态只能是 0. Idle[空闲] / 1. Checked in[已入住], 请重新输入! ")
     room=(room_id_int, room_type, room_price_int, room_state)
     rooms[room_coord]=room

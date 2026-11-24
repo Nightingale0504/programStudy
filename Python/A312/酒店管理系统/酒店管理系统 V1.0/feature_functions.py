@@ -18,11 +18,11 @@ def clear_screen():
   run(cmd, shell=(name == "nt"), check=False)
   return
 
-def query_state(opt: int) -> str:
+def query_state(opt: str) -> str:
     match opt:
-        case 0:
+        case "0":
             return "Idle[空闲]"
-        case 1:
+        case "1":
             return "Checked in[已入住]"
         case _:
             return "Unknown[未知状态]"

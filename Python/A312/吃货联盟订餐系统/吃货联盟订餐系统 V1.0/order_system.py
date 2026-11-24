@@ -15,7 +15,7 @@ order_address_list=[]
 order_state_list=[]
 order_total_price_list=[]
 
-# main system functions define
+# order system functions define
 def print_order():
     print("序号  订餐人    餐品信息                     送餐时间 送餐地址                                                              总金额          订单状态")
     for i in range(len(order_name_list)):
@@ -153,30 +153,3 @@ def init_order():
     order_state_list.append(9)
     order_total_price_list.append(dish_price_list[0]*2)
     return
-
-def state_parse(state_id: int) -> str:
-    match state_id:
-        case 0:
-            return "Order placed[订单已提交]"
-        case 1:
-            return "Order accepted[商家已接单]"
-        case 2:
-            return "Preparing your order[备餐中]"
-        case 3:
-            return "Ready for pickup[已出餐]"
-        case 4:
-            return "Assigning a courier[正在分配骑手]"
-        case 5:
-            return "Courier assigned[骑手已接单]"
-        case 6:
-            return "Courier arrived at restaurant[骑手已到店]"
-        case 7:
-            return "Picked up[骑手已取餐]"
-        case 8:
-            return "Out for delivery[骑手配送中]"
-        case 9:
-            return "Delivered[订单已完成]"
-        case -1:
-            return "Order canceled[订单已取消]"
-        case _:
-            return "Unknown state[状态未知]"
